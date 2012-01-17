@@ -5,7 +5,9 @@ require 'journalist/logger'
 require 'journalist/regexps'
 require 'journalist/configuration'
 require 'journalist/dragonfly'
+require 'journalist/middlewares'
 require 'journalist/hosting'
+require 'journalist/mongoid'
 
 require 'carrierwave/mongoid'
 

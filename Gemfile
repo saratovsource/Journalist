@@ -10,6 +10,25 @@ gem "jquery-rails"
 group :development do
   gem 'haml'
   gem 'rspec-rails'
+  gem 'unicorn'
+  gem 'rspec-cells'
+end
+
+group :test, :development do
+  gem 'linecache', '0.43', :platforms => :mri_18
+  gem 'ruby-debug', :platforms => :mri_18
+  gem 'ruby-debug19', :platforms => :mri_19
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  
+  gem 'database_cleaner'
+  
+  gem 'spork'
+  gem 'launchy'
+  gem 'mocha'
 end
 
 # Declare any dependencies that are still in development here instead of in
