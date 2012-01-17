@@ -1,0 +1,1 @@
+Dir[File.join(File.dirname(__FILE__), 'middlewares/*.rb')].each { |lib| require lib }
