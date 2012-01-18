@@ -11,7 +11,7 @@ Bundler.require :default, Rails.env
 module Journalist
   class Application < Rails::Application
     #TODO Autoload
-    #config.autoload_paths += %W( #{config.root}/app/models/extensions #{config.root}/app/models/extensions/site #{config.root}/app/models/extensions/page #{config.root}/app/models/extensions/asset #{config.root}/app/cells/admin)
+    config.autoload_paths += %W( #{config.root}/app/models/extensions #{config.root}/app/models/extensions/site #{config.root}/app/models/extensions/page #{config.root}/app/models/extensions/asset #{config.root}/app/cells/admin)
     
     config.encoding = "utf-8"
     config.filter_parameters << :password

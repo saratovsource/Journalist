@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # rescue_from Exception, :with => :render_error
+  #rescue_from Exception, :with => :render_error
   #
-  # def render_error
-  #   render :template => "/admin/errors/500", :layout => '/admin/layouts/box', :status => 500
-  # end
+  #def render_error
+  #   render :template => "/errors/500", :status => 500
+  #end
 end

@@ -3,7 +3,7 @@ module Journalist
 
     @@defaults = {
       :name                   => 'JournalistApp',
-      :domain                 => 'example.com',
+      :domain                 => 'development.local',
       :reserved_subdomains    => %w{www admin email blog webmail mail support help site sites},
       # :forbidden_paths      => %w{layouts snippets stylesheets javascripts assets admin system api},
       :reserved_slugs         => %w{stylesheets javascripts assets admin images api pages edit},

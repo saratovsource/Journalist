@@ -4,6 +4,7 @@ class Site
   
   # -= Extensions =-
   extend Extensions::Site::SubdomainDomains
+  extend Extensions::Site::FirstInstallation
   
   # -= Fields =-
   field :name

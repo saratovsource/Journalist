@@ -1,0 +1,1 @@
+Dir[File.join(File.dirname(__FILE__), 'routing/*.rb')].each { |lib| require lib }

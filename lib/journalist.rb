@@ -1,9 +1,12 @@
 require 'mimetype_fu'
 require 'devise'
 
+require 'journalist/core_ext'
 require 'journalist/logger'
 require 'journalist/regexps'
 require 'journalist/configuration'
+require 'journalist/godmode_responder'
+require 'journalist/routing'
 require 'journalist/dragonfly'
 require 'journalist/middlewares'
 require 'journalist/hosting'
