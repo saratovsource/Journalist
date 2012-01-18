@@ -1,0 +1,5 @@
+---
+en:
+  errors:
+    messages:
+      needs_admin_account: "One admin account is required at least"
