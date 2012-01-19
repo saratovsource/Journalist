@@ -1,8 +1,7 @@
 require 'digest'
 
 class Account
-  include Mongoid::Document
-  include Mongoid::Timestamps
+  include Journalist::Document
   
   devise *Journalist.config.devise_modules
   
@@ -10,6 +9,9 @@ class Account
   field :name
   field :locale, :default => Journalist.config.default_locale.to_s or 'en'
   field :switch_site_token
+  
+  # -= Associations =-
+  references_many :journal_rubrics, :validate => false
   
   # -= Validations =-
   validates_presence_of :name

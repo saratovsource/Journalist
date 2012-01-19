@@ -2,6 +2,9 @@ require 'mimetype_fu'
 require 'devise'
 require 'rack/cache'
 require 'dragonfly'
+require 'russian'
+require 'mongoid/tree'
+require 'carrierwave/mongoid'
 
 require 'journalist/core_ext'
 require 'journalist/logger'
@@ -13,8 +16,7 @@ require 'journalist/dragonfly'
 require 'journalist/middlewares'
 require 'journalist/hosting'
 require 'journalist/mongoid'
-
-require 'carrierwave/mongoid'
+require 'journalist/document'
 
 module Journalist
   

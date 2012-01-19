@@ -1,6 +1,5 @@
 class Membership
-  include Mongoid::Document
-  include Mongoid::Timestamps
+  include Journalist::Document
   
   ## fields ##
   field :role, :default => 'guest'

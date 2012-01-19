@@ -35,10 +35,14 @@ class Ability
   end
   
   def setup_editor_permissions
-    can :manage, Site do |site|
+    #Editable contents
+    can :manage, [Site, JournalRubric] do |site|
       site == @site
     end
+    
     cannot :create, Site
+    
+    #Memberships
     can :manage, Membership
     cannot :grant_admin, Membership
     cannot [:update, :destroy], Membership do |membership|

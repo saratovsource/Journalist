@@ -21,10 +21,12 @@ PATH
       mimetype-fu
       mongo
       mongoid
+      mongoid-tree
       rack-cache
       rails
       rmagick
       rubyzip
+      russian (~> 0.6.0)
       sanitize
       sass
 
@@ -148,6 +150,8 @@ GEM
       activemodel (~> 3.1)
       mongo (~> 1.3)
       tzinfo (~> 0.3.22)
+    mongoid-tree (0.6.2)
+      mongoid (~> 2.0)
     multi_json (1.0.4)
     multi_xml (0.4.1)
     net-scp (1.0.4)
@@ -219,6 +223,8 @@ GEM
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.5)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sanitize (2.0.3)
       nokogiri (>= 1.4.4, < 1.6)
     sass (3.1.12)

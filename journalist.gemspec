@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'bson'
   s.add_dependency 'bson_ext'
   s.add_dependency 'mongoid'
+  s.add_dependency 'mongoid-tree'
   
   s.add_dependency 'devise'
   
@@ -32,6 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'inherited_resources'
   s.add_dependency 'cells'
   s.add_dependency 'sanitize'
+  s.add_dependency 'russian', '~> 0.6.0'
   
   s.add_dependency 'json_pure'
   

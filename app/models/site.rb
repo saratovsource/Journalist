@@ -1,6 +1,5 @@
 class Site
-  include Mongoid::Document
-  include Mongoid::Timestamps
+  include Journalist::Document
   
   # -= Extensions =-
   extend Extensions::Site::SubdomainDomains
@@ -12,6 +11,7 @@ class Site
   
   # -= Associations =-
   embeds_many :memberships
+  references_many :journal_rubrics, :validate => false
   
   # -= Validations =-
   validates_presence_of :name

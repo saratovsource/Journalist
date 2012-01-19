@@ -1,8 +1,12 @@
 ## String
 class String
+  
+  def transliterate
+    Russian::transliterate(self)
+  end
 
   def permalink
-    self.parameterize('-')
+    self.transliterate.parameterize('-')
   end
 
   def permalink!
