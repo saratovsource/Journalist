@@ -1,4 +1,5 @@
-Rails.application.class.configure do
+require 'journalist'
+Journalist::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -45,4 +46,4 @@ Rails.application.class.configure do
   config.i18n.fallbacks = true
 
   config.active_support.deprecation = :notify
-end
+end unless Journalist.engine? || Rails.env.test?

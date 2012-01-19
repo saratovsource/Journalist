@@ -64,11 +64,12 @@ module Godmode
     end
     
     def last_url
-      if Journalist.config.manage_domains?
-        session_url(:host => Site.first.domains.first, :port => request.port)
-      else
-        session_url
-      end
+      #if Journalist.config.manage_domains?
+      #  session_url(:host => Site.first.domains.first, :port => request.port)
+      #else
+      #  session_url
+      #end
+      godmode_root_path
     end
         
   end

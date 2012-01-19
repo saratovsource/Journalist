@@ -1,5 +1,7 @@
 require 'mimetype_fu'
 require 'devise'
+require 'rack/cache'
+require 'dragonfly'
 
 require 'journalist/core_ext'
 require 'journalist/logger'
@@ -68,7 +70,7 @@ module Journalist
   end
   
   def self.add_middlewares
-    self.app_middleware.insert 0, 'Dragonfly::Middleware', :images
+    self.app_middleware.insert 0, '::Dragonfly::Middleware', :images
     if self.rack_cache?
       self.app_middleware.insert_before 'Dragonfly::Middleware', '::Journalist::Middlewares::Cache', self.config.rack_cache
     end
@@ -94,8 +96,9 @@ module Journalist
       self.config.manage_subdomain = self.config.manage_domains = true
     else
       # Note: (Did) modify the code below if Journalist handles a new hosting solution (not a perfect solution though)
-      #self.config.manage_domains = self.heroku? || self.bushido?
-      #self.config.manage_subdomain = self.bushido?
+      # TODO REfacoring this...
+      self.config.manage_domains = false
+      self.config.manage_subdomain = false
     end
   end
   

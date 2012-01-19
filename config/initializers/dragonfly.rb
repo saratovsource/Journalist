@@ -1,8 +1,7 @@
 require 'journalist'
+require 'dragonfly/rails/images'
 
 unless Journalist.engine?
-
-  require 'dragonfly'
 
   ## initialize Dragonfly ##
 

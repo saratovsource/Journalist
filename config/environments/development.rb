@@ -1,4 +1,5 @@
-Rails.application.class.configure do
+require 'journalist'
+Journalist::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
   # In the development environment your application's code is reloaded on
@@ -38,4 +39,4 @@ Rails.application.class.configure do
   #   'BUSHIDO_CLAIMED'       => 'true',
   #   'BUSHIDO_METRICS_TOKEN' => 'foobar'
   # }
-end
+end unless Journalist.engine? || Rails.env.test?

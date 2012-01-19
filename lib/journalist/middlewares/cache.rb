@@ -1,3 +1,5 @@
+require 'rack/cache'
+
 module Journalist
   module Middlewares
     class Cache
