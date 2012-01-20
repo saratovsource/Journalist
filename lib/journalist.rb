@@ -5,6 +5,7 @@ require 'dragonfly'
 require 'russian'
 require 'mongoid/tree'
 require 'carrierwave/mongoid'
+require 'state_machine'
 
 require 'journalist/core_ext'
 require 'journalist/logger'

@@ -1,0 +1,23 @@
+!!! 5
+%html
+	%head
+		%title= t(".title", :name => current_site.name)
+		= stylesheet_link_tag    "journalist/base"
+		= javascript_include_tag "journalist/base"
+		= csrf_meta_tags
+	%body#godmode
+		#header.topbar{:data => {:dropdown => "dropdown"}}
+			.topbar-inner.clearfix.row
+				.span6.a-center &nbsp;
+				= render_cell 'godmode/main_menu', :show
+		.container-fluid
+			%aside.sidebar.a-right.span6
+				%header.page-header.pos-r
+					.box
+						- if content_for? :sidebar_header
+							%h2= yield :sidebar_header
+							
+				- if content_for? :sidebar_navigation
+					%nav= yield :sidebar_navigation
+			
+			.content= yield

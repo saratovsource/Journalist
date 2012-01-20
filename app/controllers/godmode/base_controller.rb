@@ -2,6 +2,8 @@ module Godmode
   class BaseController < InheritedResources::Base
     include Journalist::Routing::SiteDispatcher
     
+    layout "godmode"
+    
     before_filter :require_admin
     before_filter :require_site
     before_filter :validate_site_membership

@@ -1,5 +1,13 @@
 ---
 en:
+  godmode:
+    shared:
+      menu:
+        journal_articles: "Publications"
+        mediabank: "Mediabank"
+  layouts:
+    godmode:
+      title: "%{name} - Godmode"
   errors:
     messages:
       needs_admin_account: "One admin account is required at least"

@@ -1,0 +1,6 @@
+%ul.nav.unstyled
+	- @list.each_with_index do |item, index|
+		- index += 1
+		%li{:class => "#{'first' if index == 1} item-#{index}"}
+			= link_to item[:url] do
+				= content_tag(:span, item[:label], :class => "icon #{item[:css_class]}")

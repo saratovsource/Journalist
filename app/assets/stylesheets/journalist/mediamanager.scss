@@ -1,0 +1,79 @@
+.mediamanager .modal-header { padding: 5px 20px; }
+.mediamanager .modal-footer { padding:14px 20px 15px 20px; line-height:30px; }
+.mediamanager .modal-footer .help { text-align:right; }
+.mediamanager .action-bar { 
+	background-color: #F5F5F5; 
+	border-bottom: 1px solid #ddd; 
+	margin-bottom: 0; 
+	padding: 14px 15px 15px;
+	box-shadow: 0 1px 0 white inset;
+	-moz-box-shadow: 0 1px 0 white inset;
+	-webkit-box-shadow: 0 1px 0 white inset;
+	-o-box-shadow: 0 1px 0 white inset; }
+.mediamanager .breadcrumb {
+	margin-bottom:0;
+	padding:0;
+	background:none;
+	border:none;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	-o-box-shadow:none; }
+  .mediamanager .breadcrumb li {
+		line-height:30px; }
+	.mediamanager .breadcrumb li.active {
+		font-size:14px;
+		font-weight:700; }	
+.mediamanager .modal-body { 
+  height:360px; 
+	overflow:auto; 
+	padding:20px 20px 0; }
+  .mediamanager .modal-body a { text-decoration:underline; }	
+	
+.media-grid.inline {
+  margin-left: -20px;
+  margin-bottom: 0;
+  zoom: 1; }
+	.media-grid.inline li { display:block; }
+  .media-grid.inline li:before, .media-grid.inline li:after {
+    display: table;
+    content: "";
+    zoom: 1; }
+  .media-grid.inline li:after {
+    clear: both; overflow:hidden; }
+	.mediamanager .media-grid a { 
+		float:none; 
+		padding:0; 
+		margin:0; 
+		border:none; 
+		-webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }	
+	.media-grid a.thumbnail, .media-grid .thumbnail	{
+		float: left;
+		padding: 4px;
+		margin: 0 0 20px 20px;
+		border: 1px solid #ddd;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+		-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);		
+		}
+   .media-grid .info { margin-left:20px; }
+	 .media-grid .description { color:#404040; display:block; }
+	 .media-grid .name { font-size:14px; line-height:40px; font-weight:700; }
+	 .media-grid .sort-item img { }
+
+	
+.mediamanager aside { height:360px; position:fixed; }
+.upload-files { border:2px dashed #eee; margin:0 0 10px; padding:2em; display:block; text-align:center; }	
+	
+	
+	
+	
+	
