@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     root :to => 'dashboard#index'
     resources :accounts
     
+    # publications section
+    resources :journal_rubrics
+    resources :journal_articles
+    
     
     # installation guide
     match '/installation' => 'installation#show', :defaults => { :step => 1 }, :as => :installation

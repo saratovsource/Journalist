@@ -10,6 +10,7 @@ module Godmode
     load_and_authorize_resource
     before_filter :set_locale
     before_filter :set_current_thread_variables
+    before_filter :set_sidebar_menu
     helper_method :sections, :current_site_url, :site_url, :page_url, :current_ability
     
     # https://rails.lighthouseapp.com/projects/8994/tickets/1905-apphelpers-within-plugin-not-being-mixed-in
@@ -35,6 +36,10 @@ module Godmode
     end
     
     protected
+    
+    def set_sidebar_menu
+      @sidebar_menu = true
+    end
     
     def set_current_thread_variables
       Thread.current[:account] = current_account
@@ -64,8 +69,10 @@ module Godmode
     def sections(key = nil)
       if !key.nil? && key.to_sym == :sub
         @godmode_sections[:sub] || self.controller_name.dasherize
-      else
+      elsif !@godmode_sections.nil?
         @godmode_sections[:main]
+      else
+        ""
       end
     end
     

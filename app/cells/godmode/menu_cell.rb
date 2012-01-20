@@ -1,10 +1,10 @@
-class Godmode::MenuCell < Cell::Base
+class Godmode::MenuCell < Cell::Rails
 
   include ::Rails.application.routes.url_helpers
 
   delegate :sections, :to => :parent_controller
 
-  attr_accessor :list
+  attr_accessor :list, :active_item
 
   def initialize(*args)
     super

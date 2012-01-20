@@ -1,0 +1,9 @@
+%li.dropdown 
+	= link_to '#', :class => "dropdown-toggle user" do
+		= content_tag :span, :class => "userpic" do
+			= image_tag "journalist/alexshow.jpg"
+		= current_account.name
+	%ul.dropdown-menu
+		= drop_down_menu_item t(:profile), "my-account"
+		= drop_down_menu_divider
+		= drop_down_menu_item t(:logout), "logout", destroy_session_url(current_account)

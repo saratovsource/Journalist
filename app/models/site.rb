@@ -12,6 +12,7 @@ class Site
   # -= Associations =-
   embeds_many :memberships
   references_many :journal_rubrics, :validate => false
+  references_many :journal_articles, :validate => false
   
   # -= Validations =-
   validates_presence_of :name

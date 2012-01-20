@@ -3,11 +3,26 @@ en:
   godmode:
     shared:
       menu:
-        journal_articles: "Publications"
+        publications: "Publications"
         mediabank: "Mediabank"
+      sub_menu:
+        journal: "Journal"
+        photo: "Photo"
+        face_patrol: "Face Patrol"
+        columns: "Columns"
+      publications_sub_menu:
+        rubrics: "Rubrics"
+        tags: "Tags"
+    sidebar:
+      headers:
+        publications: "Publications"
+        dashboard: "Dashboard"
   layouts:
     godmode:
       title: "%{name} - Godmode"
   errors:
     messages:
       needs_admin_account: "One admin account is required at least"
+  create: "Create"
+  profile: "Profile"
+  logout: "LogOut"

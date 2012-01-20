@@ -8,16 +8,18 @@
 	%body#godmode
 		#header.topbar{:data => {:dropdown => "dropdown"}}
 			.topbar-inner.clearfix.row
-				.span6.a-center &nbsp;
+				.span6.a-center= current_site.name
 				= render_cell 'godmode/main_menu', :show
+				
+				%ul.nav.secondary-nav.unstyled
+					= render :partial => 'godmode/shared/create_item'
+					= render :partial => 'godmode/shared/user_menu'
 		.container-fluid
 			%aside.sidebar.a-right.span6
 				%header.page-header.pos-r
 					.box
-						- if content_for? :sidebar_header
-							%h2= yield :sidebar_header
+						%h2= t("godmode.sidebar.headers.#{self.sections.blank? ? 'empty' : self.sections}")
 							
-				- if content_for? :sidebar_navigation
-					%nav= yield :sidebar_navigation
+				%nav= render_sidebar_menu #yield :sidebar_navigation
 			
 			.content= yield

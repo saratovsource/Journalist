@@ -1,0 +1,4 @@
+%ul.unstyled.dark-links
+	- @list.each_with_index do |item, index|
+		%li{:class => "item#{' active' if item[:active]}"}
+			= link_to item[:label], item[:url]
