@@ -1,5 +1,13 @@
 /* 1. BASE */
 
+@font-face{ /*http://www.justbenice.ru/studio/websymbols/*/
+	font-family: 'WebSymbolsRegular';
+	src: asset-url('websymbols-regular-webfont.eot', font);
+	src: asset-url('websymbols-regular-webfont.eot?#iefix', font) format('embedded-opentype'),
+	     asset-url('websymbols-regular-webfont.woff', font) format('woff'),
+	     asset-url('websymbols-regular-webfont.ttf', font) format('truetype'),
+	     asset-url('websymbols-regular-webfont.svg#WebSymbolsRegular', font) format('svg'); }
+
 a { color:#0074A4; }
 .box { margin:0 1.25em; }
 .boxp { padding:0 1.25em; }
@@ -278,7 +286,7 @@ background-color: #222;
 	background-image: -webkit-linear-gradient(rgba(234, 238, 243, 0.2), #EAEEF3), -webkit-linear-gradient(left, #EAEEF3, #EAEEF3 97%, #D3D7DB);
 	background-image: -moz-linear-gradient(rgba(234, 238, 243, 0.2), #EAEEF3), -moz-linear-gradient(left, #EAEEF3, #EAEEF3 97%, #D3D7DB); }
 
-.sidebar .page-header { 
+.sidebar .page-header, hr { 
 	border-color: #D1DCE4;
   box-shadow: 0 1px 0 #F5F8FC;
 	-moz-box-shadow: 0 1px 0 #F5F8FC;
@@ -291,6 +299,7 @@ background-color: #222;
 	color:#53637D; 
 	text-shadow:0 1px #F5F8FC; 
 	font-family:sans-serif; }
+
 	
 /* 3.1 Sidebar navigation */
 	
@@ -344,6 +353,10 @@ background-color: #222;
 .sidebar nav ul li.active > a,
 .sidebar nav ul ul li.active > a {
 	font-weight:700; }
+	
+nav.secondary-menu ul li a {
+	color:#009933; }
+	
 
 /* 4. CONTENT AREA */
 
@@ -358,6 +371,10 @@ background-color: #222;
 	display:inline-block; }
 
 /* 4.1 Table list*/
+
+.listingtable.zebra-striped tbody tr:hover td, 
+.listingtable.zebra-striped tbody tr:hover th {
+  background-color: #ECF1F2; }
 
 .listingtable { 
 	margin-bottom:3.375em; }
@@ -382,11 +399,16 @@ background-color: #222;
 .listingtable tr:hover .check input { 
 	opacity:1; }
 
-.listingtable th.check { 
+.listingtable th.check, .listingtable td.dragHandle { 
 	padding-left:1em; }
 
-.listingtable td.check { 
+.listingtable td.check, .listingtable td.dragHandle { 
 	padding-left:.75em; }
+	
+.listingtable td.dragHandle { 
+	background: image-url("journalist/drag-handle.png") 100% no-repeat; 
+	text-indent:-999px; 
+	cursor:ns-resize; }	
 
 .listingtable .publication:visited,
 .listingtable .last-modified, 
@@ -395,10 +417,6 @@ background-color: #222;
 
 .listingtable .rubric {
 	color:#BBCEE9; }
-
-.zebra-striped.listingtable tbody tr:hover td, 
-.zebra-striped tbody tr:hover th {
-  background-color: #ECF1F2; }
 
 .float-actions { 
 	position:fixed;
@@ -436,8 +454,10 @@ fieldset.toogle .clearfix { display:none; }
 fieldset.toogle.on legend { color:#D30062; }
 fieldset.toogle.on .clearfix { display:block; }
 
-fieldset.toogle legend::after { content:' +'; color:gray; }
-fieldset.toogle.on legend::after { content:' −'; color:gray; }
+fieldset.toogle legend::after { font:.9em/1 "WebSymbolsRegular"; content:' ;'; color:#ddd; }
+fieldset.toogle.on legend::after { font:.9em/1 "WebSymbolsRegular"; content:' :'; color:#ddd; }
+fieldset.toogle.on legend:hover::after, fieldset.toogle legend:hover::after { color:gray; }
+
 
  .minimalistic label { 
 -moz-transition: opacity 1s ease-out; } 
@@ -455,3 +475,7 @@ fieldset.toogle.on legend::after { content:' −'; color:gray; }
 
 /* Uncategorized */
 .url-snippet { color:#093; font-family:monospace; }
+
+/* Iconweb */
+
+.iconweb { font-family:"WebSymbolsRegular"; font-variant:normal; text-transform:none; }

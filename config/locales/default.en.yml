@@ -1,5 +1,9 @@
 ---
 en:
+  mongoid:
+    models:
+      journal_article: "Journal Article"
+      journal_rubric: "Journal Rubric"
   godmode:
     shared:
       menu:
@@ -13,10 +17,22 @@ en:
       publications_sub_menu:
         rubrics: "Rubrics"
         tags: "Tags"
+      new_header:
+        title: "New %{create_type}"
+      headers:
+        index_header:
+          journalarticle: "Journal Articles"
+        edit_header:
+          journalarticle: "Edit Journal Article"
     sidebar:
       headers:
         publications: "Publications"
         dashboard: "Dashboard"
+    journal_rubrics:
+      index:
+        title: "Rubric title"
+        slug: "Slug"
+        last_publication: "Last publication"
   layouts:
     godmode:
       title: "%{name} - Godmode"
@@ -24,5 +40,8 @@ en:
     messages:
       needs_admin_account: "One admin account is required at least"
   create: "Create"
+  save: "Save"
+  destroy: "Destroy"
   profile: "Profile"
   logout: "LogOut"
+  are_you_shure: "Are you shure?"

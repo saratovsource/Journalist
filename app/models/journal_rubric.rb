@@ -10,7 +10,21 @@ class JournalRubric
   
   # -= Fields =-
   
+  # -= Associations =-
+  references_many :journal_articles
+  
   # -= Medthos =-
+  
+  class << self
+    # Create new empty rubric
+    def create_new(args = {})
+      args = {
+        :title => Journalist::UniqGenerator.generate(:prefix => self.model_name.human)
+        }.merge(args)
+        
+      create(args)
+    end
+  end
   
   # Override fullpath method
   def fullpath(force = false)

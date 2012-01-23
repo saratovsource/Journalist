@@ -10,9 +10,14 @@ module Extensions
         field :description
         field :fullpath
         
+        # -= Associations =-
+        has_one :router, :as => :routerable, :dependent => :destroy
+        
         # -= Callbacks =-
         before_validation         :normalize_slug
         before_save { |p| p.fullpath = p.fullpath(true) }
+        after_create :send_me_to_route
+        after_save :update_route
         
         # -= Validations =-
         validates_presence_of     :title, :slug
@@ -30,6 +35,14 @@ module Extensions
         
         def fullpath(force = false)
           raise Exception, "Not Implemented..."
+        end
+        
+        def send_me_to_route
+          Router.register_instance(self)
+        end
+        
+        def update_route
+          self.router.update_attribute(:url, self.fullpath)
         end
         
       end

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :accounts
     
     # publications section
-    resources :journal_rubrics
+    resources :journal_rubrics do
+      get :empty, :on => :collection
+    end
     resources :journal_articles
     
     

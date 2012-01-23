@@ -1,1 +1,24 @@
-RUBRICS index
+= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => JournalArticle.model_name.parameterize}
+
+%table.listingtable.zebra-striped.t-dnd
+	%thead
+		%tr
+			%th.dragHandle &nbsp;
+			%th= t(".title")
+			%th= t(".slug")
+			%th.a-center
+				%span.iconweb Z
+			%th= t(".last_publication")
+	%tbody
+		- current_site.journal_rubrics.each do |rubric|
+			%tr
+				%td.dragHandle &nbsp;
+				%td
+					%span.rubric
+						= link_to rubric.title, edit_godmode_journal_rubric_path(rubric)
+				%td
+					%span.url-snippet= rubric.fullpath
+				%td.a-center= link_to rubric.journal_articles.count, godmode_journal_rubric_path(rubric)
+				%td
+					- last_article = rubric.journal_articles.last
+					= link_to last_article.title, edit_godmode_journal_article_path(last_article), :class => "publication" if last_article

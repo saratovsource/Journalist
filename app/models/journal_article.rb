@@ -17,6 +17,19 @@ class JournalArticle
   validates_presence_of :site
   validates_uniqueness_of   :slug, :scope => [:site_id, :journal_rubric_id]
   
+  # -= Methods =-
+  class << self
+    # Create new empty article
+    def create_new(args = {})
+      args = {
+        :title => I18n.t('journal_article.default_title'),
+        :slug => Journalist::UniqGenerator.generate(:prefix => "post")
+        }.merge(args)
+        
+      create(args)
+    end
+  end
+  
   protected
   
   def set_owned_site

@@ -32,11 +32,18 @@ class Ability
     can :touch, Site do |site|
       site == @site
     end
+    
+    can :manage, [JournalArticle] do |article|
+      article.site == @site and article.owner_id == @account.id
+    end
+    
+    cannot :manage, JournalRubric
+    can    :read, JournalRubric
   end
   
   def setup_editor_permissions
     #Editable contents
-    can :manage, [Site, JournalRubric] do |site|
+    can :manage, [Site, JournalRubric, JournalArticle] do |site|
       site == @site
     end
     

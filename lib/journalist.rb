@@ -8,6 +8,7 @@ require 'carrierwave/mongoid'
 require 'state_machine'
 
 require 'journalist/core_ext'
+require 'journalist/uniq_generator'
 require 'journalist/logger'
 require 'journalist/regexps'
 require 'journalist/configuration'

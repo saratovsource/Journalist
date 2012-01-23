@@ -1985,7 +1985,7 @@ body { background:#fff; position:relative; color:#111; }
 	.b-edit img { max-width:100%; height:auto; }
 
 .b-edit {
-	background: rgba(0, 0, 0, 0.05) image-url("journal/pencil.png") 50% no-repeat;
+	background: rgba(0, 0, 0, 0.05) image-url("journalist/pencil.png") 50% no-repeat;
 	z-index:10;
 	text-decoration:none;
 	-webkit-transition: background .3s linear, top 0.3s ease-out;
@@ -1994,7 +1994,7 @@ body { background:#fff; position:relative; color:#111; }
 	-o-transition: background .3s linear, top 0.3s ease-out;
 	transition: background .3s linear, top 0.3s ease-out;
  }
-	.b-edit:hover { z-index:30; background: rgba(0, 153, 204, .7) image-url("journal/pencil.png") 50% no-repeat; }
+	.b-edit:hover { z-index:30; background: rgba(0, 153, 204, .7) image-url("journalist/pencil.png") 50% no-repeat; }
 	.b-edit + h2, .b-edit + h3 { display:inline-block; }
 	
 

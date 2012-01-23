@@ -13,6 +13,7 @@ class Site
   embeds_many :memberships
   references_many :journal_rubrics, :validate => false
   references_many :journal_articles, :validate => false
+  references_many :routers, :validate => false
   
   # -= Validations =-
   validates_presence_of :name
