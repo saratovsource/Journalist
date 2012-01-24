@@ -18,6 +18,7 @@ require 'rake'
 require 'rspec'
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
+require 'tasks/state_machine'
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 
 gemspec = eval(File.read('journalist.gemspec'))

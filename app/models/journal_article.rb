@@ -3,6 +3,7 @@ class JournalArticle
   include Extensions::Content::BaseFields
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
+  include Extensions::Article::Stated
   
   # -= Associations =-
   referenced_in :journal_rubric
@@ -13,9 +14,21 @@ class JournalArticle
   # -= Callbacks =-
   before_validation :set_owned_site
   
+  #-= States =-
+  state_machine do
+    event :prepublish do
+      transition [:drafted, :rewrited] => :prepublished, :if => lambda {|article| !article.journal_rubric.nil?}
+    end
+    
+    state all - [:drafted, :trashed] do
+      validates_presence_of     :journal_rubric
+      validates_uniqueness_of   :slug, :scope => [:site_id, :journal_rubric_id]
+    end
+    
+  end
+  
   # -= Validations =-
-  validates_presence_of :site
-  validates_uniqueness_of   :slug, :scope => [:site_id, :journal_rubric_id]
+  validates_presence_of     :site
   
   # -= Methods =-
   class << self
@@ -44,6 +57,6 @@ class JournalArticle
     
     slugs = [self.slug] #TODO Get all slugs of tree, if it be a tree
     
-    return File.join [self.journal_rubric.fullpath, self.slug].compact
+    return self.journal_rubric.nil? ? nil : File.join([self.journal_rubric.fullpath, self.slug].compact)
   end
 end

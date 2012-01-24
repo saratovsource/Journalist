@@ -15,7 +15,7 @@ module Extensions
         
         # -= Callbacks =-
         before_validation         :normalize_slug
-        before_save { |p| p.fullpath = p.fullpath(true) }
+        before_save { |p| p.fullpath = p.fullpath(true) if p }
         after_create :send_me_to_route
         after_save :update_route
         
@@ -38,11 +38,17 @@ module Extensions
         end
         
         def send_me_to_route
+          return if self.fullpath.nil?
           Router.register_instance(self)
         end
         
         def update_route
-          self.router.update_attribute(:url, self.fullpath)
+          return if self.fullpath.nil?
+          if self.router.nil?
+            send_me_to_route
+          else
+            self.router.update_attribute(:url, self.fullpath)
+          end
         end
         
       end
