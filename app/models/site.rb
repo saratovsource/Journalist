@@ -34,4 +34,8 @@ class Site
     self.memberships.find_all { |m| m.admin? }
   end
   
+  def sort(type = Array, ids = [])
+    type.send(:sort!, ids)
+  end
+  
 end

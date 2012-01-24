@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     # publications section
     resources :journal_rubrics do
       get :empty, :on => :collection
+      put :sort, :on => :collection
     end
     resources :journal_articles
     

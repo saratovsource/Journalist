@@ -1,6 +1,6 @@
 = render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => JournalArticle.model_name.parameterize}
 
-%table.listingtable.zebra-striped.t-dnd
+%table.listingtable.zebra-striped.t-dnd{:data => {:sortable => "", :"drag-handle" => "td.dragHandle", :"drag-class" => "myDragClass"}}
 	%thead
 		%tr
 			%th.dragHandle &nbsp;
@@ -9,10 +9,11 @@
 			%th.a-center
 				%span.iconweb Z
 			%th= t(".last_publication")
-	%tbody
+	%tbody{:data => {:url => sort_godmode_journal_rubrics_path}}
 		- current_site.journal_rubrics.each do |rubric|
-			%tr
-				%td.dragHandle &nbsp;
+			%tr{:id => "item-#{rubric.id}"}
+				%td.dragHandle
+					%em &nbsp;
 				%td
 					%span.rubric
 						= link_to rubric.title, edit_godmode_journal_rubric_path(rubric)

@@ -1,3 +1,5 @@
-#= require ./jquery-1.7.min
+#= require ./jquery
+#= require ./jquery_ui
+#= require ./jquery.gritter.min
 #= require ./bootstrap/bootstrap
-#= require ./godmode/editable_elements
+#= require_tree ./godmode
