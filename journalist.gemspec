@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   
   s.add_dependency 'haml'
   s.add_dependency 'sass'
+  s.add_dependency 'jquery-rails'
   
   s.add_dependency 'formtastic'
   s.add_dependency 'inherited_resources'

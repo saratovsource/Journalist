@@ -6,6 +6,7 @@ require 'russian'
 require 'mongoid/tree'
 require 'carrierwave/mongoid'
 require 'state_machine'
+require 'jquery-rails'
 
 require 'journalist/core_ext'
 require 'journalist/uniq_generator'

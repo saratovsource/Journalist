@@ -2,8 +2,10 @@ $ ->
 	@editable_elements = $('[data-editable]')
 	@editable_elements.each ->
 		$(this).bind "click", ->
-			source_object = $(this).parents().find('[data-editable-source]')
-			target_object = $(this).parents().find('[data-editable-target]')
+			parent = $(this).parent()
+			return false if parent == undefined
+			source_object = $(parent).find('[data-editable-source="true"]')
+			target_object = $(parent).find('[data-editable-target="true"]')
 			if source_object && target_object
 				$(source_object).hide()
 				$(this).hide()

@@ -4,6 +4,7 @@ module Extensions
       extend ActiveSupport::Concern
       
       included do
+        include Extensions::Seo::Metadata
         # -= Fields =-
         field :title
         field :slug
@@ -34,6 +35,10 @@ module Extensions
         end
         
         def fullpath(force = false)
+          raise Exception, "Not Implemented..."
+        end
+        
+        def parent_path
           raise Exception, "Not Implemented..."
         end
         

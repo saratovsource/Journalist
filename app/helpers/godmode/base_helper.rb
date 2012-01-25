@@ -34,4 +34,8 @@ module Godmode::BaseHelper
   def link_to_destroy(url= nil, name = :destroy)
     link_to I18n.t(name), url, :method => :delete, :confirm => t(:are_you_shure), :class => "btn danger pull-left"
   end
+  
+  def render_fieldsets(template_name, form)
+    render :partial => "godmode/shared/fieldsets/#{template_name}", :locals => { :f => form }
+  end
 end

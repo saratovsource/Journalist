@@ -24,6 +24,19 @@ en:
           journalarticle: "Journal Articles"
         edit_header:
           journalarticle: "Edit Journal Article"
+          journalrubric: "Edit Journal Rubric"
+      fieldsets:
+        seo:
+          legend: "SEO Properties"
+          seo_title: "SEO title"
+          meta_keywords: "Meta Keywords"
+          meta_description: "Meta Description"
+          in_robots: "Include in robots.txt"
+          help:
+            seo_title: "Use if you want to completely change the header in the browser window."
+            meta_keywords: "Tags for meta information"
+            meta_description: "One or two sentence description of the publication. Make the text informative, to reading the text, the visitor is immediately understood as speech."
+            in_robots: "URL of this page will be added to rotobs.txt in deny section"
     sidebar:
       headers:
         publications: "Publications"
@@ -40,6 +53,7 @@ en:
     messages:
       needs_admin_account: "One admin account is required at least"
   create: "Create"
+  edit: "Edit"
   save: "Save"
   destroy: "Destroy"
   profile: "Profile"

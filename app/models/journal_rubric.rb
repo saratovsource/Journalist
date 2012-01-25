@@ -25,6 +25,7 @@ class JournalRubric
         
       create(args)
     end
+    
   end
   
   # Override fullpath method
@@ -36,6 +37,11 @@ class JournalRubric
     #TODO Add segment form settind, example:   http://localhost:8080/[rubrics]/rubric-1
     #                                                                ^^^^^^^^          
     # for generate full path to rubruc
-    return File.join ["/", self.slug]
+    return File.join [self.parent_path, self.slug]
+  end
+  
+  # Override parent_path method
+  def parent_path
+    "/"
   end
 end

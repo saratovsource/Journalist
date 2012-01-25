@@ -15,5 +15,12 @@ module Journalist
     
     config.encoding = "utf-8"
     config.filter_parameters << :password
+    
+    initializer :after_append_asset_paths,
+                :group => :all,
+                :after => :append_assets_path do
+       config.assets.paths.unshift Rails.root.join("vendor", "assets", "stylesheets", "jquery-ui", "cupertino").to_s
+    end
+    
   end
 end

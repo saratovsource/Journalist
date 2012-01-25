@@ -1,6 +1,7 @@
 puts "Runing Journalist ..."
 
 require 'rails'
+require 'jquery-rails'
 require 'json/pure'
 require 'devise'
 require 'mongoid'
@@ -24,6 +25,14 @@ module Journalist
     
     initializer "journalist.cells" do |app|
       Cell::Base.prepend_view_path("#{config.root}/app/cells")
+    end
+    
+    if defined?(query::Rails::Engine)
+      initializer :after_append_asset_paths,
+                  :group => :all,
+                  :after => :append_assets_path do
+         config.paths.add File.join(::Jquery::Rails::Engine.root.to_s, "vendor", "assets", "javascripts").to_s, :glob => "*"
+      end
     end
     
     rake_tasks do
