@@ -3,4 +3,4 @@
 		= content_tag(:strong, t(:create), :class => "icon new")
 	%ul.dropdown-menu
 		= drop_down_menu_item JournalRubric.model_name.human, "journal_rubric", empty_godmode_journal_rubrics_url if can? :create, JournalRubric
-		= drop_down_menu_item JournalArticle.model_name.human, "journal_article", new_godmode_journal_article_url if can? :create, JournalArticle
+		= drop_down_menu_item JournalArticle.model_name.human, "journal_article", empty_godmode_journal_articles_url if can? :create, JournalArticle

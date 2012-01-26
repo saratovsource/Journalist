@@ -1,0 +1,6 @@
+= render :partial => "/godmode/shared/headers/stated_edit_header", :locals => {:edit_type => JournalArticle.model_name.parameterize, :item => @journal_article}
+.container
+	.row
+		= form_for :journal_article, :url => godmode_journal_article_path(@journal_article), :method => :put do |f|
+			= render :partial => "form", :locals => { :f => f }
+			.float-actions= render :partial => "/godmode/shared/actions/save", :locals => {:f => f}

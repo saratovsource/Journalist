@@ -23,7 +23,8 @@ module Journalist
         :entitystore => URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/body")
       },
       :devise_modules             => [:database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, { :encryptor => :sha1 }],
-      :context_assign_extensions  => {  }
+      :context_assign_extensions  => {  },
+      :content_filter         => :textile
     }
 
     cattr_accessor :settings

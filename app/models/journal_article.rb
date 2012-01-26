@@ -1,6 +1,7 @@
 class JournalArticle
   include Journalist::Document
   include Extensions::Content::BaseFields
+  include Extensions::Content::EditableContent
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
   include Extensions::Article::Stated
@@ -23,6 +24,7 @@ class JournalArticle
     state all - [:drafted, :trashed] do
       validates_presence_of     :journal_rubric
       validates_uniqueness_of   :slug, :scope => [:site_id, :journal_rubric_id]
+      validates_presence_of :content
     end
     
   end
@@ -57,6 +59,11 @@ class JournalArticle
     
     slugs = [self.slug] #TODO Get all slugs of tree, if it be a tree
     
-    return self.journal_rubric.nil? ? nil : File.join([self.journal_rubric.fullpath, self.slug].compact)
+    return self.journal_rubric.nil? ? nil : File.join([self.parent_path, self.slug].compact)
+  end
+  
+  # Override parent_path method
+  def parent_path
+    self.try(:journal_rubric).try(:fullpath)
   end
 end

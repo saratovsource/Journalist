@@ -25,6 +25,8 @@ en:
         edit_header:
           journalarticle: "Edit Journal Article"
           journalrubric: "Edit Journal Rubric"
+        stated_edit_header:
+          journalarticle: "Edit Journal Article"
       fieldsets:
         seo:
           legend: "SEO Properties"

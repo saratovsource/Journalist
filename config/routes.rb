@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       get :empty, :on => :collection
       put :sort, :on => :collection
     end
-    resources :journal_articles
+    resources :journal_articles do
+      get :empty, :on => :collection
+    end
     
     
     # installation guide
