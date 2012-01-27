@@ -7,10 +7,10 @@ class JournalArticle
   include Extensions::Article::Stated
   
   # -= Associations =-
-  referenced_in :journal_rubric
+  referenced_in :parent, :class_name => "JournalRubric"
   
   # -= Indexes =-
-  index :journal_rubric_id
+  index :parent_id
   
   # -= Callbacks =-
   before_validation :set_owned_site
@@ -22,12 +22,17 @@ class JournalArticle
     end
     
     state all - [:drafted, :trashed] do
-      validates_presence_of     :journal_rubric
-      validates_uniqueness_of   :slug, :scope => [:site_id, :journal_rubric_id]
+      validates_presence_of     :parent
+      validates_uniqueness_of   :slug, :scope => [:site_id, :parent_id]
       validates_presence_of :content
     end
     
   end
+  
+  # -= Scopes =-
+  scope :collection_for, ->(member, states, owner = nil) {
+    where(:state => {'$in' => states}, :owner_id => owner.nil? ? nil : owner.id)
+  }
   
   # -= Validations =-
   validates_presence_of     :site
@@ -48,22 +53,6 @@ class JournalArticle
   protected
   
   def set_owned_site
-    self.site = self.journal_rubric.site if self.journal_rubric.present?
-  end
-  
-  
-  def fullpath(force = false)
-    if read_attribute(:fullpath).present? && !force
-      return read_attribute(:fullpath)
-    end
-    
-    slugs = [self.slug] #TODO Get all slugs of tree, if it be a tree
-    
-    return self.journal_rubric.nil? ? nil : File.join([self.parent_path, self.slug].compact)
-  end
-  
-  # Override parent_path method
-  def parent_path
-    self.try(:journal_rubric).try(:fullpath)
+    self.site = self.parent.site if self.parent.present?
   end
 end

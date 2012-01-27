@@ -5,6 +5,10 @@ module Extensions
       
       included do
         include Extensions::Seo::Metadata
+        include Mongoid::Taggable
+        
+        tags_separator ', '
+        
         # -= Fields =-
         field :title
         field :slug
@@ -15,17 +19,24 @@ module Extensions
         has_one :router, :as => :routerable, :dependent => :destroy
         
         # -= Callbacks =-
-        before_validation         :normalize_slug
-        before_save { |p| p.fullpath = p.fullpath(true) if p }
-        after_create :send_me_to_route
-        after_save :update_route
+        before_validation   :normalize_slug
+        after_create        :register_router
+        after_save          :update_route
         
         # -= Validations =-
-        validates_presence_of     :title, :slug
-        validates_exclusion_of    :slug, :in => Journalist.config.reserved_slugs#, :if => Proc.new { |p| p.depth == 0 }
+        validates_presence_of   :title, :slug
+        validates_exclusion_of  :slug, :in => Journalist.config.reserved_slugs#, :if => Proc.new { |p| p.depth == 0 }
       end
       
       module InstanceMethods
+        
+        def fullpath
+          return self.router.nil? ? nil : self.router.fullpath
+        end
+        
+        def parent_path
+          return self.router.nil? ? nil : self.router.parent_url
+        end
         
         protected
         
@@ -34,23 +45,13 @@ module Extensions
           self.slug.permalink! if self.slug.present?
         end
         
-        def fullpath(force = false)
-          raise Exception, "Not Implemented..."
-        end
-        
-        def parent_path
-          raise Exception, "Not Implemented..."
-        end
-        
-        def send_me_to_route
-          return if self.fullpath.nil?
+        def register_router
           Router.register_instance(self)
         end
         
         def update_route
-          return if self.fullpath.nil?
           if self.router.nil?
-            send_me_to_route
+            register_router
           else
             self.router.update_attribute(:url, self.fullpath)
           end

@@ -12,7 +12,7 @@ class JournalRubric
   # -= Fields =-
   
   # -= Associations =-
-  references_many :journal_articles
+  references_many :journal_articles, :class_name => "JournalArticle", :foreign_key => "parent_id"
   
   # -= Medthos =-
   
@@ -28,20 +28,8 @@ class JournalRubric
     
   end
   
-  # Override fullpath method
-  def fullpath(force = false)
-    if read_attribute(:fullpath).present? && !force
-      return read_attribute(:fullpath)
-    end
-    
-    #TODO Add segment form settind, example:   http://localhost:8080/[rubrics]/rubric-1
-    #                                                                ^^^^^^^^          
-    # for generate full path to rubruc
-    return File.join [self.parent_path, self.slug]
+  def parent
+    self.site
   end
   
-  # Override parent_path method
-  def parent_path
-    "/"
-  end
 end

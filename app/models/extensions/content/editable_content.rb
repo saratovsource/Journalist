@@ -4,6 +4,7 @@ module Extensions
       extend ActiveSupport::Concern
       
       included do
+        
         field :content
       end
 

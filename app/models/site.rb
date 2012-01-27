@@ -38,4 +38,9 @@ class Site
     type.send(:sort!, ids)
   end
   
+  # Fix for routing
+  def router
+    nil
+  end
+  
 end

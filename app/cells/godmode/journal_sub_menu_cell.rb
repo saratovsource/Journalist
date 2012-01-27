@@ -3,7 +3,8 @@ class Godmode::JournalSubMenuCell < ::Godmode::MenuCell
   protected
   
   def build_list
-    add :rubrics, :url => godmode_journal_rubrics_url, :controllers => [Godmode::JournalRubricsController]
+    abil = Ability.new(current_account, current_site)
+    add :rubrics, :url => godmode_journal_rubrics_url, :controllers => [Godmode::JournalRubricsController] if abil.can? :manage, JournalRubric
     add :tags, :url => '#'
   end
   

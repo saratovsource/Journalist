@@ -3,6 +3,8 @@ class Godmode::MenuCell < Cell::Rails
   include ::Rails.application.routes.url_helpers
 
   delegate :sections, :to => :parent_controller
+  delegate :current_site, :to => :parent_controller
+  delegate :current_account, :to => :parent_controller
 
   attr_accessor :list, :active_item
 

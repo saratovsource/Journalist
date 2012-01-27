@@ -1,5 +1,10 @@
 ---
 en:
+  states:
+    drafted: "Drafted"
+    prepublished: "Prepublished"
+    published: "Published"
+    trashed: "Trashed"
   mongoid:
     models:
       journal_article: "Journal Article"
@@ -22,6 +27,7 @@ en:
       headers:
         index_header:
           journalarticle: "Journal Articles"
+          journalrubric: "Journal Rubrics"
         edit_header:
           journalarticle: "Edit Journal Article"
           journalrubric: "Edit Journal Rubric"
@@ -39,6 +45,9 @@ en:
             meta_keywords: "Tags for meta information"
             meta_description: "One or two sentence description of the publication. Make the text informative, to reading the text, the visitor is immediately understood as speech."
             in_robots: "URL of this page will be added to rotobs.txt in deny section"
+        base_fields:
+          help:
+            tags: "Separate tags with commas"
     sidebar:
       headers:
         publications: "Publications"
@@ -48,6 +57,13 @@ en:
         title: "Rubric title"
         slug: "Slug"
         last_publication: "Last publication"
+    journal_articles:
+      index:
+        title: "Article Title"
+        rubric: "Journal Rubric"
+        author: "Author"
+        updated_at: "Updated At"
+        updated_at_title: "Updated at %{time}"
   layouts:
     godmode:
       title: "%{name} - Godmode"
@@ -60,4 +76,7 @@ en:
   destroy: "Destroy"
   profile: "Profile"
   logout: "LogOut"
+  all_items: "All"
   are_you_shure: "Are you shure?"
+  journal_article:
+    default_title: "New Article"

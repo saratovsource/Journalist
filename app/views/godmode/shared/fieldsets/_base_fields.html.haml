@@ -9,7 +9,12 @@
 		.input
 			%span.uneditable-input{:data => {:"editable-source" => "true"}}
 				%span.url-snippet
-					= raw("#{resource.try(:parent_path)}<ins>#{resource.try(:slug)}</ins>")
+					= raw("#{resource.try(:parent_path)}/<ins>#{resource.try(:slug)}</ins>")
 			= link_to t(:edit), '#', :class => "btn small", :data => {:editable => ""}
 			.hide{:data => {:"editable-target" => "true"}}
 				= f.text_field :slug, :class => "span8"
+	.clearfix
+		= f.label :tags
+		.input.span18
+			= f.text_field :tags, :class => "xxlarge"
+			%span.help-block= t(".help.#{:tags}")

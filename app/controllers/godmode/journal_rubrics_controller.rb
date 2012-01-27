@@ -10,6 +10,10 @@ module Godmode
       redirect_to edit_godmode_journal_rubric_path(@journal_rubric)
     end
     
+    def update
+      update! { godmode_journal_rubrics_path }
+    end
+    
     def sort
       p params[:children]
       respond_to do |format|

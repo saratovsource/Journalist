@@ -1,4 +1,4 @@
-= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => JournalArticle.model_name.parameterize}
+= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => JournalRubric.model_name.parameterize}
 
 %table.listingtable.zebra-striped.t-dnd{:data => {:sortable => "", :"drag-handle" => "td.dragHandle", :"drag-class" => "myDragClass"}}
 	%thead
@@ -21,5 +21,5 @@
 					%span.url-snippet= rubric.fullpath
 				%td.a-center= link_to rubric.journal_articles.count, godmode_journal_rubric_path(rubric)
 				%td
-					- last_article = rubric.journal_articles.last
-					= link_to last_article.title, edit_godmode_journal_article_path(last_article), :class => "publication" if last_article
+					- last_article = rubric.journal_articles.with_states([:published, :prepublished]).last
+					= link_to last_article.title, last_article.fullpath, :class => "publication" if last_article

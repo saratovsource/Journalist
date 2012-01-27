@@ -37,6 +37,10 @@ class Ability
       article.site == @site and article.owner_id == @account.id
     end
     
+    cannot [:edit, :update, :destroy], [JournalArticle] do |stated|
+      stated.prepublished? or stated.published?
+    end
+    
     cannot :manage, JournalRubric
     can    :read, JournalRubric
   end

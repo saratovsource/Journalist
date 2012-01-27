@@ -1,18 +1,21 @@
 class Router
   include Journalist::Document
   include Extensions::Site::IncludedIn
+  include Mongoid::Tree
   
   # -= Fields =-
+  field :slug
   field :url
   
   # -= Associations =-
   belongs_to :routerable, polymorphic: true
   
   # -= Validations =-
-  validates_presence_of   :url
+  validates_presence_of   :url, :slug
   validates_uniqueness_of :url
   
   before_validation       :build_fields_to_save
+  after_save              :rebuild_childrens
   
   # -= Indexes =-
   index(
@@ -27,16 +30,46 @@ class Router
   
   class << self
     def register_instance(instance_type)
-      create(:routerable => instance_type)
+      create!(:routerable => instance_type)
     end    
+  end
+  
+  def fullpath
+    return self.url
+  end
+  
+  def parent_url
+    return parent.nil? ? nil : parent.fullpath
+  end
+  
+  def rebuild_path
+    tmp_path = [self.parent_url, self.slug].compact.join('/')
+    if self.parent.nil?
+      self.url = ['/', tmp_path].compact.join
+    else
+      self.url = tmp_path
+    end
+  end
+  
+  
+  
+  def rebuild_childrens
+    self.children.each do |child|
+      child.save
+    end
   end
   
   protected
   
   def build_fields_to_save
     unless self.routerable.nil?
-      self.url = self.routerable.fullpath
+      self.slug = self.routerable.slug
       self.site = self.routerable.site
+      #retrive parent
+      unless self.routerable.parent.nil?
+        self.parent = self.routerable.parent.router
+      end
+      rebuild_path
     end
   end
 end
