@@ -40,6 +40,13 @@ class Account
     self.find_using_switch_site_token(token, age) || raise(Mongoid::Errors::DocumentNotFound.new(self, token))
   end
   
+  def role_in?(roles)
+    self.sites.each do |site|
+      membership = site.memberships.where(:account_id => self._id).first
+      return roles.include?(membership.role)
+    end
+  end
+  
   protected
   
   def password_required?

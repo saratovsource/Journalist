@@ -38,4 +38,16 @@ module Godmode::BaseHelper
   def render_fieldsets(template_name, form)
     render :partial => "godmode/shared/fieldsets/#{template_name}", :locals => { :f => form }
   end
+  
+  def account_type
+    session[:account_type]
+  end
+  
+  def show_selector?
+    current_account.role_in?(%w(editor admin))
+  end
+  
+  def render_editor_selector
+    render :partial => "godmode/shared/editor_switcher" if show_selector?
+  end
 end

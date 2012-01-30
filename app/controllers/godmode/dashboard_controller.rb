@@ -8,6 +8,11 @@ module Godmode
       
     end
     
+    def switch_to
+      session[:account_type] = params[:role] if current_account.role_in?(%w(editor admin))
+      redirect_to :back
+    end
+    
     protected
     
     def set_sidebar_menu

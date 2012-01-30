@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   namespace :godmode do
     root :to => 'dashboard#index'
+    get 'switch_to/:role' => 'dashboard#switch_to', :as => :role_switch
     resources :accounts
     
     # publications section

@@ -280,7 +280,7 @@ ul li, ol li {
   ul li {
 	list-style:none; 
     padding:0 0 0 1.25em;
-    background: image-url("journalist/icons/16px/li.png") 0 .18em no-repeat; }
+    background:image-url("journalist/icons/16px/li.png") 0 .18em no-repeat; }
 
 ul.unstyled, ol.unstyled {
   list-style: none;
@@ -1065,7 +1065,7 @@ table .span16 {
 	
 .zebra-striped tbody tr:hover td,
 .zebra-striped tbody tr:hover th {
-	background-color: #f5f5f5; }
+	background-color: #ECF1F2; }
 		
 table .header {
   cursor: pointer; }	
@@ -1889,7 +1889,7 @@ body { background:#fff; position:relative; color:#111; }
 		.b-userpanel li.b-search	{  position:absolute; top:.3125em; right:0; }
 			.b-userpanel li.b-search form { margin:0; }
 
-	.megaimage.var1 { background-image: image-url("journalist/ny.jpg"); background-position:50% 5%; }
+	.megaimage.var1 { background-image: url(../../assets/ny.jpg); background-position:50% 5%; }
 	.var1 h1 { color:#eee; text-shadow:1px 1px #000; }
 	.var1 .cheeky-nav ul a { color:#eee; text-shadow:1px 1px #000; }
 	.var1 .cheeky-nav ul a:hover { color: #CCC; }
@@ -1898,7 +1898,7 @@ body { background:#fff; position:relative; color:#111; }
 	.var1 h1+h2 { color:#eee; }
 	.var1 .description { color:#fff; text-shadow:1px 1px #000; }
 
-	.megaimage.var2 { background-image: image-url("journalist/var3.jpg"); background-position:50% 20%; }
+	.megaimage.var2 { background-image: url(../../assets/var3.jpg); background-position:50% 20%; }
 	.var2 h1 { color:#FFDC00; text-shadow:1px 1px #000; }
 	.var2 .cheeky-nav ul a { color:#eee; text-shadow:1px 1px #000; }
 	.var2 .cheeky-nav ul a:hover { color: #CCC; }
@@ -1954,7 +1954,7 @@ body { background:#fff; position:relative; color:#111; }
 	display:inline-block;
 	vertical-align:text-bottom; 
 	overflow:hidden;
-	background: image-url("journalist/ps-bg-20.png") repeat 50% #eee; }
+	background: url(../../images/ps-bg-20.png) repeat 50% #eee; }
 	.b-userpic.span3, 
 	.b-pictogramm.span3, 
 	.b-edit.span3 { 
@@ -1985,7 +1985,7 @@ body { background:#fff; position:relative; color:#111; }
 	.b-edit img { max-width:100%; height:auto; }
 
 .b-edit {
-	background: rgba(0, 0, 0, 0.05) image-url("journalist/pencil.png") 50% no-repeat;
+	background: rgba(0, 0, 0, 0.05) url(../../assets/pencil.png) 50% no-repeat;
 	z-index:10;
 	text-decoration:none;
 	-webkit-transition: background .3s linear, top 0.3s ease-out;
@@ -1994,7 +1994,7 @@ body { background:#fff; position:relative; color:#111; }
 	-o-transition: background .3s linear, top 0.3s ease-out;
 	transition: background .3s linear, top 0.3s ease-out;
  }
-	.b-edit:hover { z-index:30; background: rgba(0, 153, 204, .7) image-url("journalist/pencil.png") 50% no-repeat; }
+	.b-edit:hover { z-index:30; background: rgba(0, 153, 204, .7) url(../../assets/pencil.png) 50% no-repeat; }
 	.b-edit + h2, .b-edit + h3 { display:inline-block; }
 	
 

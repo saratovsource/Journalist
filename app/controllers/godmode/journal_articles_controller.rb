@@ -11,7 +11,12 @@ module Godmode
     end
     
     def update
-      update!{ collection_url(:state => @journal_article.state) }
+      update! do |format|
+        @journal_article.send(params[:after_action]) unless params[:after_action].blank? #Try send action
+        if @journal_article.errors.empty?
+          format.html { redirect_to collection_url(:state => @journal_article.state) }
+        end
+      end
     end
     
     protected

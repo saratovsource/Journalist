@@ -10,10 +10,22 @@ en:
       journal_article: "Journal Article"
       journal_rubric: "Journal Rubric"
   godmode:
+    author: "Author"
+    editor: "Editor"
+    events:
+      trash: "Trash"
+      prepublish: "Send to Editor"
+      publish: "Publish"
+      rewrite: "Send to rewtite"
     shared:
+      actions:
+        stated_actions:
+          save: "Save draft"
       menu:
         publications: "Publications"
         mediabank: "Mediabank"
+        comments: "Comments"
+        feedback: "Feedback"
       sub_menu:
         journal: "Journal"
         photo: "Photo"

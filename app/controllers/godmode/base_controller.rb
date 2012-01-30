@@ -12,7 +12,7 @@ module Godmode
     before_filter :set_current_thread_variables
     before_filter :set_sidebar_menu
     helper_method :sections, :current_site_url, :site_url, :page_url, :current_ability
-    
+        
     # https://rails.lighthouseapp.com/projects/8994/tickets/1905-apphelpers-within-plugin-not-being-mixed-in
     Dir[File.dirname(__FILE__) + "/../../helpers/**/*_helper.rb"].each do |file|
       helper "godmode/#{File.basename(file, '.rb').gsub(/_helper$/, '')}"
@@ -44,6 +44,9 @@ module Godmode
     def set_current_thread_variables
       Thread.current[:account] = current_account
       Thread.current[:site]  = current_site
+      
+      #set account_type
+      session[:account_type] ||= "author"
     end
     
     def current_ability

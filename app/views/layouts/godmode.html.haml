@@ -19,7 +19,7 @@
 				%header.page-header.pos-r
 					.box
 						%h2= t("godmode.sidebar.headers.#{self.sections.blank? ? 'empty' : self.sections}")
-							
+				= render_editor_selector
 				%nav= render_sidebar_menu #yield :sidebar_navigation
 			
 			.content= yield

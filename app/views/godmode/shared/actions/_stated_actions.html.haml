@@ -1,0 +1,7 @@
+.actions.clearfix
+	= hidden_field_tag :after_action, ""
+	= link_to_destroy if can?(:destroy, resource)
+	- resource.state_events.each_with_index do |event, index|
+		- if can?(event, resource)
+			%button{:class =>"btn pull-right#{' primary' if index == 0}", :data => {:"after-action" => event, :target => "after_action"}}= t("godmode.events.#{event}")
+	= f.submit t(".save"), :class => "btn pull-right"
