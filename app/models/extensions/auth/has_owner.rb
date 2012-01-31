@@ -5,10 +5,13 @@ module Extensions
       
       included do
         #-= Associations =-
-        referenced_in :owner, :class_name => "Account"
+        belongs_to :owner, :class_name => "Account"
         
         # -= Validations =-
         validates_presence_of :owner
+        
+        # -= Scope =-
+        scope :owned, ->(account) { where(:owner_id => account.id)}
       end
       
     end

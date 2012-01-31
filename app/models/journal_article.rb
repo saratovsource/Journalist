@@ -7,7 +7,7 @@ class JournalArticle
   include Extensions::Article::Stated
   
   # -= Associations =-
-  referenced_in :parent, :class_name => "JournalRubric"
+  belongs_to :parent, :class_name => "JournalRubric"
   
   # -= Indexes =-
   index :parent_id

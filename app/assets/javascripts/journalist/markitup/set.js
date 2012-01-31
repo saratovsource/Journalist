@@ -48,7 +48,6 @@ makitup_sets["textile"] = {
         {name:'Heading 4', key:'4', openWith:'h4(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
         {name:'Heading 5', key:'5', openWith:'h5(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
         {name:'Heading 6', key:'6', openWith:'h6(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
-        {name:'Paragraph', key:'P', openWith:'p(!(([![Class]!]))!). '}, 
         {separator:'---------------' },
         {name:'Bold', key:'B', closeWith:'*', openWith:'*'}, 
         {name:'Italic', key:'I', closeWith:'_', openWith:'_'}, 

@@ -16,10 +16,10 @@ class Ability
       setup_admin_permissions!
     else
       setup_default_permissions! #for guest
+      
+      setup_author_permissions!  if @membership.author?
 
       setup_editor_permissions! if @membership.editor?
-
-      setup_author_permissions!  if @membership.author?
     end
   end
   
@@ -42,25 +42,35 @@ class Ability
     end
     
     cannot :manage, JournalRubric
-    can    :read, JournalRubric
+    can    [:read, :show, :articles], [JournalRubric, Account]
   end
   
-  def setup_editor_permissions
+  def setup_editor_permissions!
+    setup_author_permissions!
+    
     #Editable contents
-    can :manage, [Site, JournalRubric, JournalArticle] do |site|
-      site == @site
+    can :manage, [JournalRubric, JournalArticle, Account] do |sitable|
+      sitable.site == @site
     end
     
     cannot :create, Site
     
     #Memberships
-    can :manage, Membership
     cannot :grant_admin, Membership
     cannot [:update, :destroy], Membership do |membership|
       @membership.account_id == membership.account_id || # can not edit myself
       membership.admin? # can not modify an administrator
     end
     
+    cannot [:edit, :destroy], [JournalArticle] do |stated|
+      stated.prepublished? or stated.published?
+    end
+    
+    can [:show, :read], [JournalArticle] do |stated|
+      stated.prepublished? or stated.published?
+    end
+    
+    can [:read, :show, :articles ], Account
     
   end
   

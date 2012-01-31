@@ -50,4 +50,15 @@ module Godmode::BaseHelper
   def render_editor_selector
     render :partial => "godmode/shared/editor_switcher" if show_selector?
   end
+  
+  def filter_params(filter_target)
+    case filter_target
+    when Account
+      params.merge(:rubric => nil, :author => filter_target)
+    when JournalRubric
+      params.merge(:author => nil, :rubric => filter_target)
+    else
+      {}
+    end
+  end
 end

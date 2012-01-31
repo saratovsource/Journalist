@@ -5,15 +5,20 @@ Rails.application.routes.draw do
   namespace :godmode do
     root :to => 'dashboard#index'
     get 'switch_to/:role' => 'dashboard#switch_to', :as => :role_switch
-    resources :accounts
+    
+    resources :accounts do
+      get :articles,      :on => :member
+    end
     
     # publications section
     resources :journal_rubrics do
-      get :empty, :on => :collection
-      put :sort, :on => :collection
+      get :empty,         :on => :collection
+      put :sort,          :on => :collection
     end
     resources :journal_articles do
-      get :empty, :on => :collection
+      get :empty,         :on => :collection
+      get :prepublished,  :on => :collection
+      get :published,     :on => :collection
     end
     
     

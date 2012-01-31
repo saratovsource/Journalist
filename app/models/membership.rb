@@ -5,7 +5,7 @@ class Membership
   field :role, :default => 'guest'
   
   ## associations ##
-  referenced_in :account, :validate => false
+  belongs_to :account, :validate => false
   embedded_in :site, :inverse_of => :memberships
   
   ## validations ##

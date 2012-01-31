@@ -11,6 +11,12 @@ en:
       journal_rubric: "Journal Rubric"
   godmode:
     author: "Author"
+    header_fields: &article_headers
+      title: "Title"
+      rubric: "Journal Rubric"
+      author: "Author"
+      updated_at: "Updated At"
+      updated_at_title: "Updated at %{time}"
     editor: "Editor"
     events:
       trash: "Trash"
@@ -21,11 +27,15 @@ en:
       actions:
         stated_actions:
           save: "Save draft"
+      collections:
+        sorted_articles:
+          <<: *article_headers
       menu:
         publications: "Publications"
         mediabank: "Mediabank"
         comments: "Comments"
         feedback: "Feedback"
+        journal: "Journal"
       sub_menu:
         journal: "Journal"
         photo: "Photo"
@@ -64,18 +74,21 @@ en:
       headers:
         publications: "Publications"
         dashboard: "Dashboard"
-    journal_rubrics:
-      index:
-        title: "Rubric title"
-        slug: "Slug"
-        last_publication: "Last publication"
     journal_articles:
       index:
-        title: "Article Title"
-        rubric: "Journal Rubric"
-        author: "Author"
-        updated_at: "Updated At"
-        updated_at_title: "Updated at %{time}"
+        <<: *article_headers
+    journal_rubrics:
+      articles:
+        <<: *article_headers
+      index:
+        <<: *article_headers
+        slug: "Slug"
+        last_publication: "Last Publication"
+    accounts:
+      articles:
+        <<: *article_headers
+    headers:
+      <<: *article_headers
   layouts:
     godmode:
       title: "%{name} - Godmode"

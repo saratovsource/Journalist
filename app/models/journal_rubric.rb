@@ -12,7 +12,7 @@ class JournalRubric
   # -= Fields =-
   
   # -= Associations =-
-  references_many :journal_articles, :class_name => "JournalArticle", :foreign_key => "parent_id"
+  has_many :journal_articles, :class_name => "JournalArticle", :foreign_key => "parent_id"
   
   # -= Medthos =-
   

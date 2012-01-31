@@ -1,9 +1,17 @@
 module Godmode
   class JournalRubricsController < BaseController
-    custom_actions :resource => :empty, :collection => :sort
+    custom_actions :resource => [:empty], :collection => :sort
     respond_to :html, :json
     
     sections :publications
+    
+    def show
+      if session[:account_type] == "editor"
+        @collection = @journal_rubric.journal_articles.must_publish
+      else
+        @collection = @journal_rubric.journal_articles.owned(current_account)
+      end
+    end
     
     def empty
       @journal_rubric = JournalRubric.create_new( :site => current_site, :owner => current_account )

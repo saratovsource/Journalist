@@ -1,0 +1,17 @@
+%tbody
+	- local_collection.each do |article|
+		%tr
+			%td.check= check_box_tag :selected_articles, nil, nil
+			%td
+				= link_to can?(:edit, article) ? edit_godmode_journal_article_url(article) : godmode_journal_article_url(article), :title => article.fullpath do
+					- if article.trashed?
+						= content_tag(:del, article.title)
+					- else
+						= article.title
+			- %w(comments likes).each do |field|
+				%td.a-center= content_tag(:small, 0, :class => field)
+			- unless reject == "journal_rubric"
+				%td= link_to article.parent.title, godmode_journal_rubric_path(article.parent) if article.parent
+			- unless reject == "owner"
+				%td= link_to article.owner.name, articles_godmode_account_path(article.owner), :class => "light-link"
+			%td= content_tag(:small, l(article.updated_at, :format => :short), :class => "updated_at", :title => t(".updated_at_title", :time => l(article.updated_at, :format => :long)))

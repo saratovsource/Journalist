@@ -27,6 +27,9 @@ module Extensions
             transition [:trashed] => :drafted
           end
         end
+        
+        # -=Scopes=-
+        scope :must_publish, with_states([:prepublished, :published])
 
       end
       

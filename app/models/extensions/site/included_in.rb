@@ -6,7 +6,7 @@ module Extensions
       
       included do
         # -= Associations =-
-        referenced_in :site
+        belongs_to :site
         
         # -= Indexes=-
         index :site_id

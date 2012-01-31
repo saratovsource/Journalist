@@ -1,6 +1,16 @@
 module Godmode
   class AccountsController < BaseController
+    custom_actions :resource => [:articles]
     
+    sections :publications
+    
+    def articles
+      unless session[:account_type] == "editor"
+        @collection = current_site.journal_articles.owned(current_account).must_publish
+      else
+        @collection = @account.journal_articles.must_publish
+      end
+    end
     
     def new
       @account = Account.new(:email => params[:email])

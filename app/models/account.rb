@@ -11,8 +11,8 @@ class Account
   field :switch_site_token
   
   # -= Associations =-
-  references_many :journal_rubrics, :class_name => "JournalRubric", :foreign_key => "owner_id"
-  references_many :journal_articles, :class_name => "JournalArticle", :foreign_key => "owner_id", :order => "updated_at DESC"
+  has_many :journal_rubrics, :class_name => "JournalRubric", :foreign_key => "owner_id"
+  has_many :journal_articles, :class_name => "JournalArticle", :foreign_key => "owner_id", :order => "updated_at DESC"
   
   # -= Validations =-
   validates_presence_of :name
