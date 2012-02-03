@@ -17,9 +17,6 @@ class JournalArticle
   
   #-= States =-
   state_machine do
-    event :prepublish do
-      transition [:drafted, :rewrited] => :prepublished, :if => lambda {|article| !article.journal_rubric.nil?}
-    end
     
     state all - [:drafted, :trashed] do
       validates_presence_of     :parent
@@ -47,6 +44,17 @@ class JournalArticle
         }.merge(args)
         
       create(args)
+    end
+  end
+  
+  def can_state?(state_name)
+    case state_name
+    when :prepublish
+      self.parent.present?
+    when :publish
+      self.content.present? and self.parent.present?
+    else
+      true
     end
   end
   

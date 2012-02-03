@@ -21,6 +21,7 @@ require 'journalist/middlewares'
 require 'journalist/hosting'
 require 'journalist/mongoid'
 require 'journalist/document'
+require 'journalist/acl'
 
 module Journalist
   
