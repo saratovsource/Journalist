@@ -1,5 +1,8 @@
 ---
 en:
+  acl:
+    password: "Password invalid!"
+    acl_time_range: "Time now not in range of access time"
   states:
     drafted: "Drafted"
     prepublished: "Prepublished"
@@ -24,6 +27,15 @@ en:
       publish: "Publish"
       rewrite: "Send to rewtite"
     shared:
+      acls:
+        password:
+          acl_password: "Password"
+          help:
+            acl_password: "Type password for access"
+        time:
+          time_range: "Time range"
+          help:
+            time_range: "In this range it will be accessible"
       actions:
         stated_actions:
           save: "Save draft"
@@ -56,6 +68,8 @@ en:
         stated_edit_header:
           journalarticle: "Edit Journal Article"
       fieldsets:
+        acls:
+          legend: "Access options"
         seo:
           legend: "SEO Properties"
           seo_title: "SEO title"
@@ -99,6 +113,7 @@ en:
   edit: "Edit"
   save: "Save"
   destroy: "Destroy"
+  generate: "Generate"
   profile: "Profile"
   logout: "LogOut"
   all_items: "All"

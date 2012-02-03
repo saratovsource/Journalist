@@ -17,6 +17,7 @@
 				%td
 					%span.rubric
 						= link_to rubric.title, edit_godmode_journal_rubric_path(rubric)
+						= content_tag(:span, "x", :class => "iconweb") if rubric.acl_protected?
 				%td
 					%span.url-snippet= rubric.fullpath
 				%td.a-center

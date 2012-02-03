@@ -4,8 +4,10 @@ class JournalRubric
   include Extensions::Content::Sortable
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
+  # -= ACLS=-
   include Journalist::Acl
   include Extensions::Acl::Password
+  include Extensions::Acl::Time
   
   # -= Validations =-
   #TODO Add Validation of UNIQ scoped [site_id, parent_id] - parent: may be only Rubric

@@ -48,9 +48,25 @@ module Journalist
         end
       end
       
+      def acls_instances
+        self.class.acl_validators
+      end
+      
       def acls
-        @acls ||= self.class.acl_validators.collect{|validator| validator.kind}
+        @acls ||= acls_instances.collect{|validator| validator.kind}
         @acls
+      end
+      
+      def acl_protecteds
+        @protected_fields = []
+        acls_instances.each do |validator|
+          @protected_fields << validator if validator.protected?(self)
+        end
+        @protected_fields
+      end
+      
+      def acl_protected?
+        !acl_protecteds.empty?
       end
     end
   end
