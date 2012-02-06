@@ -10,6 +10,8 @@ module Godmode
     
     skip_load_and_authorize_resource
     
+    layout "install"
+    
     def show
       request.get? ? self.handle_get : self.handle_post
     end
