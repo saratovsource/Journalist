@@ -65,6 +65,7 @@ en:
         edit_header:
           journalarticle: "Edit Journal Article"
           journalrubric: "Edit Journal Rubric"
+          mediacollection: "Edit Media Collection"
         stated_edit_header:
           journalarticle: "Edit Journal Article"
       fieldsets:
@@ -88,6 +89,7 @@ en:
       headers:
         publications: "Publications"
         dashboard: "Dashboard"
+        mediabank: "Mediabank"
     journal_articles:
       index:
         <<: *article_headers

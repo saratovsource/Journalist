@@ -1,13 +1,5 @@
 /* 1. BASE */
 
-@font-face{ /*http://www.justbenice.ru/studio/websymbols/*/
-	font-family: 'WebSymbolsRegular';
-	src: asset-url('websymbols-regular-webfont.eot', font);
-	src: asset-url('websymbols-regular-webfont.eot?#iefix', font) format('embedded-opentype'),
-	     asset-url('websymbols-regular-webfont.woff', font) format('woff'),
-	     asset-url('websymbols-regular-webfont.ttf', font) format('truetype'),
-	     asset-url('websymbols-regular-webfont.svg#WebSymbolsRegular', font) format('svg'); }
-
 a { color:#0074A4; }
 .box { margin:0 1.25em; }
 .boxp { padding:0 1.25em; }
@@ -131,16 +123,7 @@ a { color:#0074A4; }
     text-shadow: 0 1px 0 #fff; }
 		
 .topbar-inner, .topbar .fill {
-background-color: #222;
-  background-color: #222;
-  background-repeat: repeat-x;
-  background-image: -moz-linear-gradient(top, #333, #222);
-  background-image: -ms-linear-gradient(top, #333, #222);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333), color-stop(100%, #222));
-  background-image: -webkit-linear-gradient(top, #333, #222);
-  background-image: -o-linear-gradient(top, #333, #222);
-  background-image: linear-gradient(top, #333, #222);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333', endColorstr='#222', GradientType=0);
+  background-color: #000;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
@@ -266,15 +249,15 @@ background-color: #222;
 
 /* 2.1 Topbar icons */
 
-.topbar .publications	{ background-image: image-url("journalist/icons/16px/attibutes-inv.png") }
-.topbar .mediabank { background-image: image-url("journalist/icons/16px/illustration-inv.png") }
-.topbar .comments { background-image: image-url("journalist/icons/16px/comment-inv.png") }
-.topbar .users { background-image: image-url("journalist/icons/16px/customers-inv.png") }
-.topbar .advertising { background-image: image-url("journalist/icons/16px/advertising-inv.png") }
-.topbar .settings { background-image: image-url("journalist/icons/16px/settings-inv.png") }
-.topbar .new { background-image: image-url("journalist/icons/16px/creat.png") }
-.topbar .my-account { background-image: image-url("journalist/icons/16px/my-account-inv.png") }
-.topbar .logout { background-image: image-url("journalist/icons/16px/logout-inv.png") }
+.topbar .publications	{ background-image: image_url("journalist/icons/16px/attibutes-inv.png") }
+.topbar .mediabank { background-image: image_url("journalist/icons/16px/illustration-inv.png") }
+.topbar .comments { background-image: image_url("journalist/icons/16px/comment-inv.png") }
+.topbar .users { background-image: image_url("journalist/icons/16px/customers-inv.png") }
+.topbar .advertising { background-image: image_url("journalist/icons/16px/advertising-inv.png") }
+.topbar .settings { background-image: image_url("journalist/icons/16px/settings-inv.png") }
+.topbar .new { background-image: image_url("journalist/icons/16px/creat.png") }
+.topbar .my-account { background-image: image_url("journalist/icons/16px/my-account-inv.png") }
+.topbar .logout { background-image: image_url("journalist/icons/16px/logout-inv.png") }
 
 
 /* 3. SIDEBAR AREA */
@@ -285,21 +268,23 @@ background-color: #222;
 	top:2.5em; 
 	bottom:0; 
 	overflow: auto; 
-	border-right:1px solid #c6c9ce;
+	border-right:1px solid #ccc;
 	box-sizing: border-box; 
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box;
 	-o-box-sizing: border-box; 
 	-ms-box-sizing: border-box;
-	background-image: -webkit-linear-gradient(rgba(234, 238, 243, 0.2), #EAEEF3), -webkit-linear-gradient(left, #EAEEF3, #EAEEF3 97%, #D3D7DB);
-	background-image: -moz-linear-gradient(rgba(234, 238, 243, 0.2), #EAEEF3), -moz-linear-gradient(left, #EAEEF3, #EAEEF3 97%, #D3D7DB); }
+	background-image: -webkit-linear-gradient(rgba(234, 238, 243, 0.2), #F2F2F2), -webkit-linear-gradient(left, #F2F2F2, #F2F2F2 97%, #D3D7DB);
+	background-image: -moz-linear-gradient(rgba(234, 238, 243, 0.2), #F2F2F2), -moz-linear-gradient(left, #F2F2F2, #F2F2F2 97%, #D3D7DB);
+	background-image: -o-linear-gradient(rgba(234, 238, 243, 0.2), #F2F2F2), -moz-linear-gradient(left, #F2F2F2, #F2F2F2 97%, #D3D7DB);
+	background-image: -ms-linear-gradient(rgba(234, 238, 243, 0.2), #F2F2F2), -moz-linear-gradient(left, #F2F2F2, #F2F2F2 97%, #D3D7DB); }
 
-.sidebar .page-header, hr { 
-	border-color: #D1DCE4;
-  box-shadow: 0 1px 0 #F5F8FC;
-	-moz-box-shadow: 0 1px 0 #F5F8FC;
-	-webkit-box-shadow: 0 1px 0 #F5F8FC;
-	-o-box-shadow: 0 1px 0 #F5F8FC; }
+.sidebar .page-header, .sidebar hr { 
+	border-color: #e1e1e1;
+  box-shadow: 0 1px 0 #f5f5f5;
+	-moz-box-shadow: 0 1px 0 #f5f5f5;
+	-webkit-box-shadow: 0 1px 0 #f5f5f5;
+	-o-box-shadow: 0 1px 0 #f5f5f5; }
 	
 .sidebar h2, 
 .sidebar h3, 
@@ -391,6 +376,8 @@ nav.secondary-menu ul li a:hover { text-decoration:none; }
 #godmode .content { margin-top:2.5em; }
 #godmode .sidebar + .content { margin-left:13.75em; }
 
+#godmode .content > header { border-bottom:1px solid #E1E1E1; }
+#godmode .content > header h2 { margin:0; line-height:1.0714; }
 
 .content h2, 
 .content h3, 
@@ -434,7 +421,7 @@ nav.secondary-menu ul li a:hover { text-decoration:none; }
 	padding-left:.75em; }
 	
 .listingtable td.dragHandle { 
-	background:image-url("journalist/drag-handle.png") 100% no-repeat; 
+	background:image_url("journalist/drag-handle.png") 100% no-repeat; 
 	text-indent:-999px; 
 	cursor:ns-resize; }	
 		

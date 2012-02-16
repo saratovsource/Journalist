@@ -13,7 +13,7 @@ module Extensions
         field :title
         field :slug
         field :description
-        field :fullpath
+        #field :fullpath
         
         # -= Associations =-
         has_one :router, :as => :routerable, :dependent => :destroy

@@ -5,6 +5,8 @@ class Router
   
   # -= Fields =-
   field :slug
+  field :prefix
+  field :postfix
   field :url
   
   # -= Associations =-
@@ -43,7 +45,7 @@ class Router
   end
   
   def rebuild_path
-    tmp_path = [self.parent_url, self.slug].compact.join('/')
+    tmp_path = [self.parent_url, self.prefix, self.slug, self.postfix].compact.join('/')
     if self.parent.nil?
       self.url = ['/', tmp_path].compact.join
     else
@@ -65,6 +67,8 @@ class Router
     unless self.routerable.nil?
       self.slug = self.routerable.slug
       self.site = self.routerable.site
+      self.prefix = self.routerable.prefix if self.routerable.respond_to?(:prefix)
+      self.postfix = self.routerable.postfix if self.routerable.respond_to?(:postfix)
       #retrive parent
       unless self.routerable.parent.nil?
         self.parent = self.routerable.parent.router

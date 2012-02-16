@@ -1,0 +1,12 @@
+<h1>Listing MediaCollections</h1>
+
+<% for media_collection in @media_collections: %>
+  <div class="item" data-id="<%= media_collection.id %>">
+    <a data-type="show"><%= media_collection.title %></a>
+    
+    <a data-type="edit">Edit</a> 
+    <a data-type="destroy">Destroy</a>
+  </div>
+<% end %>
+
+<p><a data-type="new">New MediaCollection</a></p>

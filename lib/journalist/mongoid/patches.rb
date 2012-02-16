@@ -5,7 +5,9 @@ require 'mongoid'
 # Limit feature for embedded documents
 
 module Mongoid #:nodoc:
-  module Criterion #:nodoc:
+  
+  module Criterion #:nodoc:    
+    
     module Exclusion
 
       def only(*args)
@@ -104,5 +106,15 @@ module Mongoid #:nodoc:
 
     end
 
+  end
+end
+
+module Mongoid
+  module Document
+    def as_json(options={})
+      attrs = super(options)
+      attrs["id"] = self.persisted? ? self._id : nil
+      attrs
+    end
   end
 end

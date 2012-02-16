@@ -1,3 +1,8 @@
 /*
  *= require_tree .
+ *= require_self
 */
+
+.stack > *:not(.active) {
+  display: none;
+}

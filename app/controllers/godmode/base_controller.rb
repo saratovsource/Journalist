@@ -8,6 +8,7 @@ module Godmode
     before_filter :require_site
     before_filter :validate_site_membership
     load_and_authorize_resource
+    before_filter :delete_id_for_spine, :only =>[:new, :create]
     before_filter :set_locale
     before_filter :set_current_thread_variables
     before_filter :set_sidebar_menu
@@ -33,6 +34,12 @@ module Godmode
 
         redirect_to root_url#admin_pages_url
       end
+    end
+    
+    def delete_id_for_spine
+      params.delete(:id)
+      cl_name = resource_class.name.underscore.underscore
+      params[cl_name].delete(:id)
     end
     
     protected

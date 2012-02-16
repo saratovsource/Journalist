@@ -31,13 +31,18 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass'
   s.add_dependency 'jquery-rails'
   
+  # For SpineJs
+  s.add_dependency 'eco'
+  s.add_dependency 'spine-rails'
+  #------------
+  
   s.add_dependency 'formtastic'
   s.add_dependency 'inherited_resources'
   s.add_dependency 'cells'
   s.add_dependency 'sanitize'
   s.add_dependency 'russian', '~> 0.6.0'
   
-  s.add_dependency 'json_pure'
+  #s.add_dependency 'json_pure'
   
   s.add_dependency 'rmagick'
   s.add_dependency 'carrierwave'

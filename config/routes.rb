@@ -21,6 +21,14 @@ Rails.application.routes.draw do
       get :published,     :on => :collection
     end
     
+    namespace :mediabank do
+      root :to => 'media_collections#index'
+      resources :media_collections do
+        get :add_files, :on => :member
+        resources :media_files
+      end
+    end
+    
     
     # installation guide
     match '/installation' => 'installation#show', :defaults => { :step => 1 }, :as => :installation

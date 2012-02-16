@@ -1,0 +1,10 @@
+---
+en:
+  mediabank:
+    create_header:
+      placeholder: "Enter the name of the new collection"
+    media_collections:
+      add_files_button: "Add files"
+      files_count: "%{count} files"
+      add_files:
+        title: "Add media files to collection"

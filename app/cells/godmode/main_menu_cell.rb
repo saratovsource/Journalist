@@ -4,7 +4,7 @@ class Godmode::MainMenuCell < ::Godmode::MenuCell
 
   def build_list
     add :publications, :url => godmode_journal_articles_url, :css_class => 'publications'
-    add :mediabank, :url => '#', :css_class => 'mediabank'
+    add :mediabank, :url => godmode_mediabank_root_url, :css_class => 'mediabank'
     #add :contents, :url => admin_pages_url
     #add :settings, :url => edit_admin_current_site_url
   end

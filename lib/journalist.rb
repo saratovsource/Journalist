@@ -8,6 +8,8 @@ require 'mongoid_taggable'
 require 'carrierwave/mongoid'
 require 'state_machine'
 require 'jquery-rails'
+require 'spine-rails'
+require 'eco'
 
 require 'journalist/core_ext'
 require 'journalist/uniq_generator'

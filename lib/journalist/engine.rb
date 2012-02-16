@@ -2,7 +2,7 @@ puts "Runing Journalist ..."
 
 require 'rails'
 require 'jquery-rails'
-require 'json/pure'
+require 'json'
 require 'devise'
 require 'mongoid'
 require 'haml'

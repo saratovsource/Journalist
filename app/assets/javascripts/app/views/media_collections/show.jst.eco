@@ -1,0 +1,8 @@
+<h1>Show MediaCollection</h1>
+
+<a data-type="edit">Edit</a> <a data-type="back">Back</a>
+
+<p>Title: <%= @title %></p>
+<p>Slug: <%= @slug %></p>
+<p>Description: <%= @description %></p>
+<p>Fullpath: <%= @fullpath %></p>

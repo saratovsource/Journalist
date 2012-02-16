@@ -1,0 +1,20 @@
+.mediamanager.container
+	%ul.unstyled.medialist
+		- current_media_user.media_collections.each do |media_collection|
+			%li.sort-item.row
+				
+				.span6
+					= link_to image_tag(media_collection.poster_url), resource_url(media_collection), :class => "thumbnail"
+				
+				.info.span10
+					%small.label.count= t("mediabank.media_collections.files_count", :count => media_collection.media_files.count)
+					%small.update= media_collection.updated_at
+					%span.name
+						= link_to media_collection.title, resource_url(media_collection)
+						= content_tag(:span, "x", :class => "iconweb") if media_collection.acl_protected?
+					%span.url-snippet= media_collection.fullpath
+					%span.description= media_collection.description
+				
+				.controls.span4
+					= link_to t("mediabank.media_collections.add_files_button"), add_files_godmode_mediabank_media_collection_path(media_collection), :class => "btn a-center span4 small"
+					= link_to t(:edit), edit_resource_url(media_collection), :class => "btn a-center span4 small"

@@ -3,6 +3,8 @@
 #= require jquery-ui
 #= require ./jquery.gritter.min
 #= require ./bootstrap/bootstrap
+#= require ./fileupload/loader
 #= require_tree ./markitup
 #= require_tree ./godmode
+#= require ./../app/index
 #= require_self

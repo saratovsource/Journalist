@@ -1,0 +1,22 @@
+%header.action-bar.pos-r
+	%h2
+		= t("mediabank.media_collections.add_files.title")
+		%small
+			«
+			= link_to @media_collection.title, resource_path(@media_collection)
+			»
+.mediamanager.container
+	= form_for [:godmode, :mediabank, @media_collection, MediaFile.new], :html => { :id => "fileupload", :multipart => true} do |f|
+		= f.hidden_field :media_collection
+
+		.span16.a-center.upload.fileupload-buttonbar
+			.progressbar.fileupload-progressbar.nofade
+				%div{:style => "width:0%;"}
+			
+			%span.btn.success.fileinput-button
+				%span= t('photos.add_files')
+				= f.file_field :file
+			%button.btn.primary.start{:type => "submit"}= t("mediabank.media_collections.add_files.start_upload")
+
+		%ul.unstyled.medialist.files
+= render :partial => "script_templates"
