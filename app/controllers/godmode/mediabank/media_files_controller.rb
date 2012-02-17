@@ -35,7 +35,7 @@ module Godmode
       
       def destroy
         destroy! do |format|
-          format.html { render :json => true, :content_type => 'text/html', layout => false }
+          format.html { render :json => true, :content_type => 'text/html' }
           format.json { render :json => true }
         end
       end

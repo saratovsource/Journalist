@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       root :to => 'media_collections#index'
       resources :media_collections do
         get :add_files, :on => :member
+        get :descriptions, :on => :member
         resources :media_files do
           put :sort,          :on => :collection
         end

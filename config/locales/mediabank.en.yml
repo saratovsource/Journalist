@@ -6,6 +6,7 @@ en:
     media_collections:
       add_files_button: "Add files"
       files_count: "%{count} files"
+      edit_files: "Edit files"
       add_files:
         title: "Add media files to collection"
     media_files:

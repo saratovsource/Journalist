@@ -15,6 +15,8 @@ class MediaCollection
   # -= Validations =-
   validates_uniqueness_of   :slug, :scope => [:site_id]
   
+  accepts_nested_attributes_for :media_files
+  
   class << self
     # Create new empty rubric
     def create_new(args = {})

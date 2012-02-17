@@ -1,0 +1,23 @@
+%header.action-bar.pos-r
+	%h2
+		= t("mediabank.media_collections.edit_files")
+		%small
+			«
+			= link_to resource.title, resource_url(resource)
+			»
+.mediamanager.container
+	= form_for [:godmode, :mediabank, @media_collection] do |f|
+		%ul.unstyled.medialist
+			- @media_collection.media_files.each do |file|
+				= f.fields_for :media_files, file do |mf|
+					%li.sort-item.row
+						.span4
+							= link_to file.file.url, :class => "thumbnail fancybox", :rel => "galery-#{resource.id}" do
+								= image_tag file.file.mini_thumb.url
+						.info.span10
+							= mf.text_area :description, :placeholder => t(:description), :rows => 2, :class => "span10"
+							%small.update= l(file.updated_at, :format => :long)
+						.controls.span2= link_to t(:delete), godmode_mediabank_media_collection_media_file_path(file.parent, file), :class => "btn danger a-center span2 small", :remote => true, :method => :delete, :confirm => t(:"are_you_shure"), :data => {:"can-destroy-parent" => "li"}
+		.float-actions
+			.actions.clearfix
+				= f.submit t(:save), :class => "btn primary pull-right" if can? :edit, resource

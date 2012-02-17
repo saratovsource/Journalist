@@ -119,6 +119,8 @@ en:
   profile: "Profile"
   logout: "LogOut"
   move_element: "Move Element"
+  descriptions: "Descriptions"
+  description: "Description"
   all_items: "All"
   are_you_shure: "Are you shure?"
   journal_article:
