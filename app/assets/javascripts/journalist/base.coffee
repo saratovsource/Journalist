@@ -4,7 +4,7 @@
 #= require ./jquery.gritter.min
 #= require ./bootstrap/bootstrap
 #= require ./fileupload/loader
+#= require ./jquery.fancybox.pack
 #= require_tree ./markitup
 #= require_tree ./godmode
-#= require ./../app/index
 #= require_self

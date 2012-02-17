@@ -23,3 +23,20 @@ $ ->
 					"json"
 				)
 		)
+		
+	$("[data-grid-sortable]").each ->
+		$(this).sortable({
+			update: (event, ui)->
+				params = $(this).sortable('serialize', { 'key': 'children[]' })
+				params += '&_method=put'
+				params += '&' + $('meta[name=csrf-param]').attr('content') + '=' + $('meta[name=csrf-token]').attr('content')
+				
+				$.post(
+					$(this).attr('data-url'), 
+					params,
+					(data) ->
+						growl(data.message.title, data.message.text)
+					,
+					"json"
+				)
+		})

@@ -23,7 +23,6 @@ module Godmode
     end
     
     def sort
-      p params[:children]
       respond_to do |format|
         if current_site.sort(JournalRubric, params[:children])
           format.json { render :json => {:compleated => true, :message => {:title => "Sorting", :text => "Success"}}}

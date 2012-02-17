@@ -8,3 +8,5 @@ en:
       files_count: "%{count} files"
       add_files:
         title: "Add media files to collection"
+    media_files:
+      header_title: "Collections"

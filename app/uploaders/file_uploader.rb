@@ -1,4 +1,5 @@
 class FileUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
   def store_dir
     "#{model.parent.prefix}/#{model.parent.slug}"
   end
@@ -17,6 +18,15 @@ class FileUploader < CarrierWave::Uploader::Base
   
   def extension_white_list
     %w(jpg jpeg gif png)
+  end
+  
+  version :mini_thumb do
+    #process :resize_to_fill => [90, 64]
+    process :resize_to_fill => [130, 92]
+  end
+  
+  version :poster_thumb do
+    process :resize_to_fill => [210, 150]
   end
   
   protected

@@ -40,7 +40,7 @@ class MediaCollection
   end
   
   def poster_url
-    self.media_files.empty? ? "journalist/empty.png" : self.media_files.first.file.url
+    self.media_files.empty? ? "journalist/empty.png" : self.media_files.first.file.poster_thumb.url
   end
   
 end

@@ -1,0 +1,11 @@
+= render :partial => "header"
+.mediamanager.container
+	.row
+		.span16
+			%ul.unstyled.medialist.row{:data => {:url => sort_godmode_mediabank_media_collection_media_files_path(resource), :"grid-sortable" => "true"}}
+				- resource.media_files.each do |file|
+					%li.sort-item.span4{:id => "item=#{file.id}"}
+						= link_to file.file.url, :class => "thumbnail fancybox", :rel => "galery-#{resource.id}" do
+							= content_tag(:span, raw("&nbsp;"), :class => "dragHandle", :title => t(:move_element))
+							= image_tag(file.file.mini_thumb.url)
+		= render :partial => "godmode/mediabank/shared/collection_controls", :locals => {:collection => resource}

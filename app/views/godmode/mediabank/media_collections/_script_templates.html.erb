@@ -13,7 +13,7 @@
 	{% for (var i=0, files=o.files, l=files.length, file=files[0]; i<l; file=files[++i]) { %}
 		<li class="sort-item row template-upload nofade">
 			<div class="span3 preview">
-				<span class="nofade"></span>
+				<span class="nofade thumbnail"></span>
 			</div>
 			<div class="info span10">
 				<small class="update">{%=file.name%} | {%=o.formatFileSize(file.size)%}</small><br />
@@ -42,8 +42,8 @@
 				</div>
 			{% } else { %}
 				<div class="span3 preview">
-					{% if (file.thumbnail_url) { %}
-						<a href="{%=file.url%}" title="{%=file.name%}" rel="gallery"><img src="{%=file.thumbnail_url%}"></a>
+					{% if (file.thumbnail_url) { %}	
+						<a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" class="thumbnail"><img src="{%=file.thumbnail_url%}"></a>
 					{% } %}
 				</div>
 			{% } %}

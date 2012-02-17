@@ -2,6 +2,7 @@ module Godmode
   module Mediabank
     class MediaFilesController < SpineModelController
       sections :mediabank
+      custom_actions :collection => :sort
       before_filter :set_site_and_owner, :only => :create
       belongs_to :media_collection
       respond_to :html, :json
@@ -39,6 +40,16 @@ module Godmode
         end
       end
       
+      def sort
+        respond_to do |format|
+          if current_site.sort(MediaFile, params[:children])
+            format.json { render :json => {:compleated => true, :message => {:title => "Sorting", :text => "Success"}}}
+          else
+            format.json { render :json => {:compleated => false, :message => {:title => "Sorting", :text => "Fails"}}}
+          end
+        end
+      end
+      
       protected
       
       def set_site_and_owner
@@ -52,7 +63,7 @@ module Godmode
           "size" => resource.file.size,
           "url" => resource.file.url,
           "fullpath" => resource.fullpath,
-          "thumbnail_url" => resource.file.url,
+          "thumbnail_url" => resource.file.mini_thumb.url,
           "delete_url" => resource_url(resource),
           "delete_type" => "DELETE" 
         }
