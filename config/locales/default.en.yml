@@ -85,6 +85,10 @@ en:
         base_fields:
           help:
             tags: "Separate tags with commas"
+        description:
+          description: "Description"
+          help:
+            description: "In this field you can enter a small description, preferably not more than 255 characters."
     sidebar:
       headers:
         publications: "Publications"
