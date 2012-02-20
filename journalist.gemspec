@@ -50,7 +50,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'dragonfly'
   s.add_dependency 'rack-cache'
   s.add_dependency 'state_machine'
-  s.add_dependency 'therubyracer'
   
   s.add_dependency 'cancan'
   s.add_dependency 'fog'
@@ -61,6 +60,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave-mongoid'
   s.add_dependency 'delayed_job_mongoid'
   s.add_dependency 'rubyzip'
+  s.add_dependency "execjs"
 
   s.add_development_dependency('bson')
   s.add_development_dependency('haml')

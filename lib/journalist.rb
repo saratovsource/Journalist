@@ -1,5 +1,4 @@
 require 'mimetype_fu'
-require 'v8'
 require 'devise'
 require 'rack/cache'
 require 'dragonfly'
@@ -11,6 +10,7 @@ require 'state_machine'
 require 'jquery-rails'
 require 'spine-rails'
 require 'eco'
+require 'execjs'
 
 require 'journalist/core_ext'
 require 'journalist/uniq_generator'
