@@ -24,6 +24,6 @@
 		.input.span18
 			%ul.inputs-list
 				%li
-					%label{:for => "journal_rubric_in_robots"}
+					= f.label :in_robots do
 						= f.check_box :in_robots
 						%span= t(".help.in_robots")
