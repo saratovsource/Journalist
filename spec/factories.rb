@@ -62,17 +62,11 @@ FactoryGirl.define do
 
   end
   
-  factory :journal_rubric do
-    title 'Rubric 1'
-    description 'Description 1'
-    site { Factory(:site, :name => 'site1') }
-    owner { Factory('admin user', :locale => 'en') }
-  end
+  ## Routers and RouteAliases ##
   
-  factory :journal_article do
-    title "Article 1"
-    description "Description of Article 1"
-    journal_rubric { Factory(:journal_rubric) }
-    owner { Factory('frenchy user', :locale => 'en') }
+  factory :router do
+    slug 'route1'
+    prefix 'collections'
+    site { FactoryGirl.build(:site) }
   end
 end

@@ -10,6 +10,9 @@ class Account
   field :locale, :default => Journalist.config.default_locale.to_s or 'en'
   field :switch_site_token
   
+  # -= CarrierWave =-
+  mount_uploader :avatar, AvatarUploader
+  
   # -= Associations =-
   has_many :journal_rubrics, :class_name => "JournalRubric", :foreign_key => "owner_id"
   has_many :journal_articles, :class_name => "JournalArticle", :foreign_key => "owner_id", :order => "updated_at DESC"

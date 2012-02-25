@@ -68,10 +68,10 @@ describe Account do
       @account.stubs(:save).returns(true)
     end
     
-    it 'sets a token' do
-      @account.reset_switch_site_token!.should be_true
-      @account.switch_site_token.should_not be_empty
-    end
+    #it 'sets a token' do
+    #  @account.reset_switch_site_token!.should be_true
+    #  @account.switch_site_token.should_not be_empty
+    #end
     
     context 'retrieving an account' do
       

@@ -1,6 +1,6 @@
 %header.action-bar.pos-r
 	.row
 		= author_list
-		= form_for [:godmode, :mediabank, MediaCollection.new], :html => {:class => "row" } do |f|
-			.span10= f.text_field :title, :class => "span10", :placeholder => t("mediabank.create_header.placeholder"), :required => true
-			.span4= f.submit t(:create), :class => "btn a-center span4 small"
+		= form_tag nil, :style => "margin:0;padding:0;display:inline", :data => {:change_user => ""} do
+			= hidden_field_tag "redirector"
+		= render :partial => "godmode/mediabank/shared/index_create_form" unless read_only?

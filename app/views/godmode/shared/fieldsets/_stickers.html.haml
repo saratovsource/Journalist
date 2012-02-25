@@ -1,0 +1,12 @@
+.clearfix
+	= f.label t(".stick", :default => "stick")
+	.input
+		%ul.inputs-list
+			%li
+				%label
+					= f.check_box :stick_homepage
+					%span= t(".stick_homepage")
+			%li
+				%label
+					= f.check_box :stick_parent
+					%span= t(".#{f.object_name}")

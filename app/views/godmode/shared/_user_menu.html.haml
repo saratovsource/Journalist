@@ -1,7 +1,7 @@
 %li.dropdown 
 	= link_to '#', :class => "dropdown-toggle user" do
 		= content_tag :span, :class => "userpic" do
-			= image_tag "journalist/alexshow.jpg"
+			= image_tag current_account.avatar.thumb.url
 		= current_account.name
 	%ul.dropdown-menu
 		= drop_down_menu_item t(:profile), "my-account"

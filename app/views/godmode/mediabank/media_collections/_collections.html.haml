@@ -12,7 +12,7 @@
 					%span.name
 						= link_to media_collection.title, resource_url(media_collection)
 						= content_tag(:span, "x", :class => "iconweb") if media_collection.acl_protected?
-					%span.url-snippet= ["...", media_collection.slug].join("/")
+					%span.url-snippet= ["..", media_collection.slug].join("/")
 					%span.description= media_collection.description
 				
-				= render :partial => "godmode/mediabank/shared/collection_controls", :locals => {:collection => media_collection}
+				= render :partial => "godmode/mediabank/shared/collection_controls", :locals => {:collection => media_collection} unless read_only?

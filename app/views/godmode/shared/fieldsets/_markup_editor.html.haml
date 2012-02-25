@@ -1,4 +1,3 @@
-%fieldset.divider
-	.clearfix
-		= f.label :content
-		.input= f.text_area :content, :rows => 14, :spellcheck => false, :class => "span18", :data => {:"content-editor" => Journalist.config.content_filter}
+.clearfix
+	= f.label :content
+	.input= f.text_area :content, :rows => 14, :spellcheck => false, :class => "span18", :data => {:"content-editor" => Journalist.config.content_filter}

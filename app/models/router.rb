@@ -1,22 +1,19 @@
-class Router
-  include Journalist::Document
-  include Extensions::Site::IncludedIn
+class Router < AbstractRouter
   include Mongoid::Tree
-  
   # -= Fields =-
   field :slug
   field :prefix
   field :postfix
-  field :url
   
   # -= Associations =-
   belongs_to :routerable, polymorphic: true
+  has_many :route_aliases
   
   # -= Validations =-
-  validates_presence_of   :url, :slug
-  validates_uniqueness_of :url
+  validates_presence_of   :slug
   
   before_validation       :build_fields_to_save
+  after_save             :create_alias, :if => lambda { |router| router.slug_changed? }
   after_save              :rebuild_childrens
   
   # -= Indexes =-
@@ -53,8 +50,6 @@ class Router
     end
   end
   
-  
-  
   def rebuild_childrens
     self.children.each do |child|
       child.save
@@ -75,5 +70,9 @@ class Router
       end
       rebuild_path
     end
+  end
+  
+  def create_alias
+    self.route_aliases.create(:url => self.url_was, :site_id => self.site_id)
   end
 end

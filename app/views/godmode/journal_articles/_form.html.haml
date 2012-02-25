@@ -1,2 +1,10 @@
-- %w(base_fields parent markup_editor seo).each do |fieldset|
+- %w(base_fields parent).each do |fieldset|
 	= render_fieldsets fieldset, f
+= fieldset_tag(:content, :class => "toogle off") do
+	- %w(markup_editor).each do |fieldset|
+		= render_fieldsets fieldset, f
+= fieldset_tag(:settings, :class => "toogle off") do
+	- %w(stickers).each do |fieldset|
+		= render_fieldsets fieldset, f
+= fieldset_tag(:seo, :class => "toogle off") do
+	= render_fieldsets "seo", f

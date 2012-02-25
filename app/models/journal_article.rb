@@ -5,6 +5,7 @@ class JournalArticle
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
   include Extensions::Article::Stated
+  include Extensions::Stick::Stickers
   
   # -= Associations =-
   belongs_to :parent, :class_name => "JournalRubric"

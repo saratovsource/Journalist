@@ -25,6 +25,14 @@ class Ability
   
   def setup_default_permissions!
     cannot :manage, :all
+    
+    cannot :manage, [Account]
+    
+    can :manage, [MediaCollection, MediaFile] do |mb|
+      mb.owner_id == @account.id or mb.owner_id.nil?
+    end
+    can [:index, :read, :show], [MediaCollection, MediaFile]
+    can [:change_user, :read], [Account]
   end
   
   def setup_author_permissions!

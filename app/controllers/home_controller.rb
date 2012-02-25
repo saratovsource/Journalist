@@ -7,4 +7,8 @@ class HomeController < ActionController::Base
     
   end
   
+  def search_path
+    
+  end
+  
 end

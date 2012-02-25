@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     
     resources :accounts do
       get :articles,      :on => :member
+      post :change_user, :on => :member
     end
     
     # publications section
@@ -39,4 +40,5 @@ Rails.application.routes.draw do
   end
   
   root :to => 'home#index'
+  match '/test_search' => 'home#search_path', :as => :test_search
 end

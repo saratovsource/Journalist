@@ -24,11 +24,11 @@ module Extensions
           end
           
           event :rewrite do
-            transition [:published] => :rewrited
+            transition [:prepublished, :published] => :rewrited
           end
           
           event :trash do
-            transition all - [:published] => :trashed
+            transition all - [:trashed, :published] => :trashed
           end
           
           event :rescue do

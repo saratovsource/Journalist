@@ -7,9 +7,11 @@ class Godmode::MenuCell < Cell::Rails
   delegate :current_account, :to => :parent_controller
 
   attr_accessor :list, :active_item
+  attr_reader   :ability
 
   def initialize(*args)
     super
+    @ability = Ability.new(current_account, current_site)
     self.list = []
   end
 

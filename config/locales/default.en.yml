@@ -20,12 +20,20 @@ en:
       author: "Author"
       updated_at: "Updated At"
       updated_at_title: "Updated at %{time}"
+      name: "Name"
+      email: "Email"
+      role: "User role"
+      last_sign_in_at: "Last sign in at"
     editor: "Editor"
     events:
       trash: "Trash"
       prepublish: "Send to Editor"
       publish: "Publish"
       rewrite: "Send to rewtite"
+    fieldsets:
+      content: "Content data:"
+      settings: "Settings:"
+      seo: "Seo settings:"
     shared:
       acls:
         password:
@@ -48,11 +56,14 @@ en:
         comments: "Comments"
         feedback: "Feedback"
         journal: "Journal"
+        accounts: "Accounts"
       sub_menu:
         journal: "Journal"
         photo: "Photo"
         face_patrol: "Face Patrol"
         columns: "Columns"
+        redaction: "Redaction"
+        others: "Others"
       publications_sub_menu:
         rubrics: "Rubrics"
         tags: "Tags"
@@ -62,15 +73,20 @@ en:
         index_header:
           journalarticle: "Journal Articles"
           journalrubric: "Journal Rubrics"
+          account: "Accounts"
         edit_header:
           journalarticle: "Edit Journal Article"
           journalrubric: "Edit Journal Rubric"
           mediacollection: "Edit Media Collection"
+          account: "Edit Account settings"
         stated_edit_header:
           journalarticle: "Edit Journal Article"
       fieldsets:
         acls:
           legend: "Access options"
+        stickers:
+          stick_homepage: "Freeze on the main page"
+          journal_article: "Freeze the heading"
         seo:
           legend: "SEO Properties"
           seo_title: "SEO title"
@@ -94,6 +110,7 @@ en:
         publications: "Publications"
         dashboard: "Dashboard"
         mediabank: "Mediabank"
+        accounts: "Accounts"
     journal_articles:
       index:
         <<: *article_headers

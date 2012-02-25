@@ -1,0 +1,12 @@
+= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => Account.model_name.parameterize}
+
+%table.listingtable.zebra-striped.t-sort
+	= render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(name email role last_sign_in_at), :rejected => ""}
+	%tbody
+		- collection.each do |account|
+			%tr
+				%td.check= check_box_tag :selected_articles, nil, nil
+				%td= link_to account.name, edit_resource_url(account)
+				%td= account.email
+				%td= current_site.memberships.where(:account_id => account.id).collect{|m| m.role}.join(", ")
+				%td= l(account.last_sign_in_at, :format => :long) if account.last_sign_in_at

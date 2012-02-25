@@ -26,12 +26,12 @@ module Godmode
       
       #Sort By State
       unless params[:state].blank?
-        states = (params[:state] == :drafted) ? [:rewrited] : []
+        states = (params[:state] == :drafted.to_s) ? [:rewrited] : []
         states << params[:state]
       else
         states = resource_class.state_machines[:state].states.keys
       end
-      
+      states = states.compact
       @collection ||= end_of_association_chain.where(where_params).with_states(states.compact)
     end
     

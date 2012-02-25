@@ -61,4 +61,12 @@ module Godmode::BaseHelper
       {}
     end
   end
+  
+  def fieldset_tag(legend = nil, options = nil, &block)
+    content = capture(&block)
+    output = tag(:fieldset, options, true)
+    output.safe_concat(content_tag(:legend, t("godmode.fieldsets.#{legend}"))) unless legend.blank?
+    output.concat(content)
+    output.safe_concat("</fieldset>")
+  end
 end
