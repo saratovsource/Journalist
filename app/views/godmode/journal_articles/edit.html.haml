@@ -2,5 +2,5 @@
 .container
 	.row
 		= form_for :journal_article, :url => godmode_journal_article_path(@journal_article), :method => :put do |f|
-			= render :partial => "form", :locals => { :f => f }
+			= render :partial => "#{'readonly_' if resource.readonly?}form", :locals => { :f => f }
 			.float-actions= render :partial => "/godmode/shared/actions/stated_actions", :locals => {:f => f}

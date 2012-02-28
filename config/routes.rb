@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     root :to => 'dashboard#index'
     get 'switch_to/:role' => 'dashboard#switch_to', :as => :role_switch
     
+    resources :memberships, :only => [:edit, :update]
     resources :accounts do
       get :articles,      :on => :member
       post :change_user, :on => :member
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
       get :empty,         :on => :collection
       get :prepublished,  :on => :collection
       get :published,     :on => :collection
+      get :tags,          :on => :collection
     end
     
     namespace :mediabank do

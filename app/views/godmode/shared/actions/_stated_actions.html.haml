@@ -4,4 +4,4 @@
 	- resource.state_events.each_with_index do |event, index|
 		- if can?(event, resource)
 			%button{:class =>"btn pull-right#{' primary' if index == 0}", :data => {:"after-action" => event, :target => "after_action"}}= t("godmode.events.#{event}")
-	= f.submit t(".save"), :class => "btn pull-right"
+	= f.submit t(".save"), :class => "btn pull-right" if can?(:update, resource)

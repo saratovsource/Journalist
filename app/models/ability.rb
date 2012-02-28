@@ -85,8 +85,8 @@ class Ability
   def setup_admin_permissions!
     can :manage, :all
 
-    cannot [:update, :destroy], Membership do |membership|
-      @membership.account_id == membership.account_id # can not edit myself
-    end
+    #cannot [:update, :destroy], Membership do |membership|
+    #  @membership.account_id == membership.account_id # can not edit myself
+    #end
   end
 end

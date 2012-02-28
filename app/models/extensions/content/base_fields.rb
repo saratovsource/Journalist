@@ -6,6 +6,7 @@ module Extensions
       included do
         include Extensions::Seo::Metadata
         include Mongoid::Taggable
+        include Mongoid::MultiParameterAttributes
         
         tags_separator ', '
         

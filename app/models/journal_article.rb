@@ -4,7 +4,9 @@ class JournalArticle
   include Extensions::Content::EditableContent
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
+  include Extensions::Auth::Partners
   include Extensions::Article::Stated
+  include Extensions::Article::Publish
   include Extensions::Stick::Stickers
   
   # -= Associations =-

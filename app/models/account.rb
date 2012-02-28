@@ -51,6 +51,10 @@ class Account
     end
   end
   
+  def membership(site)
+    site.memberships.where(:account_id => self.id).first
+  end
+  
   protected
   
   def password_required?

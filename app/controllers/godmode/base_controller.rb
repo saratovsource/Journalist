@@ -105,5 +105,9 @@ module Godmode
       url
     end
     
+    def is_redactor?
+      session[:account_type] == "editor"
+    end
+    
   end
 end

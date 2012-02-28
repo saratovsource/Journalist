@@ -40,3 +40,6 @@ $ ->
 					"json"
 				)
 		})
+	
+	$("table[data-sorted]").each ->
+		$(this).tablesorter()

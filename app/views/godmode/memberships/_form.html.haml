@@ -1,0 +1,4 @@
+%fieldset.no-margin.no-padding
+	.clearfix.title
+		= f.label :role
+		.input.span18= f.select :role, Ability::ROLES.collect{|r| [r, r]}, :include_blank => false

@@ -51,6 +51,10 @@ module Extensions
           STATE_SYMBOLS[self.state_name]
         end
         
+        def readonly?
+          return (prepublished? or published?)
+        end
+        
         protected
         
         def can_state?(state_name)

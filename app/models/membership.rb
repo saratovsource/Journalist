@@ -60,7 +60,7 @@ class Membership
   # be an administrator
   def can_change_role
     current_site       = Thread.current[:site]
-    current_membership = current_site.memberships.where(:account_id => Thread.current[:admin].id).first if current_site.present?
+    current_membership = current_site.memberships.where(:account_id => Thread.current[:account].id).first if current_site.present?
 
     if current_membership.present?
       # The role cannot be set higher than the current one (we use the index in

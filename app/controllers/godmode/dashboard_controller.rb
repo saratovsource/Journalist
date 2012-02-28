@@ -10,7 +10,7 @@ module Godmode
     
     def switch_to
       session[:account_type] = params[:role] if current_account.role_in?(%w(editor admin))
-      redirect_to :back
+      redirect_to is_redactor? ? prepublished_godmode_journal_articles_path : godmode_journal_articles_path
     end
     
     protected

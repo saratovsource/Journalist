@@ -8,5 +8,7 @@
 				%td.check= check_box_tag :selected_articles, nil, nil
 				%td= link_to account.name, edit_resource_url(account)
 				%td= account.email
-				%td= current_site.memberships.where(:account_id => account.id).collect{|m| m.role}.join(", ")
+				%td
+					- membership = account.membership(current_site)
+					= link_to membership.role, edit_godmode_membership_path(membership) if membership
 				%td= l(account.last_sign_in_at, :format => :long) if account.last_sign_in_at

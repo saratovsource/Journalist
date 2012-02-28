@@ -69,4 +69,8 @@ module Godmode::BaseHelper
     output.concat(content)
     output.safe_concat("</fieldset>")
   end
+  
+  def partners_accounts
+    current_site.godmode_accounts.reject{|acc| acc.id == current_account.id}.collect{|acc| [acc.name, acc.id]}
+  end
 end

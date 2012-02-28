@@ -5,6 +5,7 @@
 #= require ./bootstrap/bootstrap
 #= require ./fileupload/loader
 #= require ./jquery.fancybox.pack
+#= require ./jquery.tablesorter.min
 #= require_tree ./markitup
 #= require_tree ./godmode
 #= require_self

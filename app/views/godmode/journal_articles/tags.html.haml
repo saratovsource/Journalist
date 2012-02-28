@@ -1,0 +1,12 @@
+= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => "#{JournalArticle.model_name.parameterize}_tags"}
+
+%table.listingtable.zebra-striped{:data => {:sorted => ""}}
+	= render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(name weight last_item), :rejected => "check_all"}
+	%tbody
+		- @tags.each do |tag|
+			%tr
+				%td= tag[0]
+				%td= tag[1]
+				%td
+					- last_item = current_account.journal_articles.tagged_with_any(tag[0]).first
+					= link_to last_item.title, edit_resource_url(last_item) if last_item

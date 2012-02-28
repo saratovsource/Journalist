@@ -12,7 +12,7 @@
 			%th.header= t(".author")
 			%th.header= t(".updated_at")
 	%tbody
-		- current_site.journal_articles.with_state(:prepublished).each do |article|
+		- collection.each do |article|
 			%tr
 				%td.check= check_box_tag :selected_articles, nil, nil
 				%td
@@ -21,7 +21,7 @@
 							= content_tag(:del, article.title)
 						- else
 							= article.title
-				%td= link_to article.parent.title, articles_godmode_journal_rubric_path(article.parent) if article.parent
+				%td= link_to article.parent.title, articles_godmode_account_path(article.parent) if article.parent
 				- %w(comments likes).each do |field|
 					%td.a-center= content_tag(:small, 0, :class => field)
 				%td= link_to article.owner.name, articles_godmode_account_path(article.owner), :class => "light-link"

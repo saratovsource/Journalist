@@ -24,6 +24,8 @@ en:
       email: "Email"
       role: "User role"
       last_sign_in_at: "Last sign in at"
+      weight: "Weight"
+      last_item: "Last Item"
     editor: "Editor"
     events:
       trash: "Trash"
@@ -74,11 +76,13 @@ en:
           journalarticle: "Journal Articles"
           journalrubric: "Journal Rubrics"
           account: "Accounts"
+          journalarticle_tags: "List of Journal Articles Tags:"
         edit_header:
           journalarticle: "Edit Journal Article"
           journalrubric: "Edit Journal Rubric"
           mediacollection: "Edit Media Collection"
           account: "Edit Account settings"
+          membership: "Membership"
         stated_edit_header:
           journalarticle: "Edit Journal Article"
       fieldsets:
@@ -113,6 +117,8 @@ en:
         accounts: "Accounts"
     journal_articles:
       index:
+        <<: *article_headers
+      prepublished:
         <<: *article_headers
     journal_rubrics:
       articles:
