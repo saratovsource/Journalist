@@ -7,7 +7,6 @@ module Extensions
         
         field :content
       end
-
     end
   end
 end

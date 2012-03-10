@@ -25,6 +25,8 @@ require 'journalist/hosting'
 require 'journalist/mongoid'
 require 'journalist/document'
 require 'journalist/acl'
+require 'journalist/formatters'
+require 'journalist/render_factory'
 
 module Journalist
   
