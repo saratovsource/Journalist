@@ -7,11 +7,6 @@ module Extensions
         field :partner
       end
 
-      module ClassMethods
-      end
-
-      module InstanceMethods
-      end
     end
   end
 end

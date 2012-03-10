@@ -15,10 +15,7 @@ module Extensions
           acl_validates_with Journalist::Acl::TimeValidator, _merge_attributes(attr_names)
         end
       end
-      
-      module InstanceMethods
-        
-      end
+
     end
   end
 end

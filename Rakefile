@@ -31,13 +31,13 @@ task :release => :gem do
   sh "gem push pkg/journalist-#{gemspec.version}.gem"
 end
 
-%w(unit integration models).each do |task_var|
+%w(unit integration models lib).each do |task_var|
   RSpec::Core::RakeTask.new("spec:#{task_var}") do |spec|
     spec.pattern = "spec/#{task_var}/**/*_spec.rb"
   end
 end
 
-task :spec => %w(unit integration models).collect{|i| "spec:#{i}"}
+task :spec => %w(unit integration models lib).collect{|i| "spec:#{i}"}
 
 task :default => :spec
 

@@ -7,7 +7,7 @@ module Journalist
       
       # Process content
       def process(content)
-        content + "with links"
+        
       end
     end
   end

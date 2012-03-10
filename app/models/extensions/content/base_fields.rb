@@ -29,7 +29,7 @@ module Extensions
         validates_exclusion_of  :slug, :in => Journalist.config.reserved_slugs#, :if => Proc.new { |p| p.depth == 0 }
       end
       
-      module InstanceMethods
+#      module InstanceMethods
         
         def fullpath
           return self.router.nil? ? nil : self.router.fullpath
@@ -58,7 +58,7 @@ module Extensions
           end
         end
         
-      end
+#      end
     end
   end
 end

@@ -40,27 +40,21 @@ module Extensions
         scope :must_publish, with_states([:prepublished, :published])
 
       end
-      
-      module ClassMethods
         
+      def state_sym
+        STATE_SYMBOLS[self.state_name]
       end
       
-      module InstanceMethods
-        
-        def state_sym
-          STATE_SYMBOLS[self.state_name]
-        end
-        
-        def readonly?
-          return (prepublished? or published?)
-        end
-        
-        protected
-        
-        def can_state?(state_name)
-          raise "Not implemented"
-        end
+      def readonly?
+        return (prepublished? or published?)
       end
+      
+      protected
+      
+      def can_state?(state_name)
+        raise "Not implemented"
+      end
+
     end
   end
 end

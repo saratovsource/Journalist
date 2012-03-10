@@ -20,9 +20,6 @@ module Extensions
         end
       end
       
-      module InstanceMethods
-        
-      end
     end
   end
 end

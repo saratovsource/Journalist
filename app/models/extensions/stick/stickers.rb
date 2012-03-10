@@ -11,8 +11,6 @@ module Extensions
       module ClassMethods
       end
 
-      module InstanceMethods
-      end
     end
   end
 end
