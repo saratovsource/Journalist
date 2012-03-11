@@ -21,7 +21,15 @@ module Journalist
       protected
       
       def retrive_links
-        links = LinksBrowser.new(@content)
+        if current_site = @options[:site]
+          retrive_uris.select{|uri|
+            self[@options[:slice_host] ? uri.path : uri.to_s] = current_site.find_object_by_path(uri.path)
+            }
+        end
+      end
+      
+      def retrive_uris
+        LinksBrowser.new(@content).collect{|i| URI(i)}
       end
       
       def slice_host?

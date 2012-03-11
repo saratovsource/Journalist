@@ -49,4 +49,8 @@ class Site
     nil
   end
   
+  def find_object_by_path(path)
+    routers.where(:url => path).map(&:routerable).first
+  end
+  
 end

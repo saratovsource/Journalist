@@ -62,11 +62,23 @@ FactoryGirl.define do
 
   end
   
+  ## Journal Items ##
+  
+  factory :journal_rubric do
+    title 'Test Rubric'
+    slug 'test_rubric'
+    description "this is a test text block with a link to rubric http://example.com/test_rubric is a link of Test Rubric We want to parce this text"
+    site { FactoryGirl.build(:site)}
+    owner { FactoryGirl.build("admin user") }
+  end
+  
+  
   ## Routers and RouteAliases ##
   
   factory :router do
     slug 'route1'
     prefix 'collections'
     site { FactoryGirl.build(:site) }
+    routerable { FactoryGirl.build(:journal_rubric) }
   end
 end

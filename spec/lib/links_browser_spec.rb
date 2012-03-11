@@ -15,11 +15,18 @@ describe "Links retrivers" do
     Journalist link http://localhost:8080/collections/test_collection/my_photo.png is not valid link
 
 EOF
+  @route_link_browser = Journalist::TextUtils::RouteLinksBrowser.new(@text)
   end
   
   it "does retrive links array" do
     links = Journalist::TextUtils::LinksBrowser.new(@text)
     links.should have(2).items
+  end
+  
+  it "Testing Route Blowser" do
+    uris = @route_link_browser.instance_eval{ retrive_uris }
+    uris.should have(2).items
+    uris.each{|uri| uri.should be_an_instance_of URI::HTTP}
   end
   
 end
