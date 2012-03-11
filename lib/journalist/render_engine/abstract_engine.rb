@@ -7,7 +7,7 @@ module Journalist
       include AbstractController::Translation
       include AbstractController::AssetPaths
       
-      self.view_paths = "app/views"
+      self.view_paths = ActionView::PathSet.new([::Journalist::Engine.root.join("app/views"), "app/views"])
       
       OPTIONS = {}
       

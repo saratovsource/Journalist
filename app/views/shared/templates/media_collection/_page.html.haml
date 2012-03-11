@@ -1,0 +1,4 @@
+%p.fotorama
+	- if !(media_files = @element.media_files).empty?
+		- media_files.each do |mf|
+			= mf.render(:block)

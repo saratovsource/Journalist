@@ -34,6 +34,10 @@ module Journalist
       Cell::Base.prepend_view_path("#{config.root}/app/cells")
     end
     
+    initializer "model_render_engine" do |app|
+      require 'journalist/render_engine'
+    end
+    
     if defined?(query::Rails::Engine)
       initializer :after_append_asset_paths,
                   :group => :all,

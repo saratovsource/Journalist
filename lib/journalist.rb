@@ -29,7 +29,6 @@ require 'journalist/acl'
 require 'journalist/text_utils'
 require 'journalist/formatters'
 require 'journalist/render_factory'
-require 'journalist/render_engine'
 
 module Journalist
   
