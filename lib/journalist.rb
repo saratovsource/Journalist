@@ -11,6 +11,7 @@ require 'jquery-rails'
 require 'spine-rails'
 require 'eco'
 require 'execjs'
+require 'tilt'
 
 require 'journalist/core_ext'
 require 'journalist/uniq_generator'
@@ -28,6 +29,7 @@ require 'journalist/acl'
 require 'journalist/text_utils'
 require 'journalist/formatters'
 require 'journalist/render_factory'
+require 'journalist/render_engine'
 
 module Journalist
   

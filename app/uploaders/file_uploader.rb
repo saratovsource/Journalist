@@ -1,7 +1,7 @@
 class FileUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   def store_dir
-    "#{model.parent.prefix}/#{model.parent.slug}"
+    [:prefix, :slug].map{|i| i = model.parent.try(i)}.join('/')# "#{model.parent.prefix}/#{model.parent.slug}"
   end
   
   def filename

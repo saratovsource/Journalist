@@ -5,6 +5,7 @@ module Extensions
       
       included do
         include Extensions::Seo::Metadata
+        include Renderable
         include Mongoid::Taggable
         include Mongoid::MultiParameterAttributes
         

@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   
   s.add_dependency 'haml'
   s.add_dependency 'sass'
+  s.add_dependency 'tilt'
   s.add_dependency 'jquery-rails'
   
   # For SpineJs

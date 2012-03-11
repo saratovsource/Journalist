@@ -35,6 +35,7 @@ PATH
       sass
       spine-rails
       state_machine
+      tilt
 
 GEM
   remote: http://rubygems.org/
