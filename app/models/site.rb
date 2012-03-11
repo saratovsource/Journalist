@@ -14,6 +14,8 @@ class Site
   has_many :journal_rubrics, :validate => false
   has_many :journal_articles, :validate => false
   has_many :routers, :validate => false
+  has_many :abstract_routers, :validate => false
+  has_many :route_aliases, :validate => false
   has_many :media_collections, :validate => false
   has_many :media_files, :validate => false
   
@@ -50,7 +52,12 @@ class Site
   end
   
   def find_object_by_path(path)
-    routers.where(:url => path).map(&:routerable).first
+    case potential_route = abstract_routers.where(:url => path).first
+    when Router
+      potential_route
+    when RouteAlias
+      potential_route.router
+    end.try(:routerable)
   end
   
 end

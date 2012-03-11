@@ -23,7 +23,9 @@ module Journalist
       def retrive_links
         if current_site = @options[:site]
           retrive_uris.select{|uri|
-            self[@options[:slice_host] ? uri.path : uri.to_s] = current_site.find_object_by_path(uri.path)
+            if retrived_object = current_site.find_object_by_path(uri.path)
+              self[@options[:slice_host] ? uri.path : uri.to_s] = retrived_object
+            end
             }
         end
       end
