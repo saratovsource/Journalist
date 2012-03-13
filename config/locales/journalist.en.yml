@@ -1,0 +1,10 @@
+---
+en:
+  journalist:
+    menu:
+      top_menu:
+        journal: "Journal"
+        reportage: "Reportage"
+        facepatrol: "Facepatrol"
+        columns: "Columns"
+        timeline: "Timeline"

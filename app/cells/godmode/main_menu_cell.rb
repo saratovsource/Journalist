@@ -1,4 +1,4 @@
-class Godmode::MainMenuCell < ::Godmode::MenuCell
+class Godmode::MainMenuCell < ::MenuCell
   
   protected
 

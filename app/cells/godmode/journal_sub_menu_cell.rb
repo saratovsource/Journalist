@@ -1,4 +1,4 @@
-class Godmode::JournalSubMenuCell < ::Godmode::MenuCell
+class Godmode::JournalSubMenuCell < ::MenuCell
   
   protected
   

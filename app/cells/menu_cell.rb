@@ -1,4 +1,4 @@
-class Godmode::MenuCell < Cell::Rails
+class MenuCell < Cell::Rails
 
   include ::Rails.application.routes.url_helpers
 
@@ -11,7 +11,7 @@ class Godmode::MenuCell < Cell::Rails
 
   def initialize(*args)
     super
-    @ability = Ability.new(current_account, current_site)
+    @ability = Ability.new(current_account, current_site) if current_account
     self.list = []
   end
 

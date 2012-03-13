@@ -1,6 +1,6 @@
 ---
 en:
-  layouts:
-    journalist:
+  shared:
+    header:
       big_h: "N"
       logo_any: "ahal"

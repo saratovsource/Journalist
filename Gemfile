@@ -12,6 +12,7 @@ group :development do
   gem 'rspec-rails'
   gem 'unicorn'
   gem 'rspec-cells'
+  gem "rails_best_practices"
 end
 
 group :test, :development do

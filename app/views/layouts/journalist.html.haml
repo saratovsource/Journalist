@@ -7,11 +7,19 @@
 		%link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
 		%link{:rel => "stylesheet", :href => ""}
 	%body
+		= yield(:topbanner) if content_for?(:topbanner)
 		%header.cheeky-header{:role => "banner"}
 			.container
-				%hgroup
-					%h1.cheeky-logo.a-right
-						= link_to root_path do
-							%span.big-h= t(".big_h")
-							%span= t(".logo_any")
-		= yield
+				= render :partial => "shared/header"
+				= render :partial => "shared/navigation"# yield(:navigation) if content_for?(:navigation)
+				= render :partial => "shared/user_menu"# yield(:user_menu) if content_for?(:user_menu)
+		%div{:class => @page_class || "default"}
+			.container
+				.row
+					- if content_for?(:sidebar)
+						%article.span20= yield
+						%aside.span4= yield(:sidebar)
+					- else
+						%article.span24= yield
+		= yield(:additional) if content_for?(:additional) # Render Additional Section a-la comments
+		

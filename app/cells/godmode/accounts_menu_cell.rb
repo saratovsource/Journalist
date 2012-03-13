@@ -1,4 +1,4 @@
-class Godmode::AccountsMenuCell < ::Godmode::MenuCell
+class Godmode::AccountsMenuCell < ::MenuCell
   protected
   
   def build_list

@@ -1,0 +1,4 @@
+%nav.cheeky-nav
+	%ul.unstyled.pos-a.pos-bottom.base-menu.dark-links
+		- @list.each_with_index do |item, index|
+			%li= link_to item[:label], item[:url]
