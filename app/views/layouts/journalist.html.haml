@@ -10,7 +10,7 @@
 		= yield(:topbanner) if content_for?(:topbanner)
 		%header.cheeky-header{:role => "banner"}
 			.container
-				= render :partial => "shared/header"
+				= render :partial => "shared/header", :locals => { :additional_class => "a-right" }
 				= render :partial => "shared/navigation"# yield(:navigation) if content_for?(:navigation)
 				= render :partial => "shared/user_menu"# yield(:user_menu) if content_for?(:user_menu)
 		%div{:class => @page_class || "default"}
@@ -22,4 +22,4 @@
 					- else
 						%article.span24= yield
 		= yield(:additional) if content_for?(:additional) # Render Additional Section a-la comments
-		
+		= render :partial => "shared/footer"

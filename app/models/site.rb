@@ -18,6 +18,7 @@ class Site
   has_many :route_aliases, :validate => false
   has_many :media_collections, :validate => false
   has_many :media_files, :validate => false
+  has_many :comments, :validate => false
   
   # -= Validations =-
   validates_presence_of :name

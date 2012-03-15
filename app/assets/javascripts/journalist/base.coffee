@@ -1,11 +1,11 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery-ui
-#= require ./jquery.gritter.min
+#= require ./vendor/jquery.gritter.min
 #= require ./bootstrap/bootstrap
 #= require ./fileupload/loader
-#= require ./jquery.fancybox.pack
-#= require ./jquery.tablesorter.min
+#= require ./vendor/jquery.fancybox.pack
+#= require ./vendor/jquery.tablesorter.min
 #= require_tree ./markitup
 #= require_tree ./godmode
 #= require_self

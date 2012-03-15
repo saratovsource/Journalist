@@ -13,6 +13,9 @@ require 'eco'
 require 'execjs'
 require 'tilt'
 
+require 'omniauth-facebook'
+require 'omniauth-twitter'
+
 require 'journalist/core_ext'
 require 'journalist/uniq_generator'
 require 'journalist/logger'

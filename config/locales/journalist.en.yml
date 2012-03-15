@@ -8,3 +8,9 @@ en:
         facepatrol: "Facepatrol"
         columns: "Columns"
         timeline: "Timeline"
+      auth:
+        sign_in: "Sign in"
+        password_restore: "Resotre password"
+  i_generators:
+    comments:
+      title: "Comment"

@@ -1,0 +1,11 @@
+%footer.cheeky-footer{:role => "contentinfo"}
+	.container
+		%ul.unstyled.clearfix.navigation
+			%li.sitename.active= link_to "Nahalno.ru", root_path
+		.row.copyright
+			.span12
+				%p= t(".copiright").html_safe
+			.span12.a-right
+				%p
+					%small
+						= t(".develop").html_safe

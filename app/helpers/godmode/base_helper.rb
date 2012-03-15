@@ -73,4 +73,8 @@ module Godmode::BaseHelper
   def partners_accounts
     current_site.godmode_accounts.reject{|acc| acc.id == current_account.id}.collect{|acc| [acc.name, acc.id]}
   end
+  
+  def random_scale_image
+    image_tag "journalist/auth/auth#{1.upto(3).sort_by{ rand }.slice(1)}.jpg", :class => "scaleimg"
+  end
 end

@@ -30,6 +30,9 @@ group :test do
   gem 'spork'
   gem 'launchy'
   gem 'mocha'
+  
+  gem 'cucumber-rails'
+  gem 'capybara'
 end
 
 # Declare any dependencies that are still in development here instead of in

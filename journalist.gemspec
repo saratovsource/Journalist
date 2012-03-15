@@ -62,6 +62,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'delayed_job_mongoid'
   s.add_dependency 'rubyzip'
   s.add_dependency "execjs"
+  
+  #auth
+  s.add_dependency "omniauth-facebook"
+  s.add_dependency "omniauth-twitter"
 
   s.add_development_dependency('bson')
   s.add_development_dependency('haml')

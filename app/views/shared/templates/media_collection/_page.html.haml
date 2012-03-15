@@ -1,4 +1,22 @@
-%p.fotorama
-	- if !(media_files = @element.media_files).empty?
-		- media_files.each do |mf|
-			= mf.render(:block)
+%h1
+	= @element.title
+	%small= "#{@element.media_files.count} #{t('.photos')}"
+.postinfo.light-links.pos-r
+	%span.item.date
+		%span.iconweb P
+		= link_to '#' do
+			= content_tag(:time, l(@element.created_at, :format => :short), :datetime => @element.created_at)
+	%span.item.user
+		%span.iconweb U
+		= link_to @element.owner.name, '#', :class => "name"
+	- unless @element.tags_array.empty?
+		%ul.unstyled.breadcrumb.compact.pos-a.pos-right.item.tags
+			%li.iconweb ,
+			- @element.tags_array.each do |tag|
+				%li= link_to tag, '#'
+%figure.pos-r
+	%p.fotorama{data: {nav: "thumbs", margin: 0, width: "100%", fullscreenIcon: "true"}}
+		- if !(media_files = @element.media_files).empty?
+			- media_files.each do |mf|
+				= mf.render(:block)
+%figcaption= @element.description
