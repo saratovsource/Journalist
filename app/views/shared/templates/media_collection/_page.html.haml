@@ -5,7 +5,7 @@
 	%span.item.date
 		%span.iconweb P
 		= link_to '#' do
-			= content_tag(:time, l(@element.created_at, :format => :short), :datetime => @element.created_at)
+			= time_tag(@element.created_at)
 	%span.item.user
 		%span.iconweb U
 		= link_to @element.owner.name, '#', :class => "name"

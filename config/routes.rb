@@ -44,6 +44,14 @@ Rails.application.routes.draw do
   root :to => 'home#index'
   match '/test_search' => 'home#search_path', :as => :test_search
   
+  namespace :journal do
+    resources :journal_rubrics, :as => :rubrics do
+      resources :journal_articles, :as => :articles do
+        resources :comments
+      end
+    end
+  end
+  
   # Any rendering
   match '*path' => 'rendering#show'
 end

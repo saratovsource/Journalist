@@ -28,5 +28,15 @@ describe Comment do
       end
     end
     
+    describe "Render" do
+      it "should have render method" do
+        @first_comment.should respond_to(:render)
+      end
+
+      it "should render test page" do
+        @first_comment.render(:block).should include(@first_comment.owner.name)
+      end
+    end
+    
   end
 end
