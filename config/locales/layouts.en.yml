@@ -8,6 +8,9 @@ en:
       media_collection:
         page:
           photos: "photos"
+      comment:
+        block:
+          divider: " / "
     footer:
       copiright: "&copy; Nahal Media Ltd. 2012 Tel.: 8 (8452) 57-11-48"
       develop: "Created by <a href='http://advamedia.ru'>Advamedia.ru</a></small>"
@@ -21,3 +24,7 @@ en:
       recover: "Password recover"
       info: "To recover your password, enter your email address registered on the site. System will be generated and sent to the temporary password, you can always change the settings in your account."
       submit: "Recover me"
+  rendering:
+    show:
+      comments:
+        header: "Comments"

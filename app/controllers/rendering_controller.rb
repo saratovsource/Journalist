@@ -5,6 +5,7 @@ class RenderingController < ApplicationController
   
   def show
     @page_class = css_class_from(@routerable)
+    @comments = @routerable.comments || []
   end
   
   protected

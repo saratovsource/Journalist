@@ -1,5 +1,6 @@
 class JournalArticle
   include Journalist::Document
+  include Extensions::Content::Cacheble # For caching render elements
   include Extensions::Content::BaseFields
   include Extensions::Content::EditableContent
   include Extensions::Site::IncludedIn
@@ -66,4 +67,5 @@ class JournalArticle
   def set_owned_site
     self.site = self.parent.site if self.parent.present?
   end
+  
 end

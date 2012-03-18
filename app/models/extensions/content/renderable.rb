@@ -15,6 +15,11 @@ module Extensions
         end
       end
       
+      # may be overrideble
+      def alternative_parent
+        nil
+      end
+      
       protected
       
       def render_without_parameters(type)

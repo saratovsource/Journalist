@@ -1,6 +1,7 @@
 class MediaFile
   include Rails.application.routes.url_helpers
   include Journalist::Document
+  include Extensions::Content::Cacheble # For caching render elements
   include Extensions::Content::BaseFields
   include Extensions::Content::Sortable
   include Extensions::Site::IncludedIn

@@ -42,7 +42,11 @@ class Router < AbstractRouter
   end
   
   def rebuild_path
-    tmp_path = [self.parent_url, self.prefix, self.slug, self.postfix].compact.join('/')
+    if routerable.respond_to?(:override_route_path)
+      tmp_path = routerable.send(:override_route_path)
+    else
+      tmp_path = [self.parent_url, self.prefix, self.slug, self.postfix].compact.join('/')
+    end
     if self.parent.nil?
       self.url = ['/', tmp_path].compact.join
     else

@@ -6,7 +6,7 @@ describe Comment do
   end
   
   describe "Comment with child and commentable element" do
-    before(:each) do
+    before do
       @first_comment = FactoryGirl.create("first comment")
     end
     it "should have child comments" do
@@ -15,6 +15,21 @@ describe Comment do
     
     it "should have commentable object" do
       @first_comment.commentable.should_not be_nil
+    end
+    
+    describe "Caching" do
+      it "should have cache_marker field" do
+        @first_comment.should respond_to(:cache_marker)
+      end
+      
+      it "should have cache_marker value for instance" do
+        @first_comment.cache_marker.should_not be_nil
+        lambda { 
+          @first_comment.message = "test"
+          @first_comment.save
+          @first_comment.reload
+           }.should change(@first_comment, :cache_marker)
+      end
     end
     
     describe "Commentable" do
