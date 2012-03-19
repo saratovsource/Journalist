@@ -2,7 +2,6 @@ class Comment
   include Journalist::Document
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
-  include Extensions::Content::Cacheble # For caching render elements
   include Extensions::Content::Renderable
   include Mongoid::Taggable
   include Mongoid::Tree
