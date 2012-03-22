@@ -17,6 +17,8 @@ class MediaCollection
   
   accepts_nested_attributes_for :media_files
   
+  cachable :media_files
+  
   class << self
     # Create new empty rubric
     def create_new(args = {})

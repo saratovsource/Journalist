@@ -10,7 +10,9 @@ module Journalist
       
       self.view_paths = ActionView::PathSet.new([::Journalist::Engine.root.join("app/views"), "app/views"])
       
-      OPTIONS = {}
+      OPTIONS = {
+        :cache => true
+      }
       
       attr_accessor :element, :options
       
@@ -21,10 +23,20 @@ module Journalist
       
       # Enter point of rendering ))))
       def process
-        render partial: template_path, :locals => { element: @element } if @element
+        if @options[:cache]
+          Rails.cache.fetch(@element.cache_marker) do
+            render_template_from_path
+          end
+        else
+          render_template_from_path
+        end
       end
       
       protected
+      
+      def render_template_from_path
+        render partial: template_path, :locals => { element: @element } if @element
+      end
       
       def template_path
         File.join('shared', 'templates', @element.class.name.underscore)
