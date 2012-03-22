@@ -1,0 +1,36 @@
+.page.postinfo.pos-r
+  %ul.unstyled.breadcrumb.compact.no-margin.dark-links
+    %li
+      -# TODO: Add real link!
+      %a{href: '#'}><
+        %i.icon-time.icon-white>
+        %time.pos-r{:datetime => element.created_at}= l(element.created_at, :format => :short)
+      &nbsp;
+    %li
+      -# TODO: Add real link!
+      %a{href: '#'}><
+        %i.icon-user.icon-white>
+        = element.owner.name
+      &nbsp;
+    %li
+      %a{href: '#comments'}><
+        %i.icon-comment.icon-white>
+        = element.comments.count
+      &nbsp;
+    %li
+      -# TODO: Add likes
+      %a{href: '#'}><
+        %i.icon-heart.icon-white>
+        ?
+      &nbsp;
+  %ul.unstyled.breadcrumb.compact.no-margin.pos-a.tags.light-links
+    - if element.parent && element.parent.respond_to?(:title)
+      %li= link_to element.parent.title, '#', :class => "rubric dark-link"
+      %li.divider= "/"
+    %li.dropdown{:data => {:dropdown => "dropdown"}}
+      = link_to t(".show_tags"), '#', :class => "dropdown-toggle"
+      - unless @element.tags_array.empty?
+        %ul.dropdown-menu
+          - @element.tags_array.each do |tag|
+            %li= link_to tag, '#'
+  = link_to t(".see_later"), '#', :class => "btn large span4 pos-a readlater a-center"

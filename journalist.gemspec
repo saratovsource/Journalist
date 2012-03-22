@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cells'
   s.add_dependency 'sanitize'
   s.add_dependency 'russian', '~> 0.6.0'
+  s.add_dependency 'RedCloth'
   
   #s.add_dependency 'json_pure'
   

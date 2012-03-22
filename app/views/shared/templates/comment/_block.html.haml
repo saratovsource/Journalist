@@ -1,8 +1,11 @@
 %article{:class => "post indent-#{@element.depth}", :id => @element.slug}
-	.comment= @element.message.html_safe
-	.postinfo
-		= t(".owner")
-		%span.user= @element.owner.name
-		= t(".divider")
-		%span= time_tag(@element.created_at)
-		= t(".divider")
+  .comment
+    = @element.message.to_textile.html_safe
+  .postinfo
+    %a{:href => '#'}><
+      %i.icon-user>
+      = @element.owner.name
+    = " / "
+    %span
+      %time.pos-r{:datetime => @element.created_at}= l(@element.created_at, :format => :long)
+    = " / "

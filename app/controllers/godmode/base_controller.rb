@@ -15,7 +15,7 @@ module Godmode
     helper_method :sections, :current_site_url, :site_url, :page_url, :current_ability
         
     # https://rails.lighthouseapp.com/projects/8994/tickets/1905-apphelpers-within-plugin-not-being-mixed-in
-    Dir[File.dirname(__FILE__) + "/../../helpers/**/*_helper.rb"].each do |file|
+    Dir[File.dirname(__FILE__) + "/../../helpers/godmode/*_helper.rb"].each do |file|
       helper "godmode/#{File.basename(file, '.rb').gsub(/_helper$/, '')}"
     end
     

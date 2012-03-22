@@ -1,3 +1,4 @@
+require 'redcloth'
 ## String
 class String
   
@@ -11,6 +12,10 @@ class String
 
   def permalink!
     replace(self.permalink)
+  end
+  
+  def to_textile
+    RedCloth.new(self).to_html
   end
 
   alias :parameterize! :permalink!

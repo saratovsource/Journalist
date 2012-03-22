@@ -123,11 +123,11 @@ a.pseudo, .pseudo-links a{
   border-bottom:1px dotted; }
   a.pseudo:hover { border:none; }
 
-a.dark-link, .dark-links a { color:inherit; }
-a.dark-link:hover, .dark-links a:hover { color:#cc0033;}
+  a.dark-link, .dark-links a { color:#111; }
+  a.dark-link:hover, .dark-links a:hover { color:#cc0033;}
 
-a.light-link, .light-links a { color:gray; }
-a.light-link:hover, .light-links a:hover { color:#cc0033; }
+  a.light-link, .light-links a { color:#a1a1a1; }
+  a.light-link:hover, .light-links a:hover { color:#cc0033; }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: Georgia,"Bitstream Charter","Century Schoolbook L","Liberation Serif", "Times New Roman",serif; }
@@ -566,7 +566,7 @@ textarea {
 	-o-box-shadow: inset 0 .0625em .125em rgba(0, 0, 0, 0.025);
   box-shadow: inset 0 .0625em .125em rgba(0, 0, 0, 0.025);
 	width:auto;
-	color:gray;
+	color:#a1a1a1;
 	cursor: not-allowed; }
 
 :-moz-placeholder {
@@ -839,7 +839,7 @@ textarea[readonly] {
   max-width: 37.5em; }
 
 .inline-inputs {
-  color: gray; }
+  color: #a1a1a1; }
   .inline-inputs span {
     padding: 0 .125em 0 .0625em; }
 
@@ -912,7 +912,7 @@ textarea[readonly] {
 	font-size:1em;
 	color: inherit; }
     .inputs-list label strong {
-      color: gray; }
+      color: #a1a1a1; }
     .inputs-list label small {
       font-size: .6875em;
       font-weight: normal; }
@@ -1156,7 +1156,7 @@ a.menu:after,
   clear: both;
   font-weight: normal;
   line-height: 1.125em;;
-  color: gray;
+  color: #a1a1a1;
   text-shadow: 0 .0625em 0 white; }
   .dropdown-menu a:hover,
   .dropdown-menu a.hover {
@@ -1241,7 +1241,7 @@ a.menu:after,
         border-color: #eee #eee #ddd; }
   .tabs .active > a,
   .tabs .active > a:hover {
-    color: gray;
+    color: #a1a1a1;
     background-color: white;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
@@ -1984,18 +1984,24 @@ li.rubric, .rubric { text-transform:uppercase; font:bold .875em/1 'PT Sans', san
 .join, .join:hover { color:#02B100; }
 .remove, .remove:hover { color:#E70000; }
 
-.postinfo { font:.8125em/1 sans-serif; color:#a1a1a1; margin-bottom:1.538em; border-bottom:1px solid #eee; }
-.postinfo .item { top:1px; background:#fff; padding-right:5px; }
-.postinfo .tags { padding-right:0; padding-left:5px; top:2px; }
-
+/* postinfo */
+.postinfo { font:.8125em/1 sans-serif; color:#a1a1a1; margin-bottom:1.538em;  }
+.page.postinfo { background: #f5f5f5; width: 100%; padding: 11px 150px 11px 10px; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; -o-border-radius:2px; -ms-border-radius:2px; }
+.page.postinfo .tags { top:10px; right:160px; }
+.page.postinfo .readlater { right:2px; top: 2px; }
+.page.postinfo .open .dropdown-toggle { background: none; color: inherit; }
+.page.postinfo .dropdown-menu { right:0; top:25px; }
+.mediapage .page.postinfo { background: none; width: auto; padding-left: 0; }
+.mediapage .page.postinfo .readlater { border-color:#000; color: #333; right:0; }
+.mediapage .page.postinfo .dropdown-menu a { color: #333; }
 
 /* MEDIAPAGE */
 .mediapage { background: #030303; color: #eee; padding-top:2.5em; margin-top:-2.5em; }
 .mediapage h1 { position:relative; padding-right:2.75em; }
-.mediapage h1 small { color:#FFDC00; width:4.075em; position:absolute; right:0; top:.2962em; text-align:right; }
+.mediapage h1 small { color:#FFDC00; width:4.444em; position:absolute; right:0; top:.2962em; text-align:right; }
 .mediapage .postinfo { border-bottom: 1px solid #000; box-shadow: 0 1px #090909; }
-.mediapage .postinfo .item { background:#030303; color:#eee; text-shadow:none; }
 .mediapage .postinfo a { text-shadow:none; color:#eee; }
+.mediapage .postinfo a:hover { color:#84C2FC; }
 .mediapage figcaption { font:1.25em/1 serif; margin:2em 0 1em; padding:0; border:none; color:#eee; }
 .mediapage .story { background:#fff; color:#111; padding-top:2.5em; }
 
@@ -2036,9 +2042,16 @@ li.rubric, .rubric { text-transform:uppercase; font:bold .875em/1 'PT Sans', san
 .section-body { padding:20px 20px 0; }
 .auth .form-stacked { padding-left:0; }
 .auth .form-stacked fieldset { padding:0; }
-.auth .divider { background: image_url("journalist/or.png") 50% no-repeat; min-height:112px; }
+.auth .divider { background: image-url("journalist/or.png") 50% no-repeat; min-height:112px; }
 .auth .iconweb { color:#BFBFBF; }
 .auth .help-block { color:#666; }
+
+/* Profile */
+.realname { }
+.whereami { color:#a1a1a1; font-family:sans-serif; margin-top:-15px; }
+.aboutme { position:relative; font-size: 1.25em; line-height: 1.35em; margin-bottom: 1.25em; padding: 0 30px; }
+.aboutme:before { position:absolute; left:0; top:0; display:block; content:'вАЬ'; font:48px/1 serif; color: #FFDF00; }
+
 
 /* OTHER */
 .b-shadow { box-shadow:1px 1px 2px #ccc; background:#F9F9F9; }
@@ -2061,6 +2074,4 @@ box-shadow: 0 0.1875em 0.4375em rgba(0, 0, 0, 0.3);
 overflow: hidden;
 width: 17.5em;
 padding:0.875em; 	
-	} 
-
-
+	}
