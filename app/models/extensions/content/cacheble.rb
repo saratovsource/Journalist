@@ -7,7 +7,6 @@ module Extensions
         field :cache_marker, type: String, default: -> { changed_cache_marker}
         
         before_update :expire_cache
-        after_update :clean_relation_cache
       end
       
       def cache_traverse(visitor)
