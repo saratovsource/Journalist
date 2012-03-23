@@ -1,13 +1,13 @@
 .box
-	%ul.tabs
-		%li{:class => "list_item #{'active' if params[:state].blank?}"}
-			= link_to godmode_journal_articles_url do
-				= t(:all_items)
-				%span.label= current_account.journal_articles.count
-		- (resource_class.state_machines[:state].states.keys - [:rewrited]).each do |state|
-			%li{:class => "list_item #{' active' if box_active_state?(state.to_s, params[:state])}"}
-				= link_to godmode_journal_articles_url(:state => state) do
-					= t("states.#{state.to_s}")
-					- states = [state]
-					- states<< :rewrited if state == :drafted
-					%span.label= current_account.journal_articles.with_states(states).count
+  %ul.tabs
+    %li{:class => "list_item #{'active' if params[:state].blank?}"}
+      = link_to godmode_journal_articles_url do
+        = t(:all_items)
+        %span.label= current_account.journal_articles.count
+    - (resource_class.state_machines[:state].states.keys - [:rewrited]).each do |state|
+      %li{:class => "list_item #{' active' if box_active_state?(state.to_s, params[:state])}"}
+        = link_to godmode_journal_articles_url(:state => state) do
+          = t("states.#{state.to_s}")
+          - states = [state]
+          - states<< :rewrited if state == :drafted
+          %span.label= current_account.journal_articles.with_states(states).count

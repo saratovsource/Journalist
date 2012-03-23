@@ -1,26 +1,26 @@
 .clearfix
-	= f.label :seo_title, t(".seo_title")
-	.input.span18
-		= f.text_field :seo_title, :class => "xxlarge", :autocomplete => "off"
-		%span.help-block= t(".help.seo_title")
-		
+  = f.label :seo_title, t(".seo_title")
+  .input.span18
+    = f.text_field :seo_title, :class => "xxlarge", :autocomplete => "off"
+    %span.help-block= t(".help.seo_title")
+    
 .clearfix
-	= f.label :meta_keywords, t(".meta_keywords")
-	.input.span18
-		= f.text_field :meta_keywords, :class => "xxlarge", :autocomplete => "off"
-		%span.help-block= t(".help.meta_keywords")
-		
+  = f.label :meta_keywords, t(".meta_keywords")
+  .input.span18
+    = f.text_field :meta_keywords, :class => "xxlarge", :autocomplete => "off"
+    %span.help-block= t(".help.meta_keywords")
+    
 .clearfix
-	= f.label :meta_description, t(".meta_description")
-	.input.span18
-		= f.text_area :meta_description, :rows => 3, :class => "xxlarge", :autocomplete => "off"
-		%span.help-block= t(".help.meta_description")
-		
+  = f.label :meta_description, t(".meta_description")
+  .input.span18
+    = f.text_area :meta_description, :rows => 3, :class => "xxlarge", :autocomplete => "off"
+    %span.help-block= t(".help.meta_description")
+    
 .clearfix
-	= f.label :in_robots, t(".in_robots")
-	.input.span18
-		%ul.inputs-list
-			%li
-				= f.label :in_robots do
-					= f.check_box :in_robots
-					%span= t(".help.in_robots")
+  = f.label :in_robots, t(".in_robots")
+  .input.span18
+    %ul.inputs-list
+      %li
+        = f.label :in_robots do
+          = f.check_box :in_robots
+          %span= t(".help.in_robots")

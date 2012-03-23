@@ -1,17 +1,17 @@
 %header.action-bar.pos-r
-	.box
-		%h2
-			= t(".#{edit_type}")
-			%small
-				&rarr;
-				%span.iconweb
-					= resource.try(:state_sym)
-				= t("states.#{resource.state}")
-			%span.pull-right
-				%span.iconweb
-					N
-				?
-			%span.pull-right
-				%span.iconweb
-					c
-				?
+  .box
+    %h2
+      = t(".#{edit_type}")
+      %small
+        &rarr;
+        %span.iconweb
+          = resource.try(:state_sym)
+        = t("states.#{resource.state}")
+      %span.pull-right
+        %span.iconweb
+          N
+        ?
+      %span.pull-right
+        %span.iconweb
+          c
+        ?

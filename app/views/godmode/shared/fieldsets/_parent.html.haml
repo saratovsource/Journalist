@@ -1,4 +1,4 @@
 .clearfix
-	= f.label :parent_id
-	.input
-		= f.select :parent_id, @parent_class.all.collect{|pc| [pc.title, pc.id]}, :include_blank => t(".empty", :name => @parent_class.model_name.human)
+  = f.label :parent_id
+  .input
+    = f.select :parent_id, @parent_class.all.collect{|pc| [pc.title, pc.id]}, :include_blank => t(".empty", :name => @parent_class.model_name.human)

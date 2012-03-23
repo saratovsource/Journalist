@@ -1,15 +1,15 @@
 %fieldset.no-margin.no-padding
-	.clearfix.title
-		= f.label :name
-		.input.span18= f.text_field :name, :required => true
-		
-	.clearfix
-		= f.label :email
-		.input.span18= f.text_field :email, :required => true
-		
-	.clearfix
-		= f.label :avatar
-		.input.span18
-			= image_tag @account.avatar.url
-			%br
-			= f.file_field :avatar
+  .clearfix.title
+    = f.label :name
+    .input.span18= f.text_field :name, :required => true
+    
+  .clearfix
+    = f.label :email
+    .input.span18= f.text_field :email, :required => true
+    
+  .clearfix
+    = f.label :avatar
+    .input.span18
+      = image_tag @account.avatar.url
+      %br
+      = f.file_field :avatar

@@ -1,25 +1,25 @@
 !!! 5
 %html
-	%head
-		%title= t(".title", :name => current_site.name)
-		= stylesheet_link_tag    "journalist/base"
-		= javascript_include_tag "journalist/base"
-		= csrf_meta_tags
-	%body#godmode
-		#header.topbar{:data => {:dropdown => "dropdown"}}
-			.topbar-inner.clearfix.row
-				.span6.a-center= current_site.name
-				= render_cell 'godmode/main_menu', :show
-				
-				%ul.nav.secondary-nav.unstyled
-					= render :partial => 'godmode/shared/create_item'
-					= render :partial => 'godmode/shared/user_menu'
-		.container-fluid
-			%aside.sidebar.a-right.span6
-				%header.page-header.pos-r
-					.box
-						%h2= t("godmode.sidebar.headers.#{self.sections.blank? ? 'empty' : self.sections}")
-				= render_editor_selector
-				%nav= render_sidebar_menu #yield :sidebar_navigation
-			
-			.content= yield
+  %head
+    %title= t(".title", :name => current_site.name)
+    = stylesheet_link_tag    "journalist/base"
+    = javascript_include_tag "journalist/base"
+    = csrf_meta_tags
+  %body#godmode
+    #header.topbar{:data => {:dropdown => "dropdown"}}
+      .topbar-inner.clearfix.row
+        .span6.a-center= current_site.name
+        = render_cell 'godmode/main_menu', :show
+        
+        %ul.nav.secondary-nav.unstyled
+          = render :partial => 'godmode/shared/create_item'
+          = render :partial => 'godmode/shared/user_menu'
+    .container-fluid
+      %aside.sidebar.a-right.span6
+        %header.page-header.pos-r
+          .box
+            %h2= t("godmode.sidebar.headers.#{self.sections.blank? ? 'empty' : self.sections}")
+        = render_editor_selector
+        %nav= render_sidebar_menu #yield :sidebar_navigation
+      
+      .content= yield

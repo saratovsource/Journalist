@@ -1,5 +1,5 @@
 = render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => JournalArticle.model_name.parameterize}
 
 %table.listingtable.zebra-striped.t-sort
-	= render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(title icons rubric author updated_at), :rejected => "rubric"}
-	= render :partial => "godmode/shared/collections/sorted_articles", :locals => {:local_collection => @collection, :reject => "journal_rubric"}
+  = render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(title icons rubric author updated_at), :rejected => "rubric"}
+  = render :partial => "godmode/shared/collections/sorted_articles", :locals => {:local_collection => @collection, :reject => "journal_rubric"}

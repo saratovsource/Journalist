@@ -1,10 +1,10 @@
 %thead
-	%tr
-		- unless rejected == "check_all"
-			%th.check= check_box_tag :check_all, nil, nil, :data =>{ :"action-select" => true }
-		- columns.reject{|rf| rf == rejected}.each do |field|
-			- if field == "icons"
-				- %w(c N).each do |sym|
-					%th.header= content_tag(:span, sym, :class => "iconweb")
-			- else
-				%th.header= t("godmode.headers.#{field}")
+  %tr
+    - unless rejected == "check_all"
+      %th.check= check_box_tag :check_all, nil, nil, :data =>{ :"action-select" => true }
+    - columns.reject{|rf| rf == rejected}.each do |field|
+      - if field == "icons"
+        - %w(c N).each do |sym|
+          %th.header= content_tag(:span, sym, :class => "iconweb")
+      - else
+        %th.header= t("godmode.headers.#{field}")

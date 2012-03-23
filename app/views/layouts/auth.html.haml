@@ -1,17 +1,17 @@
 !!! 5
 %html
-	%head
-		= stylesheet_link_tag    "journalist/application"
-		= javascript_include_tag "journalist/application"
-		= csrf_meta_tags
-		%link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
-		%link{:rel => "stylesheet", :href => ""}
-	%body
-		.scale-wrapper
-			%header.cheeky-header{:role => "banner"}
-				.container
-					= render :partial => "shared/header", :locals => {:additional_class => "a-center"}
-			= random_scale_image
-			.auth.span14
-				= render_cell 'auth/auth_menu', :show
-				= yield
+  %head
+    = stylesheet_link_tag    "journalist/application"
+    = javascript_include_tag "journalist/application"
+    = csrf_meta_tags
+    %link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
+    %link{:rel => "stylesheet", :href => ""}
+  %body
+    .scale-wrapper
+      %header.cheeky-header{:role => "banner"}
+        .container
+          = render :partial => "shared/header", :locals => {:additional_class => "a-center"}
+      = random_scale_image
+      .auth.span14
+        = render_cell 'auth/auth_menu', :show
+        = yield

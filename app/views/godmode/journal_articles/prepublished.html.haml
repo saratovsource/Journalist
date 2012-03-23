@@ -1,28 +1,27 @@
 = render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => JournalArticle.model_name.parameterize}
 
-
 %table.listingtable.zebra-striped.t-sort
-	%thead
-		%tr
-			%th.check= check_box_tag :check_all, nil, nil, :data =>{ :"action-select" => true }
-			%th.header= t(".title")
-			%th.header= t(".rubric")
-			- %w(c N).each do |sym|
-				%th.header= content_tag(:span, sym, :class => "iconweb")
-			%th.header= t(".author")
-			%th.header= t(".updated_at")
-	%tbody
-		- collection.each do |article|
-			%tr
-				%td.check= check_box_tag :selected_articles, nil, nil
-				%td
-					= link_to can?(:edit, article) ? edit_resource_url(article) : resource_url(article), :title => article.fullpath do
-						- if article.trashed?
-							= content_tag(:del, article.title)
-						- else
-							= article.title
-				%td= link_to article.parent.title, articles_godmode_account_path(article.parent) if article.parent
-				- %w(comments likes).each do |field|
-					%td.a-center= content_tag(:small, 0, :class => field)
-				%td= link_to article.owner.name, articles_godmode_account_path(article.owner), :class => "light-link"
-				%td= content_tag(:small, l(article.updated_at, :format => :short), :class => "updated_at", :title => t(".updated_at_title", :time => l(article.updated_at, :format => :long)))
+  %thead
+    %tr
+      %th.check= check_box_tag :check_all, nil, nil, :data =>{ :"action-select" => true }
+      %th.header= t(".title")
+      %th.header= t(".rubric")
+      - %w(c N).each do |sym|
+        %th.header= content_tag(:span, sym, :class => "iconweb")
+      %th.header= t(".author")
+      %th.header= t(".updated_at")
+  %tbody
+    - collection.each do |article|
+      %tr
+        %td.check= check_box_tag :selected_articles, nil, nil
+        %td
+          = link_to can?(:edit, article) ? edit_resource_url(article) : resource_url(article), :title => article.fullpath do
+            - if article.trashed?
+              = content_tag(:del, article.title)
+            - else
+              = article.title
+        %td= link_to article.parent.title, articles_godmode_account_path(article.parent) if article.parent
+        - %w(comments likes).each do |field|
+          %td.a-center= content_tag(:small, 0, :class => field)
+        %td= link_to article.owner.name, articles_godmode_account_path(article.owner), :class => "light-link"
+        %td= content_tag(:small, l(article.updated_at, :format => :short), :class => "updated_at", :title => t(".updated_at_title", :time => l(article.updated_at, :format => :long)))

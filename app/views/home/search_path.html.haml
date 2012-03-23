@@ -1,18 +1,18 @@
 = form_tag do
-	= text_field_tag :q
+  = text_field_tag :q
 
 .result
-	%h1 Route Result
-	
-	- if @result
-		.result
-			%ul
-				%li
-					%span Path:
-					%span= @result.url
-				%li
-					%span Type:
-					%span= @result.class.name
-				%li
-					%span Object
-					%span= @result.
+  %h1 Route Result
+  
+  - if @result
+    .result
+      %ul
+        %li
+          %span Path:
+          %span= @result.url
+        %li
+          %span Type:
+          %span= @result.class.name
+        %li
+          %span Object
+          %span= @result.

@@ -1,5 +1,5 @@
 %ul.unstyled.compact
-	- @list.each_with_index do |item, index|
-		%li{:class => "#{'active' if item[:expanded]}"}
-			= link_to item[:url] do
-				= item[:label]
+  - @list.each_with_index do |item, index|
+    %li{:class => "#{'active' if item[:expanded]}"}
+      = link_to item[:url] do
+        = item[:label]

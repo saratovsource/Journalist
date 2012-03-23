@@ -1,13 +1,13 @@
 %section.recover
-	.section-title
-		%h3= t(".recover")
-	.section-body
-		%p
-			%span.help-block= t(".info")
-		
-		= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "row form-stacked" }) do |f|
-			%fieldset.span14
-				.clearfix
-					.input
-						= f.email_field :email, :required => true, :class => "span9"
-						%button.btn.secondary{:type => "submit"}= t(".submit")
+  .section-title
+    %h3= t(".recover")
+  .section-body
+    %p
+      %span.help-block= t(".info")
+    
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "row form-stacked" }) do |f|
+      %fieldset.span14
+        .clearfix
+          .input
+            = f.email_field :email, :required => true, :class => "span9"
+            %button.btn.secondary{:type => "submit"}= t(".submit")

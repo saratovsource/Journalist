@@ -1,18 +1,18 @@
 .mediamanager.container
-	%ul.unstyled.medialist
-		- current_media_user.media_collections.each do |media_collection|
-			%li.sort-item.row
-				
-				.span6
-					= link_to image_tag(media_collection.poster_url), resource_url(media_collection), :class => "thumbnail"
-				
-				.info.span10
-					%small.label.count= t("mediabank.media_collections.files_count", :count => media_collection.media_files.count)
-					%small.update= l(media_collection.updated_at, :format => :long)
-					%span.name
-						= link_to media_collection.title, resource_url(media_collection)
-						= content_tag(:span, "x", :class => "iconweb") if media_collection.acl_protected?
-					%span.url-snippet= ["..", media_collection.slug].join("/")
-					%span.description= media_collection.description
-				
-				= render :partial => "godmode/mediabank/shared/collection_controls", :locals => {:collection => media_collection} unless read_only?
+  %ul.unstyled.medialist
+    - current_media_user.media_collections.each do |media_collection|
+      %li.sort-item.row
+        
+        .span6
+          = link_to image_tag(media_collection.poster_url), resource_url(media_collection), :class => "thumbnail"
+        
+        .info.span10
+          %small.label.count= t("mediabank.media_collections.files_count", :count => media_collection.media_files.count)
+          %small.update= l(media_collection.updated_at, :format => :long)
+          %span.name
+            = link_to media_collection.title, resource_url(media_collection)
+            = content_tag(:span, "x", :class => "iconweb") if media_collection.acl_protected?
+          %span.url-snippet= ["..", media_collection.slug].join("/")
+          %span.description= media_collection.description
+        
+        = render :partial => "godmode/mediabank/shared/collection_controls", :locals => {:collection => media_collection} unless read_only?

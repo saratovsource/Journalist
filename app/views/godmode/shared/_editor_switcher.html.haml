@@ -1,4 +1,4 @@
 %ul.pills
-	- %w(editor author).each do |acc_type|
-		%li{:class => "acctype#{' active' if account_type == acc_type}"}
-			= link_to t("godmode.#{acc_type}"), godmode_role_switch_path(acc_type)
+  - %w(editor author).each do |acc_type|
+    %li{:class => "acctype#{' active' if account_type == acc_type}"}
+      = link_to t("godmode.#{acc_type}"), godmode_role_switch_path(acc_type)

@@ -1,10 +1,10 @@
 .clearfix
-	= f.label :partners
-	.input
-		= f.select :partners, partners_accounts, {:include_blank => false}, {:multiple => true, :size => 5}
-		%span.help-block= t(".help.#{:partners}")
+  = f.label :partners
+  .input
+    = f.select :partners, partners_accounts, {:include_blank => false}, {:multiple => true, :size => 5}
+    %span.help-block= t(".help.#{:partners}")
 .clearfix
-	= f.label :partner
-	.input
-		= f.text_field :partner, :class => "span8"
-		%span.help-block= t(".help.#{:partner}")
+  = f.label :partner
+  .input
+    = f.text_field :partner, :class => "span8"
+    %span.help-block= t(".help.#{:partner}")
