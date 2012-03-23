@@ -19,7 +19,6 @@ class JournalRubric
   has_many :journal_articles, :class_name => "JournalArticle", :foreign_key => "parent_id"
   
   # -= Medthos =-
-  cachable :journal_articles, :comments
   
   class << self
     # Create new empty rubric

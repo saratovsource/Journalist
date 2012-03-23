@@ -10,29 +10,25 @@ module Journalist
       
       self.view_paths = ActionView::PathSet.new([::Journalist::Engine.root.join("app/views"), "app/views"])
       
-      OPTIONS = {
-        :cache => true
-      }
-      
       attr_accessor :element, :options
+      
+      cache_method :process
       
       def initialize(element, options = {})
         @element = element
-        @options = OPTIONS.merge(options)
+        @options = options
       end
       
       # Enter point of rendering ))))
       def process
-        if @options[:cache]
-          Rails.cache.fetch(@element.cache_marker) do
-            render_template_from_path
-          end
-        else
-          render_template_from_path
-        end
+        render_template_from_path
       end
       
       protected
+      
+      def as_cache_key
+        {:name => @element.class.name, :id => @element.id, :updated_at => @element.updated_at}
+      end
       
       def render_template_from_path
         render partial: template_path, :locals => { element: @element } if @element

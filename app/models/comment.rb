@@ -13,8 +13,6 @@ class Comment
   
   before_validation :autogenerate_title
   
-  cachable :commentable
-  
   ## Fix for validation chain ##
   include Extensions::Site::Routerable
   

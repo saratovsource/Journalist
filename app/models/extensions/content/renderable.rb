@@ -2,7 +2,6 @@ module Extensions
   module Content
     module Renderable
       extend ActiveSupport::Concern
-      include Extensions::Content::Cacheble
       
       # Render method
       # Example AnyObject.render :page => options_hash

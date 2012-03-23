@@ -10,7 +10,7 @@ module Extensions
         include Mongoid::MultiParameterAttributes
         include Extensions::Site::Routerable
         include Commentable
-        include Cacheble
+        #include Cacheble
         
         tags_separator ', '
         

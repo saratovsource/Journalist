@@ -18,23 +18,6 @@ describe Comment do
     end
     
     describe "Caching" do
-      it "should have not nil cache_marker field" do
-        @first_comment.should respond_to(:cache_marker)
-        @first_comment.should_not be_nil
-      end
-      
-      it "should cache_marker kind_of Time" do
-        @first_comment.cache_marker.should be_kind_of(String)
-      end
-      
-      it "class should have relation_methods method" do
-        @first_comment.class.should respond_to(:relation_methods)
-      end
-      
-      it "should marks as rerender \"parent\" method" do
-        @first_comment.class.relation_methods.should have(1).items
-      end
-      
     end
     
     describe "Commentable" do
