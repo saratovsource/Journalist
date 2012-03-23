@@ -18,7 +18,6 @@ describe Comment do
     end
     
     describe "Caching" do
-      
     end
     
     describe "Commentable" do

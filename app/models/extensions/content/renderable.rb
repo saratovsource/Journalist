@@ -3,7 +3,6 @@ module Extensions
     module Renderable
       extend ActiveSupport::Concern
       
-      
       # Render method
       # Example AnyObject.render :page => options_hash
       def render(args)

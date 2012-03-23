@@ -11,7 +11,7 @@ module Extensions
         # -= Callbacks =-
         before_validation   :normalize_slug
         after_create        :register_router
-        after_save          :update_route
+        after_update        :update_route
         
         validates_presence_of   :slug
         validates_exclusion_of  :slug, :in => Journalist.config.reserved_slugs#, :if => Proc.new { |p| p.depth == 0 }

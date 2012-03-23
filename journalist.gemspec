@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.require_path = 'lib'
 
-  s.add_dependency 'rails'
+  s.add_dependency 'rails', '= 3.2.2'
   s.add_dependency 'mongo'
   s.add_dependency 'bson'
   s.add_dependency 'bson_ext'
@@ -67,6 +67,8 @@ Gem::Specification.new do |s|
   #auth
   s.add_dependency "omniauth-facebook"
   s.add_dependency "omniauth-twitter"
+  
+  s.add_dependency "cache_method"
 
   s.add_development_dependency('bson')
   s.add_development_dependency('haml')
