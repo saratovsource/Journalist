@@ -12,6 +12,7 @@
         = render :partial => "shared/header", :locals => { :additional_class => "a-right" }
         = render :partial => "shared/navigation"# yield(:navigation) if content_for?(:navigation)
         = render :partial => "shared/user_menu"# yield(:user_menu) if content_for?(:user_menu)
+    = yield(:page_description) if content_for?(:page_description)
     %div{:class => @page_class || "default"}
       .container
         .row

@@ -1,6 +1,10 @@
 module Journal
-  class JournalRubricsController < InheritedResources::Base
-    #include Journalist::ProductionResource
+  class JournalRubricsController < ::BaseController
+    include Journalist::ProductionResource
+
+    def index
+      @journal_rubrics = current_site.journal_rubrics
+    end
 
   end
 end

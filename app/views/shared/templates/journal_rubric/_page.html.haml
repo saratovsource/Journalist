@@ -1,2 +1,3 @@
-%h1= element.title
-= link_to element.router.fullpath, '#'
+.span18
+  - element.journal_articles.published.each do |ja|
+    = ja.render(:block)

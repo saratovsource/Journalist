@@ -6,11 +6,11 @@ module Extensions
       # Render method
       # Example AnyObject.render :page => options_hash
       def render(*args)
-        case args
+        case args.first
         when Symbol
-          render_without_parameters(args)
+          render_without_parameters(args.first)
         when Hash
-          render_with_parameters(args)
+          render_with_parameters(args.first)
         end
       end
 
@@ -39,10 +39,12 @@ module Extensions
       end
 
       def render_page
+        p "Render page"
         Journalist::RenderEngine::Page.new(self).process
       end
 
       def render_block
+        p "Render block"
         Journalist::RenderEngine::Block.new(self).process
       end
 
