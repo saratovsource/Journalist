@@ -5,7 +5,6 @@
     = javascript_include_tag "journalist/application"
     = csrf_meta_tags
     %link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
-    %link{:rel => "stylesheet", :href => ""}
   %body
     = yield(:topbanner) if content_for?(:topbanner)
     %header.cheeky-header{:role => "banner"}

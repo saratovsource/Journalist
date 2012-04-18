@@ -24,35 +24,35 @@ Gem::Specification.new do |s|
   s.add_dependency 'mongoid'
   s.add_dependency 'mongoid-tree'
   s.add_dependency 'mongoid_taggable'
-  
+
   s.add_dependency 'devise'
-  
+
   s.add_dependency 'haml'
   s.add_dependency 'sass'
   s.add_dependency 'tilt'
   s.add_dependency 'jquery-rails'
-  
+
   # For SpineJs
   s.add_dependency 'eco'
   s.add_dependency 'spine-rails'
   #------------
-  
+
   s.add_dependency 'formtastic'
   s.add_dependency 'inherited_resources'
   s.add_dependency 'cells'
   s.add_dependency 'sanitize'
   s.add_dependency 'russian', '~> 0.6.0'
   s.add_dependency 'RedCloth'
-  
+
   #s.add_dependency 'json_pure'
-  
+
   s.add_dependency 'rmagick'
   s.add_dependency 'mini_magick'
   s.add_dependency 'carrierwave'
   s.add_dependency 'dragonfly'
   s.add_dependency 'rack-cache'
   s.add_dependency 'state_machine'
-  
+
   s.add_dependency 'cancan'
   s.add_dependency 'fog'
   s.add_dependency 'mimetype-fu'
@@ -62,12 +62,13 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave-mongoid'
   s.add_dependency 'delayed_job_mongoid'
   s.add_dependency 'rubyzip'
-  s.add_dependency "execjs"
-  
+  #s.add_dependency "execjs"
+  s.add_dependency 'therubyracer'
+
   #auth
   s.add_dependency "omniauth-facebook"
   s.add_dependency "omniauth-twitter"
-  
+
   s.add_dependency "cache_method"
 
   s.add_development_dependency('bson')
