@@ -2,12 +2,15 @@ module Godmode
   class BaseController < InheritedResources::Base
     include Journalist::Routing::SiteDispatcher
     include Journalist::Routing::BaseController
+
+    before_filter :validate_site_membership
+    before_filter :require_admin
+    before_filter :set_sidebar_menu
+
     load_and_authorize_resource
 
     layout "godmode"
 
-    before_filter :require_admin
-    before_filter :set_sidebar_menu
     helper_method :sections, :current_site_url, :site_url, :page_url, :current_ability
 
     # https://rails.lighthouseapp.com/projects/8994/tickets/1905-apphelpers-within-plugin-not-being-mixed-in

@@ -1,3 +1,4 @@
 .span18
   - element.journal_articles.published.each do |ja|
     = ja.render(:block)
+  .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}

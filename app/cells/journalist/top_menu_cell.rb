@@ -1,9 +1,10 @@
 module Journalist
   class TopMenuCell < ::MenuCell
+
     protected
 
     def build_list
-      add :journal, :url => journal_root_path
+      add :journal, :url => journal_root_path, :active => sections.include?(:journal)
       add :reportage, :url => '#'
       add :facepatrol, :url => '#'
       add :columns, :url => '#'

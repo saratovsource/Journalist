@@ -1,7 +1,4 @@
-= content_for :page_description do
-  .container.block
-    %header.pos-r
-      %h1
-        = t '.journal'
-        %small= t '.description'
-    = render_cell 'journalist/rubric_navigation', :show
+.span18
+  - @articles.each do |item|
+    = item.render(:block)
+  .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}

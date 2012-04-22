@@ -6,7 +6,7 @@ module Journalist
       included do
         if self.respond_to?(:before_filter)
           before_filter :fetch_site
-          before_filter :require_site
+          #before_filter :require_site
           helper_method :current_site
         end
       end
@@ -17,6 +17,10 @@ module Journalist
 
       module InstanceMethods
         protected
+
+        def create_guest_account_if_needed
+          current_account ||= Account.new
+        end
 
         def fetch_site
           Journalist.log "[fetch site] host = #{request.host} / #{request.env['HTTP_HOST']}"
@@ -45,11 +49,13 @@ module Journalist
         end
 
         def validate_site_membership
+          p "VALIDATING!!!!!!!!!!!!!!!!!!!1"
           return true if current_site.present? && current_site.accounts.include?(current_account)
 
           sign_out(current_account)
           flash[:alert] = I18n.t(:no_membership, :scope => [:devise, :failure, :user])
-          redirect_to new_session_url and return false
+          redirect_to new_account_session_url and return false
+          #redirect_to new_session_url and return false
         end
 
       end

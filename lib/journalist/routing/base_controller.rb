@@ -5,8 +5,6 @@ module Journalist
 
       included do
         before_filter :require_site
-        before_filter :validate_site_membership
-        before_filter :delete_id_for_spine, :only =>[:new, :create]
         before_filter :set_locale
         before_filter :set_current_thread_variables
 

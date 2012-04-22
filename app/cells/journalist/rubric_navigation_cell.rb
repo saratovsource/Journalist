@@ -4,9 +4,9 @@ module Journalist
     protected
 
     def build_list
-      add :all, :url => '#'
-      current_site.journal_rubrics.each do |rubric|
-        add rubric.title, :url => rubric.router.fullpath
+      add :all, :url => journal_root_path, :active => !options[:section].present?
+      current_site.journal_rubrics.select{|i| i.journal_articles.published.count > 0}.each do |rubric|
+        add rubric.title, :url => rubric.router.fullpath, :active => options[:section] == rubric.id
       end
     end
 

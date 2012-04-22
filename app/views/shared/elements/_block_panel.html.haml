@@ -1,0 +1,33 @@
+%ul.unstyled.breadcrumb.compact.no-margin.dark-links
+  %li
+    %a{:href => "#"}>
+      %i.icon-time>
+      %time.pos-r{:datetime => l(element.publish_at, :format => :long)}><
+        = l(element.publish_at, :format => :short)
+    \ 
+  %li
+    %a{:href => "#"}><
+      %i.icon-user>
+      = element.owner.name
+    \ 
+  %li
+    %a{:href => "#comments"}><
+      %i.icon-comment>  
+      ??
+    \ 
+  %li
+    %a{:href => "#"}><
+      %i.icon-heart>  
+      ??
+    \ 
+%ul.unstyled.breadcrumb.compact.no-margin.pos-a.tags.light-links
+  - if element.parent.present?
+    %li
+      = link_to element.parent.title, element.parent.fullpath, :class => "rubric dark-link"
+  - if element.tags_array.any?
+    %li.divider /
+    %li.dropdown{"data-dropdown" => "dropdown"}
+      %a.dropdown-toggle{:href => "#"} Показать теги
+      %ul.dropdown-menu
+        - element.tags_array.each do |tag|
+          %li= link_to tag, '#'

@@ -1,7 +1,14 @@
 ---
 en:
+  journal:
+    journal_rubrics:
+      index:
+        journal: "Journal"
+        description: "- a tape of all publications * Username *"
   journalist:
     menu:
+      rubric_navigation:
+        all: "Show All"
       top_menu:
         journal: "Journal"
         reportage: "Reportage"

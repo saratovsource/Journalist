@@ -46,11 +46,6 @@ Rails.application.routes.draw do
 
   namespace :journal do
     root :to => "journal_rubrics#index"
-    resources :journal_rubrics, :as => :rubrics do
-      resources :journal_articles, :as => :articles do
-        resources :comments
-      end
-    end
   end
 
   # Any rendering

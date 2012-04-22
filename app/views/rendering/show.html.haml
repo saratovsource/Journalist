@@ -1,12 +1,5 @@
 - if @routerable
   = @routerable.render(:page).html_safe
-  - content_for :additional do
-    %section#comments.container
-      %header.page-header.pos-r
-        %h2
-          = t(".comments.header")
-          = content_tag(:small, @comments.count) if @comments.any?
-      .row
-        .span18
-          - @comments.each do |comment|
-            = comment.render(:block)
+- if @layout_sections[:sidebar].present?
+  - content_for :sidebar do
+    = render_section(:sidebar)

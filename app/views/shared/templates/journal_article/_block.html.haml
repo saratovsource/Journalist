@@ -1,4 +1,4 @@
-%article{:class => "widget-entry sticky clearfix"}
+%article{:class => "widget-entry clearfix", :data => {:preview => ""}}
   %h2= link_to @element.title, @element.router.fullpath
   %p.post-description.clearfix= @element.meta_description
-
+  .page.postinfo.pos-r= render :partial => "shared/elements/block_panel", :locals => {:element => @element}
