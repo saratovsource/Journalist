@@ -33,7 +33,7 @@ def Journalist.configure_for_test(force = false)
       load 'site.rb'
 
       FactoryGirl.factories.clear
-      load File.join(Rails.root, 'spec', 'factories.rb')
+      #load File.join(Rails.root, 'spec', 'factories', '*_factory.rb')
     end
   end
 end
