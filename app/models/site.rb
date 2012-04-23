@@ -19,6 +19,8 @@ class Site
   has_many :media_collections, :validate => false
   has_many :media_files, :validate => false
   has_many :comments, :validate => false
+  has_many :column_articles, :validate => false
+  has_many :columns, :validate => false
 
   # -= Validations =-
   validates_presence_of :name

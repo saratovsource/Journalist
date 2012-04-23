@@ -47,11 +47,11 @@ class Ability
       site == @site
     end
 
-    can :manage, [JournalArticle] do |article|
+    can :manage, [JournalArticle, ColumnArticle] do |article|
       article.site == @site and article.owner_id == @account.id
     end
 
-    cannot [:edit, :update, :destroy], [JournalArticle] do |stated|
+    cannot [:edit, :update, :destroy], [JournalArticle, ColumnArticle] do |stated|
       stated.prepublished? or stated.published?
     end
 
@@ -63,7 +63,7 @@ class Ability
     setup_author_permissions!
 
     #Editable contents
-    can :manage, [JournalRubric, JournalArticle, Account] do |sitable|
+    can :manage, [JournalRubric, JournalArticle, ColumnArticle, Account] do |sitable|
       sitable.site == @site
     end
 

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       get :articles,      :on => :member
       post :change_user, :on => :member
     end
+    resources :columns
+    resources :column_articles
 
     # publications section
     resources :journal_rubrics do
