@@ -3,6 +3,9 @@
 
 require 'rubygems'
 require 'spork'
+require 'simplecov'
+
+SimpleCov.start 'rails'
 
 # figure out where we are being loaded from
 if $LOADED_FEATURES.grep(/spec\/spec_helper\.rb/).any?
@@ -57,7 +60,7 @@ Spork.prefork do
 
 
     config.mock_with :mocha
-    
+
     Journalist.configure_for_test
 
     config.before(:each) do
