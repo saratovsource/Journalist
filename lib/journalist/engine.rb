@@ -22,22 +22,22 @@ $:.unshift File.dirname(__FILE__)
 module Journalist
   class Engine < Rails::Engine
     config.autoload_once_paths += %W( #{config.root}/app/controllers #{config.root}/app/models #{config.root}/app/helpers #{config.root}/app/uploaders)
-    
+
     # Enabling assets precompiling under rails 3.1
     if Rails.version >= '3.1'
       initializer :assets do |config|
-        Rails.application.config.assets.precompile += %w( journalist/base.js journalist/base.css )
+        Rails.application.config.assets.precompile += %w( journalist/base.js journalist/base.css journalist/thumb_empty.png )
       end
     end
-    
+
     initializer "journalist.cells" do |app|
       Cell::Base.prepend_view_path("#{config.root}/app/cells")
     end
-    
+
     initializer "model_render_engine" do |app|
       require 'journalist/render_engine'
     end
-    
+
     if defined?(query::Rails::Engine)
       initializer :after_append_asset_paths,
                   :group => :all,
@@ -45,7 +45,7 @@ module Journalist
          config.paths.add File.join(::Jquery::Rails::Engine.root.to_s, "vendor", "assets", "javascripts").to_s, :glob => "*"
       end
     end
-    
+
     rake_tasks do
     end
   end
