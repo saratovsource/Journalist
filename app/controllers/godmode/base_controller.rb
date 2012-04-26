@@ -1,5 +1,5 @@
 module Godmode
-  class BaseController < InheritedResources::Base
+  class BaseController < ::InheritedResources::Base
     include Journalist::Routing::SiteDispatcher
     include Journalist::Routing::BaseController
 

@@ -1,4 +1,5 @@
 require 'mimetype_fu'
+require 'inherited_resources'
 require 'devise'
 require 'rack/cache'
 require 'dragonfly'
