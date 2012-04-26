@@ -13,6 +13,10 @@ en:
       journal_article: "Journal Article"
       journal_rubric: "Journal Rubric"
   godmode:
+    column_articles:
+      empty:
+        title: "You have never written an article in the column. Do you really want to do it?"
+        start: "Yes! I want to start writing!"
     author: "Author"
     header_fields: &article_headers
       title: "Title"

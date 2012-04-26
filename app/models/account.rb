@@ -18,6 +18,7 @@ class Account
   has_many :journal_articles,   :class_name => "JournalArticle",  :foreign_key => "owner_id", :order => "updated_at DESC"
   has_many :media_collections,  :class_name => "MediaCollection", :foreign_key => "owner_id"
   has_many :comments,           :class_name => "Comment",         :foreign_key => "owner_id"
+  has_one  :column,             :class_name => "Column",          :foreign_key => "owner_id"
 
   # -= Validations =-
   validates_presence_of :name
