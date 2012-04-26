@@ -26,7 +26,7 @@ module Journalist
     # Enabling assets precompiling under rails 3.1
     if Rails.version >= '3.1'
       initializer :assets do |config|
-        Rails.application.config.assets.precompile += %w( journalist/base.js journalist/base.css journalist/thumb_empty.png )
+        Rails.application.config.assets.precompile += %w( journalist/base.js journalist/base.css j ournalist/thumb_empty.png ournalist/empty.png )
       end
     end
 
