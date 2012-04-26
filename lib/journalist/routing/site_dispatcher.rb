@@ -49,7 +49,6 @@ module Journalist
         end
 
         def validate_site_membership
-          p "VALIDATING!!!!!!!!!!!!!!!!!!!1"
           return true if current_site.present? && current_site.accounts.include?(current_account)
 
           sign_out(current_account)

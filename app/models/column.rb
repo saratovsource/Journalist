@@ -1,5 +1,9 @@
 class Column
   include Journalist::Document
+
+  # -= Callbacks =-
+  before_validation :set_title_and_slug
+
   include Extensions::Content::BaseFields
   include Extensions::Content::Sortable
   include Extensions::Site::IncludedIn
@@ -18,5 +22,11 @@ class Column
 
   def parent
     self.site
+  end
+
+  protected
+
+  def set_title_and_slug
+    self.title = self.owner.name
   end
 end
