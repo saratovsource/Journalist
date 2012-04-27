@@ -24,9 +24,11 @@ class Ability
 
         setup_editor_permissions! if @membership.editor?
       end
+      any_columns_presissions!
     else
       setup_default_permissions!
     end
+
   end
 
   def setup_default_permissions!
@@ -94,5 +96,10 @@ class Ability
     #cannot [:update, :destroy], Membership do |membership|
     #  @membership.account_id == membership.account_id # can not edit myself
     #end
+  end
+
+  protected
+
+  def any_columns_presissions!
   end
 end

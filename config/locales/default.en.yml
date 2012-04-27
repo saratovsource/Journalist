@@ -77,6 +77,7 @@ en:
         title: "New %{create_type}"
       headers:
         index_header:
+          columnarticle: "Column Articles"
           journalarticle: "Journal Articles"
           journalrubric: "Journal Rubrics"
           account: "Accounts"
@@ -156,3 +157,5 @@ en:
   are_you_shure: "Are you shure?"
   journal_article:
     default_title: "New Article"
+  column_article:
+    default_title: "New Column Post"

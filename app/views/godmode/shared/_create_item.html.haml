@@ -1,6 +1,8 @@
 %li.dropdown
-  = link_to '#', :class=> "creat dropdown-toggle" do
+  = link_to '#', :class=> "creat dropdown-toggle", :data=>{:toggle => "dropdown", :target => "#"} do
     = content_tag(:strong, t(:create), :class => "icon new")
   %ul.dropdown-menu
     = drop_down_menu_item JournalRubric.model_name.human, "journal_rubric", empty_godmode_journal_rubrics_url if can? :create, JournalRubric
     = drop_down_menu_item JournalArticle.model_name.human, "journal_article", empty_godmode_journal_articles_url if can? :create, JournalArticle
+    %li.divider
+    = drop_down_menu_item ColumnArticle.model_name.human, "column_article",  empty_godmode_column_articles_url if current_account.column.present?

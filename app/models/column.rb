@@ -16,6 +16,9 @@ class Column
   # -= Associations =-
   has_many :column_articles, :class_name => "ColumnArticle", :foreign_key => "parent_id"
 
+  # -= Validations =-
+  validates :slug, :uniqueness => [:site, :owner]
+
   def prefix
     "columns"
   end

@@ -21,4 +21,22 @@ class ColumnArticle
   # -= Callbacks =-
   before_validation :set_owned_site
 
+  # -= Methods =-
+  class << self
+    # Create new empty article
+    def create_new(args = {})
+      args = {
+        :title => I18n.t('column_article.default_title'),
+        :slug => Journalist::UniqGenerator.generate(:prefix => "post")
+        }.merge(args)
+
+      create(args)
+    end
+  end
+
+  protected
+
+  def set_owned_site
+    self.site = self.parent.site if self.parent.present?
+  end
 end

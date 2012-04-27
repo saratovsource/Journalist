@@ -12,7 +12,9 @@ Rails.application.routes.draw do
       post :change_user, :on => :member
     end
     resources :columns
-    resources :column_articles
+    resources :column_articles do
+      get :empty,         :on => :collection
+    end
 
     # publications section
     resources :journal_rubrics do

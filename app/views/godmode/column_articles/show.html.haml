@@ -1,0 +1,3 @@
+= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => ColumnArticle.model_name.parameterize}
+.container
+  .row= @column_article.render(:page)
