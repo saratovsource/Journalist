@@ -1,9 +1,9 @@
 = render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => ColumnArticle.model_name.parameterize}
-= render :partial => "box"
 
 - unless has_column?
   = render :partial => "empty"
 - else
+  = render :partial => "box"
   %table.listingtable.zebra-striped.t-sort
     = render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(title icons updated_at), :rejected => ""}
     %tbody
