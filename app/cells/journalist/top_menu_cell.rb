@@ -7,7 +7,7 @@ module Journalist
       add :journal, :url => journal_root_path, :active => sections.include?(:journal)
       add :reportage, :url => '#'
       add :facepatrol, :url => '#'
-      add :columns, :url => '#'
+      add :columns, :url => columns_root_path, :active => sections.include?(:columns)
       add :timeline, :url => '#'
     end
 

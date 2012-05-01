@@ -55,6 +55,9 @@ Rails.application.routes.draw do
   namespace :journal do
     root :to => "journal_rubrics#index"
   end
+  namespace :columns do
+    root :to => "columns#index"
+  end
 
   # Any rendering
   match '*path' => 'rendering#show'

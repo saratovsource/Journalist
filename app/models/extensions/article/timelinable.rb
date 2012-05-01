@@ -13,11 +13,15 @@ module Extensions
       protected
 
       def create_timeline
-        create_time_line()
+        create_time_line(:published_at => self.publish_at)
       end
 
       def update_timeline
-        self.time_line.save
+        if self.time_line.present?
+          self.time_line.update_attributes(:published_at => self.publish_at)
+        else
+          create_timeline
+        end
       end
     end
   end
