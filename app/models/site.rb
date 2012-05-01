@@ -21,6 +21,8 @@ class Site
   has_many :comments, :validate => false
   has_many :column_articles, :validate => false
   has_many :columns, :validate => false
+  has_many :faces, :validate => false
+  has_many :time_lines, :validate => false
 
   # -= Validations =-
   validates_presence_of :name

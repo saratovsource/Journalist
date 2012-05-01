@@ -8,6 +8,7 @@ class ColumnArticle
   include Extensions::Article::Stated
   include Extensions::Article::Publish
   include Extensions::Stick::Stickers
+  include Extensions::Article::Timelinable
 
   # -= Associations =-
   belongs_to :parent, :class_name => "Column"

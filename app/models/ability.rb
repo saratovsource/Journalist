@@ -49,11 +49,11 @@ class Ability
       site == @site
     end
 
-    can :manage, [JournalArticle, ColumnArticle] do |article|
+    can :manage, [JournalArticle, ColumnArticle, Face] do |article|
       article.site == @site and article.owner_id == @account.id
     end
 
-    cannot [:edit, :update, :destroy], [JournalArticle] do |stated|
+    cannot [:edit, :update, :destroy], [JournalArticle, Face] do |stated|
       stated.prepublished? or stated.published?
     end
 
@@ -69,7 +69,7 @@ class Ability
     setup_author_permissions!
 
     #Editable contents
-    can :manage, [JournalRubric, JournalArticle, ColumnArticle, Account, ColumnArticle] do |sitable|
+    can :manage, [JournalRubric, JournalArticle, ColumnArticle, Account, ColumnArticle, Face] do |sitable|
       sitable.site == @site
     end
 
@@ -82,11 +82,11 @@ class Ability
       membership.admin? # can not modify an administrator
     end
 
-    cannot [:edit, :destroy], [JournalArticle] do |stated|
+    cannot [:edit, :destroy], [JournalArticle, ColumnArticle, Face] do |stated|
       stated.prepublished? or stated.published?
     end
 
-    can [:show, :read], [JournalArticle, ColumnArticle] do |stated|
+    can [:show, :read], [JournalArticle, ColumnArticle, Face] do |stated|
       stated.prepublished? or stated.published?
     end
 

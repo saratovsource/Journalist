@@ -19,6 +19,7 @@ class Account
   has_many :media_collections,  :class_name => "MediaCollection", :foreign_key => "owner_id"
   has_many :comments,           :class_name => "Comment",         :foreign_key => "owner_id"
   has_one  :column,             :class_name => "Column",          :foreign_key => "owner_id"
+  has_many :faces,   :class_name => "Face",  :foreign_key => "owner_id", :order => "updated_at DESC"
 
   # -= Validations =-
   validates_presence_of :name

@@ -24,5 +24,5 @@
           - journal_articles_count = account_type == "editor" ? rubric.journal_articles.count : rubric.journal_articles.owned(current_account).count
           = link_to journal_articles_count, godmode_journal_rubric_path(rubric)
         %td
-          - last_article = rubric.journal_articles.must_publish.last
+          - last_article = rubric.journal_articles.with_state(:published).last
           = link_to last_article.title, last_article.fullpath, :class => "publication" if last_article

@@ -5,10 +5,10 @@ class Face
   include Extensions::Auth::HasOwner
   include Extensions::Article::Stated
   include Extensions::Article::Publish
+  include Extensions::Article::Timelinable
 
   # -= Fields =-
-  field :name
-  field :sex, type: Boolean, default: false
+  field :sex, default: "m"
 
   # -= Associations =-
   belongs_to :parent, :class_name => "Column"
@@ -17,7 +17,7 @@ class Face
   index :parent_id
 
   # -= Validations =-
-  validates_presence_of     :site, :name
+  validates_presence_of     :site
 
   # -= Callbacks =-
   before_validation :set_owned_site

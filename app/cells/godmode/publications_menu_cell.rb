@@ -4,7 +4,7 @@ class Godmode::PublicationsMenuCell < ::MenuCell
   def build_list
     add :journal, :url => godmode_journal_articles_path, :controllers => [Godmode::JournalRubricsController, Godmode::JournalArticlesController]
     add :photo, :url => '#', :controllers => []
-    add :face_patrol, :url => '#', :controllers => []
+    add :face_patrol, :url => godmode_faces_path, :controllers => [Godmode::FacesController]
     add :columns, :url => godmode_column_articles_path, :controllers => [Godmode::ColumnArticlesController]
   end
 

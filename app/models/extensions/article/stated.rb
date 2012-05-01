@@ -16,8 +16,7 @@ module Extensions
 
         state_machine :initial => :drafted do
 
-
-          if MODERATED_MODELS.include?(self.class.name)
+          if MODERATED_MODELS.include?(self.owner_class.name)
 
             event :prepublish do
               transition [:drafted, :rewrited] => :prepublished, :if => lambda {|stated| stated.can_state?(:prepublish)}
