@@ -1,6 +1,6 @@
-= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => ColumnArticle.model_name.parameterize}
+= render :partial => "/godmode/shared/headers/stated_edit_header", :locals => {:edit_type => ColumnArticle.model_name.parameterize, :item => @column_article}
 .container
   .row
     = form_for [:godmode, @column_article] do |f|
-      = render :partial => "form", :locals => { :f => f }
-      .float-actions= render :partial => "/godmode/shared/actions/save", :locals => {:f => f}
+      = render :partial => "#{@column_article.readonly? ? 'preview' : 'form'}", :locals => { :f => f }
+      .float-actions= render :partial => "/godmode/shared/actions/stated_actions", :locals => {:f => f}

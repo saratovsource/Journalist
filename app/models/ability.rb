@@ -53,8 +53,12 @@ class Ability
       article.site == @site and article.owner_id == @account.id
     end
 
-    cannot [:edit, :update, :destroy], [JournalArticle, ColumnArticle] do |stated|
+    cannot [:edit, :update, :destroy], [JournalArticle] do |stated|
       stated.prepublished? or stated.published?
+    end
+
+    cannot [:edit, :update, :destroy], [ColumnArticle] do |stated|
+      stated.published?
     end
 
     cannot :manage, JournalRubric
@@ -65,7 +69,7 @@ class Ability
     setup_author_permissions!
 
     #Editable contents
-    can :manage, [JournalRubric, JournalArticle, ColumnArticle, Account] do |sitable|
+    can :manage, [JournalRubric, JournalArticle, ColumnArticle, Account, ColumnArticle] do |sitable|
       sitable.site == @site
     end
 
@@ -82,7 +86,7 @@ class Ability
       stated.prepublished? or stated.published?
     end
 
-    can [:show, :read], [JournalArticle] do |stated|
+    can [:show, :read], [JournalArticle, ColumnArticle] do |stated|
       stated.prepublished? or stated.published?
     end
 

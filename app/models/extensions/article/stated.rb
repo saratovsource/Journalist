@@ -4,6 +4,7 @@ module Extensions
       extend ActiveSupport::Concern
 
       included do
+        MODERATED_MODELS = %w(JournalArticle)
 
         STATE_SYMBOLS = {
           :drafted => 'a',
@@ -15,16 +16,31 @@ module Extensions
 
         state_machine :initial => :drafted do
 
-          event :prepublish do
-            transition [:drafted, :rewrited] => :prepublished, :if => lambda {|stated| stated.can_state?(:prepublish)}
-          end
 
-          event :publish do
-            transition [:prepublished] => :published, :if => lambda {|stated| stated.can_state?(:publish)}
-          end
+          if MODERATED_MODELS.include?(self.class.name)
 
-          event :rewrite do
-            transition [:prepublished, :published] => :rewrited
+            event :prepublish do
+              transition [:drafted, :rewrited] => :prepublished, :if => lambda {|stated| stated.can_state?(:prepublish)}
+            end
+
+            event :publish do
+              transition [:prepublished] => :published, :if => lambda {|stated| stated.can_state?(:publish)}
+            end
+
+            event :rewrite do
+              transition [:prepublished, :published] => :rewrited
+            end
+
+          else
+
+            event :publish do
+              transition [:drafted, :rewrited] => :published, :if => lambda {|stated| stated.can_state?(:publish)}
+            end
+
+            event :rewrite do
+              transition [:published] => :rewrited
+            end
+
           end
 
           event :trash do
@@ -37,7 +53,7 @@ module Extensions
         end
 
         # -=Scopes=-
-        scope :must_publish, with_states([:prepublished, :published])
+        scope :must_publish, with_states([:prepublished, :published]) if MODERATED_MODELS.include?(self.class.name)
         scope :published, with_states([:published])
 
       end
@@ -47,7 +63,11 @@ module Extensions
       end
 
       def readonly?
-        return (prepublished? or published?)
+        if MODERATED_MODELS.include?(self.class.name)
+          return (prepublished? or published?)
+        else
+          published?
+        end
       end
 
       protected

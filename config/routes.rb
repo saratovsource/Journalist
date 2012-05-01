@@ -28,6 +28,8 @@ Rails.application.routes.draw do
       get :tags,          :on => :collection
     end
 
+    resources :faces
+
     namespace :mediabank do
       root :to => 'media_collections#index'
       resources :media_collections do

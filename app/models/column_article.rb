@@ -21,6 +21,17 @@ class ColumnArticle
   # -= Callbacks =-
   before_validation :set_owned_site
 
+  #-= States =-
+  state_machine do
+
+    state all - [:drafted, :trashed] do
+      validates_presence_of     :parent
+      validates_uniqueness_of   :slug, :scope => [:site_id, :parent_id]
+      validates_presence_of :content
+    end
+
+  end
+
   # -= Methods =-
   class << self
     # Create new empty article
@@ -31,6 +42,17 @@ class ColumnArticle
         }.merge(args)
 
       create(args)
+    end
+  end
+
+  def can_state?(state_name)
+    case state_name
+    when :prepublish
+      self.parent.present?
+    when :publish
+      self.content.present? and self.parent.present?
+    else
+      true
     end
   end
 

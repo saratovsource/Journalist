@@ -1,0 +1,3 @@
+.actions.clearfix
+  = hidden_field_tag :after_action, ""
+  = link_to_destroy resource_url if can?(:destroy, resource)
