@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :account, :class_name => 'Account', :controllers => { :sessions => 'sessions', :passwords => 'passwords'}
+  devise_for :account, :class_name => 'Account', :controllers => { :sessions => 'sessions', :passwords => 'passwords', :registrations => 'registrations'}
 
   namespace :godmode do
     root :to => 'dashboard#index'
