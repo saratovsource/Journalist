@@ -1,0 +1,5 @@
+- column = @options[:model]
+%section.block{:style => "padding-top:40px;"}
+  %ul.unstyled.row
+    %li.span4.columnist= column.render(:block)
+    %li.span4.columnist= link_to t('.all'), columns_root_path, :class => "dark-link"

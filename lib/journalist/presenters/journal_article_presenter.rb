@@ -2,6 +2,10 @@ module Journalist
   module Presenters
     class JournalArticlePresenter < Presenter
 
+      def sections
+        [:journal]
+      end
+
       protected
 
       def build_cells

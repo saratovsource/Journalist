@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   end
   namespace :columns do
     root :to => "columns#index"
+    #match ':id' => "columns#show"
   end
 
   # Any rendering

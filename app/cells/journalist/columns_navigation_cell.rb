@@ -6,6 +6,16 @@ module Journalist
       render
     end
 
+    def show_me(args = {})
+      self.options = args
+      render
+    end
+
+    def description_me(args = {})
+      self.options = args
+      render
+    end
+
     protected
 
     def build_list

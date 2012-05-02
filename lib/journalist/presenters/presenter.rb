@@ -20,6 +20,11 @@ module Journalist
         model.try(:render, args)
       end
 
+      # Override in any presenter
+      def sections
+        []
+      end
+
       def self.build(*args)
         instance = args.first
         presenter_class = retrive_presenter_class(instance)

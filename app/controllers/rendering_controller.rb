@@ -7,6 +7,10 @@ class RenderingController < ::BaseController#ApplicationController
     @comments = @routerable.comments || []
   end
 
+  def sections
+    @presenter.sections || []
+  end
+
   protected
 
   def retrive_route_object

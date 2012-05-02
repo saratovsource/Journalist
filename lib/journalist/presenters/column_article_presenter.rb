@@ -2,6 +2,10 @@ module Journalist
   module Presenters
     class ColumnArticlePresenter < Presenter
 
+      def sections
+        [:columns]
+      end
+
       protected
 
       def build_cells
