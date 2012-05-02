@@ -5,10 +5,17 @@ en:
       info: "To recover your password, enter your email address registered on the site. System will be generated and sent to the temporary password, you can always change the settings in your account."
       recover: "Password recover"
       submit: "Recover me"
+      email: "email"
+      password: "password"
   registrations:
     new:
       desctiption: "To register for the site correctly fill in all fields. If you have accounts on social networking sites - go to the login page and select podhodyashy, in this case, the profile on Nahal.ru will be bound. By registering with the site you automatically agree with rules of the site"
       title: "Sign Up"
+      email: "email"
+      password: "password"
+      password_confirmation: "password confirmation"
+      submit: "Create account"
+      name: "username"
   rendering:
     show:
       comments:

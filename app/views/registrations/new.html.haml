@@ -9,3 +9,13 @@
         .clearfix
           .input
             = f.email_field :email, :class => "span7"
+            %span.help-inline= t('.email')
+        .clearfix
+          .input
+            = f.password_field :password, :class => "span7"
+            %span.help-inline= t('.password')
+        -#.clearfix
+          .input
+            = f.text_field :name, :class => "span7"
+            %span.help-inline= t('.name')
+        = f.submit t('.submit'), :class => "btn primary"
