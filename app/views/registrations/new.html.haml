@@ -1,0 +1,11 @@
+%section.sign-in
+  .section-title
+    %h3= t '.title'
+  .section-body
+    %p
+      %span.help-block= t '.desctiption', :url => '#'
+    = form_for(resource, :url => registration_path(resource_name), :html => {:class => "row form-stacked"}) do |f|
+      %fieldset.span14
+        .clearfix
+          .input
+            = f.email_field :email, :class => "span7"

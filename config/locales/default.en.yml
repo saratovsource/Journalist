@@ -1,161 +1,232 @@
 ---
 en:
   acl:
-    password: "Password invalid!"
     acl_time_range: "Time now not in range of access time"
-  states:
-    drafted: "Drafted"
-    prepublished: "Prepublished"
-    published: "Published"
-    trashed: "Trashed"
-  mongoid:
-    models:
-      journal_article: "Journal Article"
-      journal_rubric: "Journal Rubric"
+    password: "Password invalid!"
+  all_items: All
+  are_you_shure: "Are you shure?"
+  column_article:
+    default_title: "New Column Post"
+  create: Create
+  description: Description
+  descriptions: Descriptions
+  destroy: Destroy
+  edit: Edit
+  errors:
+    messages:
+      needs_admin_account: "One admin account is required at least"
+  generate: Generate
   godmode:
+    accounts:
+      articles:
+        author: Author
+        email: Email
+        last_item: "Last Item"
+        last_sign_in_at: "Last sign in at"
+        name: Name
+        role: "User role"
+        rubric: "Journal Rubric"
+        title: Title
+        updated_at: "Updated At"
+        updated_at_title: "Updated at %{time}"
+        weight: Weight
+    author: Author
     column_articles:
       empty:
-        title: "You have never written an article in the column. Do you really want to do it?"
         start: "Yes! I want to start writing!"
-    author: "Author"
-    header_fields: &article_headers
-      title: "Title"
-      rubric: "Journal Rubric"
-      author: "Author"
-      updated_at: "Updated At"
-      updated_at_title: "Updated at %{time}"
-      name: "Name"
-      email: "Email"
-      role: "User role"
-      last_sign_in_at: "Last sign in at"
-      weight: "Weight"
-      last_item: "Last Item"
-    editor: "Editor"
+        title: "You have never written an article in the column. Do you really want to do it?"
+    editor: Editor
     events:
-      trash: "Trash"
       prepublish: "Send to Editor"
-      publish: "Publish"
+      publish: Publish
       rewrite: "Send to rewtite"
+      trash: Trash
     fieldsets:
       content: "Content data:"
-      settings: "Settings:"
       seo: "Seo settings:"
+      settings: "Settings:"
+    header_fields:
+      author: Author
+      email: Email
+      last_item: "Last Item"
+      last_sign_in_at: "Last sign in at"
+      name: Name
+      role: "User role"
+      rubric: "Journal Rubric"
+      title: Title
+      updated_at: "Updated At"
+      updated_at_title: "Updated at %{time}"
+      weight: Weight
+    headers:
+      author: Author
+      email: Email
+      last_item: "Last Item"
+      last_sign_in_at: "Last sign in at"
+      name: Name
+      role: "User role"
+      rubric: "Journal Rubric"
+      title: Title
+      updated_at: "Updated At"
+      updated_at_title: "Updated at %{time}"
+      weight: Weight
+    journal_articles:
+      index:
+        author: Author
+        email: Email
+        last_item: "Last Item"
+        last_sign_in_at: "Last sign in at"
+        name: Name
+        role: "User role"
+        rubric: "Journal Rubric"
+        title: Title
+        updated_at: "Updated At"
+        updated_at_title: "Updated at %{time}"
+        weight: Weight
+      prepublished:
+        author: Author
+        email: Email
+        last_item: "Last Item"
+        last_sign_in_at: "Last sign in at"
+        name: Name
+        role: "User role"
+        rubric: "Journal Rubric"
+        title: Title
+        updated_at: "Updated At"
+        updated_at_title: "Updated at %{time}"
+        weight: Weight
+    journal_rubrics:
+      articles:
+        author: Author
+        email: Email
+        last_item: "Last Item"
+        last_sign_in_at: "Last sign in at"
+        name: Name
+        role: "User role"
+        rubric: "Journal Rubric"
+        title: Title
+        updated_at: "Updated At"
+        updated_at_title: "Updated at %{time}"
+        weight: Weight
+      index:
+        author: Author
+        email: Email
+        last_item: "Last Item"
+        last_publication: "Last Publication"
+        last_sign_in_at: "Last sign in at"
+        name: Name
+        role: "User role"
+        rubric: "Journal Rubric"
+        slug: Slug
+        title: Title
+        updated_at: "Updated At"
+        updated_at_title: "Updated at %{time}"
+        weight: Weight
     shared:
       acls:
         password:
-          acl_password: "Password"
+          acl_password: Password
           help:
             acl_password: "Type password for access"
         time:
-          time_range: "Time range"
           help:
             time_range: "In this range it will be accessible"
+          time_range: "Time range"
       actions:
         stated_actions:
           save: "Save draft"
       collections:
         sorted_articles:
-          <<: *article_headers
-      menu:
-        publications: "Publications"
-        mediabank: "Mediabank"
-        comments: "Comments"
-        feedback: "Feedback"
-        journal: "Journal"
-        accounts: "Accounts"
-      sub_menu:
-        journal: "Journal"
-        photo: "Photo"
-        face_patrol: "Face Patrol"
-        columns: "Columns"
-        redaction: "Redaction"
-        others: "Others"
-      publications_sub_menu:
-        rubrics: "Rubrics"
-        tags: "Tags"
-      new_header:
-        title: "New %{create_type}"
-      headers:
-        index_header:
-          columnarticle: "Column Articles"
-          journalarticle: "Journal Articles"
-          journalrubric: "Journal Rubrics"
-          account: "Accounts"
-          journalarticle_tags: "List of Journal Articles Tags:"
-        edit_header:
-          journalarticle: "Edit Journal Article"
-          journalrubric: "Edit Journal Rubric"
-          mediacollection: "Edit Media Collection"
-          account: "Edit Account settings"
-          membership: "Membership"
-        stated_edit_header:
-          journalarticle: "Edit Journal Article"
+          author: Author
+          email: Email
+          last_item: "Last Item"
+          last_sign_in_at: "Last sign in at"
+          name: Name
+          role: "User role"
+          rubric: "Journal Rubric"
+          title: Title
+          updated_at: "Updated At"
+          updated_at_title: "Updated at %{time}"
+          weight: Weight
       fieldsets:
         acls:
           legend: "Access options"
-        stickers:
-          stick_homepage: "Freeze on the main page"
-          journal_article: "Freeze the heading"
-        seo:
-          legend: "SEO Properties"
-          seo_title: "SEO title"
-          meta_keywords: "Meta Keywords"
-          meta_description: "Meta Description"
-          in_robots: "Include in robots.txt"
-          help:
-            seo_title: "Use if you want to completely change the header in the browser window."
-            meta_keywords: "Tags for meta information"
-            meta_description: "One or two sentence description of the publication. Make the text informative, to reading the text, the visitor is immediately understood as speech."
-            in_robots: "URL of this page will be added to rotobs.txt in deny section"
         base_fields:
           help:
             tags: "Separate tags with commas"
         description:
-          description: "Description"
+          description: Description
           help:
             description: "In this field you can enter a small description, preferably not more than 255 characters."
+        seo:
+          help:
+            in_robots: "URL of this page will be added to rotobs.txt in deny section"
+            meta_description: "One or two sentence description of the publication. Make the text informative, to reading the text, the visitor is immediately understood as speech."
+            meta_keywords: "Tags for meta information"
+            seo_title: "Use if you want to completely change the header in the browser window."
+          in_robots: "Include in robots.txt"
+          legend: "SEO Properties"
+          meta_description: "Meta Description"
+          meta_keywords: "Meta Keywords"
+          seo_title: "SEO title"
+        stickers:
+          journal_article: "Freeze the heading"
+          stick_homepage: "Freeze on the main page"
+      headers:
+        edit_header:
+          account: "Edit Account settings"
+          journalarticle: "Edit Journal Article"
+          journalrubric: "Edit Journal Rubric"
+          mediacollection: "Edit Media Collection"
+          membership: Membership
+        index_header:
+          account: Accounts
+          columnarticle: "Column Articles"
+          journalarticle: "Journal Articles"
+          journalarticle_tags: "List of Journal Articles Tags:"
+          journalrubric: "Journal Rubrics"
+        stated_edit_header:
+          journalarticle: "Edit Journal Article"
+      menu:
+        accounts: Accounts
+        comments: Comments
+        feedback: Feedback
+        journal: Journal
+        mediabank: Mediabank
+        publications: Publications
+      new_header:
+        title: "New %{create_type}"
+      publications_sub_menu:
+        rubrics: Rubrics
+        tags: Tags
+      sub_menu:
+        columns: Columns
+        face_patrol: "Face Patrol"
+        journal: Journal
+        others: Others
+        photo: Photo
+        redaction: Redaction
     sidebar:
       headers:
-        publications: "Publications"
-        dashboard: "Dashboard"
-        mediabank: "Mediabank"
-        accounts: "Accounts"
-    journal_articles:
-      index:
-        <<: *article_headers
-      prepublished:
-        <<: *article_headers
-    journal_rubrics:
-      articles:
-        <<: *article_headers
-      index:
-        <<: *article_headers
-        slug: "Slug"
-        last_publication: "Last Publication"
-    accounts:
-      articles:
-        <<: *article_headers
-    headers:
-      <<: *article_headers
+        accounts: Accounts
+        dashboard: Dashboard
+        mediabank: Mediabank
+        publications: Publications
+  journal_article:
+    default_title: "New Article"
   layouts:
     godmode:
       title: "%{name} - Godmode"
-  errors:
-    messages:
-      needs_admin_account: "One admin account is required at least"
-  create: "Create"
-  edit: "Edit"
-  save: "Save"
-  destroy: "Destroy"
-  generate: "Generate"
-  profile: "Profile"
-  logout: "LogOut"
+  logout: LogOut
+  mongoid:
+    models:
+      journal_article: "Journal Article"
+      journal_rubric: "Journal Rubric"
   move_element: "Move Element"
-  descriptions: "Descriptions"
-  description: "Description"
-  all_items: "All"
-  are_you_shure: "Are you shure?"
-  journal_article:
-    default_title: "New Article"
-  column_article:
-    default_title: "New Column Post"
+  profile: Profile
+  save: Save
+  states:
+    drafted: Drafted
+    prepublished: Prepublished
+    published: Published
+    trashed: Trashed
+

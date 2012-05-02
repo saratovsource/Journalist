@@ -1,30 +1,35 @@
 ---
 en:
-  shared:
-    header:
-      big_h: "N"
-      logo_any: "ahal"
-    templates:
-      media_collection:
-        page:
-          photos: "photos"
-      comment:
-        block:
-          divider: " / "
-    footer:
-      copiright: "&copy; Nahal Media Ltd. 2012 Tel.: 8 (8452) 57-11-48"
-      develop: "Created by <a href='http://advamedia.ru'>Advamedia.ru</a></small>"
-  sessions:
-    new:
-      sign_in: "Enter the site"
-      info: "To access the site, you can use the classical form, for this, enter your email and password. If you have an account with social networking sites Please select a site by appropriate."
-      enter: "Login"
   passwords:
     new:
-      recover: "Password recover"
       info: "To recover your password, enter your email address registered on the site. System will be generated and sent to the temporary password, you can always change the settings in your account."
+      recover: "Password recover"
       submit: "Recover me"
+  registrations:
+    new:
+      desctiption: "To register for the site correctly fill in all fields. If you have accounts on social networking sites - go to the login page and select podhodyashy, in this case, the profile on Nahal.ru will be bound. By registering with the site you automatically agree with rules of the site"
+      title: "Sign Up"
   rendering:
     show:
       comments:
-        header: "Comments"
+        header: Comments
+  sessions:
+    new:
+      enter: Login
+      info: "To access the site, you can use the classical form, for this, enter your email and password. If you have an account with social networking sites Please select a site by appropriate."
+      sign_in: "Enter the site"
+  shared:
+    footer:
+      copiright: "&copy; Nahal Media Ltd. 2012 Tel.: 8 (8452) 57-11-48"
+      develop: "Created by <a href='http://advamedia.ru'>Advamedia.ru</a></small>"
+    header:
+      big_h: "N"
+      logo_any: ahal
+    templates:
+      comment:
+        block:
+          divider: " / "
+      media_collection:
+        page:
+          photos: photos
+
