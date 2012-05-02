@@ -1,0 +1,6 @@
+.clearfix
+  = f.label :file, t(".file")
+  .input.span18
+    = link_to image_tag(@face.file.thumb), @face.file.url, :class => "thumbnail" if @face.file?
+    = f.file_field :file, :class => "file"
+    %span.help-block= t(".help.file")

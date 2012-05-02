@@ -1,6 +1,6 @@
 module Journalist
   module Presenters
-    class FacePresenter < Presenter
+    class ColumnArticlePresenter < Presenter
 
       def sections
         [:columns]

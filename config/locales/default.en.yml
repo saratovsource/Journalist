@@ -5,6 +5,8 @@ en:
     password: "Password invalid!"
   all_items: All
   are_you_shure: "Are you shure?"
+  face_patrol:
+    default_title: "Man or Woman name"
   column_article:
     default_title: "New Column Post"
   create: Create
@@ -41,6 +43,10 @@ en:
       publish: Publish
       rewrite: "Send to rewtite"
       trash: Trash
+    faces:
+      form:
+        f: Female
+        m: Male
     fieldsets:
       content: "Content data:"
       seo: "Seo settings:"

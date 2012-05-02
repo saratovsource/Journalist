@@ -67,5 +67,15 @@ module Godmode
       session[:account_type] == "editor"
     end
 
+    def states_from_params(state)
+      states = []
+      if %w(drafted rewrited).include?(state)
+        states << :drafted << :rewrited
+      else
+        states << state
+      end
+      states
+    end
+
   end
 end

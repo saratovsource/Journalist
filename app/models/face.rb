@@ -5,29 +5,33 @@ class Face
   include Extensions::Auth::HasOwner
   include Extensions::Article::Stated
   include Extensions::Article::Publish
-  include Extensions::Article::Timelinable
+  #include Extensions::Article::Timelinable
 
   # -= Fields =-
   field :sex, default: "m"
+  field :file
+  field :age, type: Integer
+
+  # -= CarrierWave =-
+  mount_uploader :file, FaceUploader
 
   # -= Associations =-
-  belongs_to :parent, :class_name => "Column"
+  #belongs_to :parent, :class_name => "Site"
 
   # -= Indexes =-
   index :parent_id
 
-  # -= Validations =-
-  validates_presence_of     :site
-
   # -= Callbacks =-
-  before_validation :set_owned_site
+  before_create :set_title_and_slug
+
+  # -= Validations =-
+  validates :slug, :uniqueness => [:site]
 
   #-= States =-
   state_machine do
 
     state all - [:drafted, :trashed] do
       validates_presence_of     :parent
-      validates_uniqueness_of   :slug, :scope => [:site_id]
     end
 
   end
@@ -38,6 +42,17 @@ class Face
 
   def parent
     self.site
+  end
+
+  def can_state?(state_name)
+    self.file?
+  end
+
+  protected
+
+  def set_title_and_slug
+    self.title = I18n.t('face_patrol.default_title')
+    self.slug = Journalist::UniqGenerator.generate(:prefix => "face")
   end
 
 end
