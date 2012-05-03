@@ -1,0 +1,20 @@
+%fieldset.no-margin.no-padding
+  .clearfix.title
+    = f.label :title
+    .input.span18
+      = f.text_field :title, :style => "font-size:1.5em; width:100%;", :required => true
+  .clearfix
+    = f.label :slug
+    .input
+      %span.uneditable-input{:data => {:"editable-source" => "true"}}
+        %span.url-snippet
+          = raw("#{resource.try(:parent_path)}/<ins>#{resource.try(:slug)}</ins>")
+      - if resource.media_files.empty?
+        = link_to t(:edit), '#', :class => "btn small", :data => {:editable => ""}
+        .hide{:data => {:"editable-target" => "true"}}
+          = f.text_field :slug, :class => "span8"
+  .clearfix
+    = f.label :tags
+    .input.span18
+      = f.text_field :tags, :class => "xxlarge"
+      %span.help-block= t(".help.#{:tags}")

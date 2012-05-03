@@ -21,6 +21,8 @@ class Godmode::ColumnArticlesController < Godmode::BaseController
   def collection
     where_params = { :site_id => current_site.id }
 
+    where_params[:owner_id] = current_account.id unless current_account.role_in?("editor")
+
     #Sort By State
     unless params[:state].blank?
       states = states_from_params(params[:state])

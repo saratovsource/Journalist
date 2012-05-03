@@ -4,4 +4,9 @@ class RegistrationsController < Devise::RegistrationsController
   layout "auth"
 
   before_filter :require_site
+
+  def create
+    super
+    current_site.memberships.create(:role => "guest", :account => resource)
+  end
 end

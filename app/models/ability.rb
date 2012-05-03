@@ -49,7 +49,9 @@ class Ability
       site == @site
     end
 
-    can :manage, [JournalArticle, ColumnArticle, Face] do |article|
+    can :create, [Column]
+
+    can :manage, [JournalArticle, Column, ColumnArticle, Face] do |article|
       article.site == @site and article.owner_id == @account.id
     end
 

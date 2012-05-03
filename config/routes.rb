@@ -30,6 +30,9 @@ Rails.application.routes.draw do
 
     resources :faces do
       get :empty,         :on => :collection
+      get :prepublished,  :on => :collection
+      get :published,     :on => :collection
+      get :tags,          :on => :collection
     end
 
     namespace :mediabank do

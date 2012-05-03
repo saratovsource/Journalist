@@ -26,10 +26,10 @@ class Account
   ### Encryptable
   #field :password_salt, :type => String
 
-  ## -= Attributes =-
-  #field :name
-  #field :locale, :default => Journalist.config.default_locale.to_s or 'en'
-  #field :switch_site_token
+  # -= Attributes =-
+  field :name
+  field :locale, :default => Journalist.config.default_locale.to_s or 'en'
+  field :switch_site_token
 
   # -= CarrierWave =-
   mount_uploader :avatar, AvatarUploader
