@@ -1,0 +1,4 @@
+= render_cell 'journalist/faces_navigation', :tabs, :site => current_site
+%ul.unstyled.row
+  - @faces.each do |face|
+    %li.span6= face.render(:block)

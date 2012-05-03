@@ -60,7 +60,10 @@ Rails.application.routes.draw do
   end
   namespace :columns do
     root :to => "columns#index"
-    #match ':id' => "columns#show"
+  end
+  namespace :face_patrol do
+    root :to => "face_patrols#index"
+    get :gallery
   end
 
   # Any rendering

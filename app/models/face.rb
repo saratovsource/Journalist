@@ -12,6 +12,10 @@ class Face
   field :file
   field :age, type: Integer
 
+  # -= scopes =-
+  scope :boys, where(:sex => 'm')
+  scope :girls, where(:sex => 'w')
+
   # -= CarrierWave =-
   mount_uploader :file, FaceUploader
 

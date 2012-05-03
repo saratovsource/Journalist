@@ -8,6 +8,8 @@ module Extensions
         after_create :create_timeline
         after_update :update_timeline
 
+        scope :feed, desc(:publish_at)
+
       end
 
       protected
