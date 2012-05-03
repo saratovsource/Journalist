@@ -1,0 +1,25 @@
+---
+ru:
+  i_generators:
+    comments:
+      title: "Комментарии"
+  journal:
+    journal_rubrics:
+      index:
+        description: "- a tape of all publications * Username *"
+        journal: Journal
+  journalist:
+    menu:
+      auth:
+        password_restore: "Восстановить пароль"
+        register: "Зарегистрироваться"
+        sign_in: "Войти"
+      rubric_navigation:
+        all: "Показать все"
+      top_menu:
+        columns: "Колонки"
+        facepatrol: "Фейспатруль"
+        journal: "Журнал"
+        reportage: "Репортаж"
+        timeline: "Таймлайн"
+

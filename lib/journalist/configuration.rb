@@ -12,7 +12,7 @@ module Journalist
       :enable_logs            => false,
       :hosting                => :auto,
       :delayed_job            => false,
-      :default_locale         => :en,
+      :default_locale         => :ru,
       :mailer_sender          => 'support', #support@example.com'
       :manage_subdomain       => false,
       :manage_manage_domains  => false,

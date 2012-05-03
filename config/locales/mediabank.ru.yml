@@ -1,0 +1,13 @@
+---
+ru:
+  mediabank:
+    create_header:
+      placeholder: "Введите имя новой коллекции"
+    media_collections:
+      add_files_button: "Добавить файлы"
+      files_count: "%{count} файлов"
+      edit_files: "Редактировать файлы"
+      add_files:
+        title: "Добавить файлы в коллекцию"
+    media_files:
+      header_title: "Коллекции"
