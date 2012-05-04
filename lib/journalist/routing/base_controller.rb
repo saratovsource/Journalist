@@ -5,7 +5,6 @@ module Journalist
 
       included do
         before_filter :require_site
-        before_filter :set_locale
         before_filter :set_current_thread_variables
 
         respond_to :html
@@ -33,10 +32,6 @@ module Journalist
 
       def begin_of_association_chain
         current_site
-      end
-
-      def set_locale
-        I18n.locale = current_account.locale rescue Journalist.config.default_locale
       end
 
       def current_site_url

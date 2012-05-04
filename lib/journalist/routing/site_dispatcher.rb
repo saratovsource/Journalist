@@ -8,6 +8,7 @@ module Journalist
           before_filter :fetch_site
           #before_filter :require_site
           helper_method :current_site
+          before_filter :set_locale
         end
       end
 
@@ -17,6 +18,10 @@ module Journalist
 
       module InstanceMethods
         protected
+
+        def set_locale
+          I18n.locale = current_account.locale rescue Journalist.config.default_locale
+        end
 
         def create_guest_account_if_needed
           current_account ||= Account.new

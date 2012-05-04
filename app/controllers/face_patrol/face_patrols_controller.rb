@@ -1,6 +1,8 @@
 module FacePatrol
   class FacePatrolsController < ::BaseController
 
+    layout "journalist_non_semantic"
+
     def index
       @faces = current_site.faces
       if params[:sex].present? && %w(boys girls).include?(params[:sex])

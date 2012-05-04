@@ -190,10 +190,12 @@ ru:
         index_header:
           account: Аккаунты
           columnarticle: "Статьи колонки"
+          face: Фейспатруль
           journalarticle: "Журнальные статьи"
           journalarticle_tags: "Список тэгов журнала:"
           journalrubric: "Рубрики журнала"
         stated_edit_header:
+          face: Фейс
           journalarticle: "Редактируем журнальную статью"
       menu:
         accounts: Пользователи
