@@ -8,3 +8,7 @@
       = link_to face_patrol_root_path(params.merge(:sex => sex)) do
         = t(".#{sex}")
         %span.label= @options[:site].faces.send(sex.to_sym).count
+    %li.pos-a.pos-right
+      = link_to face_patrol_gallery_path do
+        %i.icon-picture &nbsp;
+        = t('.gallery')

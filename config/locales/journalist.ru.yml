@@ -1,5 +1,10 @@
 ---
 ru:
+  face_patrol:
+    face_patrols:
+      gallery:
+        photos: фото
+        title: "Фейспатруль - галерея"
   i_generators:
     comments:
       title: Комментарии
@@ -24,6 +29,7 @@ ru:
       tabs:
         all: "Все в куче"
         boys: Мальчики
+        gallery: Галерея
         girls: Девочки
     menu:
       auth:

@@ -21,6 +21,11 @@ module FacePatrol
       }
     end
 
+    def gallery
+      @faces = current_site.faces.desc(:created_at)
+      @page_class = "mediapage"
+    end
+
     def sections
       [:face_patrol]
     end

@@ -63,7 +63,7 @@ Rails.application.routes.draw do
   end
   scope "/face-patrol", :module => "face_patrol", :as => "face_patrol" do
     root :to => "face_patrols#index"
-    get :gallery
+    match 'gallery' => "face_patrols#gallery", :as => :gallery
   end
 
   # Any rendering

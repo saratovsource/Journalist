@@ -1,0 +1,7 @@
+%h1
+  = t('.title')
+  %small= "#{@faces.count} #{t('.photos')}"
+%figure.pos-r
+  %p.fotorama{data: {nav: "thumbs", margin: 0, width: "100%", fullscreenIcon: "true"}}
+    - @faces.each do |mf|
+      = link_to image_tag(mf.file.thumb.url), mf.file.url
