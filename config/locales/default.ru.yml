@@ -3,134 +3,134 @@ ru:
   acl:
     acl_time_range: "Сейчас не время"
     password: "Пароль не верен!"
-  all_items: "Все"
+  all_items: Все
   are_you_shure: "Вы уверены?"
-  face_patrol:
-    default_title: "Имя женщины или мужчины"
   column_article:
     default_title: "Новый пост в колонку"
-  create: "Создать"
-  description: "Описание"
-  descriptions: "Описания"
-  destroy: "Удалить"
-  edit: "Редактировать"
+  create: Создать
+  description: Описание
+  descriptions: Описания
+  destroy: Удалить
+  edit: Редактировать
   errors:
     messages:
       needs_admin_account: "One admin account is required at least"
-  generate: "Сгенерировать"
+  face_patrol:
+    default_title: "Имя женщины или мужчины"
+  generate: Сгенерировать
   godmode:
     accounts:
       articles:
-        author: "Автор"
+        author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
         last_sign_in_at: "Последний раз был"
-        name: "Имя"
-        role: "Роль"
-        rubric: "Рубрика"
-        title: "Заголовок"
-        updated_at: "Обновлен"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
-        weight: "Вес"
-    author: "Автор"
+        weight: Вес
+    author: Автор
     column_articles:
       empty:
         start: "Да! Я хочу начать писать!"
         title: "Вы еще ни разу не писали статей в свою колонку и она пока не создана. Вы уверены, что хотите начать?"
-    editor: "Редактор"
+    editor: Редактор
     events:
       prepublish: "Послать редактору"
-      publish: "Опубликовать"
-      rewrite: "Переписать"
+      publish: Опубликовать
+      rewrite: Переписать
       trash: "В корзину"
     faces:
       form:
-        f: "Женщина"
-        m: "Мужчина"
+        f: Женщина
+        m: Мужчина
     fieldsets:
       content: "Содержимое:"
       seo: "SEO настройка:"
       settings: "Настройки:"
     header_fields:
-      author: "Автор"
+      author: Автор
       email: "Электронная почта"
       last_item: "Последний элемент"
       last_sign_in_at: "Последний раз был"
-      name: "Имя"
-      role: "Роль"
-      rubric: "Рубрика"
-      title: "Заголовок"
-      updated_at: "Обновлен"
+      name: Имя
+      role: Роль
+      rubric: Рубрика
+      title: Заголовок
+      updated_at: Обновлен
       updated_at_title: "Обновлен %{time}"
-      weight: "Вес"
+      weight: Вес
     headers:
-      author: "Автор"
+      author: Автор
       email: "Электронная почта"
       last_item: "Последний элемент"
       last_sign_in_at: "Последний раз был"
-      name: "Имя"
-      role: "Роль"
-      rubric: "Рубрика"
-      title: "Заголовок"
-      updated_at: "Обновлен"
+      name: Имя
+      role: Роль
+      rubric: Рубрика
+      title: Заголовок
+      updated_at: Обновлен
       updated_at_title: "Обновлен %{time}"
-      weight: "Вес"
+      weight: Вес
     journal_articles:
       index:
-        author: "Автор"
+        author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
         last_sign_in_at: "Последний раз был"
-        name: "Имя"
-        role: "Роль"
-        rubric: "Рубрика"
-        title: "Заголовок"
-        updated_at: "Обновлен"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
-        weight: "Вес"
+        weight: Вес
       prepublished:
-        author: "Автор"
+        author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
         last_sign_in_at: "Последний раз был"
-        name: "Имя"
-        role: "Роль"
-        rubric: "Рубрика"
-        title: "Заголовок"
-        updated_at: "Обновлен"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
-        weight: "Вес"
+        weight: Вес
     journal_rubrics:
       articles:
-        author: "Автор"
+        author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
         last_sign_in_at: "Последний раз был"
-        name: "Имя"
-        role: "Роль"
-        rubric: "Рубрика"
-        title: "Заголовок"
-        updated_at: "Обновлен"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
-        weight: "Вес"
+        weight: Вес
       index:
-        author: "Автор"
+        author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
         last_publication: "Последняя публикация"
         last_sign_in_at: "Последний раз был"
-        name: "Имя"
-        role: "Роль"
-        rubric: "Рубрика"
-        slug: "путь"
-        title: "Заголовок"
-        updated_at: "Обновлен"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        slug: путь
+        title: Заголовок
+        updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
-        weight: "Вес"
+        weight: Вес
     shared:
       acls:
         password:
-          acl_password: "Пароль"
+          acl_password: Пароль
           help:
             acl_password: "Введите пароль для доступа"
         time:
@@ -142,17 +142,17 @@ ru:
           save: "В черновики"
       collections:
         sorted_articles:
-          author: "Автор"
+          author: Автор
           email: "Электронная почта"
           last_item: "Последний элемент"
           last_sign_in_at: "Последний раз был"
-          name: "Имя"
-          role: "Роль"
-          rubric: "Рубрика"
-          title: "Заголовок"
-          updated_at: "Обновлен"
+          name: Имя
+          role: Роль
+          rubric: Рубрика
+          title: Заголовок
+          updated_at: Обновлен
           updated_at_title: "Обновлен %{time}"
-          weight: "Вес"
+          weight: Вес
       fieldsets:
         acls:
           legend: "Опции доступа"
@@ -160,7 +160,7 @@ ru:
           help:
             tags: "Разделяйте тэги запятыми"
         description:
-          description: "Описание"
+          description: Описание
           help:
             description: "В это поле можно ввести небольшое описание, желательно не более 255 символов."
         seo:
@@ -171,7 +171,7 @@ ru:
             seo_title: "Если вы хотите, то можете изменить заголовок окна браузера."
           in_robots: "Добавить в robots.txt"
           legend: "SEO свойства"
-          meta_description: "Мета-описание"
+          meta_description: Мета-описание
           meta_keywords: "Ключевые слова"
           seo_title: "SEO заголовок"
         stickers:
@@ -183,9 +183,9 @@ ru:
           journalarticle: "Редактируем статью"
           journalrubric: "Редактируем рубрику"
           mediacollection: "Редактируем коллекцию"
-          membership: "Членство"
+          membership: Членство
         index_header:
-          account: "Аккаунты"
+          account: Аккаунты
           columnarticle: "Статьи колонки"
           journalarticle: "Журнальные статьи"
           journalarticle_tags: "Список тэгов журнала:"
@@ -193,47 +193,50 @@ ru:
         stated_edit_header:
           journalarticle: "Редактируем журнальную статью"
       menu:
-        accounts: "Пользователи"
-        comments: "Комментарии"
+        accounts: Пользователи
+        comments: Комментарии
+        face_patrol: ФейсПатруль
         feedback: "Обратная связь"
-        face_patrol: "ФейсПатруль"
-        journal: "Журнал"
-        mediabank: "Медиабанк"
-        publications: "Публикации"
+        journal: Журнал
+        mediabank: Медиабанк
+        publications: Публикации
       new_header:
         title: "Новый %{create_type}"
       publications_sub_menu:
-        rubrics: "Рубрики"
-        tags: "Тэги"
+        rubrics: Рубрики
+        tags: Тэги
       sub_menu:
-        columns: "Колонки"
-        face_patrol: "ФейсПатруль"
-        journal: "Журнал"
-        others: "Другие"
-        photo: "Фото"
-        redaction: "Редакция"
+        columns: Колонки
+        face_patrol: ФейсПатруль
+        journal: Журнал
+        others: Другие
+        photo: Фото
+        redaction: Редакция
     sidebar:
       headers:
-        accounts: "Пользователи"
+        accounts: Пользователи
         dashboard: Dashboard
-        mediabank: "Медиабанк"
-        publications: "Публикации"
+        mediabank: Медиабанк
+        publications: Публикации
   journal_article:
     default_title: "Новая статья"
   layouts:
     godmode:
       title: "%{name} - Режим Бога"
+  login: Войти
   logout: LogOut
   mongoid:
     models:
       journal_article: "Статья Журнала"
       journal_rubric: "Рубрика Журнала"
   move_element: "Переместить элемент"
-  profile: "Профиль"
-  save: "Сохранить"
+  or: или
+  profile: Профиль
+  register: Зарегистрироваться
+  save: Сохранить
   states:
-    drafted: "Черновик"
+    drafted: Черновик
     prepublished: "На предпубликации"
-    published: "Опубликована"
+    published: Опубликована
     trashed: "В корзине"
 

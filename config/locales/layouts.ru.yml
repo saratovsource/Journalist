@@ -4,39 +4,41 @@ ru:
     new:
       email: "Электронная почта"
       info: "Для восстановления пароля введите адрес электронной почты, зарегистрированной на сайте. Системой будет сгенерирован и выслан временный пароль, его всегда можно будет сменить в настройках аккаунта."
-      password: "Пароль"
+      password: Пароль
       recover: "Восстановить пароль"
-      submit: "Восстановить"
+      submit: Восстановить
   registrations:
     new:
       desctiption: "Для регистрации на сайте правильно заполните все поля. Если у Вас есть аккаунты в социальных сетях — перейдите на страницу входа и выберете подходяший, в этом случае профиль на сайте Nahal.ru будет привязан."
       email: "Электронная почта"
       name: "Имя пользователя"
-      password: "Пароль"
+      password: Пароль
       password_confirmation: "Подтвердите пароль"
-      submit: "Зарегистрироваться"
-      title: "Регистрация"
+      submit: Зарегистрироваться
+      title: Регистрация
   rendering:
     show:
       comments:
-        header: "Комментарии"
+        header: Комментарии
   sessions:
     new:
-      enter: "Логин"
+      email: "Электронная почта"
+      enter: Логин
       info: "Для входа на сайт Вы можете воспользоваться классической формой, для этого введите свой email и пароль. Если у Вас есть аккаунт в социальных сетях, выбирете соотетсвующий сайт"
+      password: Пароль
       sign_in: "Войти на сайт"
   shared:
     footer:
       copiright: "&copy; Nahal Media Ltd. 2012 Tel.: 8 (8452) 57-11-48"
       develop: "Created by <a href='http://advamedia.ru'>Advamedia.ru</a></small>"
     header:
-      big_h: "Н"
-      logo_any: "ахал"
+      big_h: Н
+      logo_any: ахал
     templates:
       comment:
         block:
           divider: " / "
       media_collection:
         page:
-          photos: "фотографии"
+          photos: фотографии
 

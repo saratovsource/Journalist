@@ -2,24 +2,44 @@
 ru:
   i_generators:
     comments:
-      title: "Комментарии"
+      title: Комментарии
   journal:
     journal_rubrics:
       index:
         description: "- a tape of all publications * Username *"
         journal: Journal
   journalist:
+    columns_navigation:
+      description:
+        description: "— личное пространство независимых авторов"
+        post_description: "В своих колонках авторы пишут на четко определенную тематику. Они пишут, как хотят, когда хотят и что хотят, даже главный редактор не имеет права менять устав. Здесь отсутствует демократия, все принадлежит и подчиняется автору, аминь!"
+        title: Колонки
+      show_me:
+        all: "Все авторы"
+    faces_navigation:
+      description:
+        description: "— это фотократочки с заметными людьми города"
+        post_description: "Сюда невозможно попасть нарочно, наш фоторежиссер беспристрастен и неподкупаем. Фотосессии не планируются заранее, а термин «выездная съемка» вызывает смех у редакции. Только /Нахальное фото, только хардкор!"
+        title: Фейспатруль
+      tabs:
+        all: "Все в куче"
+        boys: Мальчики
+        girls: Девочки
     menu:
       auth:
         password_restore: "Восстановить пароль"
-        register: "Зарегистрироваться"
-        sign_in: "Войти"
+        register: Зарегистрироваться
+        sign_in: Войти
       rubric_navigation:
         all: "Показать все"
       top_menu:
-        columns: "Колонки"
-        facepatrol: "Фейспатруль"
-        journal: "Журнал"
-        reportage: "Репортаж"
-        timeline: "Таймлайн"
+        columns: Колонки
+        facepatrol: Фейспатруль
+        journal: Журнал
+        reportage: Репортаж
+        timeline: Таймлайн
+    rubric_navigation:
+      show:
+        description: "— это лента всех публикаций *Username*"
+        journal: Журнал
 
