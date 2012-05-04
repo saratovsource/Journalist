@@ -17,11 +17,11 @@
       .container
         .row
           - if content_for?(:sidebar)
-            %article.span20{:role => "main"}= yield
+            .span20{:role => "main"}= yield
             = render_section(:comments)
-            %aside.span4
+            .span4
               = yield(:sidebar)
           - else
-            %article.span24= yield
+            .span24= yield
             = render_section(:comments)
     = render :partial => "shared/footer"
