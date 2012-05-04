@@ -14,7 +14,7 @@ class Face
 
   # -= scopes =-
   scope :boys, where(:sex => 'm')
-  scope :girls, where(:sex => 'w')
+  scope :girls, where(:sex => 'f')
 
   # -= CarrierWave =-
   mount_uploader :file, FaceUploader
