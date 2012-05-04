@@ -11,6 +11,11 @@ module Journalist
       render
     end
 
+    def widget(args={})
+      self.options = args
+      render
+    end
+
     protected
 
     def build_list

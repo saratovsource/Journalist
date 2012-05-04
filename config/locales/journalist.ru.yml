@@ -31,6 +31,12 @@ ru:
         boys: Мальчики
         gallery: Галерея
         girls: Девочки
+      widget:
+        all: "Всего в нашей базе %{count}"
+        and: и
+        boys: "%{count} мальчиков"
+        girls: "%{count} девочек"
+        title: Фейспатруль
     menu:
       auth:
         password_restore: "Восстановить пароль"
