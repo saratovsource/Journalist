@@ -17,9 +17,9 @@
       .container
         .row
           - if content_for?(:sidebar)
-            %article.span20{:role => "main"}= yield
+            %article.span18{:role => "main"}= yield
             = render_section(:comments)
-            %article.span4
+            %article.span6
               = yield(:sidebar)
           - else
             %article.span24= yield
