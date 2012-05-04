@@ -1,0 +1,4 @@
+.clearfix
+  = f.label :sex
+  .input
+    = f.select :sex, %w(m f).collect{|pc| [t(pc, :scope => "godmode.sex"), pc]}, :include_blank => false

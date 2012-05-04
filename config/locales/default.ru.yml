@@ -127,6 +127,9 @@ ru:
         updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
         weight: Вес
+    sex:
+      f: Девушка
+      m: Парень
     shared:
       acls:
         password:
