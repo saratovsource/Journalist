@@ -1,4 +1,5 @@
 %article
   %p.dark-links
     = image_tag(@element.file.thumb.url)
-    = content_tag(:span, "#{@element.title}, #{@element.age}" )
+    %span
+      = [@element.title, ', ', t('.age', :count => @element.age)].join

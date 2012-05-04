@@ -42,4 +42,14 @@ ru:
       show:
         description: "— это лента всех публикаций *Username*"
         journal: Журнал
+  shared:
+    templates:
+      face:
+        block:
+          age:
+            few: "%{count} год"
+            many: "%{count} лет"
+            one: "один годик"
+            other: "%{count} лет"
+            zero: "еще младенец"
 
