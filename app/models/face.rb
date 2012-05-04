@@ -41,7 +41,7 @@ class Face
   end
 
   def prefix
-    "facepatrol"
+    "face-patrol"
   end
 
   def parent
