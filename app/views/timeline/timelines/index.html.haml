@@ -1,0 +1,7 @@
+- content_for :sidebar do
+  = render_section(:sidebar)
+.span18
+  - if @items.any?
+    - @items.each do |item|
+      = item.render(:block)
+      .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}

@@ -61,6 +61,11 @@ Rails.application.routes.draw do
   namespace :columns do
     root :to => "columns#index"
   end
+
+  namespace :timeline do
+    root :to => "timelines#index"
+  end
+
   scope "/face-patrol", :module => "face_patrol", :as => "face_patrol" do
     root :to => "face_patrols#index"
     match 'gallery' => "face_patrols#gallery", :as => :gallery
