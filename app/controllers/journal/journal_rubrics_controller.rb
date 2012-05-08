@@ -9,6 +9,11 @@ module Journal
         :main_menu => {
           :name => "journalist/rubric_navigation",
           :action => :show
+        },
+        :sidebar => {
+          :name => "journalist/faces_navigation",
+          :action => :widget,
+          :options => {:current_site => current_site}
         }
       }
     end

@@ -1,13 +1,12 @@
-- faces = @options[:current_site].faces
-- if faces.any?
+- if @faces.any?
   %section.block
     %header.page-header.pos-r
       %h3= t '.title'
-    = faces.desc(:created_at).first.render(:block)
+    = @face.render(:block)
     %p.dark-links
-      = t '.all', :count => faces.count
+      = t '.all', :count => @faces.count
       %i.icon-user
       %br
-      = link_to t('.girls', :count => faces.girls.count), face_patrol_root_path(:sex => "girls")
+      = link_to t('.girls', :count => @faces.girls.count), face_patrol_root_path(:sex => "girls")
       = t('.and')
-      = link_to t('.boys', :count => faces.boys.count), face_patrol_root_path(:sex => "boys")
+      = link_to t('.boys', :count => @faces.boys.count), face_patrol_root_path(:sex => "boys")
