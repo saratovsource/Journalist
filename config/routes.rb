@@ -63,7 +63,9 @@ Rails.application.routes.draw do
   end
 
   namespace :timeline do
-    root :to => "timelines#index"
+    match "/(:date)" => "timelines#index",
+      :as => :root,
+      :constraints => { :date => /\d{4}-\d{2}-\d{2}/ }
   end
 
   scope "/face-patrol", :module => "face_patrol", :as => "face_patrol" do
