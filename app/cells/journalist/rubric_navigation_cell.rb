@@ -1,6 +1,15 @@
 module Journalist
   class RubricNavigationCell < ::MenuCell
 
+    def widget(args = {})
+      self.options = args
+      @current_site = current_site
+      @posts_count = current_site.journal_articles.published.count
+      @rubrics = current_site.journal_rubrics.select{|i| i.journal_articles.published.count > 0}
+      @rubrics_count = @rubrics.count
+      render
+    end
+
     protected
 
     def build_list

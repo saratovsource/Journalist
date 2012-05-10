@@ -1,0 +1,5 @@
+%ul.unstyled.tabs.dark-links{:data => {:tabs => ""}}
+  - with_options :data => {:toggle => "tab"} do |bldr|
+    %li.active= bldr.link_to t('.last'), "##{type}-last"
+    %li= bldr.link_to t('.best'), "##{type}-best"
+    %li= bldr.link_to t('.comments'), "##{type}-comments"

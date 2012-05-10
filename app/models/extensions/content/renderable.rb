@@ -3,6 +3,11 @@ module Extensions
     module Renderable
       extend ActiveSupport::Concern
 
+      included do
+
+        scope :latests, lambda{|n| published.desc(:published_at).limit(n)}
+      end
+
       # Render method
       # Example AnyObject.render :page => options_hash
       def render(*args)

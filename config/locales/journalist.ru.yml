@@ -51,9 +51,14 @@ ru:
         reportage: Репортаж
         timeline: Таймлайн
     rubric_navigation:
+      item:
+        bgoverlay: "Нажмите чтобы закрыть"
       show:
         description: "— это лента всех публикаций *Username*"
         journal: Журнал
+      widget:
+        statistic: "%{count} постов в %{rubrics} рубриках"
+        title: Журнал
   shared:
     templates:
       face:
@@ -64,4 +69,8 @@ ru:
             one: "один годик"
             other: "%{count} лет"
             zero: "еще младенец"
+    widget_tabs:
+      best: Лучшие
+      comments: Комментируемые
+      last: Последние
 
