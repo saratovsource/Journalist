@@ -1,6 +1,6 @@
 %ul.unstyled.breadcrumb.compact.no-margin.dark-links
   %li
-    %a{:href => "#"}>
+    %a{:href => timeline_root_path(element.publish_at.strftime('%F'))}>
       %i.icon-time>
       %time.pos-r{:datetime => l(element.publish_at, :format => :long)}><
         = l(element.publish_at, :format => :short)

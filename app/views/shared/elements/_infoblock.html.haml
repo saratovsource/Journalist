@@ -2,9 +2,9 @@
   %ul.unstyled.breadcrumb.compact.no-margin.dark-links
     %li
       -# TODO: Add real link!
-      %a{href: '#'}><
+      %a{href: timeline_root_path(element.published_at)}><
         %i.icon-time.icon-white>
-        %time.pos-r{:datetime => element.created_at}= l(element.created_at, :format => :short)
+        %time.pos-r{:datetime => element.published_at}= l(element.published_at, :format => :short)
       &nbsp;
     %li
       -# TODO: Add real link!

@@ -1,8 +1,23 @@
 .timeline
   .container
     %ul.row.unstyled.compact.dateline.dark-links
+      - prev_month = @days.prev_month_day
+      - if prev_month.present?
+        %li.span2
+          = link_to timeline_root_path(l(prev_month, :format => '%F')), :class => "month a-left" do
+            = content_tag :i, nil, :class => "icon-chevron-left"
+            = l(prev_month, :format => '%B')
       - @days.each do |day|
         %li{:class => "span2#{' active' if day.active}"}
-          = link_to timeline_root_path(day), :class => "day" do
-            = content_tag :span , l(day, :format => '%a'), :class => "weekday"
-            = content_tag :time, l(day, :format => '%-d %b')
+          - if day.is_empty?
+            = content_tag :span, :class => "day" do
+              = render :partial => "day_item", :locals => {:day => day}
+          - else
+            = link_to timeline_root_path(day), :class => "day" do
+              = render :partial => "day_item", :locals => {:day => day}
+      - next_month = @days.next_month_day
+      - if next_month.present?
+        %li.span2
+          = link_to timeline_root_path(l(next_month, :format => '%F')), :class => "month a-left" do
+            = l(next_month, :format => '%B')
+            = content_tag :i, nil, :class => "icon-chevron-right"
