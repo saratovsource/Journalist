@@ -5,3 +5,5 @@
     - @items.each do |item|
       = item.render(:block)
       .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
+- content_for :postcontent do
+  = render_cell "journalist/rubric_navigation", :widget
