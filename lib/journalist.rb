@@ -21,6 +21,7 @@ require 'omniauth-twitter'
 
 require 'journalist/core_ext'
 require 'journalist/uniq_generator'
+require 'journalist/calendar_day'
 require 'journalist/calendar_builder'
 require 'journalist/logger'
 require 'journalist/regexps'

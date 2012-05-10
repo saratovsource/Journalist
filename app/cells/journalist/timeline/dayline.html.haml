@@ -2,4 +2,7 @@
   .container
     %ul.row.unstyled.compact.dateline.dark-links
       - @days.each do |day|
-        %li= day.inspect
+        %li{:class => "span2#{' active' if day.active}"}
+          = link_to timeline_root_path(day), :class => "day" do
+            = content_tag :span , l(day, :format => '%a'), :class => "weekday"
+            = content_tag :time, l(day, :format => '%-d %b')

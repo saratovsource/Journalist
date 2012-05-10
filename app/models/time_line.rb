@@ -12,7 +12,7 @@ class TimeLine
   field :state
 
   scope :published, where(:state => "published")
-  scope :feed, ->{published.where(:published_at.lte => Time.now).desc(:published_at)}
+  scope :feed, Proc.new{|date| published.where(date.present? ? {:published_at.lte => date.end_of_day, :published_at.gte => date.beginning_of_day} : {:published_at.lte => date || Time.now}).desc(:published_at)}
 
   protected
 
