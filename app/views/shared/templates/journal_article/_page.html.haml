@@ -1,4 +1,4 @@
 %h1
-  = @element.title
+  = @element.title.j_clean
 .page.postinfo.pos-r= render :partial => "shared/elements/block_panel", :locals => {:element => @element}
 =raw @element.to_html

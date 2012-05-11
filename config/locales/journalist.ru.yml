@@ -56,6 +56,9 @@ ru:
       show:
         description: "— это лента всех публикаций *Username*"
         journal: Журнал
+      widget:
+        statistic: "%{count} постов в %{rubrics} рубриках"
+        title: Журнал
     timeline:
       description:
         description: "— это лента всех публикаций *Username*"

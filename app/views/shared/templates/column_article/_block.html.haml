@@ -4,6 +4,6 @@
       %i.icon-user &nbsp;
     = link_to @element.parent.title, @element.parent.fullpath, :class => "dark-link"
     &rarr;
-    = link_to @element.title, @element.router.fullpath
+    = raw @element.title.to_link(@element).html_safe
   %p.post-description.clearfix= @element.meta_description
   .page.postinfo.pos-r= render :partial => "shared/elements/block_panel", :locals => {:element => @element}
