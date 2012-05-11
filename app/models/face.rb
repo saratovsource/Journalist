@@ -5,6 +5,7 @@ class Face
   include Extensions::Auth::HasOwner
   include Extensions::Article::Stated
   include Extensions::Article::Publish
+  include Mongoid::Rateable
   #include Extensions::Article::Timelinable
 
   # -= Fields =-

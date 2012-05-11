@@ -5,6 +5,14 @@ class RenderingController < ::BaseController#ApplicationController
   def show
     @page_class = css_class_from(@routerable)
     @comments = @routerable.comments || []
+
+    if params.has_key? :like
+      p "TRY_RATING"
+      @rater = Rater.find_or_create_by(:ip_address => request.env['REMOTE_ADDR'], :site_id => current_site.id)
+      p @rater.inspect
+      @routerable.rate_and_save(1, @rater)
+      p @routerable.rated?
+    end
   end
 
   def sections

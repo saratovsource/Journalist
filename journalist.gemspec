@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'mongoid-tree'
   s.add_dependency 'mongoid_taggable'
   s.add_dependency 'kaminari'
+  s.add_dependency 'mongoid_rateable'
 
   s.add_dependency 'devise'
 

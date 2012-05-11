@@ -15,6 +15,7 @@ require 'execjs'
 require 'tilt'
 require 'cache_method'
 require 'kaminari'
+require 'mongoid_rateable'
 
 require 'omniauth-facebook'
 require 'omniauth-twitter'

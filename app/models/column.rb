@@ -8,6 +8,7 @@ class Column
   include Extensions::Content::Sortable
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
+  include Mongoid::Rateable
   # -= ACLS=-
   include Journalist::Acl
   include Extensions::Acl::Password

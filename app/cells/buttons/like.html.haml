@@ -1,0 +1,7 @@
+%section.a-center
+  = link_to "#{@model.fullpath}?like", :remote => true, :class => "likethis a-center dark-link" do
+    = content_tag(:i, nil, :class => "iconlike")
+    %small
+      = t '.like'
+      %br
+      = content_tag(:i, @model.rate_count, :class => "rate_count")
