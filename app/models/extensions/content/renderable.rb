@@ -44,12 +44,10 @@ module Extensions
       end
 
       def render_page
-        p "Render page"
         Journalist::RenderEngine::Page.new(self).process
       end
 
       def render_block
-        p "Render block"
         Journalist::RenderEngine::Block.new(self).process
       end
 
