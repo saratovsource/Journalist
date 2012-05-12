@@ -9,6 +9,7 @@ class ColumnArticle
   include Extensions::Article::Publish
   include Extensions::Stick::Stickers
   include Extensions::Article::Timelinable
+  include Mongoid::Rateable
 
   # -= Associations =-
   belongs_to :parent, :class_name => "Column"

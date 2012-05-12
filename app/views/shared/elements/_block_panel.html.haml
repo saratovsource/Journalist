@@ -18,7 +18,7 @@
   %li
     %a{:href => "#"}><
       %i.icon-heart>  
-      ??
+      = element.try(:rate_count) || 0
     \ 
 %ul.unstyled.breadcrumb.compact.no-margin.pos-a.tags.light-links
   - if element.parent.present?

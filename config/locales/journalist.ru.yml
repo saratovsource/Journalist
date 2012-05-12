@@ -1,5 +1,8 @@
 ---
 ru:
+  buttons:
+    like:
+      like: Нравится?
   face_patrol:
     face_patrols:
       gallery:

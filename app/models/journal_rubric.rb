@@ -8,6 +8,7 @@ class JournalRubric
   include Journalist::Acl
   include Extensions::Acl::Password
   include Extensions::Acl::Time
+  include Mongoid::Rateable
 
   # -= Validations =-
   #TODO Add Validation of UNIQ scoped [site_id, parent_id] - parent: may be only Rubric
