@@ -1,6 +1,10 @@
 module Journalist
   class TopMenuCell < ::MenuCell
 
+    def footer
+      show
+    end
+
     protected
 
     def build_list
