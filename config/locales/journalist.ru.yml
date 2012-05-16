@@ -71,6 +71,11 @@ ru:
         statistic: "%{count} постов в %{rubrics} рубриках"
         title: Журнал
   shared:
+    elements:
+      sort_widget_tab:
+        best: Лучшие
+        comments: Комментируемые
+        last: Последние
     templates:
       face:
         block:

@@ -12,6 +12,15 @@ module Journalist
 
       protected
 
+      def tabs_filter(criteria, orders)
+        case orders
+        when /best/
+          criteria.rated.order(:rating.desc)
+        else
+          criteria
+        end
+      end
+
       def delete_id_for_spine
         params.delete(:id)
         cl_name = resource_class.name.underscore.underscore

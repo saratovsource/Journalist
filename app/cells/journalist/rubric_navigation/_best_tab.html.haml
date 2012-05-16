@@ -1,1 +1,6 @@
 .tab-pane#journal-best
+  -items = current_site.journal_articles.weekly.highest_rated(3)
+  - if items.any?
+    - items.each do |item|
+      = item.render(:block)
+  - else

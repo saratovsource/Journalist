@@ -9,7 +9,7 @@ module Extensions
         after_update :update_timeline
 
         scope :feed, desc(:publish_at)
-
+        scope :weekly, ->{ published.where(:publish_at.lte => Date.today.end_of_day.utc, :publish_at.gte => 1.week.ago.beginning_of_day.utc) }
       end
 
       protected
@@ -28,3 +28,4 @@ module Extensions
     end
   end
 end
+
