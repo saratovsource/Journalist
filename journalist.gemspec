@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari'
   s.add_dependency 'mongoid_rateable'
 
-  s.add_dependency 'devise'
+  s.add_dependency 'devise', '2.0.4'
 
   s.add_dependency 'haml'
   s.add_dependency 'sass'
