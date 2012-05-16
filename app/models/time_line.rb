@@ -24,6 +24,6 @@ class TimeLine
 
   def set_state
     self.state = self.timelinable.state if self.timelinable.respond_to?(:state)
-    self.rating = self.timelinable.try(:rating) || 0
+    self.rating = self.timelinable.try(:rate_count) || 0
   end
 end
