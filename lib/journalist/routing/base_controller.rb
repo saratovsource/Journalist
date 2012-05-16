@@ -15,7 +15,7 @@ module Journalist
       def tabs_filter(criteria, orders)
         case orders
         when /best/
-          criteria.rated.order(:rating.desc)
+          criteria.rated.order(:rate_count.desc)
         else
           criteria
         end

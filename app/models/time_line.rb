@@ -10,7 +10,7 @@ class TimeLine
 
   field :published_at, type: DateTime
   field :state
-  field :rating
+  field :rate_count
 
   scope :published, where(:state => "published")
   scope :feed, Proc.new{|date| published.where(date.present? ? {:published_at.lte => date.end_of_day, :published_at.gte => date.beginning_of_day} : {:published_at.lte => date || Time.now}).desc(:published_at)}
@@ -24,6 +24,6 @@ class TimeLine
 
   def set_state
     self.state = self.timelinable.state if self.timelinable.respond_to?(:state)
-    self.rating = self.timelinable.try(:rate_count) || 0
+    self.rate_count = self.timelinable.try(:rate_count) || 0
   end
 end
