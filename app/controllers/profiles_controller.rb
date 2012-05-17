@@ -1,8 +1,10 @@
 class ProfilesController < ::BaseController
 
   def show
-    redirect_to "/page_not_found" if current_account.blank?
-    return
+    if current_account.blank?
+      redirect_to "/page_not_found"
+      return
+    end
     @profile = current_account.profile
   end
 
