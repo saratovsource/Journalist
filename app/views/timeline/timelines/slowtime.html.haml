@@ -1,0 +1,8 @@
+.container.a-center
+  %p= image_tag "journalist/slowpoke.png"
+  %h2= t '.title'
+  %p.slowcount
+    %span.num.pos-r
+      = Slowpoke.count
+      %small= t'.pages'
+  = raw t('.snippet')
