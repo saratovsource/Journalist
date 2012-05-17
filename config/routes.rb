@@ -73,6 +73,11 @@ Rails.application.routes.draw do
     match 'gallery' => "face_patrols#gallery", :as => :gallery
   end
 
+  resource :profile, :only => [:show, :edit] do
+    put :update
+  end
+  match '/404' => 'rendering#page_not_found'
+
   # Any rendering
   match '*path' => 'rendering#show'
 end

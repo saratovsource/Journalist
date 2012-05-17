@@ -1,0 +1,7 @@
+.row
+  %aside.span6
+    %p= image_tag(current_account.profile.avatar.big.url)
+  %article.span18{:role => "main"}
+    = render_cell "buttons", :profile_tabs, :edit
+    = form_for @profile, :html => {:class => "form-stacked"} do |f|
+      = render "form", :f => f

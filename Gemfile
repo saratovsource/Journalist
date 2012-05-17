@@ -9,6 +9,7 @@ gemspec
 gem "jquery-rails"
 group :development do
   gem 'haml'
+  gem 'haml-rails'
   gem 'rspec-rails'
   gem 'unicorn'
   gem 'rspec-cells'

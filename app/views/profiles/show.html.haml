@@ -1,0 +1,11 @@
+.row
+  %aside.span6
+    %p= image_tag(@profile.avatar.big.url)
+  %article.span18{:role => "main"}
+    = render_cell "buttons", :profile_tabs, nil
+    - if @profile.name.present?
+      .readlanme
+        %h1= @profile.name
+    %p.whereami.dark-links= [@profile.country, @profile.city].compact.join(', ')
+    - if @profile.about_me.present?
+      = RedCloth.new(@profile.about_me).to_html.html_safe
