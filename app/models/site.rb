@@ -23,7 +23,7 @@ class Site
   has_many :columns, :validate => false
   has_many :faces, :validate => false
   has_many :time_lines, :validate => false
-  has_many :prodiles, :validate => false
+  has_many :profiles, :validate => false
 
   # -= Validations =-
   validates_presence_of :name
