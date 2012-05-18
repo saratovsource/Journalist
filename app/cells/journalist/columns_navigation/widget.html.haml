@@ -12,7 +12,7 @@
             = col.owner.profile.name || col.owner.name
     .row
       .span18
-        = render :partial => "shared/widget_tabs", :locals => {:type => "journal"}
+        = render :partial => "shared/widget_tabs", :locals => {:type => "columns"}
         .tab-content
           - %w(last best comments).each do |ttype|
             = render :partial => "#{ttype}_tab", :locals => {:current_site => @current_site}

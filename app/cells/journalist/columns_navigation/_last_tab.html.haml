@@ -1,3 +1,3 @@
-.tab-pane#journal-last.active
+.tab-pane#columns-last.active
   - current_site.column_articles.latests(3).each do |art|
     = render :partial => "item", :locals => {:art => art}
