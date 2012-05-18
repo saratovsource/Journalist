@@ -16,6 +16,14 @@ module Journalist
       render
     end
 
+    def widget(args = {})
+      self.options = args
+      @current_site = current_site
+      @posts_count = current_site.column_articles.published.count
+      @columns = current_site.columns.select{|i| i.column_articles.published.count > 0}[0..5]
+      render
+    end
+
     protected
 
     def build_list

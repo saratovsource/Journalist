@@ -17,6 +17,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [220, 400]
   end
 
+  version :column_small do
+    process :resize_to_fill => [140, 80]
+  end
+
   def default_url
     "journalist/" + [version_name, "empty.png"].compact.join('_')
   end
