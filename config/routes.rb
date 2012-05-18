@@ -79,5 +79,6 @@ Rails.application.routes.draw do
   match '/404' => 'rendering#page_not_found'
 
   # Any rendering
-  match '*path' => 'rendering#show'
+  get '*path' => 'rendering#show'
+  post '*path' => 'rendering#comment'
 end
