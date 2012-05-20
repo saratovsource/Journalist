@@ -1,9 +1,13 @@
 class Journalist::CommentsCell < ::MenuCell
   attr_accessor :commentable, :collection
 
-  def show(commentable, collection)
-    self.commentable = commentable
-    self.collection = collection
+  def show(args = {})
+    self.options = args.merge(:can_post => current_account.present?)
+    render
+  end
+
+  def form(args = {})
+    self.options = args
     render
   end
 

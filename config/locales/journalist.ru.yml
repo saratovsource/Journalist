@@ -1,6 +1,7 @@
 ---
 ru:
   buttons:
+    reply: "Ответить"
     like:
       like: Нравится?
     profile_tabs:
@@ -40,6 +41,12 @@ ru:
       widget:
         statistic: "%{count} постов на актуальные темы"
         title: Колонки
+    comments:
+      form:
+        new_comment: "Написать новый комментарий к "
+        send: Написать
+      show:
+        title: Комментарии
     faces_navigation:
       description:
         description: "— это фотократочки с заметными людьми города"

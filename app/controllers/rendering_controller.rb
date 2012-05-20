@@ -16,6 +16,11 @@ class RenderingController < ::BaseController#ApplicationController
     end
   end
 
+  def comment
+    @routerable.write_comment(params[:comment], current_account)
+    redirect_to @routerable.fullpath
+  end
+
   def page_not_found
 
   end

@@ -1,20 +1,7 @@
 - if @routerable
   = @routerable.render(:page).html_safe
   = render_cell "buttons", :like, @routerable, @routerable.rated_by?(@rater)
-  - if @comments.any?
-    - content_for :comments do
-      %section#comments.container
-        %header.header-page.pos-r
-          %h2
-            = t('.title')
-        .row
-          .span18
-            - if current_account.present?
-            = render_cell "journalist/comments", :show, :commentable => @routerable, :comments => @comments
-          - else
-            %p= t(".description")
-          .span6
-            TODO ADWORDS
+  = render_section(:comments)
 - if @layout_sections[:sidebar].present?
   - content_for :sidebar do
     = render_section(:sidebar)
