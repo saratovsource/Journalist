@@ -18,11 +18,9 @@
         .row
           - if content_for?(:sidebar)
             %article.span18{:role => "main"}= yield
-            = render_section(:comments)
             %article.span6
               = yield(:sidebar)
           - else
             %article.span24= yield
-            = render_section(:comments)
       = yield(:postcontent) if content_for?(:postcontent)
     = render :partial => "shared/footer"

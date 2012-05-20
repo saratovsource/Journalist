@@ -18,6 +18,9 @@ module RenderingHelper
     render_cell section[:name], section[:action], (section[:options] || {}) if has_valid_keys?(section)
   end
 
+  def name_of_user(account)
+    account.profile.name || account.name || t(:anonymous)
+  end
   protected
 
   def has_valid_keys?(section, keys=[:name, :action])

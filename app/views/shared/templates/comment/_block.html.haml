@@ -4,8 +4,9 @@
   .postinfo
     %a{:href => '#'}><
       %i.icon-user>
-      = @element.owner.name
+      = @element.owner.profile.name || @element.owner.name
     = " / "
     %span
       %time.pos-r{:datetime => @element.created_at}= l(@element.created_at, :format => :long)
     = " / "
+    = link_to t(:reply, :scope => "buttons"), '', :method => :post, :data=>{:reply => true}

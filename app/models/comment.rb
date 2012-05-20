@@ -14,6 +14,8 @@ class Comment
 
   before_validation :autogenerate_title
 
+  scope :web, ->{asc(:created_at)}
+
   ## Fix for validation chain ##
   include Extensions::Site::Routerable
 

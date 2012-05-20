@@ -1,0 +1,8 @@
+%article#newcommenttopost.post
+  = form_tag @options[:model].fullpath do
+    .comment
+      = text_area_tag "comment", '', :rows => 8
+    .postinfo
+      = t('.new_comment')
+      = link_to @options[:model].title, @options[:model].fullpath
+      = submit_tag t('.send'), :class => "btn pos-a pos-right"

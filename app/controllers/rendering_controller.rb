@@ -5,7 +5,7 @@ class RenderingController < ::BaseController#ApplicationController
   def show
     if @routerable.present?
       @page_class = css_class_from(@routerable)
-      #@comments = @routerable.comments || []
+      @comments = @routerable.comments || []
 
       if params.has_key? :like
         @routerable.rate_and_save(1, @rater) unless @routerable.rated_by?(@rater)
@@ -14,6 +14,11 @@ class RenderingController < ::BaseController#ApplicationController
     else
       render :page_not_found, :layout => "errors", :status => 404
     end
+  end
+
+  def comment
+    @routerable.write_comment(params[:comment], current_account)
+    redirect_to @routerable.fullpath
   end
 
   def page_not_found
