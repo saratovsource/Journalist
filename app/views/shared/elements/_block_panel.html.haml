@@ -16,7 +16,7 @@
       = element.comments.count
     \ 
   %li
-    %a{:href => "#"}><
+    %a{href: "#{element.fullpath}#like"}><
       %i.icon-heart>  
       = element.try(:rate_count) || 0
     \ 
