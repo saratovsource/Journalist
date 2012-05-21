@@ -9,4 +9,4 @@
     %span
       %time.pos-r{:datetime => @element.created_at}= l(@element.created_at, :format => :long)
     = " / "
-    = link_to t(:reply, :scope => "buttons"), '', :method => :post, :data=>{:reply => true}
+    = link_to t(:reply, :scope => "buttons"), '', :method => :post, :data=>{:reply => form_comment_path(@element)}

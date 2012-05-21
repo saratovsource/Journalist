@@ -1,7 +1,8 @@
 - if @routerable
   = @routerable.render(:page).html_safe
-  = render_cell "buttons", :like, @routerable, @routerable.rated_by?(@rater)
-  = render_section(:comments)
+  - content_for :additionals do
+    = render_cell "buttons", :like, @routerable, @routerable.rated_by?(@rater)
+    = render_section(:comments)
 - if @layout_sections[:sidebar].present?
   - content_for :sidebar do
     = render_section(:sidebar)

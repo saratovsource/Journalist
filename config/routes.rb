@@ -73,6 +73,13 @@ Rails.application.routes.draw do
     match 'gallery' => "face_patrols#gallery", :as => :gallery
   end
 
+  resources :comments, :only =>[] do
+    member do
+      get :form
+      post :post
+    end
+  end
+
   resource :profile, :only => [:show, :edit] do
     put :update
   end

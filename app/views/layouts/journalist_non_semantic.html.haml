@@ -24,4 +24,5 @@
           - else
             .span24= yield
             = render_section(:comments)
+    = yield(:additionals) if content_for?(:additionals)
     = render :partial => "shared/footer"
