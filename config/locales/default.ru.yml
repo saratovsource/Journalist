@@ -237,6 +237,7 @@ ru:
   move_element: "Переместить элемент"
   or: или
   profile: Профиль
+  profileslug: (◕_◕)
   register: Зарегистрироваться
   save: Сохранить
   states:

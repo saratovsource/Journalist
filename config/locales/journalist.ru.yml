@@ -105,6 +105,9 @@ ru:
         title: Журнал
   shared:
     elements:
+      last_comments:
+        reply_for: "Ответ на этот комментарий"
+        title: "Комментарии:"
       sort_widget_tab:
         best: Лучшие
         comments: Комментируемые

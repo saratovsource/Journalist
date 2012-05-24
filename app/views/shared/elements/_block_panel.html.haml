@@ -6,7 +6,7 @@
         = l(element.publish_at, :format => :short)
     \ 
   %li
-    %a{:href => "#"}><
+    %a{:href => element.owner.profile.fullpath}><
       %i.icon-user>
       = element.owner.name
     \ 

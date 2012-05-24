@@ -17,6 +17,7 @@ class Comment
   validates_presence_of   :message
 
   scope :web, ->{where(:message.ne => nil).asc(:created_at)}
+  scope :revert, ->{desc(:created_at)}
 
   ## Fix for validation chain ##
   include Extensions::Site::Routerable

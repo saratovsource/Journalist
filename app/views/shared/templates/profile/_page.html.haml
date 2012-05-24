@@ -1,0 +1,12 @@
+.row
+  %aside.span6
+    %p= image_tag(@element.avatar.big.url)
+  %article.span18{:role => "main"}
+    =# render_cell "buttons", :profile_tabs, nil
+    - if @element.name.present?
+      .readlanme
+        %h1= @element.name
+    %p.whereami.dark-links= [@element.country, @element.city].compact.join(', ')
+    - if @element.about_me.present?
+      = RedCloth.new(@element.about_me).to_html.html_safe
+    = render "shared/elements/last_comments", :comments => @element.owner.comments

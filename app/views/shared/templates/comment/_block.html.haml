@@ -2,7 +2,7 @@
   .comment
     = @element.message.to_textile.html_safe
   .postinfo
-    %a{:href => '#'}><
+    %a{:href => @element.owner.profile.fullpath}><
       %i.icon-user>
       = @element.owner.profile.name || @element.owner.name
     = " / "
