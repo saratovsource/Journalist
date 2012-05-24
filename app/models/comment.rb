@@ -6,6 +6,7 @@ class Comment
   include Mongoid::Taggable
   include Mongoid::Tree
   include Mongoid::Rateable
+  include Extensions::Content::Commentable
 
   field :title
   field :message
@@ -13,8 +14,9 @@ class Comment
   belongs_to :commentable, polymorphic: true
 
   before_validation :autogenerate_title
+  validates_presence_of   :message
 
-  scope :web, ->{asc(:created_at)}
+  scope :web, ->{where(:message.ne => nil).asc(:created_at)}
 
   ## Fix for validation chain ##
   include Extensions::Site::Routerable
@@ -22,12 +24,24 @@ class Comment
   protected
 
   def override_route_path
-    if commentable.fullpath
-      "#{commentable.fullpath.gsub(/^\//, '')}##{slug}"
-    else
-      "#{commentable.fullpath}##{slug}"
+    ret = "#{root.commentable.fullpath.gsub(/^\//, '')}##{slug}"
+    unless parent.nil?
+      ret = "/#{ret}"
     end
+    ret
   end
+
+  #def override_route_path
+  #  if root.commentable.fullpath[0] == '/'
+  #    "#{root.commentable.fullpath.gsub(/^\//, '')}##{slug}"
+  #  else
+  #    "#{root.commentable.fullpath}##{slug}"
+  #  end
+  #end
+
+  #def override_route_path
+  #  "#{root.commentable.fullpath}##{slug}"
+  #end
 
   def set_default_marker
     self.cache_marker = [commentable.fullpath, Time.now.nsec].join('-')

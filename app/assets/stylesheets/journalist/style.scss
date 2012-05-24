@@ -2089,6 +2089,7 @@ h2 .marker { top: -2px; }
 /* COMMENTS */
 #comments .post { position:relative;  }
 #comments .postinfo { margin:-15px 0 0; padding:0 0 20px; }
+#comments form .postinfo { margin: 10px 0 0; }
 #comments .bad { opacity:.15; transition:.25s ease-in-out; -moz-transition:.25s ease-in-out; -webkit-transition:.25s ease-in-out; -o-transition:.25s ease-in-out; -ms-transition:.25s ease-in-out;}
 #comments .bad:hover { opacity:1; }
 #comments .comment p { margin:1.25em 0; }

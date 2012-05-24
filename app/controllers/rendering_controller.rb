@@ -17,8 +17,9 @@ class RenderingController < ::BaseController#ApplicationController
   end
 
   def comment
-    @routerable.write_comment(params[:comment], current_account)
-    redirect_to @routerable.fullpath
+    @rtm = @routerable.write_comment(params[:comment], current_account)
+    p @rtm.fullpath.inspect
+    redirect_to @rtm.fullpath
   end
 
   def page_not_found
@@ -34,7 +35,7 @@ class RenderingController < ::BaseController#ApplicationController
   def retrive_route_object
     @routerable = current_site.find_object_by_path("/#{params[:path]}") if params[:path]
     return if @routerable.blank?
-    @presenter = Journalist::Presenters::Presenter.build(@routerable)
+    @presenter = Journalist::Presenters::Presenter.build(@routerable, :parent_controller => self)
     @layout_sections = @presenter.cells if @presenter.present?
     @rater = Rater.find_or_create_by(:ip_address => request.env['REMOTE_ADDR'], :site_id => current_site.id)
   end

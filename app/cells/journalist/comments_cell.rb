@@ -11,6 +11,16 @@ class Journalist::CommentsCell < ::MenuCell
     render
   end
 
+  def reply(args = {})
+    self.options = args
+    render
+  end
+
+  def register(args = {})
+    self.options = args
+    render
+  end
+
   protected
 
   def build_list

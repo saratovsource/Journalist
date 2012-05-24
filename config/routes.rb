@@ -75,7 +75,7 @@ Rails.application.routes.draw do
 
   resources :comments, :only =>[] do
     member do
-      get :form
+      post :form
       post :post
     end
   end

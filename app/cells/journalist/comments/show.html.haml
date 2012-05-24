@@ -2,7 +2,10 @@
   %header.page-header.pos-r
     %h2
       = t('.title')
-      %small= @options[:model].comments.count
-  - @options[:model].comments.web.each do |comment|
-    = comment.render(:block)
-  = render_cell "journalist/comments", :form, @options if @options[:can_post]
+      %small= @options[:model].comments.web.count
+  .row
+    .span18
+      - @options[:model].comments.web.each do |comment|
+        = comment.render(:block)
+      = render_cell "journalist/comments", :form, @options if @options[:can_post]
+    .span6= render_cell "journalist/adware", :show
