@@ -5,8 +5,6 @@ en:
     password: "Password invalid!"
   all_items: All
   are_you_shure: "Are you shure?"
-  face_patrol:
-    default_title: "Man or Woman name"
   column_article:
     default_title: "New Column Post"
   create: Create
@@ -17,6 +15,8 @@ en:
   errors:
     messages:
       needs_admin_account: "One admin account is required at least"
+  face_patrol:
+    default_title: "Man or Woman name"
   generate: Generate
   godmode:
     accounts:
@@ -195,8 +195,8 @@ en:
       menu:
         accounts: Accounts
         comments: Comments
-        feedback: Feedback
         face_patrol: "Face patrol"
+        feedback: Feedback
         journal: Journal
         mediabank: Mediabank
         publications: Publications
@@ -230,6 +230,7 @@ en:
       journal_rubric: "Journal Rubric"
   move_element: "Move Element"
   profile: Profile
+  profileslug: (◕_◕)
   save: Save
   states:
     drafted: Drafted

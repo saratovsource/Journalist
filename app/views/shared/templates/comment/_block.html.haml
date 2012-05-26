@@ -1,12 +1,14 @@
-%article{:class => "post indent-#{@element.depth}", :id => @element.slug}
+%article{:class => "post indent-#{(@element.depth < 6) ? @element.depth : 6}", :id => @element.slug}
   .comment
     = @element.message.to_textile.html_safe
   .postinfo
-    %a{:href => '#'}><
+    %a{:href => @element.owner.profile.fullpath}><
       %i.icon-user>
       = @element.owner.profile.name || @element.owner.name
     = " / "
     %span
       %time.pos-r{:datetime => @element.created_at}= l(@element.created_at, :format => :long)
     = " / "
-    = link_to t(:reply, :scope => "buttons"), '', :method => :post, :data=>{:reply => true}
+    = link_to t(:reply, :scope => "buttons"), form_comment_path(@element), :remote => true, :method => :post, :data=>{:reply => ""}
+- @element.comments.each do |cc|
+  = cc.render(:block)

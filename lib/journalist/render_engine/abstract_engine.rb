@@ -8,6 +8,8 @@ module Journalist
       include AbstractController::AssetPaths
       include ::Rails.application.routes.url_helpers
 
+      include Journalist::Routing::SiteDispatcher
+
       self.view_paths = ActionView::PathSet.new([::Journalist::Engine.root.join("app/views"), "app/views"])
 
       attr_accessor :element, :options
@@ -31,7 +33,7 @@ module Journalist
       end
 
       def render_template_from_path
-        render partial: template_path, :locals => { element: @element } if @element
+        render partial: template_path, :locals => { element: @element, options: @options } if @element
       end
 
       def template_path

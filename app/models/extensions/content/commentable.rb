@@ -10,7 +10,10 @@ module Extensions
       end
 
       def write_comment(message, user)
-        self.comments.create(:owner => user, :message => message, :site => self.site)
+        @ret_comment = self.comments.build(:owner => user, :message => message, :site => self.site)
+        @ret_comment.parent = self if self.kind_of?(Comment)
+        @ret_comment.save
+        @ret_comment
       end
 
     end

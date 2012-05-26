@@ -1,13 +1,13 @@
 ---
 ru:
   buttons:
-    reply: "Ответить"
     like:
       like: Нравится?
     profile_tabs:
       bookmarks: Закладки
       edit: Редактировать
       profile: Профайл
+    reply: Ответить
   columns:
     columns:
       index:
@@ -45,6 +45,11 @@ ru:
       form:
         new_comment: "Написать новый комментарий к "
         send: Написать
+      register:
+        comment: "Да, да, мы точно будем гореть в аду, ведь для того, чтобы оставить комментарий необходимо <a href='%{signin}'>войти</a> или <a href='%{signup}'>зарегистрироваться</a>"
+      reply:
+        new_comment: "Комментарий к "
+        send: Ответить
       show:
         title: Комментарии
     faces_navigation:
@@ -100,6 +105,9 @@ ru:
         title: Журнал
   shared:
     elements:
+      last_comments:
+        reply_for: "Ответ на этот комментарий"
+        title: "Комментарии:"
       sort_widget_tab:
         best: Лучшие
         comments: Комментируемые

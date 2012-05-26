@@ -1,0 +1,4 @@
+- if current_account.present?
+  = render_cell 'journalist/comments', :reply, {:model => @comment}
+- else
+  = render_cell 'journalist/comments', :register, {:model => @comment}

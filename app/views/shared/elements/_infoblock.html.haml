@@ -7,21 +7,19 @@
         %time.pos-r{:datetime => element.published_at}= l(element.published_at, :format => :short)
       &nbsp;
     %li
-      -# TODO: Add real link!
-      %a{href: '#'}><
+      %a{href: element.owner.profile.fullpath}><
         %i.icon-user.icon-white>
         = element.owner.name
       &nbsp;
     %li
-      %a{href: '#comments'}><
+      %a{href: "#{element.fullpath}#comments"}><
         %i.icon-comment.icon-white>
         = element.comments.count
       &nbsp;
     %li
-      -# TODO: Add likes
-      %a{href: '#'}><
+      %a{href: "#{element.fullpath}#like"}><
         %i.icon-heart.icon-white>
-        ?
+        = element.try(:rate_count) || 0
       &nbsp;
   %ul.unstyled.breadcrumb.compact.no-margin.pos-a.tags.light-links
     - if element.parent && element.parent.respond_to?(:title)

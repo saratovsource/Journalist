@@ -1,9 +1,9 @@
 module Journalist
   module Presenters
-    class ColumnArticlePresenter < Presenter
+    class FacePresenter < Presenter
 
       def sections
-        [:columns]
+        [:facepatrol]
       end
 
       protected
