@@ -1,7 +1,7 @@
 - %w(base_fields parent).each do |fieldset|
   = render_fieldsets fieldset, f
 = fieldset_tag(:content, :class => "toogle off") do
-  - %w(markup_editor).each do |fieldset|
+  - %w(markup_editor assets_picker).each do |fieldset|
     = render_fieldsets fieldset, f
 = fieldset_tag(:settings, :class => "toogle off") do
   - %w(stickers publish partners).each do |fieldset|

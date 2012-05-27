@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    resources :media_collections
+  end
+
   devise_for :account, :class_name => 'Account', :controllers => { :sessions => 'sessions', :passwords => 'passwords', :registrations => 'registrations'}
 
   namespace :godmode do
@@ -29,6 +33,13 @@ Rails.application.routes.draw do
     end
 
     resources :faces do
+      get :empty,         :on => :collection
+      get :prepublished,  :on => :collection
+      get :published,     :on => :collection
+      get :tags,          :on => :collection
+    end
+
+    resources :reportages do
       get :empty,         :on => :collection
       get :prepublished,  :on => :collection
       get :published,     :on => :collection

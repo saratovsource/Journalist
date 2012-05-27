@@ -1,3 +1,4 @@
+require 'rabl'
 require 'mimetype_fu'
 require 'inherited_resources'
 require 'devise'
@@ -19,6 +20,7 @@ require 'mongoid_rateable'
 
 require 'omniauth-facebook'
 require 'omniauth-twitter'
+
 
 require 'journalist/core_ext'
 require 'journalist/uniq_generator'

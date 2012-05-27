@@ -73,6 +73,7 @@ Gem::Specification.new do |s|
   s.add_dependency "omniauth-twitter"
 
   s.add_dependency "cache_method"
+  s.add_dependency "rabl"
 
   s.add_development_dependency('bson')
   s.add_development_dependency('haml')

@@ -1,0 +1,6 @@
+= render :partial => "/godmode/shared/headers/stated_edit_header", :locals => {:edit_type => Reportage.model_name.parameterize, :item => @reportage}
+.container
+  .row
+    = form_for [:godmode, @reportage] do |f|
+      = render "form", :f => f
+      .float-actions= render :partial => "/godmode/shared/actions/stated_actions", :locals => {:f => f}

@@ -22,6 +22,7 @@ class Site
   has_many :column_articles, :validate => false
   has_many :columns, :validate => false
   has_many :faces, :validate => false
+  has_many :reportages, :validate => false
   has_many :time_lines, :validate => false
   has_many :profiles, :validate => false
 
