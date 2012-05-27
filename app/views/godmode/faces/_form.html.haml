@@ -1,2 +1,4 @@
 - %w(base_fields sex age file).each do |fieldset|
   = render_fieldsets fieldset, f
+= fieldset_tag(:seo, :class => "toogle off") do
+  = render_fieldsets "seo", f

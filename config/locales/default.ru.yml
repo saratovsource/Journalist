@@ -41,6 +41,7 @@ ru:
     events:
       prepublish: "Послать редактору"
       publish: Опубликовать
+      rescue: Восстановить
       rewrite: Переписать
       trash: "В корзину"
     faces:
@@ -166,6 +167,10 @@ ru:
           description: Описание
           help:
             description: "В это поле можно ввести небольшое описание, желательно не более 255 символов."
+        reportage:
+          content: Содержимое
+          help:
+            content: "Здесь необходимо указать ссылки на интересующий Вас контент. Они преобразуются в медийные данные."
         seo:
           help:
             in_robots: "Эта страница будет добавлена в robots.txt и не будет доступна поисковикам для индексации."
@@ -197,6 +202,7 @@ ru:
         stated_edit_header:
           face: Фейс
           journalarticle: "Редактируем журнальную статью"
+          reportage: Репортаж
       menu:
         accounts: Пользователи
         comments: Комментарии
@@ -217,6 +223,7 @@ ru:
         others: Другие
         photo: Фото
         redaction: Редакция
+        reportage: Репортаж
     sidebar:
       headers:
         accounts: Пользователи

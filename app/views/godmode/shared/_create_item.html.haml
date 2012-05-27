@@ -7,3 +7,4 @@
     %li.divider
     = drop_down_menu_item ColumnArticle.model_name.human, "column_article",  empty_godmode_column_articles_url if current_account.column.present?
     = drop_down_menu_item Face.model_name.human, "face", empty_godmode_faces_url if can?(:create, Face)
+    = drop_down_menu_item Reportage.model_name.human, "reportage", empty_godmode_reportages_url if can?(:create, Reportage)

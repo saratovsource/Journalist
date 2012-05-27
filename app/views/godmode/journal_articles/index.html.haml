@@ -14,7 +14,7 @@
             - else
               = article.title
         %td= link_to article.parent.title, godmode_journal_rubric_path(article.parent) if article.parent
-        - %w(comments likes).each do |field|
-          %td.a-center= content_tag(:small, 0, :class => field)
+        %td= link_to article.comments.count, '#'
+        %td= link_to article.try(:rate_count) || 0, '#'
         %td= link_to article.owner.name, articles_godmode_account_path(article.owner), :class => "light-link"
         %td= content_tag(:small, l(article.updated_at, :format => :short), :class => "updated_at", :title => t(".updated_at_title", :time => l(article.updated_at, :format => :long)))

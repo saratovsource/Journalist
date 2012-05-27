@@ -9,7 +9,7 @@ module Journalist
 
     def build_list
       add :journal, :url => journal_root_path, :active => sections.include?(:journal)
-      add :reportage, :url => '#'
+      add :reportage, :url => '#', :active => sections.include?(:reportage)
       add :facepatrol, :url => face_patrol_root_path, :active => sections.include?(:face_patrol)
       add :columns, :url => columns_root_path, :active => sections.include?(:columns)
       add :timeline, :url => timeline_root_path, :active => sections.include?(:timeline)

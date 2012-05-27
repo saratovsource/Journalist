@@ -8,8 +8,8 @@ class Reportage
   include Mongoid::Rateable
   include Extensions::Article::Timelinable
 
-  # -= Callbacks =-
-  before_validation :set_owned_site
+  # -= Fields =-
+  field :content
 
   #-= States =-
   state_machine do
@@ -24,6 +24,14 @@ class Reportage
 
   # -= Validations =-
   validates_presence_of     :site
+
+  def prefix
+    "reportage"
+  end
+
+  def parent
+    self.site
+  end
 
   # -= Methods =-
   class << self
@@ -49,9 +57,4 @@ class Reportage
     end
   end
 
-  protected
-
-  def set_owned_site
-    self.site = self.parent.site if self.parent.present?
-  end
 end
