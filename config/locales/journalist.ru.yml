@@ -121,6 +121,9 @@ ru:
             one: "один годик"
             other: "%{count} лет"
             zero: "еще младенец"
+      reportage:
+        page:
+          photos: фото
     widget_tabs:
       best: Лучшие
       comments: Комментируемые

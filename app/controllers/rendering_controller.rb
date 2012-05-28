@@ -43,6 +43,7 @@ class RenderingController < ::BaseController#ApplicationController
   def css_class_from(object)
     case object
     when MediaCollection then "mediapage"
+    when Reportage then "mediapage"
     else "page"
     end
   end

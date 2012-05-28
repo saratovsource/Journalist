@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :media_collections
+    #resources :reportages
   end
 
   devise_for :account, :class_name => 'Account', :controllers => { :sessions => 'sessions', :passwords => 'passwords', :registrations => 'registrations'}
@@ -71,6 +72,10 @@ Rails.application.routes.draw do
   end
   namespace :columns do
     root :to => "columns#index"
+  end
+
+  namespace :reportage do
+    root :to => "reportages#index"
   end
 
   namespace :timeline do

@@ -25,14 +25,6 @@ class Reportage
   # -= Validations =-
   validates_presence_of     :site
 
-  def prefix
-    "reportage"
-  end
-
-  def parent
-    self.site
-  end
-
   # -= Methods =-
   class << self
     # Create new empty article
@@ -46,6 +38,26 @@ class Reportage
     end
   end
 
+  def images
+    @images ||= retrive_images
+  end
+
+  def prefix
+    "reportage"
+  end
+
+  def parent
+    self.site
+  end
+
+  def description
+    self.meta_description
+  end
+
+  def to_html(fname = :content, args = nil)
+    "PARSE IMAGES"
+  end
+
   def can_state?(state_name)
     case state_name
     when :prepublish
@@ -56,5 +68,26 @@ class Reportage
       true
     end
   end
+
+  protected
+
+  def retrive_images
+    ret ||= []
+    self.content.each_line do |line|
+      obj = self.site.find_object_by_path(line.gsub(/\r\n?/, ""))
+      p line
+      case obj
+      when MediaFile
+        ret << obj
+      when MediaCollection
+        ret << obj.media_files
+      else
+        #nothing
+      end
+      ret << obj if obj.present? && obj.kind_of?(MediaFile)
+    end
+    ret.flatten.compact
+  end
+
 
 end

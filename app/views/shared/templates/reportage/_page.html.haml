@@ -1,0 +1,9 @@
+%h1
+  = @element.title
+  %small= "#{@element.images.count} #{t('.photos')}"
+%figure.pos-r
+  %p.fotorama{data: {nav: "thumbs", margin: 0, width: "100%", fullscreenIcon: "true"}}
+    - if !(media_files = @element.images).empty?
+      - media_files.each do |mf|
+        = mf.render(:block)
+%figcaption= @element.description

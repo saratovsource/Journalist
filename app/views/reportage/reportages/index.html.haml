@@ -1,0 +1,5 @@
+= render_cell 'journalist/reportages_navigation', :tabs, :site => current_site
+%ul.unstyled.row
+  - @reportages.each do |reportage|
+    %li.span6
+      %article= reportage.render(:block)

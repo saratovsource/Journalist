@@ -9,6 +9,8 @@ class Site
   field :name
   field :robots_txt
 
+  alias :title :name
+
   # -= Associations =-
   embeds_many :memberships
   has_many :journal_rubrics, :validate => false
@@ -56,6 +58,10 @@ class Site
   # Fix for routing
   def router
     nil
+  end
+
+  def fullpath
+    "/"
   end
 
   def find_object_by_path(path)
