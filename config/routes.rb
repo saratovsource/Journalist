@@ -74,7 +74,7 @@ Rails.application.routes.draw do
     root :to => "columns#index"
   end
 
-  namespace :reportage do
+  namespace :reportages do
     root :to => "reportages#index"
   end
 
