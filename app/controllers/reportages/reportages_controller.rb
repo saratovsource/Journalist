@@ -1,4 +1,4 @@
-module Reportage
+module Reportages
   class ReportagesController < ::BaseController
 
 
