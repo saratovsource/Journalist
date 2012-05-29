@@ -1,6 +1,6 @@
 - if @routerable
   = @routerable.render(:page).html_safe
-  - unless [Profile, MediaCollection, Reportage].include?(@routerable.class)
+  - unless [Profile, MediaCollection].include?(@routerable.class)
     - content_for :additionals do
       = render_cell "buttons", :like, @routerable, @routerable.rated_by?(@rater)
       = render_section(:comments)

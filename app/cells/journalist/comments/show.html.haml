@@ -8,4 +8,5 @@
       - @options[:model].comments.web.each do |comment|
         = comment.render(:block)
       = render_cell "journalist/comments", :form, @options if @options[:can_post]
-    .span6= render_cell "journalist/adware", :show
+    - if @options[:model].comments.web.present?
+      .span6= render_cell "journalist/adware", :show
