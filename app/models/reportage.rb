@@ -69,6 +69,10 @@ class Reportage
     end
   end
 
+  def cat_link_text
+    nil
+  end
+
   protected
 
   def retrive_images
