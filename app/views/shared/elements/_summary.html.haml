@@ -1,1 +1,3 @@
-.post-teaser= raw element.to_html(:summary)
+.post-teaser
+  = raw element.to_html(:summary)
+  = link_to element.cat_link_text.present? ? element.cat_link_text : t(".read_#{rand(4)}"), element.fullpath, :class => "morelink"

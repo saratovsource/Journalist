@@ -13,7 +13,22 @@ module Extensions
       end
 
       def summary(delimiter = "cut")
-        self.content.scan(/(.*)?<!--#{delimiter}-->(.*)?/im).flatten.compact.first || ""
+        cat_array(delimiter).first || ""
+      end
+
+      def cat_link_text(delimiter = "cut")
+        cat_ar = cat_array(delimiter)
+        if cat_ar.size > 2
+          cat_ar[1]
+        else
+          ""
+        end
+      end
+
+      protected
+
+      def cat_array(delimiter = "cut")
+        @cat_array ||= self.content.scan(/(.*)?<!--#{delimiter}+:?(.*)?-->(.*)?/im).flatten.compact
       end
     end
   end
