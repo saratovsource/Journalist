@@ -5,4 +5,5 @@
       = render "shared/elements/label", :label => lab
   = render :partial => "shared/elements/images_list", :locals => {:element => @element}
   %p.post-description.clearfix= @element.meta_description
+  = render :partial => "shared/elements/more_link", :locals => {:element => @element}
   .page.postinfo.pos-r= render :partial => "shared/elements/block_panel", :locals => {:element => @element}
