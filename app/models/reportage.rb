@@ -84,7 +84,6 @@ class Reportage
       else
         #nothing
       end
-      ret << obj if obj.present? && obj.kind_of?(MediaFile)
     end
     ret.flatten.compact
   end
