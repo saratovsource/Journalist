@@ -2,7 +2,7 @@
   = @element.title.j_clean
   %small= "#{@element.media_files.count} #{t('.photos')}"
 %figure.pos-r
-  %p.fotorama{data: {nav: "thumbs", margin: 0, width: "100%", fullscreenIcon: "true", :hash => true}}
+  %p.fotorama{data: {nav: "thumbs", margin: 0, width: "100%", fullscreenIcon: "true", :hash => "true"}}
     - if !(media_files = @element.media_files).empty?
       - media_files.each do |mf|
         = mf.render(:block)
