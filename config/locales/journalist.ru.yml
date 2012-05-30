@@ -105,19 +105,21 @@ ru:
         title: Журнал
   shared:
     elements:
+      images_list:
+        count: "%{count} фото"
       last_comments:
         reply_for: "Ответ на этот комментарий"
         title: "Комментарии:"
-      sort_widget_tab:
-        best: Лучшие
-        comments: Комментируемые
-        last: Последние
       more_link:
         read_0: "Узнать подробности"
         read_1: "Жги, капитан"
         read_2: "Больше конкретики"
         read_3: "Этай ссылка принесет нам миллионы"
         read_4: Подробнее
+      sort_widget_tab:
+        best: Лучшие
+        comments: Комментируемые
+        last: Последние
     templates:
       face:
         block:
