@@ -44,7 +44,7 @@ class Reportage
   end
 
   def prefix
-    "reportage"
+    "reportages"
   end
 
   def parent
