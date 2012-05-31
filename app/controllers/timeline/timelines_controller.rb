@@ -31,7 +31,7 @@ module Timeline
             :name => "journalist/slowtime",
             :action => :description
           }}
-        render "slowtime"
+        render "slowtime", :status => 404
       end
     end
 
