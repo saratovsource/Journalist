@@ -1,4 +1,6 @@
 %h1
   = @element.title.j_clean
+  - @element.labels.each do |lab|
+    = render "shared/elements/label", :label => lab
 .page.postinfo.pos-r= render :partial => "shared/elements/block_panel", :locals => {:element => @element}
 = raw @element.to_html

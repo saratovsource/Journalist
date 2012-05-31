@@ -6,7 +6,7 @@ require 'json'
 require 'devise'
 require 'mongoid'
 require 'haml'
-require 'formtastic'
+#require 'formtastic'
 require 'inherited_resources'
 require 'carrierwave'
 require 'mimetype_fu'
@@ -47,6 +47,7 @@ module Journalist
     end
 
     rake_tasks do
+      Dir[File.join(File.dirname(__FILE__),'../tasks/*.rake')].each { |f| load f }
     end
   end
 end
