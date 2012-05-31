@@ -13,6 +13,8 @@ class Comment
 
   belongs_to :commentable, polymorphic: true
 
+  belongs_to :moderator, :class_name => "Account"
+
   before_validation :autogenerate_title
   validates_presence_of   :message
 
