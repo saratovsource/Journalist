@@ -46,7 +46,7 @@ ru:
       sign_in: "Войти на сайт"
   shared:
     footer:
-      copiright: "&copy; Nahal Media Ltd. 2012 Tel.: 8 (8452) 57-11-48"
+      copiright: "&copy; Nahal Media Ltd. %{year}"
       develop: "Created by <a href='http://advamedia.ru'>Advamedia.ru</a></small>"
     header:
       big_h: Н

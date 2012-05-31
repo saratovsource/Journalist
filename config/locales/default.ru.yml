@@ -236,7 +236,7 @@ ru:
     godmode:
       title: "%{name} - Режим Бога"
   login: Войти
-  logout: LogOut
+  logout: Выйти
   mongoid:
     models:
       journal_article: "Статья Журнала"

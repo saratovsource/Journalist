@@ -4,5 +4,5 @@
       = text_area_tag "comment", '', :rows => 8
     .postinfo
       = t('.new_comment')
-      = link_to @options[:model].root.commentable.title, @options[:model].root.commentable.fullpath
+      = link_to @options[:model].root.commentable.title.j_clean.truncate(50), @options[:model].root.commentable.fullpath
       = submit_tag t('.send'), :class => "btn pos-a pos-right"
