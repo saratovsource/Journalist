@@ -4,6 +4,7 @@ module Extensions
       extend ActiveSupport::Concern
 
       included do
+        has_and_belongs_to_many :labels
 
         scope :latests, lambda{|n| published.desc(:published_at).limit(n)}
       end

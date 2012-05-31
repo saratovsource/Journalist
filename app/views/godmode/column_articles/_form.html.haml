@@ -4,7 +4,7 @@
   - %w(markup_editor).each do |fieldset|
     = render_fieldsets fieldset, f
 = fieldset_tag(:settings, :class => "toogle off") do
-  - %w(stickers publish partners).each do |fieldset|
+  - %w(labels stickers publish partners).each do |fieldset|
     = render_fieldsets fieldset, f
 = fieldset_tag(:seo, :class => "toogle off") do
   = render_fieldsets "seo", f

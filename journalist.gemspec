@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'spine-rails'
   #------------
 
-  s.add_dependency 'formtastic'
+  #s.add_dependency 'formtastic'
   s.add_dependency 'simple_form'
   s.add_dependency 'inherited_resources'
   s.add_dependency 'cells'

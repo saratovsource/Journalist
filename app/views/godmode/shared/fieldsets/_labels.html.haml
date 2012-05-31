@@ -1,0 +1,2 @@
+.clearfix
+  = f.input :label_ids, :collection => Label.all.collect{|i| [i.name, i.id]}, :as => :check_boxes
