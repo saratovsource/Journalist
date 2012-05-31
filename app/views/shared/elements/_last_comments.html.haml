@@ -14,9 +14,9 @@
               = link_to t('.reply_for'), comment.commentable.fullpath
             - else
               %span.light-link #
-              = link_to comment.commentable.parent.title, comment.commentable.parent.fullpath
+              = link_to comment.commentable.parent.title.j_clean.truncate(50), comment.commentable.parent.fullpath
               %span.light-link /
-              = link_to comment.commentable.title, comment.commentable.fullpath
+              = link_to comment.commentable.title.j_clean.truncate(50), comment.commentable.fullpath
             = " / "
             %span
               %time.pos-r{:datetime => comment.created_at}= l(comment.created_at, :format => :long)

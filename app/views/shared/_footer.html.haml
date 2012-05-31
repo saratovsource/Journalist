@@ -5,7 +5,7 @@
       = render_cell 'journalist/top_menu', :footer
     .row.copyright
       .span12
-        %p= t(".copiright").html_safe
+        %p= t(".copiright", :year => Date.today.year).html_safe
       .span12.a-right
         %p
           %small
