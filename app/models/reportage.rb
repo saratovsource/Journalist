@@ -3,6 +3,7 @@ class Reportage
   include Extensions::Content::BaseFields
   include Extensions::Site::IncludedIn
   include Extensions::Auth::HasOwner
+  include Extensions::Stick::Stickers
   include Extensions::Article::Stated
   include Extensions::Article::Publish
   include Mongoid::Rateable

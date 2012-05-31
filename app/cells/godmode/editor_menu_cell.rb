@@ -7,6 +7,7 @@ class Godmode::EditorMenuCell < ::MenuCell
     add :face_patrol, :url => prepublished_godmode_faces_path, :controllers => [Godmode::FacesController]
     add :comments,  :url => '#'
     add :feedback,  :url => '#'
+    add :labels,    :url => godmode_labels_path, :controllers => [Godmode::LabelsController]
   end
 
   def build_item(name, attributes)
