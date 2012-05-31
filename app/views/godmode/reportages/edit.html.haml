@@ -2,5 +2,5 @@
 .container
   .row
     = simple_form_for [:godmode, @reportage] do |f|
-      = render "form", :f => f
+      = render :partial => "#{'readonly_' if resource.readonly?}form", :locals => { :f => f }
       .float-actions= render :partial => "/godmode/shared/actions/stated_actions", :locals => {:f => f}
