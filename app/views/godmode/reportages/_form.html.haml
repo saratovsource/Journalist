@@ -1,4 +1,8 @@
 - %w(base_fields reportage).each do |fieldset|
   = render_fieldsets fieldset, f
+= fieldset_tag(:settings, :class => "toogle off") do
+  - %w(labels stickers publish).each do |fieldset|
+    = render_fieldsets fieldset, f
 = fieldset_tag(:seo, :class => "toogle off") do
   = render_fieldsets "seo", f
+

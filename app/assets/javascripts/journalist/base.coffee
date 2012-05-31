@@ -6,6 +6,7 @@
 #= require ./vendor/jquery.fancybox.pack
 #= require ./vendor/jquery.markitup
 #= require ./vendor/jquery.tablesorter.min
+#= require ./vendor/fotorama
 #= require_tree ./markitup
 #= require ./bootstrap/bootstrap
 #= require_tree ./godmode

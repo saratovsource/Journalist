@@ -17,6 +17,25 @@ ru:
       gallery:
         photos: фото
         title: "Фейспатруль - галерея"
+  godmode:
+    headers:
+      color: Цвет
+      css: Иконка
+      render: Рендер
+    labels:
+      index:
+        new: "Добавить метку"
+    shared:
+      headers:
+        edit_header:
+          label: "Редактирование метки"
+        index_header:
+          label: Метки
+          reportage: Репортажи
+        new_header:
+          title: "Новая метка"
+      menu:
+        labels: Метки
   home:
     index:
       bgoverlay: "Нажмите здесь чтобы закрыть"
