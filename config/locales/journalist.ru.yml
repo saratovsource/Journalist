@@ -129,6 +129,10 @@ ru:
       last_comments:
         reply_for: "Ответ на этот комментарий"
         title: "Комментарии:"
+      sort_widget_tab:
+        best: Лучшие
+        comments: Комментируемые
+        last: Последние
       more_link:
         read_0: "Узнать подробности"
         read_1: "Жги, капитан"
