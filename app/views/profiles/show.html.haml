@@ -9,4 +9,4 @@
     %p.whereami.dark-links= [@profile.country, @profile.city].compact.join(', ')
     - if @profile.about_me.present?
       = RedCloth.new(@profile.about_me).to_html.html_safe
-    = render "shared/elements/last_comments", :comments => @profile.owner.comments.page(params[:page]).per(params[:per_page])
+    = render "shared/elements/last_comments", :comments => @profile.owner.comments.page(params[:page]).per(params[:per_page]), :element => @profile.owner

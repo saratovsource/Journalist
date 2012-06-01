@@ -11,7 +11,7 @@
         %tr
           %td.check= check_box_tag :selected_articles, nil, nil
           %td= link_to article.title, can?(:edit, article) ? edit_resource_path(article) : resource_path(article)
-          %td= link_to article.comments.count, '#'
+          %td= link_to article.comments_count, '#'
           %td= link_to article.try(:rate_count) || 0, '#'
           %td= l(article.created_at, :format => :short)
 

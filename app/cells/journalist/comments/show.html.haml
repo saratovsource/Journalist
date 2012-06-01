@@ -2,7 +2,7 @@
   %header.page-header.pos-r
     %h2
       = t('.title')
-      %small= @options[:model].comments.web.count
+      %small= @options[:model].comments_count
   .row
     .span18
       - @options[:model].comments.web.each do |comment|
