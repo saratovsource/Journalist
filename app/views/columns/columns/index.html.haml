@@ -1,0 +1,6 @@
+- content_for :sidebar do
+  = render_section(:sidebar)
+= render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym)
+- @column_articles.each do |article|
+  = article.render(:block)
+  .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}

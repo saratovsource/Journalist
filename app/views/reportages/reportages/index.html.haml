@@ -1,0 +1,4 @@
+- if @reportages.any?
+  - @reportages.each do |item|
+    = item.render(:block)
+    .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}

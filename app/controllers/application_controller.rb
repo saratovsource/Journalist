@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
+  include Journalist::Routing::SiteDispatcher
+
   protect_from_forgery
+
+  layout "journalist"
 
   protected
 
-  #rescue_from Exception, :with => :render_error
-  #
-  #def render_error
-  #   render :template => "/errors/500", :status => 500
-  #end
+  def journalist_layout
+   request.xhr? ? false : "journalist"
+  end
 end

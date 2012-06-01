@@ -1,6 +1,6 @@
 %ul.unstyled.compact
-	- @list.each_with_index do |item, index|
-		%li{:class => "#{'active' if item[:expanded]}"}
-			= link_to item[:url] do
-				= item[:label]
-			= render_cell "godmode/#{item[:name]}_sub_menu", :show if item[:expanded]
+  - @list.each_with_index do |item, index|
+    %li{:class => "#{'active' if item[:expanded]}"}
+      = link_to item[:url] do
+        = item[:label]
+      = render_cell "godmode/#{item[:name]}_sub_menu", :show if item[:expanded]

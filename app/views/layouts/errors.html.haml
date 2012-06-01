@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag    "journalist/application"
+    = javascript_include_tag "journalist/application"
+    = csrf_meta_tags
+    %link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
+    %link{:rel => "stylesheet", :href => ""}
+  %body
+    %header.cheeky-header{:role => "banner"}
+      .container
+        %hgroup
+          %h1.cheeky-logo.a-center
+            %a{:href => root_path}
+              %span.big-h>= t '.big_h'
+              %span= t '.header_continue'
+    .container= yield

@@ -1,0 +1,6 @@
+.tab-pane#columns-best
+  -items = current_site.column_articles.weekly.highest_rated(3)
+  - if items.any?
+    - items.each do |art|
+      = render :partial => "item", :locals => {:art => art}
+  - else

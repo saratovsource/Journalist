@@ -1,0 +1,255 @@
+---
+ru:
+  acl:
+    acl_time_range: "Сейчас не время"
+    password: "Пароль не верен!"
+  all_items: Все
+  are_you_shure: "Вы уверены?"
+  column_article:
+    default_title: "Новый пост в колонку"
+  create: Создать
+  description: Описание
+  descriptions: Описания
+  destroy: Удалить
+  edit: Редактировать
+  errors:
+    messages:
+      needs_admin_account: "One admin account is required at least"
+  face_patrol:
+    default_title: "Имя женщины или мужчины"
+  generate: Сгенерировать
+  godmode:
+    accounts:
+      articles:
+        author: Автор
+        email: "Электронная почта"
+        last_item: "Последний элемент"
+        last_sign_in_at: "Последний раз был"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
+        updated_at_title: "Обновлен %{time}"
+        weight: Вес
+    author: Автор
+    column_articles:
+      empty:
+        start: "Да! Я хочу начать писать!"
+        title: "Вы еще ни разу не писали статей в свою колонку и она пока не создана. Вы уверены, что хотите начать?"
+    editor: Редактор
+    events:
+      prepublish: "Послать редактору"
+      publish: Опубликовать
+      rescue: Восстановить
+      rewrite: Переписать
+      trash: "В корзину"
+    faces:
+      form:
+        f: Женщина
+        m: Мужчина
+    fieldsets:
+      content: "Содержимое:"
+      seo: "SEO настройка:"
+      settings: "Настройки:"
+    header_fields:
+      author: Автор
+      email: "Электронная почта"
+      last_item: "Последний элемент"
+      last_sign_in_at: "Последний раз был"
+      name: Имя
+      role: Роль
+      rubric: Рубрика
+      title: Заголовок
+      updated_at: Обновлен
+      updated_at_title: "Обновлен %{time}"
+      weight: Вес
+    headers:
+      author: Автор
+      email: "Электронная почта"
+      last_item: "Последний элемент"
+      last_sign_in_at: "Последний раз был"
+      name: Имя
+      role: Роль
+      rubric: Рубрика
+      title: Заголовок
+      updated_at: Обновлен
+      updated_at_title: "Обновлен %{time}"
+      weight: Вес
+    journal_articles:
+      index:
+        author: Автор
+        email: "Электронная почта"
+        last_item: "Последний элемент"
+        last_sign_in_at: "Последний раз был"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
+        updated_at_title: "Обновлен %{time}"
+        weight: Вес
+      prepublished:
+        author: Автор
+        email: "Электронная почта"
+        last_item: "Последний элемент"
+        last_sign_in_at: "Последний раз был"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
+        updated_at_title: "Обновлен %{time}"
+        weight: Вес
+    journal_rubrics:
+      articles:
+        author: Автор
+        email: "Электронная почта"
+        last_item: "Последний элемент"
+        last_sign_in_at: "Последний раз был"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        title: Заголовок
+        updated_at: Обновлен
+        updated_at_title: "Обновлен %{time}"
+        weight: Вес
+      index:
+        author: Автор
+        email: "Электронная почта"
+        last_item: "Последний элемент"
+        last_publication: "Последняя публикация"
+        last_sign_in_at: "Последний раз был"
+        name: Имя
+        role: Роль
+        rubric: Рубрика
+        slug: путь
+        title: Заголовок
+        updated_at: Обновлен
+        updated_at_title: "Обновлен %{time}"
+        weight: Вес
+    sex:
+      f: Девушка
+      m: Парень
+    shared:
+      acls:
+        password:
+          acl_password: Пароль
+          help:
+            acl_password: "Введите пароль для доступа"
+        time:
+          help:
+            time_range: "In this range it will be accessible"
+          time_range: "Промежуток времени"
+      actions:
+        stated_actions:
+          save: "В черновики"
+      collections:
+        sorted_articles:
+          author: Автор
+          email: "Электронная почта"
+          last_item: "Последний элемент"
+          last_sign_in_at: "Последний раз был"
+          name: Имя
+          role: Роль
+          rubric: Рубрика
+          title: Заголовок
+          updated_at: Обновлен
+          updated_at_title: "Обновлен %{time}"
+          weight: Вес
+      fieldsets:
+        acls:
+          legend: "Опции доступа"
+        base_fields:
+          help:
+            tags: "Разделяйте тэги запятыми"
+        description:
+          description: Описание
+          help:
+            description: "В это поле можно ввести небольшое описание, желательно не более 255 символов."
+        reportage:
+          content: Содержимое
+          help:
+            content: "Здесь необходимо указать ссылки на интересующий Вас контент. Они преобразуются в медийные данные."
+        seo:
+          help:
+            in_robots: "Эта страница будет добавлена в robots.txt и не будет доступна поисковикам для индексации."
+            meta_description: "One or two sentence description of the publication. Make the text informative, to reading the text, the visitor is immediately understood as speech."
+            meta_keywords: "Tags for meta information"
+            seo_title: "Если вы хотите, то можете изменить заголовок окна браузера."
+          in_robots: "Добавить в robots.txt"
+          legend: "SEO свойства"
+          meta_description: Мета-описание
+          meta_keywords: "Ключевые слова"
+          seo_title: "SEO заголовок"
+        stickers:
+          journal_article: "Закрепить в начале"
+          stick_homepage: "Закрепить на главной странице"
+      headers:
+        edit_header:
+          account: "Редактировать свойства аккаунта"
+          journalarticle: "Редактируем статью"
+          journalrubric: "Редактируем рубрику"
+          mediacollection: "Редактируем коллекцию"
+          membership: Членство
+        index_header:
+          account: Аккаунты
+          columnarticle: "Статьи колонки"
+          face: Фейспатруль
+          journalarticle: "Журнальные статьи"
+          journalarticle_tags: "Список тэгов журнала:"
+          journalrubric: "Рубрики журнала"
+        stated_edit_header:
+          face: Фейс
+          journalarticle: "Редактируем журнальную статью"
+          reportage: Репортаж
+      menu:
+        accounts: Пользователи
+        comments: Комментарии
+        face_patrol: ФейсПатруль
+        feedback: "Обратная связь"
+        journal: Журнал
+        mediabank: Медиабанк
+        publications: Публикации
+      new_header:
+        title: "Новый %{create_type}"
+      publications_sub_menu:
+        rubrics: Рубрики
+        tags: Тэги
+      sub_menu:
+        columns: Колонки
+        face_patrol: ФейсПатруль
+        journal: Журнал
+        others: Другие
+        photo: Фото
+        redaction: Редакция
+        reportage: Репортаж
+    sidebar:
+      headers:
+        accounts: Пользователи
+        dashboard: Dashboard
+        mediabank: Медиабанк
+        publications: Публикации
+  journal_article:
+    default_title: "Новая статья"
+  layouts:
+    godmode:
+      title: "%{name} - Режим Бога"
+  login: Войти
+  logout: Выйти
+  mongoid:
+    models:
+      journal_article: "Статья Журнала"
+      journal_rubric: "Рубрика Журнала"
+  move_element: "Переместить элемент"
+  or: или
+  profile: Профиль
+  profileslug: (◕_◕)
+  register: Зарегистрироваться
+  save: Сохранить
+  states:
+    drafted: Черновик
+    prepublished: "На предпубликации"
+    published: Опубликована
+    trashed: "В корзине"
+

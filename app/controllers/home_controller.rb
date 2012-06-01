@@ -1,14 +1,11 @@
-class HomeController < ActionController::Base
-  include Journalist::Routing::SiteDispatcher
-  
-  before_filter :require_site
-  
+class HomeController < ::BaseController
+
   def index
-    
+    @items = tabs_filter(current_site.time_lines.feed, params[:tab]).page(params[:page]).per(10).map(&:timelinable).compact
   end
-  
-  def search_path
-    
+
+  def sections
+    []
   end
-  
+
 end

@@ -1,0 +1,8 @@
+.container.block
+  %header.pos-r
+    %h1
+      = t '.journal'
+      %small= t '.description'
+  %ul.pills
+    - @list.each_with_index do |item, index|
+      %li{:class => "journlal_rubric#{' active' if item[:active]}"}= link_to item[:label], item[:url]

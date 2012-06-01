@@ -1,0 +1,4 @@
+%section.block{:style => "padding-top:40px;"}
+  %ul.unstyled.row
+    - @list.each_with_index do |item, index|
+      %li.span4.columnist= item[:resource].render(:block)

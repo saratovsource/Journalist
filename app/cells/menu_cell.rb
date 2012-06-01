@@ -6,7 +6,7 @@ class MenuCell < Cell::Rails
   delegate :current_site, :to => :parent_controller
   delegate :current_account, :to => :parent_controller
 
-  attr_accessor :list, :active_item
+  attr_accessor :list, :active_item, :options
   attr_reader   :ability
 
   def initialize(*args)
@@ -16,6 +16,7 @@ class MenuCell < Cell::Rails
   end
 
   def show(args = {})
+    self.options = args
     self.build_list
     render
   end

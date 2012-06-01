@@ -1,6 +1,6 @@
 = render :partial => "/godmode/shared/headers/edit_header", :locals => {:create_type => MediaCollection.model_name.parameterize}
 .container
-	.row
-		= form_for [:godmode, :mediabank, @media_collection], :method => :put do |f|
-			= render :partial => "form", :locals => { :f => f }
-			.float-actions= render :partial => "/godmode/shared/actions/save", :locals => {:f => f}
+  .row
+    = form_for [:godmode, :mediabank, @media_collection], :method => :put do |f|
+      = render :partial => "form", :locals => { :f => f }
+      .float-actions= render :partial => "/godmode/shared/actions/save", :locals => {:f => f}

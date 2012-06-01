@@ -1,0 +1,16 @@
+%script{ :type => 'text/html', :id => 'media_collections_picker' }
+  .mediamanager.modal.fade.in.span18
+    .modal-header
+      = link_to t(:modal_close), '#', :id => 'close-link'
+      %h3= t '.title'
+      %header.action-bar.pos-r
+    .modal-body
+      .container
+        %ul.unstyled.medialist.row
+    .modal-footer
+      = link_to t('insert_collection'), '#', :class => "btn secondary pull-left", :id => 'insert-collection-link'
+
+%script{ :type => 'text/html', :id => 'media_collection_item' }
+  %li.sort-item.span4
+    = link_to "{{fullpath}}", :class => "thumbnail" do
+      = image_tag "{{image_path}}"

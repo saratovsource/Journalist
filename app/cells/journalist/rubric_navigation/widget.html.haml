@@ -1,0 +1,19 @@
+%section{:style => "padding-top:10px; margin-bottom:30px; border-top:1px solid #eee; background:url(assets/journalist/shadowsection.png) 0 0 repeat-x;"}
+  .container
+    %header.pos-r
+      %h2
+        = link_to t('.title'), journal_root_path, :class => "dark-link"
+        %small= t('.statistic', :count => @posts_count, :rubrics => @rubrics.count)
+    .row
+      .span18
+        = render :partial => "shared/widget_tabs", :locals => {:type => "journal"}
+        .tab-content
+          - %w(last best comments).each do |ttype|
+            = render :partial => "#{ttype}_tab", :locals => {:current_site => @current_site}
+      .span6
+        %section.block{:style => "padding-top:40px;"}
+          %ul.dark-links
+            - @rubrics.each do |rbk|
+              %li
+                = link_to rbk.title, rbk.fullpath
+                = "(#{rbk.journal_articles.published.count})"

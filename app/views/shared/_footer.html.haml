@@ -1,11 +1,12 @@
 %footer.cheeky-footer{:role => "contentinfo"}
-	.container
-		%ul.unstyled.clearfix.navigation
-			%li.sitename.active= link_to "Nahalno.ru", root_path
-		.row.copyright
-			.span12
-				%p= t(".copiright").html_safe
-			.span12.a-right
-				%p
-					%small
-						= t(".develop").html_safe
+  .container
+    %ul.unstyled.clearfix.navigation
+      %li.sitename.active= link_to "Nahalno.ru", root_path
+      = render_cell 'journalist/top_menu', :footer
+    .row.copyright
+      .span12
+        %p= t(".copiright", :year => Date.today.year).html_safe
+      .span12.a-right
+        %p
+          %small
+            = t(".develop").html_safe

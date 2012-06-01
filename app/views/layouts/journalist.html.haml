@@ -1,25 +1,28 @@
 !!! 5
-%html
-	%head
-		= stylesheet_link_tag    "journalist/application"
-		= javascript_include_tag "journalist/application"
-		= csrf_meta_tags
-		%link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
-		%link{:rel => "stylesheet", :href => ""}
-	%body
-		= yield(:topbanner) if content_for?(:topbanner)
-		%header.cheeky-header{:role => "banner"}
-			.container
-				= render :partial => "shared/header", :locals => { :additional_class => "a-right" }
-				= render :partial => "shared/navigation"# yield(:navigation) if content_for?(:navigation)
-				= render :partial => "shared/user_menu"# yield(:user_menu) if content_for?(:user_menu)
-		%div{:class => @page_class || "default"}
-			.container
-				.row
-					- if content_for?(:sidebar)
-						%article.span20= yield
-						%aside.span4= yield(:sidebar)
-					- else
-						%article.span24= yield
-		= yield(:additional) if content_for?(:additional) # Render Additional Section a-la comments
-		= render :partial => "shared/footer"
+%html{:class => "wf-ptsans-n4-active wf-ptsans-n7-active wf-active"}
+  %head
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag    "journalist/application"
+    = javascript_include_tag "journalist/application"
+    = csrf_meta_tags
+    %link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
+  %body
+    = yield(:topbanner) if content_for?(:topbanner)
+    %header.cheeky-header{:role => "banner"}
+      .container
+        = render :partial => "shared/header", :locals => { :additional_class => "a-right" }
+        = render :partial => "shared/navigation"# yield(:navigation) if content_for?(:navigation)
+        = render :partial => "shared/user_menu"# yield(:user_menu) if content_for?(:user_menu)
+    = render_section(:main_menu)
+    %div{:class => @page_class || "default"}
+      .container
+        .row
+          - if content_for?(:sidebar)
+            %article.span18{:role => "main"}= yield
+            .span6
+              = yield(:sidebar)
+          - else
+            %article.span24= yield
+      = yield(:postcontent) if content_for?(:postcontent)
+    = yield(:additionals) if content_for?(:additionals)
+    = render :partial => "shared/footer"

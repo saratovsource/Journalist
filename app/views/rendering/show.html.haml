@@ -1,12 +1,10 @@
 - if @routerable
-	= @routerable.render(:page).html_safe
-	- content_for :additional do
-		%section#comments.container
-			%header.page-header.pos-r
-				%h2
-					= t(".comments.header")
-					= content_tag(:small, @comments.count) if @comments.any?
-			.row
-				.span18
-					- @comments.each do |comment|
-						= comment.render(:block)
+  = @routerable.render(:page).html_safe
+  - unless [Profile, MediaCollection, JournalRubric].include?(@routerable.class)
+    - content_for :additionals do
+      = render_cell "buttons", :like, @routerable, @routerable.rated_by?(@rater)
+      = render_section(:comments)
+- unless [Profile, MediaCollection, Reportage].include?(@routerable.class)
+  - if @layout_sections[:sidebar].present?
+    - content_for :sidebar do
+      = render_section(:sidebar)

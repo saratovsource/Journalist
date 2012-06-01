@@ -1,15 +1,15 @@
 = render :partial => "header"
 .mediamanager.container
-	.row
-		.span16
-			%ul.unstyled.medialist.row{:data => read_only? ? {} : {:url => sort_godmode_mediabank_media_collection_media_files_path(resource), :"grid-sortable" => "true"}}
-				- resource.media_files.each do |file|
-					%li.sort-item.span4{:id => "item=#{file.id}"}
-						= link_to file.file.url, :class => "thumbnail fancybox", :rel => "galery-#{resource.id}", :title => file.description do
-							= content_tag(:span, raw("&nbsp;"), :class => "dragHandle", :title => t(:move_element))
-							= image_tag(file.file.mini_thumb.url)
-		- unless read_only?
-			.controls.span4
-				= link_to t("mediabank.media_collections.add_files_button"), add_files_godmode_mediabank_media_collection_path(resource), :class => "btn a-center span4 small"
-				= link_to t(:edit), edit_resource_url(resource), :class => "btn a-center span4 small"
-				= link_to t(:descriptions), descriptions_godmode_mediabank_media_collection_path(resource), :class => "btn a-center span4 small"
+  .row
+    .span16
+      %ul.unstyled.medialist.row{:data => read_only? ? {} : {:url => sort_godmode_mediabank_media_collection_media_files_path(resource), :"grid-sortable" => "true"}}
+        - resource.media_files.each do |file|
+          %li.sort-item.span4{:id => "item=#{file.id}"}
+            = link_to file.file.url, :class => "thumbnail fancybox", :rel => "galery-#{resource.id}", :title => file.description do
+              = content_tag(:span, raw("&nbsp;"), :class => "dragHandle", :title => t(:move_element))
+              = image_tag(file.file.mini_thumb.url)
+    - unless read_only?
+      .controls.span4
+        = link_to t("mediabank.media_collections.add_files_button"), add_files_godmode_mediabank_media_collection_path(resource), :class => "btn a-center span4 small"
+        = link_to t(:edit), edit_resource_url(resource), :class => "btn a-center span4 small"
+        = link_to t(:descriptions), descriptions_godmode_mediabank_media_collection_path(resource), :class => "btn a-center span4 small"

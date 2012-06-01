@@ -1,28 +1,26 @@
 %section.sign-in
-	.section-title
-		%h3= t(".sign_in")
-	.section-body
-		%p
-			%span.help-block= t(".info")
-
-		= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "row form-stacked"}) do |f|
-			%fieldset{:class => "#{devise_mapping.omniauthable? ? 'span7' : 'span13'}"}
-				.clearfix
-					.input= f.email_field :email, :required => true
-				
-				.clearfix
-					.input= f.password_field :password, :required => true
-				
-				%button.btn.primary{:type => "submit"}= t(".enter")
-				
-				
-			- if devise_mapping.omniauthable?
-				.span1.divider
-				%fieldset.span5
-					- resource_class.omniauth_providers.each do |provider|
-						= link_to "#{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
-		
-=#			- if devise_mapping.rememberable?
-=#				%p
-=#					= f.check_box :remember_me
-=#					= f.label :remember_me
+  .section-title
+    %h3= t(".sign_in")
+  .section-body
+    %p
+      %span.help-block= t(".info")
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "row form-stacked"}) do |f|
+      %fieldset{:class => "#{devise_mapping.omniauthable? ? 'span7' : 'span13'}"}
+        .clearfix
+          .input
+            = f.email_field :email, :required => true
+            %span.help-inline= t('.email')
+        .clearfix
+          .input
+            = f.password_field :password, :required => true
+            %span.help-inline= t('.password')
+        %button.btn.primary{:type => "submit"}= t(".enter")
+      - if devise_mapping.omniauthable?
+        .span1.divider
+        %fieldset.span5
+          - resource_class.omniauth_providers.each do |provider|
+            = link_to "#{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
+=#      - if devise_mapping.rememberable?
+=#        %p
+=#          = f.check_box :remember_me
+=#          = f.label :remember_me

@@ -1,0 +1,22 @@
+%section#comments
+  %header.page-header.pos-r
+    %h2
+      = t('.title')
+      %small= comments.web.count
+  .row
+    .span18
+      - comments.web.each do |comment|
+        %article{:class => "post indent-0", :id => comment.slug}
+          .comment
+            = comment.message.to_textile.html_safe
+          .postinfo
+            - if comment.commentable.kind_of?(Comment)
+              = link_to t('.reply_for'), comment.commentable.fullpath
+            - else
+              %span.light-link #
+              = link_to comment.commentable.parent.title.j_clean.truncate(50), comment.commentable.parent.fullpath
+              %span.light-link /
+              = link_to comment.commentable.title.j_clean.truncate(50), comment.commentable.fullpath
+            = " / "
+            %span
+              %time.pos-r{:datetime => comment.created_at}= l(comment.created_at, :format => :long)

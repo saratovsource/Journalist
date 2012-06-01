@@ -1,28 +1,28 @@
 = render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => JournalRubric.model_name.parameterize}
 
 %table.listingtable.zebra-striped.t-dnd{:data => {:sortable => "", :"drag-handle" => "td.dragHandle", :"drag-class" => "myDragClass"}}
-	%thead
-		%tr
-			%th.dragHandle &nbsp;
-			%th= t(".title")
-			%th= t(".slug")
-			%th.a-center
-				%span.iconweb Z
-			%th= t(".last_publication")
-	%tbody{:data => {:url => sort_godmode_journal_rubrics_path}}
-		- current_site.journal_rubrics.each do |rubric|
-			%tr{:id => "item-#{rubric.id}"}
-				%td.dragHandle
-					%em &nbsp;
-				%td
-					%span.rubric
-						= link_to rubric.title, edit_godmode_journal_rubric_path(rubric)
-						= content_tag(:span, "x", :class => "iconweb") if rubric.acl_protected?
-				%td
-					%span.url-snippet= rubric.fullpath
-				%td.a-center
-					- journal_articles_count = account_type == "editor" ? rubric.journal_articles.count : rubric.journal_articles.owned(current_account).count
-					= link_to journal_articles_count, godmode_journal_rubric_path(rubric)
-				%td
-					- last_article = rubric.journal_articles.must_publish.last
-					= link_to last_article.title, last_article.fullpath, :class => "publication" if last_article
+  %thead
+    %tr
+      %th.dragHandle &nbsp;
+      %th= t(".title")
+      %th= t(".slug")
+      %th.a-center
+        %span.iconweb Z
+      %th= t(".last_publication")
+  %tbody{:data => {:url => sort_godmode_journal_rubrics_path}}
+    - current_site.journal_rubrics.each do |rubric|
+      %tr{:id => "item-#{rubric.id}"}
+        %td.dragHandle
+          %em &nbsp;
+        %td
+          %span.rubric
+            = link_to rubric.title, edit_godmode_journal_rubric_path(rubric)
+            = content_tag(:span, "x", :class => "iconweb") if rubric.acl_protected?
+        %td
+          %span.url-snippet= rubric.fullpath
+        %td.a-center
+          - journal_articles_count = account_type == "editor" ? rubric.journal_articles.count : rubric.journal_articles.owned(current_account).count
+          = link_to journal_articles_count, godmode_journal_rubric_path(rubric)
+        %td
+          - last_article = rubric.journal_articles.with_state(:published).last
+          = link_to last_article.title, last_article.fullpath, :class => "publication" if last_article

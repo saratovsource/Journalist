@@ -1,0 +1,30 @@
+!!! 5
+%html{:class => "wf-ptsans-n4-active wf-ptsans-n7-active wf-active"}
+  %head
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag    "journalist/application"
+    = javascript_include_tag "journalist/application"
+    = csrf_meta_tags
+    %link{:rel => "shortcut icon", :type => "image/x-icon", :href => image_path("journalist/favicon.ico")}
+  %body
+    = yield(:topbanner) if content_for?(:topbanner)
+    %header.cheeky-header{:role => "banner"}
+      .container
+        = render :partial => "shared/header", :locals => { :additional_class => "a-right" }
+        = render :partial => "shared/navigation"# yield(:navigation) if content_for?(:navigation)
+        = render :partial => "shared/user_menu"# yield(:user_menu) if content_for?(:user_menu)
+    = render_section(:timeline)
+    = render_section(:main_menu)
+    %div{:class => @page_class || "default"}
+      .container
+        .row
+          - if content_for?(:sidebar)
+            %article.span18{:role => "main"}= yield
+            = render_section(:comments)
+            .span6
+              = yield(:sidebar)
+          - else
+            %article.span24= yield
+            = render_section(:comments)
+    = yield(:additionals) if content_for?(:additionals)
+    = render :partial => "shared/footer"

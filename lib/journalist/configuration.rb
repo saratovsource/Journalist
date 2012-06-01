@@ -12,7 +12,7 @@ module Journalist
       :enable_logs            => false,
       :hosting                => :auto,
       :delayed_job            => false,
-      :default_locale         => :en,
+      :default_locale         => :ru,
       :mailer_sender          => 'support', #support@example.com'
       :manage_subdomain       => false,
       :manage_manage_domains  => false,
@@ -22,7 +22,7 @@ module Journalist
         :metastore   => URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/meta"), # URI encoded in case of spaces
         :entitystore => URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/body")
       },
-      :devise_modules             => [:database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, { :encryptor => :sha1 }],
+      :devise_modules             => [:database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, { :encryptor => :sha1 }],
       :context_assign_extensions  => {  },
       :content_filter         => :textile
     }

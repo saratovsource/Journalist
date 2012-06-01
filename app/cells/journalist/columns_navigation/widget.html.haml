@@ -1,0 +1,21 @@
+%section{:style => "padding-top:10px; margin-bottom:30px; border-top:1px solid #eee; background:url(assets/journalist/shadowsection.png) 0 0 repeat-x;"}
+  .container
+    %header.pos-r
+      %h2
+        = link_to t('.title'), columns_root_path, :class => "dark-link"
+        %small= t('.statistic', :count => @posts_count)
+    %ul.unstyled.row
+      - @columns.each do |col|
+        %li.span4.columnist
+          = link_to col.fullpath do
+            = image_tag(col.owner.profile.avatar.column_small.url)
+            = col.owner.profile.name || col.owner.name
+    .row
+      .span18
+        = render :partial => "shared/widget_tabs", :locals => {:type => "columns"}
+        .tab-content
+          - %w(last best comments).each do |ttype|
+            = render :partial => "#{ttype}_tab", :locals => {:current_site => @current_site}
+      .span6
+        %section.block{:style => "padding-top:40px;"}
+          ADWORDS

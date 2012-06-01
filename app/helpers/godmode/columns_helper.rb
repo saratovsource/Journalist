@@ -1,0 +1,2 @@
+module Godmode::ColumnsHelper
+end

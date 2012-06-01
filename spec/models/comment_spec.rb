@@ -18,18 +18,6 @@ describe Comment do
     end
     
     describe "Caching" do
-      it "should have cache_marker field" do
-        @first_comment.should respond_to(:cache_marker)
-      end
-      
-      it "should have cache_marker value for instance" do
-        @first_comment.cache_marker.should_not be_nil
-        lambda { 
-          @first_comment.message = "test"
-          @first_comment.save
-          @first_comment.reload
-           }.should change(@first_comment, :cache_marker)
-      end
     end
     
     describe "Commentable" do

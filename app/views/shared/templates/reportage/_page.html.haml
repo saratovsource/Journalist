@@ -1,0 +1,10 @@
+%h1
+  = @element.title.j_clean
+  %small= "#{@element.images.count} #{t('.photos')}"
+.page.postinfo.pos-r= render :partial => "shared/elements/block_panel_white", :locals => {:element => @element}
+%figure.pos-r
+  %p.fotorama{data: {nav: "thumbs", margin: 0, width: "100%", fullscreenIcon: "true", :hash => "true"}}
+    - if !(media_files = @element.images).empty?
+      - media_files.each do |mf|
+        = mf.render(:block)
+%figcaption= @element.description

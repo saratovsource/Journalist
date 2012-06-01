@@ -92,7 +92,7 @@
 .markItUpHeader ul ul {
 	display:none;
 	position:absolute;
-	top:18px; left:0px;	
+	top:18px; left:0px;
 	background:#F5F5F5;
 	border:1px solid #3C769D;
 	height:inherit;
@@ -124,7 +124,7 @@
 	display:block;
 	padding-left:0px;
 	text-indent:0;
-	width:120px; 
+	width:120px;
 	padding:5px 5px 5px 25px;
 	background-position:2px 50%;
 }
@@ -134,46 +134,44 @@
 }
 
 /****************************************************************************************/
-@for $i from 1 through 6 {
-	.markItUp .markItUpButton#{$i} a {
-	    background-image: image-url("journalist/icons/murkitup/h#{$i}.png");
-	}
+.markItUp .markItUpButton1 a {
+    background-image: image-url("journalist/icons/murkitup/h2.png");
 }
 
-.textile .markItUpButton7 a {
-	background-image: image-url("journalist/icons/murkitup/text_bold.png");
+.markItUp .markItUpButton2 a {
+    background-image: image-url("journalist/icons/murkitup/h3.png");
 }
 
-.textile .markItUpButton8 a {
-	background-image: image-url("journalist/icons/murkitup/text_italic.png");
+.markItUp .markItUpButton3 a {
+    background-image: image-url("journalist/icons/murkitup/h4.png");
 }
 
-.textile .markItUpButton9 a {
-	background-image: image-url("journalist/icons/murkitup/stroke_text.png");
+.markItUp .markItUpButton4 a {
+    background-image: image-url("journalist/icons/murkitup/glyphicons_102_bold.png");
 }
 
-.textile .markItUpButton10 a {
-	background-image: image-url("journalist/icons/murkitup/text_list_bullets.png");
+.markItUp .markItUpButton5 a {
+    background-image: image-url("journalist/icons/murkitup/glyphicons_101_italic.png");
 }
 
-.textile .markItUpButton11 a {
-	background-image: image-url("journalist/icons/murkitup/text_list_numbers.png");
+.markItUp .markItUpButton6 a {
+    background-image: image-url("journalist/icons/murkitup/glyphicons_104_text_strike.png");
 }
 
-.textile .markItUpButton12 a {
-	background-image: image-url("journalist/icons/murkitup/image.png");
+.markItUp .markItUpButton7 a {
+    background-image: image-url("journalist/icons/murkitup/glyphicons_114_list.png");
 }
 
-.textile .markItUpButton13 a {
-	background-image: image-url("journalist/icons/murkitup/link.png");
+.markItUp .markItUpButton8 a {
+    background-image: image-url("journalist/icons/murkitup/glyphicons_114_numlist.png");
 }
 
-.textile .markItUpButton14 a {
-	background-image: image-url("journalist/icons/murkitup/quote.png");
+.markItUp .markItUpButton9 a {
+    background-image: image-url("journalist/icons/murkitup/glyphicons_159_picture.png");
 }
 
-.textile .markItUpButton15 a {
-	background-image: image-url("journalist/icons/murkitup/code.png");
+.markItUp .markItUpButton10 a {
+    background-image: image-url("journalist/icons/murkitup/glyphicons_050_link.png");
 }
 
 .markItUp .omega a {

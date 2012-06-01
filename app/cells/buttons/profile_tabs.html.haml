@@ -1,0 +1,4 @@
+%ul.unstyled.tabs
+  %li{:class => "profile_tab#{' active' if @active_section.blank?}"}= link_to t('.profile'), profile_path
+  %li{:class => "profile_tab#{' active' if @active_section == :bookmarks}"}= link_to t('.bookmarks'), '#'
+  %li{:class => "pos-a pos-right#{' active' if @active_section == :edit}"}= link_to t('.edit'), edit_profile_path

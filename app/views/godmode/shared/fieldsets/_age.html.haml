@@ -1,0 +1,5 @@
+.clearfix
+  = f.label :age, t(".age")
+  .input.span18
+    = f.text_field :age, :class => "xxlarge", :autocomplete => "off"
+    %span.help-block= t(".help.age")

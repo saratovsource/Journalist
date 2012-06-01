@@ -14,12 +14,18 @@ test/dummy/tmp/
 capybara-*.html
 /vendor/bundle
 /spec/tmp/*
+/coverage/*
 **.orig
 rerun.txt
 /.rvmrc
 
 .DS_Store
-
+__Routes__
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#Vim ignore
+.*.sw[a-z]
+*.un~
+Session.vim

@@ -1,0 +1,5 @@
+.clearfix
+  = f.label :content, t(".content")
+  .input.span18
+    = f.text_area :content, :rows => 10, :class => "xxlarge", :autocomplete => "off"
+    %span.help-block= t(".help.content")

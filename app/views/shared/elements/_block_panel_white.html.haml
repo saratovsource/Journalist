@@ -1,0 +1,33 @@
+%ul.unstyled.breadcrumb.compact.no-margin.dark-links
+  %li
+    %a{:href => timeline_root_path(element.publish_at.strftime('%F'))}>
+      %i.icon-time.icon-white>
+      %time.pos-r{:datetime => l(element.publish_at, :format => :long)}><
+        = l(element.publish_at, :format => :short)
+    \ 
+  %li
+    %a{:href => element.owner.profile.fullpath}><
+      %i.icon-user.icon-white>
+      = element.owner.name
+    \ 
+  %li
+    %a{href: "#{element.fullpath}#comments"}><
+      %i.icon-comment.icon-white>  
+      = element.comments.count
+    \ 
+  %li
+    %a{href: "#{element.fullpath}#like"}><
+      %i.icon-heart.icon-white>  
+      = element.try(:rate_count) || 0
+    \ 
+%ul.unstyled.breadcrumb.compact.no-margin.pos-a.tags.light-links
+  - if element.parent.present?
+    %li
+      = link_to element.parent.title, element.parent.fullpath, :class => "rubric dark-link"
+  - if element.tags_array.any?
+    %li.divider /
+    %li.dropdown{"data-dropdown" => "dropdown"}
+      %a.dropdown-toggle{:href => "#"} Показать теги
+      %ul.dropdown-menu
+        - element.tags_array.each do |tag|
+          %li= link_to tag, '#'

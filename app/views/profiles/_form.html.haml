@@ -1,0 +1,19 @@
+%fieldset
+  .clearfix
+    = f.label :name, t('.name')
+    .input
+      = f.text_field :name, :class => "span10"
+  .clearfix
+    = f.label :city, t('.city')
+    .input
+      = f.text_field :city, :class => "span10"
+%fieldset
+  .clearfix
+    = f.label :avatag, t('avatar')
+    .input
+      = f.file_field :avatar
+  .clearfix
+    = f.label :about_me, t('.about_me')
+    .input
+      = f.text_area :about_me, :class => "span17", :rows => 6
+= f.submit t('.save'), :class => "btn large"

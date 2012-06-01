@@ -1,0 +1,25 @@
+%section.sign-in
+  .section-title
+    %h3= t '.title'
+  .section-body
+    %p
+      %span.help-block= t '.desctiption', :url => '#'
+    = form_for(resource, :url => registration_path(resource_name), :html => {:class => "row form-stacked"}) do |f|
+      %fieldset.span14
+        .clearfix
+          .input
+            = f.email_field :email, :class => "span7", :requred => true
+            %span.help-inline= t('.email')
+        .clearfix
+          .input
+            = f.password_field :password, :class => "span7", :requred => true
+            %span.help-inline= t('.password')
+        .clearfix
+          .input
+            = f.password_field :password_confirmation, :class => "span7", :requred => true
+            %span.help-inline= t('.password_confirmation')
+        .clearfix
+          .input
+            = f.text_field :name, :class => "span7", :requred => true
+            %span.help-inline= t('.name')
+        = f.submit t('.submit'), :class => "btn primary"

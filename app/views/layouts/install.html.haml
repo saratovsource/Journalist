@@ -1,8 +1,9 @@
 !!! 5
 %html
-	%head
-		%title Install Journalist
-		= stylesheet_link_tag    "journalist/base"
-		= javascript_include_tag "journalist/base"
-		= csrf_meta_tags
-	%body#install= yield
+  %head
+    %meta{:charset => "utf-8"}
+    %title Install Journalist
+    = stylesheet_link_tag    "journalist/base"
+    = javascript_include_tag "journalist/base"
+    = csrf_meta_tags
+  %body#install= yield

@@ -1,5 +1,5 @@
 - if resource.respond_to?(:acls)
-	%fieldset.toogle.off
-		%legend= t(".legend")
-		- resource.acls.each do |acl|
-			.clearfix= render :partial => "/godmode/shared/acls/#{acl}", :locals => { :resource => resource, :f => f }
+  %fieldset.toogle.off
+    %legend= t(".legend")
+    - resource.acls.each do |acl|
+      .clearfix= render :partial => "/godmode/shared/acls/#{acl}", :locals => { :resource => resource, :f => f }

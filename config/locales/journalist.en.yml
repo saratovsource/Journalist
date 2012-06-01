@@ -1,16 +1,25 @@
 ---
 en:
-  journalist:
-    menu:
-      top_menu:
-        journal: "Journal"
-        reportage: "Reportage"
-        facepatrol: "Facepatrol"
-        columns: "Columns"
-        timeline: "Timeline"
-      auth:
-        sign_in: "Sign in"
-        password_restore: "Resotre password"
   i_generators:
     comments:
-      title: "Comment"
+      title: Comment
+  journal:
+    journal_rubrics:
+      index:
+        description: "- a tape of all publications * Username *"
+        journal: Journal
+  journalist:
+    menu:
+      auth:
+        password_restore: "Resotre password"
+        register: "Sign Up"
+        sign_in: "Sign in"
+      rubric_navigation:
+        all: "Show All"
+      top_menu:
+        columns: Columns
+        facepatrol: Facepatrol
+        journal: Journal
+        reportage: Reportage
+        timeline: Timeline
+

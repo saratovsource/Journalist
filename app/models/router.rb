@@ -13,8 +13,8 @@ class Router < AbstractRouter
   validates_presence_of   :slug
   
   before_validation       :build_fields_to_save
-  after_save              :create_alias, :if => lambda { |router| router.slug_changed? }
-  after_save              :rebuild_childrens
+  after_update              :create_alias, :if => lambda { |router| router.slug_changed? }
+  after_update              :rebuild_childrens
   
   # -= Indexes =-
   index(

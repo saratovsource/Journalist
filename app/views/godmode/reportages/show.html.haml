@@ -1,0 +1,4 @@
+= render :partial => "/godmode/shared/headers/stated_edit_header", :locals => {:edit_type => Face.model_name.parameterize, :item => @reportage}
+.container
+  .row= render "readonly_form"
+= render :partial => "/godmode/shared/actions/preview_actions"
