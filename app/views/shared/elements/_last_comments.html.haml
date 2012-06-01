@@ -2,7 +2,7 @@
   %header.page-header.pos-r
     %h2
       = t('.title')
-      %small= comments.web.count
+      %small= element.comments_count
   .row
     .span18
       - comments.web.each do |comment|

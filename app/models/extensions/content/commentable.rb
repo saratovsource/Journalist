@@ -16,6 +16,10 @@ module Extensions
         @ret_comment
       end
 
+      def comments_count
+        self.comments.web.inject(0){|ret, i| ret += i.descendants_and_self.count}
+      end
+
     end
   end
 end
