@@ -81,6 +81,10 @@ class Account
     site.memberships.where(:account_id => self.id).first
   end
 
+  def comments_count
+    self.comments.web.inject(0){|ret, i| ret += i.descendants_and_self.count}
+  end
+
   protected
 
   def password_required?
