@@ -1,5 +1,5 @@
 class Godmode::CommentsController < Godmode::BaseController
-  sections :publications
+  sections :feedback
 
   def update
     params[:comment][:moderator_id] = current_account.id
@@ -9,7 +9,17 @@ class Godmode::CommentsController < Godmode::BaseController
   protected
 
   def collection
-    current_site.labels
+    with_params_state(current_site.comments)
+  end
+
+  def with_params_state(items)
+    params_state = params[:state]
+    items = items.revert
+    if params_state.present?
+      items.with_state(params_state)
+    else
+      items
+    end
   end
 
 end

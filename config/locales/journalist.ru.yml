@@ -18,9 +18,14 @@ ru:
         photos: фото
         title: "Фейспатруль - галерея"
   godmode:
+    comments:
+      index:
+        comments_count: "Количество комментариев в материале"
     headers:
       color: Цвет
+      comment: Комментарии
       css: Иконка
+      data: "Дата создания"
       render: Рендер
     labels:
       index:
@@ -30,12 +35,18 @@ ru:
         edit_header:
           label: "Редактирование метки"
         index_header:
+          comment: "Модерация комментариев"
           label: Метки
           reportage: Репортажи
         new_header:
           title: "Новая метка"
       menu:
         labels: Метки
+      sub_menu:
+        comments: Комментарии
+    sidebar:
+      headers:
+        feedback: "Обратная связь"
   home:
     index:
       bgoverlay: "Нажмите здесь чтобы закрыть"
@@ -129,10 +140,6 @@ ru:
       last_comments:
         reply_for: "Ответ на этот комментарий"
         title: "Комментарии:"
-      sort_widget_tab:
-        best: Лучшие
-        comments: Комментируемые
-        last: Последние
       more_link:
         read_0: "Узнать подробности"
         read_1: "Жги, капитан"

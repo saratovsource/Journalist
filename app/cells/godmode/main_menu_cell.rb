@@ -1,19 +1,18 @@
 class Godmode::MainMenuCell < ::MenuCell
-  
+
   protected
 
   def build_list
     add_main_menu_item :publications, godmode_journal_articles_url, 'publications'
     add_main_menu_item :mediabank,    godmode_mediabank_root_url,   'mediabank'
     add_main_menu_item :accounts,     godmode_accounts_url,         'users' if ability.can?(:manage, Account)
-    #add :contents, :url => admin_pages_url
-    #add :settings, :url => edit_admin_current_site_url
+    add_main_menu_item :feedback,     godmode_comments_url,         'users' if ability.can?(:manage, Comment)
   end
-  
+
   def add_main_menu_item(name, path, klazz)
     add name, :url => path, :css_class => klazz
   end
-  
+
   def build_item(name, attributes)
     item = super
     first_array = [name]

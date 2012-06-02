@@ -41,6 +41,8 @@ class Ability
     end
     can [:index, :read, :show], [MediaCollection, MediaFile]
     can [:change_user, :read], [Account]
+    can [:index, :show, :create, :update, :post, :form, :reply], [Comment]
+    cannot :destroy, Comment
   end
 
   def setup_author_permissions!
@@ -51,7 +53,7 @@ class Ability
 
     can :create, [Column]
 
-    can :manage, [JournalArticle, Column, ColumnArticle, Face, Reportage] do |article|
+    can :manage, [JournalArticle, Column, ColumnArticle, Face, Reportage, Comment] do |article|
       article.site == @site and article.owner_id == @account.id
     end
 

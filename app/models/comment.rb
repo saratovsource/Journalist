@@ -18,8 +18,27 @@ class Comment
   before_validation :autogenerate_title
   validates_presence_of   :message
 
-  scope :web, ->{where(:message.ne => nil).asc(:created_at)}
   scope :revert, ->{desc(:created_at)}
+  scope :ordered, ->{asc(:created_at)}
+  scope :web, ->{where(:message.ne => nil).without_state(:hidden).ordered}
+
+  state_machine :initial => :visible do
+    state :visible
+    state :ambiguous
+    state :hidden
+
+    event :publish do
+      transition all => :visible
+    end
+
+    event :doubt do
+      transition all => :ambiguous
+    end
+
+    event :hide do
+      transition all => :hidden
+    end
+  end
 
   ## Fix for validation chain ##
   include Extensions::Site::Routerable
