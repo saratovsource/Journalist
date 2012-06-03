@@ -6,10 +6,16 @@ class Godmode::CommentsController < Godmode::BaseController
     update!
   end
 
+  def fire
+    resource.moderator = current_account
+    resource.fire_events(params[:event])
+    render :json => resource
+  end
+
   protected
 
   def collection
-    with_params_state(current_site.comments)
+    with_params_state(current_site.comments).page(params[:page]).per(params[:per_page])
   end
 
   def with_params_state(items)

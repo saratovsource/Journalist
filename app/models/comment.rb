@@ -27,10 +27,8 @@ class Comment
     state :ambiguous
     state :hidden
 
-    event :publish do
-      transition all => :visible
-    end
-
+    event :publish do transition all => :visible
+    end 
     event :doubt do
       transition all => :ambiguous
     end

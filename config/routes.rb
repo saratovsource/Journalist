@@ -48,7 +48,9 @@ Rails.application.routes.draw do
     end
 
     resources :labels
-    resources :comments, :only => [:index, :show, :edit, :update]
+    resources :comments, :only => [:index, :show, :edit, :update] do
+      post :fire, :on => :member
+    end
 
     namespace :mediabank do
       root :to => 'media_collections#index'

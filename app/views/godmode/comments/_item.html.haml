@@ -1,0 +1,17 @@
+%tr
+  %td
+  %td
+    %p.author-comment
+      = link_to item.owner.name, item.owner.profile.fullpath
+      &rarr;
+      = link_to item.root.commentable.title, item.commentable.fullpath
+      &nbsp;
+      %span{:title => t('.comments_count')}
+        %small.iconweb.comment-count c
+        = item.root.commentable.comments_count
+    = item.message.truncate(200)
+    %small= link_to "D", item.fullpath, :class => "iconweb new-window dark-link"
+  %td= l(item.created_at, :format => :long)
+  %td
+    - %w(publish doubt hide).each do |event|
+      = link_to content_tag(:i, nil, :class => t(".#{event}")), fire_godmode_comment_path(item, :event => event), :remote => true, :data => {:hide_after_click => "tr"}, :method => :post
