@@ -1939,9 +1939,30 @@ li.rubric, .rubric { text-transform:uppercase; font:bold .875em/1 'PT Sans', san
 .mediapage .page.postinfo .dropdown-menu a { color: #333; }
 
 /* Like sections */
-#like {}
-.likethis { width:100px; height:100px; margin:auto; display:block; font-family:sans-serif; text-decoration:none;  }
-.likethis .iconlike { display:block; height:32px; height:32px; margin:10px auto; overflow:hidden; text-indent:-999px; background: image-url("journalist/icons/32px/like.png") 50% no-repeat; }
+#like { margin: 3.5em auto; }
+.likethis { width:108px; height:109px; display:block; position:relative; z-index:20; left:50%; font-family:sans-serif; text-decoration:none; background:image-url("journalist/like.png") 0 0 no-repeat; transition: left 0.35s ease-in-out, display 0.35s ease-in-out; -moz-transition: left 0.35s ease-in-out, display 0.35s ease-in-out; -webkit-transition: left 0.35s ease-in-out, display 0.35s ease-in-out; -o-transition: left 0.35s ease-in-out, display 0.35s ease-in-out; -ms-transition: left 0.35s ease-in-out, display 0.35s ease-in-out; }
+.likethis:hover { background-position: 0 -109px; }
+.likethis.liked { background-position: 0 -218px; left:0; }
+.likethis small { font-size: 9px; letter-spacing: 1px; position: relative; z-index:10; text-transform: uppercase; top: 53px; display:block; }
+.likethis.liked small { display:none; }
+.likethis i.rate_count { position:relative; z-index:10; top:57px; font:normal bold 20px/1 sans-serif; }
+.likethis.liked i.rate_count { font-size:30px; }
+.likethis.liked:hover { color:#111; }
+
+#like .sharethis { position:absolute; top:32px; left:150px; opacity:0; transition: opacity 0.5s ease-in-out 0.35s; -moz-transition: opacity 0.5s ease-in-out 0.35s; -webkit-transition: opacity 0.5s ease-in-out 0.35s; -o-transition: opacity 0.5s ease-in-out 0.35s; -ms-transition: opacity 0.5s ease-in-out 0.35s; margin:0;  }
+
+.sharethis li { float:left; margin:0 10px 0 0; line-height: 45px; }
+.sharethis li a { display:block; width:46px; height:46px; background:image-url("journalist/share.png") 0 0 no-repeat; overflow:hidden; text-indent:-999px; }
+.sharethis li.twitter a { width:45px; }
+.sharethis li.twitter a:hover { background-position:0 -46px; }
+.sharethis li.google a { background-position:-45px 0; }
+.sharethis li.google a:hover { background-position:-45px -46px; }
+.sharethis li.tumblr a { background-position:-91px 0; }
+.sharethis li.tumblr a:hover { background-position:-91px -46px; }
+.sharethis li.facebook a { background-position:-137px 0; }
+.sharethis li.facebook a:hover { background-position:-137px -46px; }
+.sharethis li.opinion a { width:auto; text-indent:inherit; background:none; }
+#like .likethis.liked + .sharethis { opacity:1; }
 
 /* Relations */
 #relations { background: #E0F2FF; margin: 2.5em auto; padding: 0 1.25em; }
@@ -2027,6 +2048,10 @@ background: linear-gradient(top, rgba(39,93,143,1) 0%,rgba(64,150,238,1) 5%,rgba
 .widget-entry.active .groove-poster { height:auto; }
 .widget-entry.active .groove-poster:after,
 .widget-entry.active .groove-poster:before { display:none; }
+.widget-entry.active .otherphotos li { float:left; margin:0; }
+.widget-entry.active .otherphotos li a { outline:5px solid #fff; display:block; position:relative; }
+.widget-entry.active .otherphotos li a:hover { }
+.widget-entry.active .otherphotos li img { margin:0; padding:0; display:block; }
 .widget-entry.active .postinfo { display:block; position:absolute; }
 .widget-entry.active .post-description { display:none; }
 .widget-entry.active h2 { font-size:28px; line-height: 40px; margin-bottom: 14px; margin-top:6px; }
@@ -2120,6 +2145,10 @@ h2 .marker { top: -2px; }
 .indent-7 { margin-left:8.75em; }
 .indent-8 { margin-left:10em; }
 .indent-9 { margin-left:11.25em; }
+#comments .comment .uwaga { width:90%;  border: 1px solid #000; margin-bottom: 40px; padding: 10px 20px; position:relative; } 
+.uwaga:after,.uwaga:before { content:""; display:block; width:40px; height:61px; position:absolute; top:-8px; background:image-url("journalist/wings.png") 0 0 no-repeat; }
+.uwaga:before { left:-27px;  }
+.uwaga:after { right:-27px; background-position:-40px 0; }
 
 /* SIGNIN & SIGNUP */
 .scale-wrapper { height:100%; width:100%; overflow:hidden; position:absolute; }
@@ -2168,3 +2197,14 @@ h2 .marker { top: -2px; }
 	}
 .slowcount .num { font-size:200px; line-height:200px; font-family:sans-serif; }
 .slowcount small { font-size:14px; position:absolute; top:40px; right:0; }
+
+.homesection { background: image-url("journalist/shadowsection.png") repeat-x 0 0; border-top: 1px solid #eee; padding: .625em 0 1.25em;}
+.homesection .span6 { padding-top:2.5em; }
+.bigpicture { margin-top:-20px; }
+.bigpicture h2 { margin:0; padding:0; position:absolute; top:0; right:0; bottom:4px; left:0; border:5px solid #000; border: 10px solid rgba(0, 0, 0, 0.5); }
+.bigpicture h2 em { position:absolute; right:0; bottom:0; background: #fff; padding:0 10px;  }
+.bigpicture h2 a { position:absolute; top:0; right:0; bottom:0; left:0; border:10px solid #fff; color:#000; }
+.bigpicture h2 a:hover { border-color: #FFDC00; }
+.bigpicture h2 a:hover em { background:#FFDC00; }
+.bigpicture .photocount { color:#BFBFBF; }
+.bigpicture h2 a:hover .photocount { color:#000; }
