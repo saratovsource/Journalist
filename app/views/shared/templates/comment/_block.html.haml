@@ -9,6 +9,6 @@
     %span
       %time.pos-r{:datetime => @element.created_at}= l(@element.created_at, :format => :long)
     = " / "
-    = link_to t(:reply, :scope => "buttons"), form_comment_path(@element), :remote => true, :method => :post, :data=>{:reply => ""}
+    = link_to t(:reply, :scope => "buttons"), form_comment_path(@element.id), :remote => true, :method => :post, :data=>{:reply => ""}
 - @element.comments.each do |cc|
   = cc.render(:block)
