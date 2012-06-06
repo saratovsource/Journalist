@@ -1,0 +1,11 @@
+= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => Comment.model_name.parameterize}
+
+- unless has_column?
+  = render :partial => "empty"
+- else
+  %table.listingtable.zebra-striped.t-sort
+    = render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(comment data actions), :rejected => ""}
+    %tbody
+      - collection.each do |comment|
+        = render "item", :item => comment
+  = paginate collection

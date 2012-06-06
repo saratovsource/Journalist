@@ -1,7 +1,12 @@
-%section.a-center.container
-  = link_to "#{@model.fullpath}?like", :remote => true, :class => "likethis#{' liked ' if @liked} a-center dark-link" do
-    = content_tag(:i, nil, :class => "iconlike")
-    %small
-      = t '.like'
-      %br
-      = content_tag(:i, @model.rate_count, :class => "rate_count")
+%section#like.container.pos-r
+  = link_to "#{@model.fullpath}?like", :remote => true, :class => "likethis a-center dark-link", :data => {:add_class => "liked", :likes => @model.rate_count} do
+    %small= t '.like'
+    = content_tag(:i, @model.rate_count, :class => "rate_count")
+  - if @liked
+    %ul.unstyled.sharethis
+      %li.doit= t '.share'
+      %li.twitter= link_to t('.twitter'), '#', :title => t('.twitter_title')
+      %li.google= link_to t('.google'), '#', :title => t('.google_title')
+      %li.tumblr= link_to t('.tumblr'), '#', :title => t('.tumblr_title')
+      %li.facebook= link_to t('.facebook'), '#', :title => t('.facebook_title')
+      %li.opinion= link_to t('.option'), "#comments", :class => "light-link"

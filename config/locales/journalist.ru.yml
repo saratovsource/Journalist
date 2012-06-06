@@ -1,169 +1,191 @@
----
-ru:
-  buttons:
-    like:
+--- 
+ru: 
+  buttons: 
+    like: 
+      facebook: Facebook
+      facebook_title: "Поделиться в Facebook"
+      google: Google+
+      google_title: "Поделиться в Google+"
       like: Нравится?
-    profile_tabs:
+      option: "высказывай свое мнение"
+      option_title: "высказывай свое мнение"
+      share: "Делись →"
+      tumblr: Tumblr
+      tumblr_title: "Поделиться в Tumblr"
+      twitter: Twitter
+      twitter_title: "Поделиться в Twitter"
+    profile_tabs: 
       bookmarks: Закладки
       edit: Редактировать
       profile: Профайл
     reply: Ответить
-  columns:
-    columns:
-      index:
+  columns: 
+    columns: 
+      index: 
         bgoverlay: "Нажмите здесь чтобы закрыть"
-  face_patrol:
-    face_patrols:
-      gallery:
+  face_patrol: 
+    face_patrols: 
+      gallery: 
         photos: фото
         title: "Фейспатруль - галерея"
-  godmode:
-    headers:
+  godmode: 
+    comments: 
+      item: 
+        comments_count: "Количество комментариев в материале"
+        doubt: icon-eye-close
+        hide: icon-warning-sign
+        publish: icon-eye-open
+    headers: 
+      actions: Действия
       color: Цвет
+      comment: Комментарии
       css: Иконка
+      data: "Дата создания"
       render: Рендер
-    labels:
-      index:
+    labels: 
+      index: 
         new: "Добавить метку"
-    shared:
-      headers:
-        edit_header:
+    shared: 
+      headers: 
+        edit_header: 
           label: "Редактирование метки"
-        index_header:
+        index_header: 
+          comment: "Модерация комментариев"
           label: Метки
           reportage: Репортажи
-        new_header:
+        new_header: 
           title: "Новая метка"
-      menu:
+      menu: 
         labels: Метки
-  home:
-    index:
+      sub_menu: 
+        comments: Комментарии
+    sidebar: 
+      headers: 
+        feedback: "Обратная связь"
+  home: 
+    index: 
       bgoverlay: "Нажмите здесь чтобы закрыть"
-  i_generators:
-    comments:
+  i_generators: 
+    comments: 
       title: Комментарии
-  journal:
-    journal_rubrics:
-      index:
+  journal: 
+    journal_rubrics: 
+      index: 
         description: "- a tape of all publications * Username *"
         journal: Journal
-  journalist:
-    columns_navigation:
-      description:
+  journalist: 
+    columns_navigation: 
+      description: 
         description: "— личное пространство независимых авторов"
         post_description: "В своих колонках авторы пишут на четко определенную тематику. Они пишут, как хотят, когда хотят и что хотят, даже главный редактор не имеет права менять устав. Здесь отсутствует демократия, все принадлежит и подчиняется автору, аминь!"
         title: Колонки
-      item:
+      item: 
         bgoverlay: "Нажмите здесь чтобы закрыть"
-      show_me:
+      show_me: 
         all: "Все авторы"
-      widget:
+      widget: 
         statistic: "%{count} постов на актуальные темы"
         title: Колонки
-    comments:
-      form:
+    comments: 
+      form: 
         new_comment: "Написать новый комментарий к "
         send: Написать
-      register:
+      register: 
         comment: "Да, да, мы точно будем гореть в аду, ведь для того, чтобы оставить комментарий необходимо <a href='%{signin}'>войти</a> или <a href='%{signup}'>зарегистрироваться</a>"
-      reply:
+      reply: 
         new_comment: "Комментарий к "
         send: Ответить
-      show:
+      show: 
         title: Комментарии
-    faces_navigation:
-      description:
+    faces_navigation: 
+      description: 
         description: "— это фотократочки с заметными людьми города"
         post_description: "Сюда невозможно попасть нарочно, наш фоторежиссер беспристрастен и неподкупаем. Фотосессии не планируются заранее, а термин «выездная съемка» вызывает смех у редакции. Только /Нахальное фото, только хардкор!"
         title: Фейспатруль
-      tabs:
+      tabs: 
         all: "Все в куче"
         boys: Мальчики
         gallery: Галерея
         girls: Девочки
-      widget:
+      widget: 
         all: "Всего в нашей базе %{count}"
         and: и
         boys: "%{count} мальчиков"
         girls: "%{count} девочек"
         title: Фейспатруль
-    menu:
-      auth:
+    menu: 
+      auth: 
         password_restore: "Восстановить пароль"
         register: Зарегистрироваться
         sign_in: Войти
-      rubric_navigation:
+      rubric_navigation: 
         all: "Показать все"
-      top_menu:
+      top_menu: 
         columns: Колонки
         facepatrol: Фейспатруль
         journal: Журнал
         reportage: Репортаж
         timeline: Таймлайн
-    rubric_navigation:
-      item:
+    rubric_navigation: 
+      item: 
         bgoverlay: "Нажмите чтобы закрыть"
-      show:
+      show: 
         description: "— это лента всех публикаций *Username*"
         journal: Журнал
-      widget:
+      widget: 
         statistic: "%{count} постов в %{rubrics} рубриках"
         title: Журнал
-    slowtime:
-      description:
+    slowtime: 
+      description: 
         description: "— исконно русский феномен *Username*"
         post_description: "Вы должны гордиться, что стали свидетелем столь необычного явления как «слоупок тайм». Эта страница тому подтверждение. Каждый раз, когда редакция курит бамбук и не хочет заниматься своей работой, слоупок не дремлет и захватывает все больше и больше страниц, о чем позорно сообщает счетчик под милым розовым зверьком."
         title: "Slowpoke time"
-    timeline:
-      description:
+    timeline: 
+      description: 
         description: "— это лента всех публикаций *Username*"
         post_description: "Все материалы тщательно упаковываются и раскладываются по <del>полочкам</del> <ins>датам</ins>. Особо ленивые, но продвинутые особи скармливают своему RSS-ридеру наш <a href='%{url}'>Feed</a>. Стоит отметить, что в ленте показываются и скрыте публикации, которые могут быть доступны только отдельным группам пользователей, материалы могут быть закрыты по паролю или видны только в опредленное время суток."
         title: Таймлайн
-      widget:
+      widget: 
         statistic: "%{count} постов в %{rubrics} рубриках"
         title: Журнал
-  shared:
-    elements:
-      images_list:
+  shared: 
+    elements: 
+      images_list: 
         count: "%{count} фото"
-      last_comments:
+      last_comments: 
         reply_for: "Ответ на этот комментарий"
         title: "Комментарии:"
-      sort_widget_tab:
-        best: Лучшие
-        comments: Комментируемые
-        last: Последние
-      more_link:
+      more_link: 
         read_0: "Узнать подробности"
         read_1: "Жги, капитан"
         read_2: "Больше конкретики"
         read_3: "Этай ссылка принесет нам миллионы"
         read_4: Подробнее
-      sort_widget_tab:
+      sort_widget_tab: 
         best: Лучшие
         comments: Комментируемые
         last: Последние
-    templates:
-      face:
-        block:
-          age:
+    templates: 
+      face: 
+        block: 
+          age: 
             few: "%{count} год"
             many: "%{count} лет"
             one: "один годик"
             other: "%{count} лет"
             zero: "еще младенец"
-      reportage:
-        page:
+      reportage: 
+        page: 
           photos: фото
-    widget_tabs:
+    widget_tabs: 
       best: Лучшие
       comments: Комментируемые
       last: Последние
-  timeline:
-    timelines:
-      index:
+  timeline: 
+    timelines: 
+      index: 
         bgoverlay: "Нажмите здесь чтобы закрыть"
-      slowtime:
+      slowtime: 
         pages: страниц
         snippet: "<hr><p><big><strong>Мы попытались проанализировать ситуацию и вот,<br> что  у нас получилсоь. Возможные причины:</strong></big></p><p></p> <ul class='unstyled'> <li>Рождение котяток, мимими</li> <li><del>Главный редактор му**к</del></li> <li>Отсутствие интернета</li> <li>Пищевое отравление</li> <li>Пьянство на работе</li> <li>Наличие интернета</li> <li>Коммунисты</li> <li>Храп тещи</li> <li>Законы РФ</li> <li>…</li> </ul> <hr> <p>К сожалению, мы не знаем пути выхода из сложившейся ситуации<br> и просто стараемся не обращать на это внимания.<br> <strong>Авось никто и не увидит.</strong></p>"
         title: "За время существования сайта наслуопочено"

@@ -6,3 +6,4 @@
     - @articles.each do |item|
       = item.render(:block)
       .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
+    = render "shared/more", :pcol => @articles

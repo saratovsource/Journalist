@@ -4,7 +4,7 @@ module Extensions
       extend ActiveSupport::Concern
 
       included do
-        MODERATED_MODELS = %w(JournalArticle Face)
+        MODERATED_MODELS = %w(JournalArticle Face Reportage)
 
         STATE_SYMBOLS = {
           :drafted => 'a',

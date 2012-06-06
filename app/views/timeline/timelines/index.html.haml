@@ -3,6 +3,7 @@
 .span18
   = render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym) if params[:date].blank?
   - if @items.any?
-    - @items.each do |item|
+    - @items.map(&:timelinable).compact.each do |item|
       = item.render(:block)
       .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
+    = render "shared/more", :pcol => @items
