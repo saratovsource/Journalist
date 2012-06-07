@@ -1,8 +1,9 @@
-%article.bigpicture
-  %figure.container.block.pos-r
-    %h2.entry-title
-      = link_to @element.fullpath do
-        %em
-          = @element.title.j_clean
-          %span= @element.images.count
-    = image_tag @element.images.first.file.url
+- if @element.present?
+  %article.bigpicture
+    %figure.container.block.pos-r
+      %h2.entry-title
+        = link_to @element.fullpath do
+          %em
+            = @element.title.j_clean
+            %span= @element.images.count
+      = image_tag @element.images.first.file.url
