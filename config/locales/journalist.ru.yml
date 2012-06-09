@@ -2,7 +2,18 @@
 ru: 
   buttons: 
     like: 
+      facebook: Facebook
+      facebook_title: "Поделиться в Facebook"
+      google: Google+
+      google_title: "Поделиться в Google+"
       like: Нравится?
+      option: "высказывай свое мнение"
+      option_title: "высказывай свое мнение"
+      share: "Делись →"
+      tumblr: Tumblr
+      tumblr_title: "Поделиться в Tumblr"
+      twitter: Twitter
+      twitter_title: "Поделиться в Twitter"
     profile_tabs: 
       bookmarks: Закладки
       edit: Редактировать

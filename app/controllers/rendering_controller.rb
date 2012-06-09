@@ -9,7 +9,7 @@ class RenderingController < ::BaseController#ApplicationController
 
       if params.has_key? :like
         @routerable.rate_and_save(1, @rater) unless @routerable.rated_by?(@rater)
-        render :text => (render_cell "buttons", :like, @routerable)
+        render :text => (render_cell "buttons", :like, @routerable, true)
       end
     else
       render :page_not_found, :layout => "errors", :status => 404
