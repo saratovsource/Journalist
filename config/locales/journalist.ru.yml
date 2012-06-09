@@ -158,11 +158,11 @@ ru:
       face: 
         block: 
           age: 
-            few: "%{count} год"
+            few: "%{count} годa"
             many: "%{count} лет"
             one: "один годик"
             other: "%{count} лет"
-            zero: "еще младенец"
+            zero: "не задан"
       reportage: 
         page: 
           photos: фото
