@@ -26,4 +26,4 @@
         %td
           - last_article = rubric.journal_articles.with_state(:published).last
           = link_to last_article.title, last_article.fullpath, :class => "publication" if last_article
-= paginate collection
+=# paginate collection
