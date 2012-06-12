@@ -1,4 +1,4 @@
-%section{:style => "padding-top:10px; margin-bottom:30px; border-top:1px solid #eee; background:url(assets/journalist/shadowsection.png) 0 0 repeat-x;"}
+%section.homesection
   .container
     %header.pos-r
       %h2
@@ -18,4 +18,4 @@
             = render :partial => "#{ttype}_tab", :locals => {:current_site => @current_site}
       .span6
         %section.block{:style => "padding-top:40px;"}
-          ADWORDS
+          = render_cell "journalist/adware", :show

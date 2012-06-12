@@ -6,6 +6,12 @@ module Journalist
       render
     end
 
+    def widget(args={})
+      self.options = args
+      @element = current_site.reportages.first
+      render
+    end
+
     protected
 
     def build_list
