@@ -43,6 +43,7 @@ class Godmode::FacesController < Godmode::BaseController
       @collection ||= end_of_association_chain.where(where_params).with_states(states.compact)
     end
 
+    @collection.page(params[:page]).per(params[:per_page])
   end
 
   def resource

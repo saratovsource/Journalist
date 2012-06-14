@@ -16,6 +16,6 @@ class Godmode::LabelsController < Godmode::BaseController
   protected
 
   def collection
-    current_site.labels
+    current_site.labels.page(params[:page]).per(params[:per_page])
   end
 end

@@ -31,7 +31,7 @@ class Godmode::ColumnArticlesController < Godmode::BaseController
     end
     states = states.compact
 
-    @collection ||= end_of_association_chain.where(where_params).with_states(states.compact)
+    @collection ||= end_of_association_chain.where(where_params).with_states(states.compact).page(params[:page]).per(params[:per_page])
   end
 
   def states_from_params(state)

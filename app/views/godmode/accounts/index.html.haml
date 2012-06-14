@@ -12,4 +12,4 @@
           - membership = account.membership(current_site)
           = link_to membership.role, edit_godmode_membership_path(membership) if membership
         %td= l(account.last_sign_in_at, :format => :long) if account.last_sign_in_at
-=# paginate collection
+= render "godmode/shared/paginator", :collection => collection

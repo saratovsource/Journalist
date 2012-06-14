@@ -37,6 +37,6 @@ class Godmode::AccountsController < Godmode::BaseController
 
   def collection
     where_params = { :site_id => current_site.id }
-    @collection ||= current_site.accounts
+    @collection ||= current_site.accounts.page(params[:page]).per(params[:per_page])
   end
 end

@@ -9,3 +9,4 @@
       - collection.each do |comment|
         = render "item", :item => comment
   =# paginate collection
+  = render "godmode/shared/paginator", :collection => collection

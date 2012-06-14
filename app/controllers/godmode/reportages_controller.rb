@@ -42,7 +42,7 @@ class Godmode::ReportagesController < Godmode::BaseController
     else
       @collection ||= end_of_association_chain.where(where_params).with_states(states.compact)
     end
-
+    @collection.page(params[:page]).per(params[:per_page])
   end
 
   def resource
