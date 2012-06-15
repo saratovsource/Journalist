@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     end
 
     resources :labels
+    resources :pages
     resources :comments, :only => [:index, :show, :edit, :update] do
       post :fire, :on => :member
     end

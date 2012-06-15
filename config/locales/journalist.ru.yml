@@ -41,10 +41,14 @@ ru:
       comment: Комментарии
       css: Иконка
       data: "Дата создания"
+      path: "Полный путь"
       render: Рендер
     labels: 
       index: 
         new: "Добавить метку"
+    pages: 
+      index: 
+        new: "Новая страница"
     shared: 
       headers: 
         edit_header: 
@@ -52,11 +56,13 @@ ru:
         index_header: 
           comment: "Модерация комментариев"
           label: Метки
+          page: Страницы
           reportage: Репортажи
         new_header: 
           title: "Новая метка"
       menu: 
         labels: Метки
+        pages: Страницы
       sub_menu: 
         comments: Комментарии
     sidebar: 

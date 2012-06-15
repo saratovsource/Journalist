@@ -1,0 +1,9 @@
+= simple_form_for [:godmode, @page] do |f|
+  = render_fieldsets "base_fields", f
+  = f.input :visible, :wrapper => :godmode, :as => :select
+  = fieldset_tag(:content, :class => "toogle on") do
+    - %w(markup_editor assets_picker).each do |fieldset|
+      = render_fieldsets fieldset, f
+  = fieldset_tag(:seo, :class => "toogle off") do
+    = render_fieldsets "seo", f
+  .clearfix= f.button :submit

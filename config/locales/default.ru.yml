@@ -241,6 +241,8 @@ ru:
     models:
       journal_article: "Статья Журнала"
       journal_rubric: "Рубрика Журнала"
+      column_article: "Статья Колонки"
+      face: "Фейспатруль"
   move_element: "Переместить элемент"
   or: или
   profile: Профиль

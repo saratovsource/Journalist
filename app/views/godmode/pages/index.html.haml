@@ -1,0 +1,16 @@
+= render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => Page.model_name.parameterize}
+
+- unless has_column?
+  = render :partial => "empty"
+- else
+  %table.listingtable.zebra-striped.t-sort
+    = render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(title path), :rejected => ""}
+    %tbody
+      - collection.each do |article|
+        %tr
+          %td.check= check_box_tag :selected_articles, nil, nil
+          %td= link_to article.title, can?(:edit, article) ? edit_resource_path(article) : resource_path(article)
+          %td= link_to article.fullpath, article.fullpath, :target => :_blank
+      %tr
+        %td{:colspan => 5}= link_to t('.new'), new_godmode_page_path, :class => "btn"
+  = render "godmode/shared/paginator", :collection => collection

@@ -28,6 +28,7 @@ class Site
   has_many :time_lines, :validate => false
   has_many :profiles, :validate => false
   has_many :labels, :validate => false
+  has_many :pages, :validate => false
 
   # -= Validations =-
   validates_presence_of :name
