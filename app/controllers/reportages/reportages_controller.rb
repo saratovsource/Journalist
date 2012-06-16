@@ -3,12 +3,11 @@ module Reportages
 
 
     def index
-      @reportages = current_site.reportages
-      @reportages = @reportages.desc(:created_at).page(params[:page] || 1).per(params[:per_page] || 8)
       @layout_sections = {
       }
 
-      redirect_to @reportages.first.fullpath
+      last_item = current_site.reportages.with_state(:published).desc(:created_at).first
+      redirect_to last_item.present? ? last_item.fullpath : root_path
     end
 
     def sections

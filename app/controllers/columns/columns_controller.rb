@@ -3,8 +3,8 @@ module Columns
 
     def index
       @columns = Column.all
-      @column_articles = current_site.column_articles.feed.with_state(:published).page(params[:page]).per(params[:per_page])
-      @column_articles = tabs_filter(@column_articles, params[:tab])
+      @column_articles = current_site.column_articles.feed.with_state(:published)
+      @column_articles = tabs_filter(@column_articles, params[:tab]).page(params[:page]).per(params[:per_page])
       @layout_sections = {
         :main_menu => {
           :name => "journalist/columns_navigation",
