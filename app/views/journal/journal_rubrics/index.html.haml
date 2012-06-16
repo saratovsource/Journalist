@@ -1,9 +1,6 @@
 - content_for :sidebar do
   = render_section(:sidebar)
-.span18
-  = render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym)
-  - if @articles.any?
-    - @articles.each do |item|
-      = item.render(:block)
-      .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
-    = render "shared/more", :pcol => @articles
+- if request.xhr?
+  = render "list_items"
+- else
+  .span18= render "list_items"

@@ -1,6 +1,10 @@
 $ ->
-  $('.bgoverlay[data-elements]').bind "click", ->
+  bind_preview()
+
+@bind_preview = () ->
+  overlays = $('.bgoverlay[data-elements]')
+  overlays.on "click", ->
     $($(this).data("elements")).removeClass("active")
-  $('[data-preview]').bind "click", (e)->
+  $('[data-preview]').on "click", (e)->
     e.stopPropagation()
     $(this).addClass "active"

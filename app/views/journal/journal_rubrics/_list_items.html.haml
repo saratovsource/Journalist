@@ -1,0 +1,5 @@
+= render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym) unless request.xhr?
+- if @articles.any?
+  - @articles.each do |item|
+    = render "item", :item => item
+  = render "shared/more", :pcol => @articles
