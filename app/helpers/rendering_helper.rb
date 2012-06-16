@@ -51,11 +51,12 @@ module RenderingHelper
     if item.respond_to?(:meta_keywords) && item.meta_keywords.present?
       ret_value = item.meta_keywords
     else
-      ret_value = item.tags.join(', ') if item.respond_to?(:tags)
+      ret_value = item.tags if item.respond_to?(:tags)
     end
     if ret_value.blank?
       nil
     else
+      ret_value = ret_value.join(', ') if ret_value.kind_of?(Array)
       tag(:meta, :name => "keywords", :content => ret_value)
     end
   end
