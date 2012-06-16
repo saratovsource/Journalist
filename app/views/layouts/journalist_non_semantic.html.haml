@@ -2,6 +2,8 @@
 %html{:class => "wf-ptsans-n4-active wf-ptsans-n7-active wf-active"}
   %head
     %meta{:charset => "utf-8"}
+    - if content_for?(:seo)
+      =yield(:seo)
     = stylesheet_link_tag    "journalist/application"
     = javascript_include_tag "journalist/application"
     = csrf_meta_tags

@@ -1,7 +1,7 @@
 %footer.cheeky-footer{:role => "contentinfo"}
   .container
     %ul.unstyled.clearfix.navigation
-      %li.sitename.active= link_to "Nahalno.ru", root_path
+      %li.sitename.active= link_to t(:site_name), root_path
       = render_cell 'journalist/top_menu', :footer
       = render_cell 'journalist/static_pages', :footer
     .row.copyright

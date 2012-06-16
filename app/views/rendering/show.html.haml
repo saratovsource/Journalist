@@ -4,6 +4,11 @@
     - content_for :additionals do
       = render_cell "buttons", :like, @routerable, @routerable.rated_by?(@rater)
       = render_section(:comments)
+  - content_for :seo do
+    = seo_title(@routerable)
+    = seo_description(@routerable)
+    = seo_tags(@routerable)
+    = seo_author(@routerable)
 - unless [Profile, MediaCollection, Reportage, Page].include?(@routerable.class)
   - if @layout_sections[:sidebar].present?
     - content_for :sidebar do
