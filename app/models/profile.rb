@@ -12,6 +12,14 @@ class Profile
   # -= CarrierWave =-
   mount_uploader :avatar, AvatarUploader
 
+  def title
+    self.name
+  end
+
+  def description
+    self.about_me.truncate(255)
+  end
+
   def parent
     self.site
   end

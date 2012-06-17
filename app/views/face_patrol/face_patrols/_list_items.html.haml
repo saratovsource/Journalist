@@ -1,0 +1,8 @@
+
+- if @faces.any?
+  - @faces.each do |face|
+    %li.span6
+      %article
+        = face.render(:block)
+        .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
+  = render "shared/more", :pcol => @faces

@@ -154,6 +154,19 @@ ru:
       widget: 
         statistic: "%{count} постов в %{rubrics} рубриках"
         title: Журнал
+  seo: 
+    column_atricles: 
+      description: "Колонки — личное пространство независимых авторов"
+      title: Колонки
+    facepatrol: 
+      description: "Фейспатруль — это фотократочки с заметными людьми города"
+      title: Фейспатруль
+    journal: 
+      description: "Про раздел"
+      title: Журнал
+    timeline: 
+      description: "Таймлайн — это лента всех публикаций *Username*"
+      title: Таймлайн
   shared: 
     elements: 
       images_list: 
@@ -171,13 +184,15 @@ ru:
         best: Лучшие
         comments: Комментируемые
         last: Последние
+    more: 
+      title: "Подгрузить еще"
     templates: 
       face: 
         block: 
           age: 
-            few: "%{count} год"
+            few: "%{count} года"
             many: "%{count} лет"
-            one: "один годик"
+            one: "%{count} год"
             other: "%{count} лет"
             zero: "еще младенец"
       reportage: 

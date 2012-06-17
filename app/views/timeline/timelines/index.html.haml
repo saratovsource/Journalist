@@ -7,3 +7,6 @@
       = item.render(:block)
       .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
     = render "shared/more", :pcol => @items
+- content_for :seo do
+  = seo_collection_title(@items, :timeline)
+  = seo_collection_description(@items, :timeline)

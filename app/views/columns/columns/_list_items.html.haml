@@ -1,0 +1,5 @@
+- if @column_articles.any?
+  - @column_articles.each do |article|
+    = article.render(:block)
+    .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
+  = render "shared/more", :pcol => @column_articles

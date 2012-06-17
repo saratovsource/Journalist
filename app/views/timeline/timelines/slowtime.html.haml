@@ -6,3 +6,6 @@
       = Slowpoke.count
       %small= t'.pages'
   = raw t('.snippet')
+- content_for :seo do
+  = seo_collection_title(@items, :timeline)
+  = seo_collection_description(@items, :timeline)

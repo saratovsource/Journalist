@@ -1,6 +1,11 @@
-- content_for :sidebar do
-  = render_section(:sidebar)
-= render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym)
-- @column_articles.each do |article|
-  = article.render(:block)
-  .bgoverlay{:title => t('.bgoverlay'), :data => {:elements => "article.active"}}
+- if request.xhr?
+  = render "list_items"
+- else
+  - content_for :sidebar do
+    = render_section(:sidebar)
+  = render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym)
+  = render "list_items"
+  - content_for :seo do
+    = seo_collection_title(@column_articles, :column_atricles)
+    = seo_collection_description(@column_articles, :column_atricles)
+    = seo_collection_tags(@column_tags || [])

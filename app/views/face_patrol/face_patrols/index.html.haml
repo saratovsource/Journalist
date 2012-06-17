@@ -1,5 +1,10 @@
-= render_cell 'journalist/faces_navigation', :tabs, :site => current_site
-%ul.unstyled.row
-  - @faces.each do |face|
-    %li.span6
-      %article= face.render(:block)
+- if request.xhr?
+  = render "list_items"
+- else
+  = render_cell 'journalist/faces_navigation', :tabs, :site => current_site
+  %ul.unstyled.row
+    = render "list_items"
+  - content_for :seo do
+    = seo_collection_title(@faces, :facepatrol)
+    = seo_collection_description(@faces, :facepatrol)
+    = seo_collection_tags([])

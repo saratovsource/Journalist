@@ -1,7 +1,7 @@
 module FacePatrol
   class FacePatrolsController < ::BaseController
 
-    layout "journalist_non_semantic"
+    #layout "journalist_non_semantic"
 
     def index
       @faces = current_site.faces
@@ -28,6 +28,12 @@ module FacePatrol
 
     def sections
       [:face_patrol]
+    end
+
+    protected
+
+    def journalist_layout
+     request.xhr? ? false : "journalist_non_semantic"
     end
 
   end

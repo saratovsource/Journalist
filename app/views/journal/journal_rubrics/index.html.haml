@@ -1,6 +1,10 @@
-- content_for :sidebar do
-  = render_section(:sidebar)
 - if request.xhr?
   = render "list_items"
 - else
   .span18= render "list_items"
+  - content_for :seo do
+    = seo_collection_title(@articles, :journal)
+    = seo_collection_description(@articles, :journal)
+    = seo_collection_tags(@journal_tags)
+  - content_for :sidebar do
+    = render_section(:sidebar)
