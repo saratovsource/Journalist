@@ -2,8 +2,8 @@ class Godmode::AccountsMenuCell < ::MenuCell
   protected
   
   def build_list
-    add :redaction, :url => '#'
-    add :others, :url => '#'
+    #add :redaction, :url => '#'
+    #add :others, :url => '#'
   end
   
   def localize_label(label)

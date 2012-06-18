@@ -35,6 +35,9 @@ ru:
         doubt: icon-eye-close
         hide: icon-warning-sign
         publish: icon-eye-open
+    faces: 
+      empty: 
+        title: "Вы пока не добавили ни одного красивого лица в коллекцию. Хотите поделиться?"
     headers: 
       actions: Действия
       color: Цвет
@@ -49,7 +52,19 @@ ru:
     pages: 
       index: 
         new: "Новая страница"
+    reportages: 
+      empty: 
+        title: "У вас нет еще ни одного репортажа. Дерзайте!"
     shared: 
+      fieldsets: 
+        age: 
+          age: Возраст
+          help: 
+            age: "Указите возраст в годах"
+        file: 
+          file: Файл
+          help: 
+            file: "Выберите изображение"
       headers: 
         edit_header: 
           label: "Редактирование метки"

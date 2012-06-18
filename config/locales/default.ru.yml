@@ -1,26 +1,26 @@
----
-ru:
-  acl:
+--- 
+ru: 
+  acl: 
     acl_time_range: "Сейчас не время"
     password: "Пароль не верен!"
   all_items: Все
   are_you_shure: "Вы уверены?"
-  column_article:
+  column_article: 
     default_title: "Новый пост в колонку"
   create: Создать
   description: Описание
   descriptions: Описания
   destroy: Удалить
   edit: Редактировать
-  errors:
-    messages:
+  errors: 
+    messages: 
       needs_admin_account: "One admin account is required at least"
-  face_patrol:
+  face_patrol: 
     default_title: "Имя женщины или мужчины"
   generate: Сгенерировать
-  godmode:
-    accounts:
-      articles:
+  godmode: 
+    accounts: 
+      articles: 
         author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
@@ -33,26 +33,26 @@ ru:
         updated_at_title: "Обновлен %{time}"
         weight: Вес
     author: Автор
-    column_articles:
-      empty:
+    column_articles: 
+      empty: 
         start: "Да! Я хочу начать писать!"
         title: "Вы еще ни разу не писали статей в свою колонку и она пока не создана. Вы уверены, что хотите начать?"
     editor: Редактор
-    events:
+    events: 
       prepublish: "Послать редактору"
       publish: Опубликовать
       rescue: Восстановить
       rewrite: Переписать
       trash: "В корзину"
-    faces:
-      form:
+    faces: 
+      form: 
         f: Женщина
         m: Мужчина
-    fieldsets:
+    fieldsets: 
       content: "Содержимое:"
       seo: "SEO настройка:"
       settings: "Настройки:"
-    header_fields:
+    header_fields: 
       author: Автор
       email: "Электронная почта"
       last_item: "Последний элемент"
@@ -64,7 +64,7 @@ ru:
       updated_at: Обновлен
       updated_at_title: "Обновлен %{time}"
       weight: Вес
-    headers:
+    headers: 
       author: Автор
       email: "Электронная почта"
       last_item: "Последний элемент"
@@ -76,8 +76,8 @@ ru:
       updated_at: Обновлен
       updated_at_title: "Обновлен %{time}"
       weight: Вес
-    journal_articles:
-      index:
+    journal_articles: 
+      index: 
         author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
@@ -89,7 +89,7 @@ ru:
         updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
         weight: Вес
-      prepublished:
+      prepublished: 
         author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
@@ -101,8 +101,8 @@ ru:
         updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
         weight: Вес
-    journal_rubrics:
-      articles:
+    journal_rubrics: 
+      articles: 
         author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
@@ -114,7 +114,7 @@ ru:
         updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
         weight: Вес
-      index:
+      index: 
         author: Автор
         email: "Электронная почта"
         last_item: "Последний элемент"
@@ -128,24 +128,24 @@ ru:
         updated_at: Обновлен
         updated_at_title: "Обновлен %{time}"
         weight: Вес
-    sex:
+    sex: 
       f: Девушка
       m: Парень
-    shared:
-      acls:
-        password:
+    shared: 
+      acls: 
+        password: 
           acl_password: Пароль
-          help:
+          help: 
             acl_password: "Введите пароль для доступа"
-        time:
-          help:
+        time: 
+          help: 
             time_range: "In this range it will be accessible"
           time_range: "Промежуток времени"
-      actions:
-        stated_actions:
+      actions: 
+        stated_actions: 
           save: "В черновики"
-      collections:
-        sorted_articles:
+      collections: 
+        sorted_articles: 
           author: Автор
           email: "Электронная почта"
           last_item: "Последний элемент"
@@ -157,22 +157,22 @@ ru:
           updated_at: Обновлен
           updated_at_title: "Обновлен %{time}"
           weight: Вес
-      fieldsets:
-        acls:
+      fieldsets: 
+        acls: 
           legend: "Опции доступа"
-        base_fields:
-          help:
+        base_fields: 
+          help: 
             tags: "Разделяйте тэги запятыми"
-        description:
+        description: 
           description: Описание
-          help:
+          help: 
             description: "В это поле можно ввести небольшое описание, желательно не более 255 символов."
-        reportage:
+        reportage: 
           content: Содержимое
-          help:
+          help: 
             content: "Здесь необходимо указать ссылки на интересующий Вас контент. Они преобразуются в медийные данные."
-        seo:
-          help:
+        seo: 
+          help: 
             in_robots: "Эта страница будет добавлена в robots.txt и не будет доступна поисковикам для индексации."
             meta_description: "One or two sentence description of the publication. Make the text informative, to reading the text, the visitor is immediately understood as speech."
             meta_keywords: "Tags for meta information"
@@ -182,28 +182,28 @@ ru:
           meta_description: Мета-описание
           meta_keywords: "Ключевые слова"
           seo_title: "SEO заголовок"
-        stickers:
+        stickers: 
           journal_article: "Закрепить в начале"
           stick_homepage: "Закрепить на главной странице"
-      headers:
-        edit_header:
+      headers: 
+        edit_header: 
           account: "Редактировать свойства аккаунта"
           journalarticle: "Редактируем статью"
           journalrubric: "Редактируем рубрику"
           mediacollection: "Редактируем коллекцию"
           membership: Членство
-        index_header:
+        index_header: 
           account: Аккаунты
           columnarticle: "Статьи колонки"
           face: Фейспатруль
           journalarticle: "Журнальные статьи"
           journalarticle_tags: "Список тэгов журнала:"
           journalrubric: "Рубрики журнала"
-        stated_edit_header:
+        stated_edit_header: 
           face: Фейс
           journalarticle: "Редактируем журнальную статью"
           reportage: Репортаж
-      menu:
+      menu: 
         accounts: Пользователи
         comments: Комментарии
         face_patrol: ФейсПатруль
@@ -211,12 +211,12 @@ ru:
         journal: Журнал
         mediabank: Медиабанк
         publications: Публикации
-      new_header:
+      new_header: 
         title: "Новый %{create_type}"
-      publications_sub_menu:
+      publications_sub_menu: 
         rubrics: Рубрики
         tags: Тэги
-      sub_menu:
+      sub_menu: 
         columns: Колонки
         face_patrol: ФейсПатруль
         journal: Журнал
@@ -224,32 +224,34 @@ ru:
         photo: Фото
         redaction: Редакция
         reportage: Репортаж
-    sidebar:
-      headers:
+    sidebar: 
+      headers: 
         accounts: Пользователи
         dashboard: Dashboard
         mediabank: Медиабанк
         publications: Публикации
-  journal_article:
+  journal_article: 
     default_title: "Новая статья"
-  layouts:
-    godmode:
+  layouts: 
+    godmode: 
       title: "%{name} - Режим Бога"
   login: Войти
   logout: Выйти
-  mongoid:
-    models:
+  mongoid: 
+    models: 
+      column_article: "Статья Колонки"
+      face: Фейспатруль
       journal_article: "Статья Журнала"
       journal_rubric: "Рубрика Журнала"
-      column_article: "Статья Колонки"
-      face: "Фейспатруль"
   move_element: "Переместить элемент"
   or: или
   profile: Профиль
   profileslug: (◕_◕)
   register: Зарегистрироваться
+  reportage: 
+    default_title: "Новый репортаж"
   save: Сохранить
-  states:
+  states: 
     drafted: Черновик
     prepublished: "На предпубликации"
     published: Опубликована
