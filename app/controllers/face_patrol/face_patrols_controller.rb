@@ -8,7 +8,7 @@ module FacePatrol
       if params[:sex].present? && %w(boys girls).include?(params[:sex])
         @faces = @faces.send(params[:sex])
       end
-      @faces = @faces.desc(:created_at).page(params[:page]).per(params[:per_page] || 8)
+      @faces = @faces.web.page(params[:page]).per(params[:per_page] || 8)
       @layout_sections = {
         :main_menu => {
           :name => "journalist/faces_navigation",
@@ -22,7 +22,7 @@ module FacePatrol
     end
 
     def gallery
-      @faces = current_site.faces.desc(:created_at).page(params[:page]).per(params[:per_page])
+      @faces = current_site.faces.web.page(params[:page]).per(params[:per_page])
       @page_class = "mediapage"
     end
 

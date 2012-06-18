@@ -14,8 +14,10 @@ class Face
   field :age, type: Integer
 
   # -= scopes =-
-  scope :boys, where(:sex => 'm')
-  scope :girls, where(:sex => 'f')
+  scope :boys, ->{where(:sex => 'm').ordered}
+  scope :girls, ->{where(:sex => 'f').ordered}
+  scope :web, ->{with_state(:published).ordered}
+  scope :ordered, ->{desc(:created_at)}
 
   # -= CarrierWave =-
   mount_uploader :file, FaceUploader

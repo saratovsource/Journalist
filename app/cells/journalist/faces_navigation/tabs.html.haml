@@ -2,12 +2,12 @@
   %li{:class => "face_tab#{' active' if params[:sex].blank?}"}
     = link_to face_patrol_root_path do
       = t('.all')
-      %span.label= @options[:site].faces.count
+      %span.label= @options[:site].faces.web.count
   - %w(boys girls).each do |sex|
     %li{:class => "face_tab#{' active' if params[:sex] == sex}"}
       = link_to face_patrol_root_path(params.merge(:sex => sex)) do
         = t(".#{sex}")
-        %span.label= @options[:site].faces.send(sex.to_sym).count
+        %span.label= @options[:site].faces.web.send(sex.to_sym).count
     %li.pos-a.pos-right
       = link_to face_patrol_gallery_path do
         %i.icon-picture &nbsp;

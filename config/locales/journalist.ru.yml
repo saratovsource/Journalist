@@ -131,8 +131,18 @@ ru:
       widget: 
         all: "Всего в нашей базе %{count}"
         and: и
-        boys: "%{count} мальчиков"
-        girls: "%{count} девочек"
+        boys:
+          few: "%{count} мальчика"
+          many: "%{count} мальчиков"
+          one: "%{count} мальчик"
+          other: "%{count} мальчиков"
+          zero: "%{count} мальчиков"
+        girls:
+          few: "%{count} девочки"
+          many: "%{count} девочек"
+          one: "%{count} девочка"
+          other: "%{count} девочек"
+          zero: "%{count} девочек"
         title: Фейспатруль
     menu: 
       auth: 

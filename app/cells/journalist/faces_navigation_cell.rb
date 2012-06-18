@@ -15,7 +15,7 @@ module Journalist
       self.options = args
       # retrive random facepatrol
       @random_counts = self.options[:count] || 1
-      @faces = current_site.faces
+      @faces = current_site.faces.web
       @face = (0..@faces.count-1).sort_by{rand}.slice(0, @random_counts).collect! do |i| @faces.skip(i).first end.first
       render
     end
