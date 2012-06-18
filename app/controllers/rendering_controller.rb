@@ -18,7 +18,6 @@ class RenderingController < ::BaseController#ApplicationController
 
   def comment
     @rtm = @routerable.write_comment(params[:comment], current_account)
-    p @rtm.fullpath.inspect
     redirect_to @rtm.fullpath
   end
 
