@@ -14,6 +14,17 @@ class Label
 
   before_validation :strip_name
 
+  class << self
+    def comment_label
+      where(:css => "comment")
+    end
+
+    def like_label
+      where(:css => "heart")
+    end
+
+  end
+
   protected
 
   def strip_name

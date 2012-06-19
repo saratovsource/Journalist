@@ -25,7 +25,23 @@ module Extensions
         nil
       end
 
+      def dynamic_labels
+        labels + statistic_labels
+      end
+
       protected
+
+      def statistic_labels
+        ret = []
+        # commentable
+        comment_label = Label.comment_label
+        ret = ret + comment_label if (self.comments.web.count > 0 && comment_label.present?)
+        # likes
+        likes_label = Label.like_label
+        ret = ret + likes_label if (self.rate_count > 20)
+
+        ret.compact
+      end
 
       def render_without_parameters(type)
         case type
