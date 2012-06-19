@@ -68,8 +68,8 @@ class Comment
   end
 
   def autogenerate_title
-    if self.owner
-      self.title = "#{I18n.t("i_generators.comments.title")}-#{self.owner.comments.count + 1}"
+    if self.site.present?
+      self.title = "#{I18n.t("i_generators.comments.title")}-#{self.site.comments.count + 1}"
     end
   end
 

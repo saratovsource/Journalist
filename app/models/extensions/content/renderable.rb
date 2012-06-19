@@ -38,7 +38,7 @@ module Extensions
         ret = ret + comment_label if (self.comments.web.count > 10 && comment_label.present?)
         # likes
         likes_label = Label.like_label
-        ret = ret + likes_label if (self.rate_count > 20)
+        ret = ret + likes_label if (self.rate_count > 20 && likes_label.present?)
 
         ret.compact
       end
