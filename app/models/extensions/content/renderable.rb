@@ -6,7 +6,7 @@ module Extensions
       included do
         has_and_belongs_to_many :labels
 
-        scope :latests, lambda{|n| published.desc(:published_at).limit(n)}
+        scope :latests, lambda{|n| published.desc(:publish_at).limit(n)}
       end
 
       # Render method
