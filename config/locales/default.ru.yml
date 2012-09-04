@@ -37,6 +37,9 @@ ru:
       empty: 
         start: "Да! Я хочу начать писать!"
         title: "Вы еще ни разу не писали статей в свою колонку и она пока не создана. Вы уверены, что хотите начать?"
+    dashboard: 
+      index: 
+        title: "Добро пожаловать!"
     editor: Редактор
     events: 
       prepublish: "Послать редактору"
@@ -48,6 +51,11 @@ ru:
       form: 
         f: Женщина
         m: Мужчина
+      prepublished: 
+        author: Автор
+        title: Заголовок
+        updated_at: Обновлен
+        updated_at_title: "Обновлен %{time}"
     fieldsets: 
       content: "Содержимое:"
       seo: "SEO настройка:"
