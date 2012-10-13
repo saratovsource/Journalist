@@ -1,6 +1,6 @@
 = render :partial => "/godmode/shared/headers/index_header", :locals => {:create_type => Page.model_name.parameterize}
 
-- unless has_column?
+- unless collection.any?
   = render :partial => "empty"
 - else
   %table.listingtable.zebra-striped.t-sort
