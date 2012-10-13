@@ -17,7 +17,7 @@ class Profile
   end
 
   def description
-    self.about_me.truncate(255)
+    (self.about_me || "").truncate(255)
   end
 
   def parent
@@ -25,7 +25,7 @@ class Profile
   end
 
   def is_empty?
-    self.name.empty?
+    (self.name || "").empty?
   end
 
   def prefix
