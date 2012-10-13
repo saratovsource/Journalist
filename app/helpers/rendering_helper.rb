@@ -27,7 +27,7 @@ module RenderingHelper
     if item.respond_to?(:seo_title) && item.seo_title.present?
       title_text =  item.seo_title if item.seo_title.present?
     else
-      title_text = item.title.j_clean
+      title_text = (item.title || "").j_clean
     end
     content_tag(:title, [title_text, I18n.t(:site_name) ].join(I18n.t(:title_delimiter)))
   end
