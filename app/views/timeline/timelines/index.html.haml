@@ -1,7 +1,7 @@
 - content_for :sidebar do
   = render_section(:sidebar)
 .span18
-  = render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym) if params[:date].blank?
+  = render "shared/elements/sort_widget_tab", :active_tab => params[:tab].try(:to_sym) if (params[:date].blank? || !request.xhr?)
   - if @items.any?
     - @items.map(&:timelinable).compact.each do |item|
       = item.render(:block)
