@@ -2,7 +2,7 @@
 = render :partial => "box"
 
 %table.listingtable.zebra-striped.t-sort
-  = render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(title rubric icons author updated_at), :rejected => ""}
+  -#= render :partial => "godmode/shared/headers/sorted_header", :locals => {:columns => %w(title rubric icons author updated_at), :rejected => ""}
   %tbody
     - collection.each do |article|
       %tr
