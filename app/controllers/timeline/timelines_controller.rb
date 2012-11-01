@@ -1,7 +1,7 @@
 module Timeline
   class TimelinesController < ::BaseController
 
-    layout "journalist_timeline"
+    #layout "journalist_timeline"
 
     def index
       @calendar_builder = Journalist::CalendarBuilder.new(calendar_options)
@@ -40,6 +40,10 @@ module Timeline
     end
 
     protected
+
+    def journalist_layout
+     request.xhr? ? false : "journalist_timeline"
+    end
 
     def calendar_options
       {
