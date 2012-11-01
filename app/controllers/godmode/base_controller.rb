@@ -11,7 +11,7 @@ module Godmode
 
     layout "godmode"
 
-    helper_method :sections, :current_site_url, :site_url, :page_url, :current_ability
+    helper_method :sections, :current_site_url, :site_url, :page_url, :current_ability, :is_redactor?
 
     # https://rails.lighthouseapp.com/projects/8994/tickets/1905-apphelpers-within-plugin-not-being-mixed-in
     Dir[File.dirname(__FILE__) + "/../../helpers/godmode/*_helper.rb"].each do |file|
@@ -32,6 +32,10 @@ module Godmode
 
         redirect_to root_url#admin_pages_url
       end
+    end
+
+    def is_redactor?
+      session[:account_type] == "editor"
     end
 
 
@@ -61,10 +65,6 @@ module Godmode
       else
         ""
       end
-    end
-
-    def is_redactor?
-      session[:account_type] == "editor"
     end
 
     def states_from_params(state)
